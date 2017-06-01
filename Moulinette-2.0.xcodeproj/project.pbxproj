@@ -15,6 +15,7 @@
 		20161D0C1EE0B28A00997AF6 /* MarkUsageSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D0B1EE0B28A00997AF6 /* MarkUsageSwiftRule.swift */; };
 		20161D0E1EE0B53A00997AF6 /* SingleEnumCaseSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D0D1EE0B53A00997AF6 /* SingleEnumCaseSwiftRule.swift */; };
 		20161D101EE0B99B00997AF6 /* InternalModifierSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D0F1EE0B99B00997AF6 /* InternalModifierSwiftRule.swift */; };
+		20161D121EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D111EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift */; };
 		206837A41EDE1D5D008CB7F3 /* ProjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837A31EDE1D5D008CB7F3 /* ProjectData.swift */; };
 		206837A61EDE1E35008CB7F3 /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837A51EDE1E35008CB7F3 /* ProjectParser.swift */; };
 		206837A81EDE20E5008CB7F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837A71EDE20E5008CB7F3 /* Constants.swift */; };
@@ -56,6 +57,7 @@
 		20161D0B1EE0B28A00997AF6 /* MarkUsageSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkUsageSwiftRule.swift; sourceTree = "<group>"; };
 		20161D0D1EE0B53A00997AF6 /* SingleEnumCaseSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleEnumCaseSwiftRule.swift; sourceTree = "<group>"; };
 		20161D0F1EE0B99B00997AF6 /* InternalModifierSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalModifierSwiftRule.swift; sourceTree = "<group>"; };
+		20161D111EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeInferenceSwiftRule.swift; sourceTree = "<group>"; };
 		206837A31EDE1D5D008CB7F3 /* ProjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectData.swift; sourceTree = "<group>"; };
 		206837A51EDE1E35008CB7F3 /* ProjectParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectParser.swift; sourceTree = "<group>"; };
 		206837A71EDE20E5008CB7F3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				20161D0B1EE0B28A00997AF6 /* MarkUsageSwiftRule.swift */,
 				20161D0D1EE0B53A00997AF6 /* SingleEnumCaseSwiftRule.swift */,
 				20161D0F1EE0B99B00997AF6 /* InternalModifierSwiftRule.swift */,
+				20161D111EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				20E414111EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift in Sources */,
 				20E414041EDF7F370000E447 /* ContextCheck.swift in Sources */,
 				206837B11EDE2305008CB7F3 /* AppDelegateSwiftRule.swift in Sources */,
+				20161D121EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift in Sources */,
 				20161D061EE09C8F00997AF6 /* FileType.swift in Sources */,
 				20161D0C1EE0B28A00997AF6 /* MarkUsageSwiftRule.swift in Sources */,
 				20E413FF1EDF41660000E447 /* Audit.swift in Sources */,

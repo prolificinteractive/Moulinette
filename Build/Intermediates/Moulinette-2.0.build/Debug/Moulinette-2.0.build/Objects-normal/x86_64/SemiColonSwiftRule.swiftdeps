@@ -8,17 +8,17 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "StringLiteralType"
-- "String"
-- "ProjectData"
 - "SwiftRule"
 - "SemiColonSwiftRule"
+- "ProjectData"
+- "String"
+- "GradeType"
 - "ExtendedGraphemeClusterType"
 - "TernaryPrecedence"
 - "AssignmentPrecedence"
-- "GradeType"
 - !private "=="
-- !private "+="
 - "UnicodeScalarType"
+- !private "+="
 depends-member:
 - !private ["Ps9AnyObject", "applicationComponents"]
 - !private ["Ps9AnyObject", "characters"]

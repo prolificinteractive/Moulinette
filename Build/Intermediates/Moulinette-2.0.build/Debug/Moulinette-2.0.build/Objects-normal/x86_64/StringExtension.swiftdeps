@@ -13,15 +13,16 @@ provides-member:
 - ["SS", "subClassName"]
 provides-dynamic-lookup:
 depends-top-level:
-- "Bool"
-- !private "StringLiteralType"
-- !private "..<"
-- "String"
 - "AssignmentPrecedence"
+- !private "<"
 - !private "Range"
-- !private "UnicodeScalarType"
-- !private "&&"
+- !private "..<"
 - !private "!"
+- !private "UnicodeScalarType"
+- !private "StringLiteralType"
+- "Bool"
+- !private "&&"
+- "String"
 depends-member:
 - !private ["Ps9AnyObject", "contains"]
 - !private ["Ps9AnyObject", "endIndex"]
@@ -34,6 +35,7 @@ depends-member:
 - !private ["Ps9AnyObject", "stringWithoutWhitespaces"]
 - !private ["Ps9AnyObject", "substring"]
 - !private ["Ps9AnyObject", "trimmingCharacters"]
+- !private ["Sb", "_getBuiltinLogicValue"]
 - ["Sb", "deinit"]
 - !private ["Ps7CVarArg", "Range"]
 - !private ["Ps7CVarArg", "contains"]
@@ -77,6 +79,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "upperBound"]
 - !private ["Ps28CustomDebugStringConvertible", "whitespaces"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "Range"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "contains"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "endIndex"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "init"]
@@ -89,6 +92,7 @@ depends-member:
 - !private ["Ps29CustomPlaygroundQuickLookable", "substring"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "trimmingCharacters"]
 - !private ["Ps17CustomReflectable", "Range"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - !private ["Ps17CustomReflectable", "contains"]
 - !private ["Ps17CustomReflectable", "endIndex"]
 - !private ["Ps17CustomReflectable", "init"]
@@ -103,6 +107,7 @@ depends-member:
 - !private ["Ps17CustomReflectable", "trimmingCharacters"]
 - !private ["Ps17CustomReflectable", "upperBound"]
 - !private ["Ps23CustomStringConvertible", "Range"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "contains"]
 - !private ["Ps23CustomStringConvertible", "endIndex"]
 - !private ["Ps23CustomStringConvertible", "init"]
@@ -118,6 +123,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "upperBound"]
 - !private ["Ps23CustomStringConvertible", "whitespaces"]
 - !private ["Ps9Equatable", "Range"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "contains"]
 - !private ["Ps9Equatable", "endIndex"]
 - !private ["Ps9Equatable", "init"]
@@ -133,6 +139,7 @@ depends-member:
 - !private ["Ps9Equatable", "upperBound"]
 - !private ["Ps9Equatable", "whitespaces"]
 - !private ["Ps25ExpressibleByArrayLiteral", "whitespaces"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "Range"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "contains"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "endIndex"]
@@ -182,6 +189,7 @@ depends-member:
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "substring"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "trimmingCharacters"]
 - !private ["Ps8Hashable", "Range"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "contains"]
 - !private ["Ps8Hashable", "endIndex"]
 - !private ["Ps8Hashable", "init"]
@@ -196,6 +204,7 @@ depends-member:
 - !private ["Ps8Hashable", "whitespaces"]
 - ["VVSS13CharacterView5Index", "deinit"]
 - !private ["Ps25LosslessStringConvertible", "Range"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps25LosslessStringConvertible", "contains"]
 - !private ["Ps25LosslessStringConvertible", "endIndex"]
 - !private ["Ps25LosslessStringConvertible", "init"]
@@ -348,6 +357,7 @@ depends-member:
 - !private ["Ps20TextOutputStreamable", "stringWithoutWhitespaces"]
 - !private ["Ps20TextOutputStreamable", "substring"]
 - !private ["Ps20TextOutputStreamable", "trimmingCharacters"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "Range"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "contains"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "endIndex"]
@@ -408,6 +418,7 @@ depends-member:
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "substring"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "trimmingCharacters"]
 - !private ["Ps9_Hashable", "Range"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps9_Hashable", "contains"]
 - !private ["Ps9_Hashable", "endIndex"]
 - !private ["Ps9_Hashable", "init"]
@@ -422,6 +433,7 @@ depends-member:
 - !private ["Ps9_Hashable", "whitespaces"]
 - !private ["P10Foundation18_MutablePairBoxing", "whitespaces"]
 - !private ["Ps21_ObjectiveCBridgeable", "Range"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "contains"]
 - !private ["Ps21_ObjectiveCBridgeable", "endIndex"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
@@ -446,6 +458,7 @@ depends-nominal:
 - !private "Ps23CustomStringConvertible"
 - !private "Ps9Equatable"
 - !private "Ps25ExpressibleByArrayLiteral"
+- !private "Ps27ExpressibleByBooleanLiteral"
 - !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - !private "Ps32ExpressibleByStringInterpolation"
 - !private "Ps26ExpressibleByStringLiteral"
@@ -468,6 +481,7 @@ depends-nominal:
 - "SS"
 - !private "Ps16TextOutputStream"
 - !private "Ps20TextOutputStreamable"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
 - !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
 - !private "Ps34_ExpressibleByBuiltinStringLiteral"
 - !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"

@@ -30,6 +30,7 @@ enum CodeRuleType {
                 ForceUnwrapSwiftRule(projectData: projectData),
                 MarkUsageSwiftRule(projectData: projectData),
                 SingleEnumCaseSwiftRule(projectData: projectData),
-                InternalModifierSwiftRule(projectData: projectData)]
+                InternalModifierSwiftRule(projectData: projectData),
+                TypeInferenceSwiftRule(projectData: projectData)]
     }
 }

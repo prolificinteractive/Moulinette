@@ -7,17 +7,17 @@ provides-member:
 - ["C14Moulinette_2_021FinalClassesSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "String"
-- "SwiftRule"
-- "FinalClassesSwiftRule"
-- "ProjectData"
-- "StringLiteralType"
-- "GradeType"
 - "AssignmentPrecedence"
 - !private "=="
-- !private "!"
+- "FinalClassesSwiftRule"
 - "TernaryPrecedence"
+- "GradeType"
+- "String"
 - !private "+="
+- "ProjectData"
+- "StringLiteralType"
+- "SwiftRule"
+- !private "!"
 depends-member:
 - !private ["Ps9AnyObject", "applicationComponents"]
 - !private ["Ps9AnyObject", "className"]

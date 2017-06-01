@@ -8,22 +8,23 @@ provides-member:
 - ["O14Moulinette_2_012CodeRuleType", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "FinalClassesSwiftRule"
-- !private "WeakIBOutletSwiftRule"
-- !private "MarkUsageSwiftRule"
-- !private "SingleEnumCaseSwiftRule"
-- !private "RequiredSelfSwiftRule"
-- "CodeRuleType"
-- !private "SinglePublicInternalSwiftRule"
-- !private "SemiColonSwiftRule"
-- !private "InternalModifierSwiftRule"
-- !private "AppDelegateSwiftRule"
-- "ProjectData"
-- "=="
-- "SwiftRule"
-- !private "IntegerLiteralType"
-- !private "ForceUnwrapSwiftRule"
 - !private "FloatLiteralType"
+- !private "SingleEnumCaseSwiftRule"
+- !private "SinglePublicInternalSwiftRule"
+- !private "IntegerLiteralType"
+- !private "TypeInferenceSwiftRule"
+- "=="
+- !private "AppDelegateSwiftRule"
+- !private "MarkUsageSwiftRule"
+- !private "ForceUnwrapSwiftRule"
+- !private "InternalModifierSwiftRule"
+- !private "WeakIBOutletSwiftRule"
+- !private "FinalClassesSwiftRule"
+- "SwiftRule"
+- "CodeRuleType"
+- !private "RequiredSelfSwiftRule"
+- "ProjectData"
+- !private "SemiColonSwiftRule"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - ["C14Moulinette_2_020AppDelegateSwiftRule", "deinit"]
@@ -43,6 +44,7 @@ depends-member:
 - !private ["O14Moulinette_2_012CodeRuleType", "SingleEnumCaseSwiftRule"]
 - !private ["O14Moulinette_2_012CodeRuleType", "SinglePublicInternalSwiftRule"]
 - ["O14Moulinette_2_012CodeRuleType", "SwiftRule"]
+- !private ["O14Moulinette_2_012CodeRuleType", "TypeInferenceSwiftRule"]
 - !private ["O14Moulinette_2_012CodeRuleType", "WeakIBOutletSwiftRule"]
 - ["O14Moulinette_2_012CodeRuleType", "_toAnyHashable"]
 - ["O14Moulinette_2_012CodeRuleType", "appDelegate"]
@@ -71,6 +73,7 @@ depends-member:
 - !private ["Ps9Equatable", "SemiColonSwiftRule"]
 - !private ["Ps9Equatable", "SingleEnumCaseSwiftRule"]
 - !private ["Ps9Equatable", "SinglePublicInternalSwiftRule"]
+- !private ["Ps9Equatable", "TypeInferenceSwiftRule"]
 - !private ["Ps9Equatable", "WeakIBOutletSwiftRule"]
 - ["Ps9Equatable", "_toAnyHashable"]
 - ["Ps9Equatable", "hashValue"]
@@ -89,6 +92,7 @@ depends-member:
 - !private ["Ps8Hashable", "SemiColonSwiftRule"]
 - !private ["Ps8Hashable", "SingleEnumCaseSwiftRule"]
 - !private ["Ps8Hashable", "SinglePublicInternalSwiftRule"]
+- !private ["Ps8Hashable", "TypeInferenceSwiftRule"]
 - !private ["Ps8Hashable", "WeakIBOutletSwiftRule"]
 - ["Ps8Hashable", "_toAnyHashable"]
 - ["Ps8Hashable", "hashValue"]
@@ -115,6 +119,8 @@ depends-member:
 - !private ["C14Moulinette_2_029SinglePublicInternalSwiftRule", "init"]
 - !private ["Ps10Strideable", "hashValue"]
 - !private ["P14Moulinette_2_09SwiftRule", "init"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "init"]
 - ["C14Moulinette_2_021WeakIBOutletSwiftRule", "deinit"]
 - !private ["C14Moulinette_2_021WeakIBOutletSwiftRule", "init"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "hashValue"]
@@ -127,6 +133,7 @@ depends-member:
 - !private ["Ps9_Hashable", "SemiColonSwiftRule"]
 - !private ["Ps9_Hashable", "SingleEnumCaseSwiftRule"]
 - !private ["Ps9_Hashable", "SinglePublicInternalSwiftRule"]
+- !private ["Ps9_Hashable", "TypeInferenceSwiftRule"]
 - !private ["Ps9_Hashable", "WeakIBOutletSwiftRule"]
 - ["Ps9_Hashable", "_toAnyHashable"]
 - ["Ps9_Hashable", "hashValue"]
@@ -168,6 +175,7 @@ depends-nominal:
 - "C14Moulinette_2_029SinglePublicInternalSwiftRule"
 - !private "Ps10Strideable"
 - !private "P14Moulinette_2_09SwiftRule"
+- "C14Moulinette_2_022TypeInferenceSwiftRule"
 - "C14Moulinette_2_021WeakIBOutletSwiftRule"
 - !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
 - "Ps9_Hashable"
