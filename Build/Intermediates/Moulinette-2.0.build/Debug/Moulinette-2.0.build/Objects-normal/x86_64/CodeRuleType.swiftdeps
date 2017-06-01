@@ -8,23 +8,25 @@ provides-member:
 - ["O14Moulinette_2_012CodeRuleType", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- !private "RequiredSelfSwiftRule"
 - !private "FloatLiteralType"
-- !private "SingleEnumCaseSwiftRule"
-- !private "SinglePublicInternalSwiftRule"
-- !private "IntegerLiteralType"
+- "ProjectData"
 - !private "TypeInferenceSwiftRule"
+- !private "FontEncapsulationSwiftRule"
+- !private "IntegerLiteralType"
+- "CodeRuleType"
+- !private "SinglePublicInternalSwiftRule"
 - "=="
-- !private "AppDelegateSwiftRule"
+- "SwiftRule"
+- !private "ColorEncapsulationSwiftRule"
+- !private "SingleEnumCaseSwiftRule"
+- !private "SemiColonSwiftRule"
+- !private "InternalModifierSwiftRule"
+- !private "FinalClassesSwiftRule"
+- !private "WeakIBOutletSwiftRule"
 - !private "MarkUsageSwiftRule"
 - !private "ForceUnwrapSwiftRule"
-- !private "InternalModifierSwiftRule"
-- !private "WeakIBOutletSwiftRule"
-- !private "FinalClassesSwiftRule"
-- "SwiftRule"
-- "CodeRuleType"
-- !private "RequiredSelfSwiftRule"
-- "ProjectData"
-- !private "SemiColonSwiftRule"
+- !private "AppDelegateSwiftRule"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - ["C14Moulinette_2_020AppDelegateSwiftRule", "deinit"]
@@ -34,7 +36,9 @@ depends-member:
 - !private ["Ps7CVarArg", "hashValue"]
 - ["O14Moulinette_2_012CodeRuleType", "=="]
 - !private ["O14Moulinette_2_012CodeRuleType", "AppDelegateSwiftRule"]
+- !private ["O14Moulinette_2_012CodeRuleType", "ColorEncapsulationSwiftRule"]
 - !private ["O14Moulinette_2_012CodeRuleType", "FinalClassesSwiftRule"]
+- !private ["O14Moulinette_2_012CodeRuleType", "FontEncapsulationSwiftRule"]
 - !private ["O14Moulinette_2_012CodeRuleType", "ForceUnwrapSwiftRule"]
 - !private ["O14Moulinette_2_012CodeRuleType", "InternalModifierSwiftRule"]
 - !private ["O14Moulinette_2_012CodeRuleType", "MarkUsageSwiftRule"]
@@ -60,12 +64,16 @@ depends-member:
 - ["O14Moulinette_2_012CodeRuleType", "singleEnum"]
 - ["O14Moulinette_2_012CodeRuleType", "singlePublicInternal"]
 - ["O14Moulinette_2_012CodeRuleType", "weakIBOutlet"]
+- ["C14Moulinette_2_027ColorEncapsulationSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_027ColorEncapsulationSwiftRule", "init"]
 - !private ["Ps10Comparable", "hashValue"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "hashValue"]
 - !private ["Ps17CustomReflectable", "hashValue"]
 - !private ["Ps23CustomStringConvertible", "hashValue"]
 - !private ["Ps9Equatable", "AppDelegateSwiftRule"]
+- !private ["Ps9Equatable", "ColorEncapsulationSwiftRule"]
 - !private ["Ps9Equatable", "FinalClassesSwiftRule"]
+- !private ["Ps9Equatable", "FontEncapsulationSwiftRule"]
 - !private ["Ps9Equatable", "ForceUnwrapSwiftRule"]
 - !private ["Ps9Equatable", "InternalModifierSwiftRule"]
 - !private ["Ps9Equatable", "MarkUsageSwiftRule"]
@@ -81,10 +89,14 @@ depends-member:
 - !private ["Ps27ExpressibleByIntegerLiteral", "hashValue"]
 - ["C14Moulinette_2_021FinalClassesSwiftRule", "deinit"]
 - !private ["C14Moulinette_2_021FinalClassesSwiftRule", "init"]
+- ["C14Moulinette_2_026FontEncapsulationSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_026FontEncapsulationSwiftRule", "init"]
 - ["C14Moulinette_2_020ForceUnwrapSwiftRule", "deinit"]
 - !private ["C14Moulinette_2_020ForceUnwrapSwiftRule", "init"]
 - !private ["Ps8Hashable", "AppDelegateSwiftRule"]
+- !private ["Ps8Hashable", "ColorEncapsulationSwiftRule"]
 - !private ["Ps8Hashable", "FinalClassesSwiftRule"]
+- !private ["Ps8Hashable", "FontEncapsulationSwiftRule"]
 - !private ["Ps8Hashable", "ForceUnwrapSwiftRule"]
 - !private ["Ps8Hashable", "InternalModifierSwiftRule"]
 - !private ["Ps8Hashable", "MarkUsageSwiftRule"]
@@ -125,7 +137,9 @@ depends-member:
 - !private ["C14Moulinette_2_021WeakIBOutletSwiftRule", "init"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "hashValue"]
 - !private ["Ps9_Hashable", "AppDelegateSwiftRule"]
+- !private ["Ps9_Hashable", "ColorEncapsulationSwiftRule"]
 - !private ["Ps9_Hashable", "FinalClassesSwiftRule"]
+- !private ["Ps9_Hashable", "FontEncapsulationSwiftRule"]
 - !private ["Ps9_Hashable", "ForceUnwrapSwiftRule"]
 - !private ["Ps9_Hashable", "InternalModifierSwiftRule"]
 - !private ["Ps9_Hashable", "MarkUsageSwiftRule"]
@@ -151,6 +165,7 @@ depends-nominal:
 - !private "Ps17BitwiseOperations"
 - !private "Ps7CVarArg"
 - "O14Moulinette_2_012CodeRuleType"
+- "C14Moulinette_2_027ColorEncapsulationSwiftRule"
 - !private "Ps10Comparable"
 - !private "Ps29CustomPlaygroundQuickLookable"
 - !private "Ps17CustomReflectable"
@@ -158,6 +173,7 @@ depends-nominal:
 - "Ps9Equatable"
 - !private "Ps27ExpressibleByIntegerLiteral"
 - "C14Moulinette_2_021FinalClassesSwiftRule"
+- "C14Moulinette_2_026FontEncapsulationSwiftRule"
 - "C14Moulinette_2_020ForceUnwrapSwiftRule"
 - "Ps8Hashable"
 - "Si"

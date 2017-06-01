@@ -7,15 +7,15 @@ provides-member:
 - ["C14Moulinette_2_012ContextCheck", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Dictionary"
-- "String"
 - "BracketContextCheck"
 - "ContextCheck"
-- !private "!="
-- "LineContext"
 - "AssignmentPrecedence"
 - !private "=="
+- "Dictionary"
 - "Check"
+- "String"
+- !private "!="
+- "LineContext"
 depends-member:
 - !private ["Ps9AnyObject", "BracketContextCheck"]
 - !private ["Ps9AnyObject", "LineContext"]

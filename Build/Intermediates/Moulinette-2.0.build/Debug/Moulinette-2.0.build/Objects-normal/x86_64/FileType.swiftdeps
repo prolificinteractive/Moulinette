@@ -8,11 +8,11 @@ provides-member:
 - ["O14Moulinette_2_08FileType", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "!"
+- "String"
 - !private "StringLiteralType"
 - "FileType"
-- "String"
 - "=="
+- !private "!"
 - !private "&&"
 depends-member:
 - !private ["Ps9AnyObject", "contains"]

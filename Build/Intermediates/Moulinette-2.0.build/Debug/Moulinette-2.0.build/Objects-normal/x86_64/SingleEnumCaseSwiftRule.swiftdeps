@@ -7,19 +7,19 @@ provides-member:
 - ["C14Moulinette_2_023SingleEnumCaseSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- "SingleEnumCaseSwiftRule"
 - "AssignmentPrecedence"
 - !private "=="
-- "UnicodeScalarType"
-- !private "+="
-- "String"
-- "ContextCheck"
 - !private "&&"
+- "String"
 - "TernaryPrecedence"
-- "SwiftRule"
-- "SingleEnumCaseSwiftRule"
-- "StringLiteralType"
+- "UnicodeScalarType"
+- "ContextCheck"
 - "GradeType"
 - "ProjectData"
+- "SwiftRule"
+- !private "+="
+- "StringLiteralType"
 depends-member:
 - ["Ps9AnyObject", "ContextCheck"]
 - !private ["Ps9AnyObject", "applicationComponents"]

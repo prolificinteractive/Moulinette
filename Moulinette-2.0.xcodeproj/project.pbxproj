@@ -16,6 +16,8 @@
 		20161D0E1EE0B53A00997AF6 /* SingleEnumCaseSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D0D1EE0B53A00997AF6 /* SingleEnumCaseSwiftRule.swift */; };
 		20161D101EE0B99B00997AF6 /* InternalModifierSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D0F1EE0B99B00997AF6 /* InternalModifierSwiftRule.swift */; };
 		20161D121EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D111EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift */; };
+		20161D141EE0C31000997AF6 /* FontEncapsulationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D131EE0C31000997AF6 /* FontEncapsulationSwiftRule.swift */; };
+		20161D161EE0C56000997AF6 /* ColorEncapsulationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D151EE0C56000997AF6 /* ColorEncapsulationSwiftRule.swift */; };
 		206837A41EDE1D5D008CB7F3 /* ProjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837A31EDE1D5D008CB7F3 /* ProjectData.swift */; };
 		206837A61EDE1E35008CB7F3 /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837A51EDE1E35008CB7F3 /* ProjectParser.swift */; };
 		206837A81EDE20E5008CB7F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837A71EDE20E5008CB7F3 /* Constants.swift */; };
@@ -58,6 +60,8 @@
 		20161D0D1EE0B53A00997AF6 /* SingleEnumCaseSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleEnumCaseSwiftRule.swift; sourceTree = "<group>"; };
 		20161D0F1EE0B99B00997AF6 /* InternalModifierSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalModifierSwiftRule.swift; sourceTree = "<group>"; };
 		20161D111EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeInferenceSwiftRule.swift; sourceTree = "<group>"; };
+		20161D131EE0C31000997AF6 /* FontEncapsulationSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontEncapsulationSwiftRule.swift; sourceTree = "<group>"; };
+		20161D151EE0C56000997AF6 /* ColorEncapsulationSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorEncapsulationSwiftRule.swift; sourceTree = "<group>"; };
 		206837A31EDE1D5D008CB7F3 /* ProjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectData.swift; sourceTree = "<group>"; };
 		206837A51EDE1E35008CB7F3 /* ProjectParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectParser.swift; sourceTree = "<group>"; };
 		206837A71EDE20E5008CB7F3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				20161D0D1EE0B53A00997AF6 /* SingleEnumCaseSwiftRule.swift */,
 				20161D0F1EE0B99B00997AF6 /* InternalModifierSwiftRule.swift */,
 				20161D111EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift */,
+				20161D131EE0C31000997AF6 /* FontEncapsulationSwiftRule.swift */,
+				20161D151EE0C56000997AF6 /* ColorEncapsulationSwiftRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -269,11 +275,13 @@
 				206837A41EDE1D5D008CB7F3 /* ProjectData.swift in Sources */,
 				20E414131EDF8C500000E447 /* SemiColonSwiftRule.swift in Sources */,
 				20E4140B1EDF7F8B0000E447 /* StringExtension.swift in Sources */,
+				20161D141EE0C31000997AF6 /* FontEncapsulationSwiftRule.swift in Sources */,
 				20161D0A1EE0A04700997AF6 /* ForceUnwrapSwiftRule.swift in Sources */,
 				20161D081EE09EAE00997AF6 /* ProjectSettings.swift in Sources */,
 				20161CFD1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift in Sources */,
 				206837A81EDE20E5008CB7F3 /* Constants.swift in Sources */,
 				207F1DE31EE06BC200284498 /* FinalClassesSwiftRule.swift in Sources */,
+				20161D161EE0C56000997AF6 /* ColorEncapsulationSwiftRule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,19 +7,19 @@ provides-member:
 - ["C14Moulinette_2_020ForceUnwrapSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "UnicodeScalarType"
+- !private "&&"
+- "StringLiteralType"
+- "String"
+- "ProjectData"
+- !private "+="
+- "GradeType"
+- "ForceUnwrapSwiftRule"
 - "AssignmentPrecedence"
 - !private "=="
-- "ForceUnwrapSwiftRule"
-- "String"
-- "TernaryPrecedence"
+- "UnicodeScalarType"
 - "SwiftRule"
-- "StringLiteralType"
-- !private "+="
-- "ProjectData"
 - !private "!"
-- "GradeType"
-- !private "&&"
+- "TernaryPrecedence"
 depends-member:
 - !private ["Ps9AnyObject", "applicationComponents"]
 - !private ["Ps9AnyObject", "contains"]
