@@ -20,7 +20,8 @@ enum RulePriority {
     /// - Returns: Updated score with weight and violations taken into consideration.
     func score(with violations: Int) -> Double {
         let wt = weight()
-        return wt * (wt / (Double(violations) + wt))
+        let score = wt * (wt / (Double(violations) + wt))
+        return round(score * 100) / 100
     }
     
     /// Weight of the rule priority.

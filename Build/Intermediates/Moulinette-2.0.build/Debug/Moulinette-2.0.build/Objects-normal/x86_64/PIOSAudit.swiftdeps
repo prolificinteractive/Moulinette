@@ -7,14 +7,14 @@ provides-member:
 - ["V14Moulinette_2_09PIOSAudit", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "+"
-- "PIOSAudit"
-- !private "StringLiteralType"
-- "ProjectData"
-- "Audit"
-- !private "CodeRuleType"
 - !private "print"
+- !private "+"
+- !private "CodeRuleType"
 - "AssignmentPrecedence"
+- !private "StringLiteralType"
+- "PIOSAudit"
+- "Audit"
+- "ProjectData"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - !private ["Sa", "Iterator"]
