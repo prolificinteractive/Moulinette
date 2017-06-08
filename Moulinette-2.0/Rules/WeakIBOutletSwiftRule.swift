@@ -12,6 +12,8 @@ final class WeakIBOutletSwiftRule: SwiftRule {
     
     let name: String = "IBOutlet marked as weak and private (except IBOutletCollection)"
     
+    let priority: RulePriority = .high
+    
     private var projectData: ProjectData
     private var failedString = ""
     

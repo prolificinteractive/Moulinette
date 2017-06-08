@@ -50,10 +50,16 @@ extension String {
         return self
     }
     
+    /// Returns a string without white spaces.
+    ///
+    /// - Returns: String without white spaces.
     func stringWithoutWhitespaces() -> String {
         return replacingOccurrences(of: " ", with: "")
     }
     
+    /// Determines if the line is a class.
+    ///
+    /// - Returns: A flag to determine if the current string is a class.
     func isProjectClass() -> Bool {
         return (contains("class") &&
             !contains("//") &&

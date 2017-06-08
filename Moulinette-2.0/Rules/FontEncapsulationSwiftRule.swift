@@ -12,6 +12,8 @@ final class FontEncapsulationSwiftRule: SwiftRule {
     
     let name: String = "Font Encapsulation"
     
+    let priority: RulePriority = .medium
+    
     private var projectData: ProjectData
     private var failedString = ""
     

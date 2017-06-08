@@ -27,6 +27,7 @@
 		206837B41EDF0250008CB7F3 /* PIOSAudit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837B31EDF0250008CB7F3 /* PIOSAudit.swift */; };
 		207F1DE31EE06BC200284498 /* FinalClassesSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207F1DE21EE06BC200284498 /* FinalClassesSwiftRule.swift */; };
 		209696C01EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209696BF1EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift */; };
+		209696C21EE9F4270035C7AE /* RulePriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209696C11EE9F4270035C7AE /* RulePriority.swift */; };
 		20C40C581ED8D47C00695CA7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C40C571ED8D47C00695CA7 /* main.swift */; };
 		20E413FF1EDF41660000E447 /* Audit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E413FE1EDF41660000E447 /* Audit.swift */; };
 		20E414011EDF41900000E447 /* CodeRuleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E414001EDF41900000E447 /* CodeRuleType.swift */; };
@@ -72,6 +73,7 @@
 		206837B31EDF0250008CB7F3 /* PIOSAudit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIOSAudit.swift; sourceTree = "<group>"; };
 		207F1DE21EE06BC200284498 /* FinalClassesSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalClassesSwiftRule.swift; sourceTree = "<group>"; };
 		209696BF1EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionWeakSwiftRule.swift; sourceTree = "<group>"; };
+		209696C11EE9F4270035C7AE /* RulePriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulePriority.swift; sourceTree = "<group>"; };
 		20C40C541ED8D47C00695CA7 /* Moulinette-2.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Moulinette-2.0"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C40C571ED8D47C00695CA7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		20E413FE1EDF41660000E447 /* Audit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audit.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				20E414001EDF41900000E447 /* CodeRuleType.swift */,
 				20E4140C1EDF7F9B0000E447 /* LineContext.swift */,
 				20161D051EE09C8F00997AF6 /* FileType.swift */,
+				209696C11EE9F4270035C7AE /* RulePriority.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				20161D121EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift in Sources */,
 				20161D061EE09C8F00997AF6 /* FileType.swift in Sources */,
 				20161D0C1EE0B28A00997AF6 /* MarkUsageSwiftRule.swift in Sources */,
+				209696C21EE9F4270035C7AE /* RulePriority.swift in Sources */,
 				20E413FF1EDF41660000E447 /* Audit.swift in Sources */,
 				20161CFB1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift in Sources */,
 				20C40C581ED8D47C00695CA7 /* main.swift in Sources */,

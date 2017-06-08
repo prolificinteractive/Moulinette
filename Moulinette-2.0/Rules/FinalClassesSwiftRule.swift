@@ -12,6 +12,8 @@ final class FinalClassesSwiftRule: SwiftRule {
     
     let name: String = "All classes should be final except when subclassed"
     
+    let priority: RulePriority = .high
+    
     private var projectData: ProjectData
     private var failedString = ""
     

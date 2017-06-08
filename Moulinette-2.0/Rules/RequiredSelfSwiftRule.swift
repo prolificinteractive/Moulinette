@@ -12,11 +12,12 @@ final class RequiredSelfSwiftRule: SwiftRule {
     
     let name: String = "Use of self only when required"
     
-    private var projectData: ProjectData
+    let priority: RulePriority = .medium
     
     fileprivate var contextCheck = ContextCheck()
+    fileprivate var count = 0
     
-    var count = 0
+    private var projectData: ProjectData
     
     init(projectData: ProjectData) {
         self.projectData = projectData

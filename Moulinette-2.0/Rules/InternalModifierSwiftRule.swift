@@ -12,6 +12,8 @@ final class InternalModifierSwiftRule: SwiftRule {
     
     let name: String = "Access modifiers used for all top level declarations EXCEPT Internal"
     
+    let priority: RulePriority = .low
+    
     private var projectData: ProjectData
     private var failedString = ""
     

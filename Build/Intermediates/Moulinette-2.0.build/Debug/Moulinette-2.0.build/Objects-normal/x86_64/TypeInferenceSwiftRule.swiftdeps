@@ -7,20 +7,21 @@ provides-member:
 - ["C14Moulinette_2_022TypeInferenceSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "BooleanLiteralType"
 - !private "UnicodeScalarType"
-- "StringLiteralType"
 - "TypeInferenceSwiftRule"
-- "String"
-- "GradeType"
-- !private "||"
-- "ProjectData"
 - "AssignmentPrecedence"
 - !private "=="
+- "ProjectData"
 - "SwiftRule"
-- !private "Bool"
+- "RulePriority"
+- "GradeType"
 - "TernaryPrecedence"
+- "String"
 - !private "+="
+- "StringLiteralType"
+- !private "||"
+- !private "BooleanLiteralType"
+- !private "Bool"
 depends-member:
 - !private ["Ps9AnyObject", "applicationComponents"]
 - !private ["Ps9AnyObject", "contains"]
@@ -28,6 +29,7 @@ depends-member:
 - !private ["Ps9AnyObject", "formattedFailedString"]
 - ["Ps9AnyObject", "init"]
 - ["Ps9AnyObject", "name"]
+- ["Ps9AnyObject", "priority"]
 - !private ["Ps9AnyObject", "projectData"]
 - ["Ps9AnyObject", "run"]
 - !private ["Ps9AnyObject", "stringBetween"]
@@ -94,6 +96,7 @@ depends-member:
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "contains"]
 - ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "medium"]
 - !private ["Ps9Equatable", "stringBetween"]
 - !private ["Ps9Equatable", "stringWithoutWhitespaces"]
 - !private ["Ps25ExpressibleByArrayLiteral", "Iterator"]
@@ -123,6 +126,7 @@ depends-member:
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "contains"]
 - ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "medium"]
 - !private ["Ps8Hashable", "stringBetween"]
 - !private ["Ps8Hashable", "stringWithoutWhitespaces"]
 - !private ["Ps9Indexable", "Iterator"]
@@ -191,6 +195,8 @@ depends-member:
 - !private ["Ps25RangeReplaceableIndexable", "Iterator"]
 - !private ["Ps25RangeReplaceableIndexable", "_Element"]
 - !private ["Ps25RangeReplaceableIndexable", "forEach"]
+- ["O14Moulinette_2_012RulePriority", "deinit"]
+- ["O14Moulinette_2_012RulePriority", "medium"]
 - !private ["Ps8Sequence", "Element"]
 - !private ["Ps8Sequence", "Iterator"]
 - !private ["Ps8Sequence", "_Element"]
@@ -203,6 +209,7 @@ depends-member:
 - !private ["P14Moulinette_2_09SwiftRule", "failedString"]
 - !private ["P14Moulinette_2_09SwiftRule", "formattedFailedString"]
 - ["P14Moulinette_2_09SwiftRule", "name"]
+- ["P14Moulinette_2_09SwiftRule", "priority"]
 - !private ["P14Moulinette_2_09SwiftRule", "projectData"]
 - ["P14Moulinette_2_09SwiftRule", "run"]
 - !private ["P14Moulinette_2_09SwiftRule", "unnecessaryTypeInference"]
@@ -218,12 +225,14 @@ depends-member:
 - !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "Bool"]
 - ["C14Moulinette_2_022TypeInferenceSwiftRule", "GradeType"]
 - ["C14Moulinette_2_022TypeInferenceSwiftRule", "ProjectData"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "RulePriority"]
 - ["C14Moulinette_2_022TypeInferenceSwiftRule", "String"]
 - ["C14Moulinette_2_022TypeInferenceSwiftRule", "deinit"]
 - !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "failedString"]
 - !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "formattedFailedString"]
 - ["C14Moulinette_2_022TypeInferenceSwiftRule", "init"]
 - ["C14Moulinette_2_022TypeInferenceSwiftRule", "name"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "priority"]
 - !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "projectData"]
 - ["C14Moulinette_2_022TypeInferenceSwiftRule", "run"]
 - !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "unnecessaryTypeInference"]
@@ -257,6 +266,7 @@ depends-member:
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps9_Hashable", "contains"]
 - ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", "medium"]
 - !private ["Ps9_Hashable", "stringBetween"]
 - !private ["Ps9_Hashable", "stringWithoutWhitespaces"]
 - !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
@@ -313,6 +323,7 @@ depends-nominal:
 - !private "Ps21RandomAccessIndexable"
 - !private "Ps26RangeReplaceableCollection"
 - !private "Ps25RangeReplaceableIndexable"
+- "O14Moulinette_2_012RulePriority"
 - !private "Ps8Sequence"
 - "SS"
 - "P14Moulinette_2_09SwiftRule"
@@ -339,4 +350,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "3cb3fc846865068a8172a0f824d5dc74"
+interface-hash: "45878db58b8dfc0f722edd95f6101cd1"

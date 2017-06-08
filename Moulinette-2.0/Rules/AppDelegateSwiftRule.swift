@@ -12,6 +12,8 @@ final class AppDelegateSwiftRule: SwiftRule {
     
     let name: String = "AppDelegate Clean"
     
+    let priority: RulePriority = .medium
+    
     private var projectData: ProjectData
     
     init(projectData: ProjectData) {

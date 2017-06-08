@@ -12,6 +12,8 @@ final class ForceUnwrapSwiftRule: SwiftRule {
     
     let name: String = "Limited use of forced unwrap (including casting, excluding test target)"
     
+    let priority: RulePriority = .high
+    
     private var projectData: ProjectData
     private var failedString = ""
     

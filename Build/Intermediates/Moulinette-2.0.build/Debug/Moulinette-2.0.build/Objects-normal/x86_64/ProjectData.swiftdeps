@@ -11,14 +11,14 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - !private "BooleanLiteralType"
-- "ClassInfo"
 - "String"
-- "ApplicationComponents"
-- "ProjectData"
+- "FileComponents"
+- "ClassInfo"
 - "AssignmentPrecedence"
 - !private "=="
+- "ApplicationComponents"
+- "ProjectData"
 - "Bool"
-- "FileComponents"
 depends-member:
 - ["Ps9AnyObject", "ClassInfo"]
 - !private ["Ps9AnyObject", "applicationComponents"]

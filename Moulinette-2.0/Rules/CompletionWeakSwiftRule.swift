@@ -12,6 +12,8 @@ final class CompletionWeakSwiftRule: SwiftRule {
     
     let name: String = "Weak Self Completion Closure"
     
+    let priority: RulePriority = .high
+    
     private var projectData: ProjectData
     private var failedString = ""
     

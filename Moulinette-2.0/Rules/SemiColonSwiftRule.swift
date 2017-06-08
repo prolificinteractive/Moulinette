@@ -12,6 +12,8 @@ final class SemiColonSwiftRule: SwiftRule {
     
     let name: String = "No use of ; (semi colon)"
     
+    let priority: RulePriority = .low
+    
     private var projectData: ProjectData
     private var failedString = ""
     

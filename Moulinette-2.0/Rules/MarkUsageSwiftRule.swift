@@ -12,6 +12,8 @@ final class MarkUsageSwiftRule: SwiftRule {
     
     let name: String = "Consistent usage of MARK / TODO"
     
+    let priority: RulePriority = .low
+    
     private var projectData: ProjectData
     private var failedString = ""
         

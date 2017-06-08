@@ -7,17 +7,18 @@ provides-member:
 - ["C14Moulinette_2_021FinalClassesSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "FinalClassesSwiftRule"
-- "String"
-- "StringLiteralType"
+- !private "!"
 - "SwiftRule"
 - "ProjectData"
-- !private "!"
 - "GradeType"
+- "String"
+- "RulePriority"
 - !private "+="
+- "TernaryPrecedence"
+- "FinalClassesSwiftRule"
 - "AssignmentPrecedence"
 - !private "=="
-- "TernaryPrecedence"
+- "StringLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "applicationComponents"]
 - !private ["Ps9AnyObject", "className"]
@@ -27,6 +28,7 @@ depends-member:
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "isProjectClass"]
 - ["Ps9AnyObject", "name"]
+- ["Ps9AnyObject", "priority"]
 - !private ["Ps9AnyObject", "projectData"]
 - ["Ps9AnyObject", "run"]
 - !private ["Ps9AnyObject", "subClassFound"]
@@ -91,6 +93,7 @@ depends-member:
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "className"]
 - !private ["Ps9Equatable", "contains"]
+- ["Ps9Equatable", "high"]
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "isProjectClass"]
 - !private ["Ps25ExpressibleByArrayLiteral", "Iterator"]
@@ -116,12 +119,14 @@ depends-member:
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "isProjectClass"]
 - ["C14Moulinette_2_021FinalClassesSwiftRule", "GradeType"]
 - ["C14Moulinette_2_021FinalClassesSwiftRule", "ProjectData"]
+- ["C14Moulinette_2_021FinalClassesSwiftRule", "RulePriority"]
 - ["C14Moulinette_2_021FinalClassesSwiftRule", "String"]
 - ["C14Moulinette_2_021FinalClassesSwiftRule", "deinit"]
 - !private ["C14Moulinette_2_021FinalClassesSwiftRule", "failedString"]
 - !private ["C14Moulinette_2_021FinalClassesSwiftRule", "formattedFailedString"]
 - ["C14Moulinette_2_021FinalClassesSwiftRule", "init"]
 - ["C14Moulinette_2_021FinalClassesSwiftRule", "name"]
+- ["C14Moulinette_2_021FinalClassesSwiftRule", "priority"]
 - !private ["C14Moulinette_2_021FinalClassesSwiftRule", "projectData"]
 - ["C14Moulinette_2_021FinalClassesSwiftRule", "run"]
 - ["O14Moulinette_2_09GradeType", "deinit"]
@@ -130,6 +135,7 @@ depends-member:
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "className"]
 - !private ["Ps8Hashable", "contains"]
+- ["Ps8Hashable", "high"]
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "isProjectClass"]
 - !private ["Ps9Indexable", "Iterator"]
@@ -199,6 +205,8 @@ depends-member:
 - !private ["Ps25RangeReplaceableIndexable", "Iterator"]
 - !private ["Ps25RangeReplaceableIndexable", "_Element"]
 - !private ["Ps25RangeReplaceableIndexable", "forEach"]
+- ["O14Moulinette_2_012RulePriority", "deinit"]
+- ["O14Moulinette_2_012RulePriority", "high"]
 - !private ["Ps8Sequence", "Element"]
 - !private ["Ps8Sequence", "Iterator"]
 - !private ["Ps8Sequence", "_Element"]
@@ -211,6 +219,7 @@ depends-member:
 - !private ["P14Moulinette_2_09SwiftRule", "failedString"]
 - !private ["P14Moulinette_2_09SwiftRule", "formattedFailedString"]
 - ["P14Moulinette_2_09SwiftRule", "name"]
+- ["P14Moulinette_2_09SwiftRule", "priority"]
 - !private ["P14Moulinette_2_09SwiftRule", "projectData"]
 - ["P14Moulinette_2_09SwiftRule", "run"]
 - ["P14Moulinette_2_09SwiftRule", ""]
@@ -252,6 +261,7 @@ depends-member:
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps9_Hashable", "className"]
 - !private ["Ps9_Hashable", "contains"]
+- ["Ps9_Hashable", "high"]
 - ["Ps9_Hashable", "init"]
 - !private ["Ps9_Hashable", "isProjectClass"]
 - !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
@@ -309,6 +319,7 @@ depends-nominal:
 - !private "Ps21RandomAccessIndexable"
 - !private "Ps26RangeReplaceableCollection"
 - !private "Ps25RangeReplaceableIndexable"
+- "O14Moulinette_2_012RulePriority"
 - !private "Ps8Sequence"
 - "SS"
 - "P14Moulinette_2_09SwiftRule"
@@ -334,4 +345,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "2a9ce910b14c4f1614985cc59a6b6cbc"
+interface-hash: "5dfd749428b7cbce40590fb541c06d3e"

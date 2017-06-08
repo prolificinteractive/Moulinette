@@ -12,6 +12,8 @@ final class ColorEncapsulationSwiftRule: SwiftRule {
     
     let name: String = "Color Encapsulation"
     
+    let priority: RulePriority = .medium
+    
     private var projectData: ProjectData
     private var failedString = ""
     

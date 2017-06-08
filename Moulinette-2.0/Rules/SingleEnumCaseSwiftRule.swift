@@ -12,6 +12,8 @@ final class SingleEnumCaseSwiftRule: SwiftRule {
     
     let name: String = "Enums (one case statement per line)"
     
+    let priority: RulePriority = .medium
+    
     private var projectData: ProjectData
     private var failedString = ""
     

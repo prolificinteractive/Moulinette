@@ -12,6 +12,8 @@ protocol SwiftRule {
     
     var name: String { get }
     
+    var priority: RulePriority { get }
+    
     func run() -> GradeType
 }
 

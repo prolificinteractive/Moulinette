@@ -12,6 +12,8 @@ final class TypeInferenceSwiftRule: SwiftRule {
     
     let name: String = "Unnecessary Type inference"
     
+    let priority: RulePriority = .medium
+    
     private var projectData: ProjectData
     private var failedString = ""
     
