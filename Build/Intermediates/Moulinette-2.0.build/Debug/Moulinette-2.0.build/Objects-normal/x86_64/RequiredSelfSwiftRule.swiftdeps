@@ -7,25 +7,25 @@ provides-member:
 - ["C14Moulinette_2_021RequiredSelfSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- !private "UnicodeScalarType"
 - "FloatLiteralType"
+- "GradeType"
 - "RequiredSelfSwiftRule"
-- "String"
 - "ContextCheck"
 - "IntegerLiteralType"
-- "GradeType"
-- "ProjectData"
 - !private "||"
-- !private "UnicodeScalarType"
 - "SwiftRule"
 - !private "Bool"
-- "AssignmentPrecedence"
-- !private "+"
 - !private "+="
+- "AssignmentPrecedence"
 - !private "=="
-- "StringLiteralType"
-- !private "print"
 - !private "!"
+- !private "print"
+- "StringLiteralType"
+- "ProjectData"
+- "String"
 - !private "BooleanLiteralType"
+- !private "+"
 depends-member:
 - ["Ps9AnyObject", "ContextCheck"]
 - !private ["Ps9AnyObject", "applicationComponents"]

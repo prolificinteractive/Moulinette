@@ -33,4 +33,4 @@ final class SingleEnumCaseSwiftRule: SwiftRule {
         }
         return (failedString == "") ? .pass : .fail(failedString)
     }
-}
+}   

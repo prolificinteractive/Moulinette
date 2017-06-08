@@ -7,15 +7,15 @@ provides-member:
 - ["C14Moulinette_2_020AppDelegateSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "+"
-- "String"
-- "AppDelegateSwiftRule"
 - "AssignmentPrecedence"
-- "SwiftRule"
 - "ProjectData"
+- !private "+"
+- "SwiftRule"
 - "StringLiteralType"
 - !private ">"
+- "String"
 - !private "Constants"
+- "AppDelegateSwiftRule"
 - "GradeType"
 depends-member:
 - !private ["Ps9AnyObject", "Constants"]

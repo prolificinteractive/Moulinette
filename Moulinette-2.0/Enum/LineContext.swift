@@ -9,13 +9,20 @@
 import Foundation
 
 enum LineContext {
+    case structContext
     case none
     case dispatchMain
     case lazy
     case function
     case enumContext
+    case completion
     
     static func type(fileLine: String) -> LineContext {
+        
+        if fileLine.contains("struct") {
+            return .structContext
+        }
+        
         if fileLine.contains("func") {
             return .function
         }
@@ -30,6 +37,10 @@ enum LineContext {
         
         if fileLine.contains("enum") {
             return .enumContext
+        }
+        
+        if fileLine.stringWithoutWhitespaces().contains("{(") && fileLine.contains("in") {
+            return .completion
         }
         
         return .none

@@ -9,18 +9,18 @@ provides-dynamic-lookup:
 depends-top-level:
 - !private "BooleanLiteralType"
 - !private "UnicodeScalarType"
-- "String"
 - "StringLiteralType"
-- "ProjectData"
-- "SwiftRule"
-- !private "+="
+- "TypeInferenceSwiftRule"
+- "String"
 - "GradeType"
+- !private "||"
+- "ProjectData"
 - "AssignmentPrecedence"
 - !private "=="
-- !private "||"
-- "TernaryPrecedence"
+- "SwiftRule"
 - !private "Bool"
-- "TypeInferenceSwiftRule"
+- "TernaryPrecedence"
+- !private "+="
 depends-member:
 - !private ["Ps9AnyObject", "applicationComponents"]
 - !private ["Ps9AnyObject", "contains"]

@@ -7,16 +7,16 @@ provides-member:
 - ["C14Moulinette_2_025InternalModifierSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "SwiftRule"
-- "ProjectData"
 - !private "+="
 - "InternalModifierSwiftRule"
-- "TernaryPrecedence"
+- "StringLiteralType"
+- "String"
 - "GradeType"
 - "AssignmentPrecedence"
 - !private "=="
-- "String"
-- "StringLiteralType"
+- "ProjectData"
+- "TernaryPrecedence"
+- "SwiftRule"
 depends-member:
 - !private ["Ps9AnyObject", "applicationComponents"]
 - !private ["Ps9AnyObject", "contains"]

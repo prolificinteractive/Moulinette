@@ -33,6 +33,7 @@ enum CodeRuleType {
                 InternalModifierSwiftRule(projectData: projectData),
                 TypeInferenceSwiftRule(projectData: projectData),
                 FontEncapsulationSwiftRule(projectData: projectData),
-                ColorEncapsulationSwiftRule(projectData: projectData)]
+                ColorEncapsulationSwiftRule(projectData: projectData),
+                CompletionWeakSwiftRule(projectData: projectData)]
     }
 }
