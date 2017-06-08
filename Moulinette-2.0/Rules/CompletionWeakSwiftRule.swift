@@ -23,13 +23,14 @@ final class CompletionWeakSwiftRule: SwiftRule {
     
     func run() -> GradeType {
         for (fileName, fileComponents) in projectData.applicationComponents {
+            contextCheck.lineContextDict = [:]
             fileComponents.forEach {
-                contextCheck.check(fileLine: $0)
-
                 if contextCheck.currentContext == .completion, $0.contains("self"),
                     contextCheck.lineContextDict[.structContext] == nil {
                     failedString += formattedFailedString(fileName: fileName, fileLine: $0)
                 }
+                
+                contextCheck.check(fileLine: $0)
             }
         }
     
