@@ -1,9 +1,10 @@
 version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
 options: "eb6acd13495ce91340775c4a5a0d21f5"
-build_time: [550272642, 38895000]
+build_time: [550350626, 812661000]
 inputs:
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/ProjectParser.swift": [549659683, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Checks/BracketContextCheck.swift": [549586349, 0]
+  "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Networking/Endpoints.swift": [550350081, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Protocols/Check.swift": [549586096, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Protocols/SwiftRule.swift": [550271405, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/RequiredSelfSwiftRule.swift": [550270076, 0]
@@ -15,7 +16,8 @@ inputs:
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Enum/RulePriority.swift": [550272632, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Protocols/Audit.swift": [549570163, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/WeakIBOutletSwiftRule.swift": [550271272, 0]
-  "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/main.swift": [550006907, 0]
+  "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/main.swift": [550350569, 0]
+  "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Model/AuditScore.swift": [550350478, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Audits/PIOSAudit.swift": [550271272, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/InternalModifierSwiftRule.swift": [550270557, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Enum/CodeRuleType.swift": [550267942, 0]
@@ -29,7 +31,9 @@ inputs:
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/FontEncapsulationSwiftRule.swift": [550270653, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/ForceUnwrapSwiftRule.swift": [550272641, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/ProjectSettings.swift": [550005626, 0]
+  "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Networking/NetworkRequester.swift": [550350626, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/SinglePublicInternalSwiftRule.swift": [550270393, 0]
+  "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Networking/APIEnvironment.swift": [550350204, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Constants.swift": [549659288, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/FinalClassesSwiftRule.swift": [550271272, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/ColorEncapsulationSwiftRule.swift": [550272641, 0]

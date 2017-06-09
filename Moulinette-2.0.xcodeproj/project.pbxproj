@@ -26,6 +26,10 @@
 		206837B11EDE2305008CB7F3 /* AppDelegateSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837B01EDE2305008CB7F3 /* AppDelegateSwiftRule.swift */; };
 		206837B41EDF0250008CB7F3 /* PIOSAudit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837B31EDF0250008CB7F3 /* PIOSAudit.swift */; };
 		207F1DE31EE06BC200284498 /* FinalClassesSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207F1DE21EE06BC200284498 /* FinalClassesSwiftRule.swift */; };
+		2081734D1EEB25510077106A /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2081734C1EEB25510077106A /* NetworkRequester.swift */; };
+		2081734F1EEB27ED0077106A /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2081734E1EEB27ED0077106A /* APIEnvironment.swift */; };
+		208173511EEB27F90077106A /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208173501EEB27F90077106A /* Endpoints.swift */; };
+		208173541EEB28E60077106A /* AuditScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208173531EEB28E60077106A /* AuditScore.swift */; };
 		209696C01EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209696BF1EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift */; };
 		209696C21EE9F4270035C7AE /* RulePriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209696C11EE9F4270035C7AE /* RulePriority.swift */; };
 		20C40C581ED8D47C00695CA7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C40C571ED8D47C00695CA7 /* main.swift */; };
@@ -72,6 +76,10 @@
 		206837B01EDE2305008CB7F3 /* AppDelegateSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRule.swift; sourceTree = "<group>"; };
 		206837B31EDF0250008CB7F3 /* PIOSAudit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIOSAudit.swift; sourceTree = "<group>"; };
 		207F1DE21EE06BC200284498 /* FinalClassesSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalClassesSwiftRule.swift; sourceTree = "<group>"; };
+		2081734C1EEB25510077106A /* NetworkRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequester.swift; sourceTree = "<group>"; };
+		2081734E1EEB27ED0077106A /* APIEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		208173501EEB27F90077106A /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		208173531EEB28E60077106A /* AuditScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditScore.swift; sourceTree = "<group>"; };
 		209696BF1EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionWeakSwiftRule.swift; sourceTree = "<group>"; };
 		209696C11EE9F4270035C7AE /* RulePriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulePriority.swift; sourceTree = "<group>"; };
 		20C40C541ED8D47C00695CA7 /* Moulinette-2.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Moulinette-2.0"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +157,24 @@
 			path = Audits;
 			sourceTree = "<group>";
 		};
+		2081734B1EEB253E0077106A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2081734C1EEB25510077106A /* NetworkRequester.swift */,
+				2081734E1EEB27ED0077106A /* APIEnvironment.swift */,
+				208173501EEB27F90077106A /* Endpoints.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		208173521EEB28DA0077106A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				208173531EEB28E60077106A /* AuditScore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		20C40C4B1ED8D47C00695CA7 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +205,8 @@
 				206837AA1EDE22BB008CB7F3 /* Protocols */,
 				206837AD1EDE22DE008CB7F3 /* Enum */,
 				20E414071EDF7F6C0000E447 /* Extensions */,
+				2081734B1EEB253E0077106A /* Networking */,
+				208173521EEB28DA0077106A /* Model */,
 			);
 			path = "Moulinette-2.0";
 			sourceTree = "<group>";
@@ -261,6 +289,7 @@
 			files = (
 				206837A61EDE1E35008CB7F3 /* ProjectParser.swift in Sources */,
 				20E414061EDF7F480000E447 /* BracketContextCheck.swift in Sources */,
+				208173511EEB27F90077106A /* Endpoints.swift in Sources */,
 				20E4140F1EDF7FAA0000E447 /* Check.swift in Sources */,
 				206837AC1EDE22C3008CB7F3 /* SwiftRule.swift in Sources */,
 				20E414111EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift in Sources */,
@@ -273,6 +302,7 @@
 				20E413FF1EDF41660000E447 /* Audit.swift in Sources */,
 				20161CFB1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift in Sources */,
 				20C40C581ED8D47C00695CA7 /* main.swift in Sources */,
+				208173541EEB28E60077106A /* AuditScore.swift in Sources */,
 				206837B41EDF0250008CB7F3 /* PIOSAudit.swift in Sources */,
 				20161D101EE0B99B00997AF6 /* InternalModifierSwiftRule.swift in Sources */,
 				20E414011EDF41900000E447 /* CodeRuleType.swift in Sources */,
@@ -286,7 +316,9 @@
 				20161D141EE0C31000997AF6 /* FontEncapsulationSwiftRule.swift in Sources */,
 				20161D0A1EE0A04700997AF6 /* ForceUnwrapSwiftRule.swift in Sources */,
 				20161D081EE09EAE00997AF6 /* ProjectSettings.swift in Sources */,
+				2081734D1EEB25510077106A /* NetworkRequester.swift in Sources */,
 				20161CFD1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift in Sources */,
+				2081734F1EEB27ED0077106A /* APIEnvironment.swift in Sources */,
 				206837A81EDE20E5008CB7F3 /* Constants.swift in Sources */,
 				207F1DE31EE06BC200284498 /* FinalClassesSwiftRule.swift in Sources */,
 				20161D161EE0C56000997AF6 /* ColorEncapsulationSwiftRule.swift in Sources */,
