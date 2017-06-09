@@ -26,11 +26,12 @@ internal struct PIOSAudit: Audit {
             collection.rules(projectData: projectData).forEach {
                 let score = $0.run().score()
                 auditScore += score
-                print(" - " + $0.name + ": " + String(score))
+                print(" - " + $0.name + ": " + String(score) + " / " + String($0.priority.weight()))
             }
         }
         
         let score = Int((auditScore / maxPoints()) * 100)
+        print("Score: " + String(score))
         return AuditScore(score: score)
     }
     

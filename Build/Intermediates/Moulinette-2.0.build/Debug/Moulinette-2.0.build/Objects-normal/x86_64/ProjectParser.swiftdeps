@@ -7,20 +7,20 @@ provides-member:
 - ["C14Moulinette_2_013ProjectParser", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- "String"
+- !private "FileManager"
+- !private "CastingPrecedence"
+- "AssignmentPrecedence"
+- !private "UnicodeScalarType"
+- !private "Constants"
 - !private "NSError"
 - "ProjectParser"
-- !private "baseDir"
 - !private "+"
+- !private "baseDir"
 - !private "print"
 - !private "!"
 - !private "ProjectSettings"
 - "ApplicationComponents"
-- "String"
-- !private "FileManager"
-- !private "Constants"
-- "AssignmentPrecedence"
-- !private "CastingPrecedence"
-- !private "UnicodeScalarType"
 depends-member:
 - !private ["Ps9AnyObject", "ApplicationComponents"]
 - !private ["Ps9AnyObject", "Constants"]

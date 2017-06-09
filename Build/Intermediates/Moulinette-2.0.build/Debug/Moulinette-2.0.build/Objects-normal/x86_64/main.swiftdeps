@@ -11,24 +11,21 @@ provides-dynamic-lookup:
 depends-top-level:
 - "StringLiteralType"
 - "applicationFileComponents"
-- "print"
 - "auditScore"
-- "String"
-- "+"
-- "baseDir"
 - "projectParser"
-- "PIOSAudit"
+- "ProjectParser"
 - "ProjectData"
 - "projectData"
+- "print"
+- "baseDir"
 - "ProjectSettings"
-- "ProjectParser"
+- "PIOSAudit"
 depends-member:
 - ["Ps9AnyObject", "applicationComponents"]
 - ["Ps9AnyObject", "init"]
 - ["P14Moulinette_2_05Audit", "init"]
 - ["P14Moulinette_2_05Audit", "runRules"]
 - ["V14Moulinette_2_010AuditScore", "deinit"]
-- ["V14Moulinette_2_010AuditScore", "score"]
 - ["Ps7CVarArg", "init"]
 - ["Ps10Comparable", "init"]
 - ["Ps28CustomDebugStringConvertible", "init"]
@@ -42,7 +39,6 @@ depends-member:
 - ["Ps26ExpressibleByStringLiteral", "init"]
 - ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
 - ["Ps8Hashable", "init"]
-- ["Si", "deinit"]
 - ["Ps25LosslessStringConvertible", "init"]
 - ["Ps10MirrorPath", "init"]
 - ["PSo8NSCoding", "init"]
@@ -89,7 +85,6 @@ depends-nominal:
 - "Ps26ExpressibleByStringLiteral"
 - "Ps33ExpressibleByUnicodeScalarLiteral"
 - "Ps8Hashable"
-- "Si"
 - "Ps25LosslessStringConvertible"
 - "Ps10MirrorPath"
 - "PSo8NSCoding"
@@ -123,4 +118,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "69692e273aba7be5488698138a04c0aa"
+interface-hash: "e9952a10e3137131e222cc0529373dab"
