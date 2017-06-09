@@ -11,28 +11,29 @@ import Foundation
 final class SingleEnumCaseSwiftRule: SwiftRule {
     
     let name: String = "Enums (one case statement per line)"
-    
     let priority: RulePriority = .medium
     
     private var projectData: ProjectData
-    private var failedString = ""
+    private var contextCheck = ContextCheck()
     
-    fileprivate var contextCheck = ContextCheck()
+    private lazy var auditGrader: AuditGrader = {
+        return PIOSAuditGrader(priority: self.priority)
+    }()
     
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func run() -> GradeType {
+    func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents {
             fileComponents.forEach {
                 contextCheck.check(fileLine: $0)
                 
                 if contextCheck.currentContext == .enumContext, $0.contains("case ") && $0.contains(",") {
-                    failedString += formattedFailedString(fileName: fileName, fileLine: $0)
+                    auditGrader.violationFound(fileName: fileName, description: $0)
                 }
             }
         }
-        return (failedString == "") ? .pass : .fail(failedString)
+        return auditGrader.generateGrade()
     }
 }   

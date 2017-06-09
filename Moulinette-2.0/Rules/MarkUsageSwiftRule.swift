@@ -11,25 +11,27 @@ import Foundation
 final class MarkUsageSwiftRule: SwiftRule {
     
     let name: String = "Consistent usage of MARK / TODO"
-    
     let priority: RulePriority = .low
     
     private var projectData: ProjectData
-    private var failedString = ""
-        
+
+    private lazy var auditGrader: AuditGrader = {
+        return PIOSAuditGrader(priority: self.priority)
+    }()
+    
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func run() -> GradeType {
+    func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents {
             fileComponents.forEach {
                 if consistentMark(fileLine: $0) || consistentTodo(fileLine: $0) {
-                    failedString += formattedFailedString(fileName: fileName, fileLine: $0)
+                    auditGrader.violationFound(fileName: fileName, description: $0)
                 }
             }
         }
-        return (failedString == "") ? .pass : .fail(failedString)
+        return auditGrader.generateGrade()
     }
 }
 

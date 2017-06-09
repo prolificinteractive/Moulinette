@@ -11,24 +11,26 @@ import Foundation
 final class WeakIBOutletSwiftRule: SwiftRule {
     
     let name: String = "IBOutlet marked as weak and private (except IBOutletCollection)"
-    
     let priority: RulePriority = .high
     
     private var projectData: ProjectData
-    private var failedString = ""
+    
+    private lazy var auditGrader: AuditGrader = {
+        return PIOSAuditGrader(priority: self.priority)
+    }()
     
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func run() -> GradeType {
+    func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents {
             fileComponents.forEach {
                 if $0.contains("IBOutlet") && !$0.contains("weak") && !$0.contains("IBOutletCollection") {
-                    failedString += formattedFailedString(fileName: fileName, fileLine: $0)
+                    auditGrader.violationFound(fileName: fileName, description: $0)
                 }
             }
         }
-        return (failedString == "") ? .pass : .fail(failedString)
+        return auditGrader.generateGrade()
     }
 }

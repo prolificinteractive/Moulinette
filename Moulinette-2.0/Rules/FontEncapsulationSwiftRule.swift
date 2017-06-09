@@ -19,17 +19,21 @@ final class FontEncapsulationSwiftRule: SwiftRule {
     
     private var fontCount = 0
     
+    private lazy var auditGrader: AuditGrader = {
+        return PIOSAuditGrader(priority: self.priority)
+    }()
+    
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func run() -> GradeType {
+    func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents {
             var fileContainsFont = false
             fileComponents.forEach {
-                if $0.contains("UIFont.") {
+                if $0.contains("UIFont.") && fontCount >= 1  {
                     fileContainsFont = true
-                    failedString += formattedFailedString(fileName: fileName, fileLine: $0)
+                    auditGrader.violationFound(fileName: fileName, description: $0)
                 }
             }
             
@@ -37,10 +41,6 @@ final class FontEncapsulationSwiftRule: SwiftRule {
                 fontCount += 1
             }
         }
-        
-        if fontCount <= 1 {
-            failedString = ""
-        }
-        return (failedString == "") ? .pass : .fail(failedString)
+        return auditGrader.generateGrade()
     }
 }

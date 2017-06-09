@@ -16,25 +16,28 @@ final class SinglePublicInternalSwiftRule: SwiftRule {
     
     private var projectData: ProjectData
     private var failedString = ""
-    
     private var type: FileType?
+    
+    private lazy var auditGrader: AuditGrader = {
+        return PIOSAuditGrader(priority: self.priority)
+    }()
     
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func run() -> GradeType {
+    func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents {
             fileComponents.forEach {
                 if let fileType = FileType.type(fileLine: $0) {
                     if type != nil {
-                        failedString += formattedFailedString(fileName: fileName, fileLine: $0)
+                        auditGrader.violationFound(fileName: fileName, description: $0)
                     }
                     type = fileType
                 }
             }
             type = nil
         }
-        return (failedString == "") ? .pass : .fail(failedString)
+        return auditGrader.generateGrade()
     }
 }

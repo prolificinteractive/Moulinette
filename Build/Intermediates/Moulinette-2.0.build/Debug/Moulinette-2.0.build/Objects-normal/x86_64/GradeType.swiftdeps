@@ -1,25 +1,44 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "GradeType"
+- "AuditGrade"
 provides-nominal:
 - "O14Moulinette_2_09GradeType"
+- "V14Moulinette_2_010AuditGrade"
 provides-member:
 - ["O14Moulinette_2_09GradeType", ""]
+- ["V14Moulinette_2_010AuditGrade", ""]
 provides-dynamic-lookup:
 depends-top-level:
 - !private "+"
+- "Int"
 - "GradeType"
+- "Double"
+- "RulePriority"
+- "AuditGrade"
 - !private "StringLiteralType"
 - "String"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
+- ["V14Moulinette_2_010AuditGrade", "Double"]
+- ["V14Moulinette_2_010AuditGrade", "GradeType"]
+- ["V14Moulinette_2_010AuditGrade", "Int"]
+- ["V14Moulinette_2_010AuditGrade", "RulePriority"]
+- ["V14Moulinette_2_010AuditGrade", "deinit"]
+- ["V14Moulinette_2_010AuditGrade", "gradeType"]
+- ["V14Moulinette_2_010AuditGrade", "init"]
+- ["V14Moulinette_2_010AuditGrade", "priority"]
+- ["V14Moulinette_2_010AuditGrade", "score"]
+- ["V14Moulinette_2_010AuditGrade", "violations"]
 - !private ["Ps7CVarArg", "init"]
 - !private ["Ps10Comparable", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps17CustomReflectable", "init"]
 - !private ["Ps23CustomStringConvertible", "init"]
+- ["Sd", "deinit"]
 - !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "score"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps32ExpressibleByStringInterpolation", "init"]
 - !private ["Ps26ExpressibleByStringLiteral", "init"]
@@ -30,6 +49,8 @@ depends-member:
 - ["O14Moulinette_2_09GradeType", "gradeText"]
 - ["O14Moulinette_2_09GradeType", "pass"]
 - !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "score"]
+- ["Si", "deinit"]
 - !private ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps10MirrorPath", "init"]
 - !private ["PSo8NSCoding", "init"]
@@ -39,6 +60,8 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo14NSSecureCoding", "init"]
 - !private ["CSo8NSString", "init"]
+- ["O14Moulinette_2_012RulePriority", "deinit"]
+- !private ["O14Moulinette_2_012RulePriority", "score"]
 - ["SS", "deinit"]
 - !private ["SS", "init"]
 - !private ["Ps16TextOutputStream", "init"]
@@ -49,15 +72,18 @@ depends-member:
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "score"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
 depends-nominal:
 - !private "Ps9AnyObject"
+- "V14Moulinette_2_010AuditGrade"
 - !private "Ps7CVarArg"
 - !private "Ps10Comparable"
 - !private "Ps28CustomDebugStringConvertible"
 - !private "Ps29CustomPlaygroundQuickLookable"
 - !private "Ps17CustomReflectable"
 - !private "Ps23CustomStringConvertible"
+- "Sd"
 - !private "Ps9Equatable"
 - !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - !private "Ps32ExpressibleByStringInterpolation"
@@ -65,6 +91,7 @@ depends-nominal:
 - !private "Ps33ExpressibleByUnicodeScalarLiteral"
 - "O14Moulinette_2_09GradeType"
 - !private "Ps8Hashable"
+- "Si"
 - !private "Ps25LosslessStringConvertible"
 - !private "Ps10MirrorPath"
 - !private "PSo8NSCoding"
@@ -74,6 +101,7 @@ depends-nominal:
 - !private "PSo16NSObjectProtocol"
 - !private "PSo14NSSecureCoding"
 - !private "CSo8NSString"
+- "O14Moulinette_2_012RulePriority"
 - "SS"
 - !private "Ps16TextOutputStream"
 - !private "Ps20TextOutputStreamable"
@@ -94,4 +122,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "6c34b1cefca4a05c750fea233148da46"
+interface-hash: "e397b5bb8154b3adee1fa25ab1039f65"

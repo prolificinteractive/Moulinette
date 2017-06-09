@@ -11,16 +11,36 @@ import Foundation
 internal struct PIOSAudit: Audit {
     
     private var projectData: ProjectData
+    private var ruleCollection: [RuleCollection] = [CodeConventionRuleCollection()]
     
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func runRules() {
+    func runRules() -> AuditScore {
         print("Running PiOS Rules:")
         
-        CodeRuleType.availableRules(projectData: projectData).forEach {
-            print(" - " + $0.name + ": " + $0.run().gradeText())
+        var auditScore: Double = 0
+        
+        for collection in ruleCollection {
+            collection.rules(projectData: projectData).forEach {
+                let score = $0.run().score()
+                auditScore += score
+                print(" - " + $0.name + ": " + String(score))
+            }
         }
+        
+        let score = Int((auditScore / maxPoints()) * 100)
+        return AuditScore(score: score)
+    }
+    
+    func maxPoints() -> Double {
+        var points: Double = 0
+        ruleCollection.forEach {
+            $0.rules(projectData: projectData).forEach {
+                points += $0.priority.weight()
+            }
+        }
+        return points
     }
 }

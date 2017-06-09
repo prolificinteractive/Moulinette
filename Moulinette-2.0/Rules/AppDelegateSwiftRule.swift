@@ -11,21 +11,25 @@ import Foundation
 final class AppDelegateSwiftRule: SwiftRule {
     
     let name: String = "AppDelegate Clean"
-    
     let priority: RulePriority = .medium
     
     private var projectData: ProjectData
+    
+    private lazy var auditGrader: AuditGrader = {
+        return PIOSAuditGrader(priority: self.priority)
+    }()
     
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func run() -> GradeType {
+    func run() -> AuditGrade {
         let fileComponent = projectData.applicationComponents[Constants.FileNameConstants.appDelegate]
         
-        if let compoent = fileComponent, compoent.count > 100 {
-            return .fail("Line Count Above 100, Actual: " + String(compoent.count))
+        if let component = fileComponent, component.count > 100 {
+            auditGrader.violationFound(fileName: Constants.FileNameConstants.appDelegate,
+                                       description: "Line Count Above 100, Actual: " + String(component.count))
         }
-        return .pass
+        return auditGrader.generateGrade()
     }
 }

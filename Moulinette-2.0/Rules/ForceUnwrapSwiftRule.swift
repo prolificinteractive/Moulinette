@@ -11,24 +11,26 @@ import Foundation
 final class ForceUnwrapSwiftRule: SwiftRule {
     
     let name: String = "Limited use of forced unwrap (including casting, excluding test target)"
-    
     let priority: RulePriority = .high
     
     private var projectData: ProjectData
-    private var failedString = ""
+    
+    private lazy var auditGrader: AuditGrader = {
+        return PIOSAuditGrader(priority: self.priority)
+    }()
     
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func run() -> GradeType {
+    func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents {
             fileComponents.forEach {
                 if $0.contains("!") && !$0.contains("IBOutlet") && !$0.contains("!=") && !$0.contains(" !") {
-                    failedString += formattedFailedString(fileName: fileName, fileLine: $0)
+                    auditGrader.violationFound(fileName: fileName, description: $0)
                 }
             }
         }
-        return (failedString == "") ? .pass : .fail(failedString)
+        return auditGrader.generateGrade()
     }
 }

@@ -11,25 +11,27 @@ import Foundation
 final class TypeInferenceSwiftRule: SwiftRule {
     
     let name: String = "Unnecessary Type inference"
-    
     let priority: RulePriority = .medium
     
     private var projectData: ProjectData
-    private var failedString = ""
+    
+    private lazy var auditGrader: AuditGrader = {
+        return PIOSAuditGrader(priority: self.priority)
+    }()
     
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func run() -> GradeType {
+    func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents {
             fileComponents.forEach {
                 if unnecessaryTypeInference(fileLine: $0) {
-                    failedString += formattedFailedString(fileName: fileName, fileLine: $0)
+                    auditGrader.violationFound(fileName: fileName, description: $0)
                 }
             }
         }
-        return (failedString == "") ? .pass : .fail(failedString)
+        return auditGrader.generateGrade()
     }
 }
 

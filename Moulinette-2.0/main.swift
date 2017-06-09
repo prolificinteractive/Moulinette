@@ -22,6 +22,7 @@ let applicationFileComponents = projectParser.applicationComponents()
 var projectData = ProjectData(applicationComponents: applicationFileComponents)
 
 // Run PiOS Rules
-//PIOSAudit(projectData: projectData).runRules()
+let auditScore = PIOSAudit(projectData: projectData).runRules()
+print("Score: " + String(auditScore.score))
 
-NetworkRequester().submitAuditScore(score: AuditScore(score: 10))
+//NetworkRequester().submitAuditScore(score: AuditScore(score: 10))

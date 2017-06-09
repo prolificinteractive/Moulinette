@@ -11,31 +11,33 @@ import Foundation
 final class RequiredSelfSwiftRule: SwiftRule {
     
     let name: String = "Use of self only when required"
-    
     let priority: RulePriority = .medium
     
     fileprivate var contextCheck = ContextCheck()
     fileprivate var count = 0
-    
     private var projectData: ProjectData
+    
+    private lazy var auditGrader: AuditGrader = {
+        return PIOSAuditGrader(priority: self.priority)
+    }()
     
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func run() -> GradeType {
+    func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents {
             fileComponents.forEach {
                 contextCheck.check(fileLine: $0)
                 
                 if variableSetCheck(fileLine: $0, fileName: fileName) {
-                    
+                    auditGrader.violationFound(fileName: fileName, description: $0)
                 }
                 // Check function self
             }
         }
         print(count)
-        return .pass
+        return auditGrader.generateGrade()
     }
 }
 

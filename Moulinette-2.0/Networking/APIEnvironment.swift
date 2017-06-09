@@ -10,7 +10,7 @@ import Foundation
 
 struct APIEnvironment {
     
-    var baseURL = URL(string: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_November_2010-1a.jpg")
+    var baseURL = URL(string: "localhost:8000/") // URL(string: "arkham.prolific.io")
     
     /// Generates the url from the base url.
     ///

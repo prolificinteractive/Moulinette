@@ -11,24 +11,26 @@ import Foundation
 final class InternalModifierSwiftRule: SwiftRule {
     
     let name: String = "Access modifiers used for all top level declarations EXCEPT Internal"
-    
     let priority: RulePriority = .low
     
     private var projectData: ProjectData
-    private var failedString = ""
+    
+    private lazy var auditGrader: AuditGrader = {
+        return PIOSAuditGrader(priority: self.priority)
+    }()
     
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func run() -> GradeType {
+    func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents {
             fileComponents.forEach {
                 if $0.contains("internal ") {
-                    failedString += formattedFailedString(fileName: fileName, fileLine: $0)
+                    auditGrader.violationFound(fileName: fileName, description: $0)
                 }
             }
         }
-        return (failedString == "") ? .pass : .fail(failedString)
+        return auditGrader.generateGrade()
     }
 }

@@ -15,27 +15,28 @@ final class CompletionWeakSwiftRule: SwiftRule {
     let priority: RulePriority = .high
     
     private var projectData: ProjectData
-    private var failedString = ""
+    private var contextCheck = ContextCheck()
     
-    fileprivate var contextCheck = ContextCheck()
+    private lazy var auditGrader: AuditGrader = {
+        return PIOSAuditGrader(priority: self.priority)
+    }()
     
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func run() -> GradeType {
+    func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents {
             contextCheck.lineContextDict = [:]
             fileComponents.forEach {
                 if contextCheck.currentContext == .completion, $0.contains("self"),
                     contextCheck.lineContextDict[.structContext] == nil {
-                    failedString += formattedFailedString(fileName: fileName, fileLine: $0)
+                    auditGrader.violationFound(fileName: fileName, description: $0)
                 }
                 
                 contextCheck.check(fileLine: $0)
             }
         }
-    
-        return (failedString == "") ? .pass : .fail(failedString)
+        return auditGrader.generateGrade()
     }
 }

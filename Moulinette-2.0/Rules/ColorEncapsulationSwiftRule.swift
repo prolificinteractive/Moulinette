@@ -11,25 +11,26 @@ import Foundation
 final class ColorEncapsulationSwiftRule: SwiftRule {
     
     let name: String = "Color Encapsulation"
-    
     let priority: RulePriority = .medium
     
     private var projectData: ProjectData
-    private var failedString = ""
-    
     private var colorCount = 0
+    
+    private lazy var auditGrader: AuditGrader = {
+        return PIOSAuditGrader(priority: self.priority)
+    }()
     
     init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
-    func run() -> GradeType {
+    func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents {
             var fileContainsColor = false
             fileComponents.forEach {
-                if $0.contains("UIColor.") {
+                if $0.contains("UIColor.") && colorCount >= 1 {
                     fileContainsColor = true
-                    failedString += formattedFailedString(fileName: fileName, fileLine: $0)
+                    auditGrader.violationFound(fileName: fileName, description: $0)
                 }
             }
             
@@ -37,10 +38,6 @@ final class ColorEncapsulationSwiftRule: SwiftRule {
                 colorCount += 1
             }
         }
-        
-        if colorCount <= 1 {
-            failedString = ""
-        }
-        return (failedString == "") ? .pass : .fail(failedString)
+        return auditGrader.generateGrade()
     }
 }

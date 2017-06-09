@@ -7,24 +7,23 @@ provides-member:
 - ["C14Moulinette_2_021WeakIBOutletSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "SwiftRule"
-- "ProjectData"
-- "GradeType"
-- "RulePriority"
-- !private "!"
-- !private "+="
-- "WeakIBOutletSwiftRule"
-- "TernaryPrecedence"
 - "AssignmentPrecedence"
-- !private "=="
-- !private "&&"
+- "ProjectData"
+- "WeakIBOutletSwiftRule"
+- !private "!"
+- "AuditGrader"
+- "RulePriority"
 - "String"
+- !private "&&"
 - "StringLiteralType"
+- !private "PIOSAuditGrader"
+- "SwiftRule"
+- "AuditGrade"
 depends-member:
+- !private ["Ps9AnyObject", "PIOSAuditGrader"]
 - !private ["Ps9AnyObject", "applicationComponents"]
+- !private ["Ps9AnyObject", "auditGrader"]
 - !private ["Ps9AnyObject", "contains"]
-- !private ["Ps9AnyObject", "failedString"]
-- !private ["Ps9AnyObject", "formattedFailedString"]
 - ["Ps9AnyObject", "init"]
 - ["Ps9AnyObject", "name"]
 - ["Ps9AnyObject", "priority"]
@@ -35,6 +34,11 @@ depends-member:
 - !private ["Sa", "_Element"]
 - ["Sa", "deinit"]
 - !private ["Sa", "forEach"]
+- ["V14Moulinette_2_010AuditGrade", "deinit"]
+- !private ["P14Moulinette_2_011AuditGrader", "deinit"]
+- !private ["P14Moulinette_2_011AuditGrader", "generateGrade"]
+- !private ["P14Moulinette_2_011AuditGrader", "init"]
+- !private ["P14Moulinette_2_011AuditGrader", "violationFound"]
 - !private ["Ps23BidirectionalCollection", "Iterator"]
 - !private ["Ps23BidirectionalCollection", "_Element"]
 - !private ["Ps23BidirectionalCollection", "forEach"]
@@ -42,7 +46,7 @@ depends-member:
 - !private ["Ps22BidirectionalIndexable", "_Element"]
 - !private ["Ps22BidirectionalIndexable", "forEach"]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- ["Sb", "deinit"]
+- !private ["Sb", "deinit"]
 - !private ["Ps7CVarArg", "Iterator"]
 - !private ["Ps7CVarArg", "_Element"]
 - !private ["Ps7CVarArg", "contains"]
@@ -93,9 +97,6 @@ depends-member:
 - ["Ps26ExpressibleByStringLiteral", "init"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "contains"]
 - ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
-- ["O14Moulinette_2_09GradeType", "deinit"]
-- !private ["O14Moulinette_2_09GradeType", "fail"]
-- !private ["O14Moulinette_2_09GradeType", "pass"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "contains"]
 - ["Ps8Hashable", "high"]
@@ -133,6 +134,9 @@ depends-member:
 - ["PSo14NSSecureCoding", "init"]
 - !private ["CSo8NSString", "contains"]
 - ["CSo8NSString", "init"]
+- ["Sq", "deinit"]
+- !private ["C14Moulinette_2_015PIOSAuditGrader", "deinit"]
+- !private ["C14Moulinette_2_015PIOSAuditGrader", "init"]
 - !private ["C14Moulinette_2_011ProjectData", "applicationComponents"]
 - ["C14Moulinette_2_011ProjectData", "deinit"]
 - !private ["Ps22RandomAccessCollection", "Iterator"]
@@ -156,8 +160,8 @@ depends-member:
 - !private ["SS", "contains"]
 - ["SS", "deinit"]
 - ["SS", "init"]
-- !private ["P14Moulinette_2_09SwiftRule", "failedString"]
-- !private ["P14Moulinette_2_09SwiftRule", "formattedFailedString"]
+- !private ["P14Moulinette_2_09SwiftRule", "PIOSAuditGrader"]
+- !private ["P14Moulinette_2_09SwiftRule", "auditGrader"]
 - ["P14Moulinette_2_09SwiftRule", "name"]
 - ["P14Moulinette_2_09SwiftRule", "priority"]
 - !private ["P14Moulinette_2_09SwiftRule", "projectData"]
@@ -167,13 +171,15 @@ depends-member:
 - ["Ps16TextOutputStream", "init"]
 - !private ["Ps20TextOutputStreamable", "contains"]
 - ["Ps20TextOutputStreamable", "init"]
-- ["C14Moulinette_2_021WeakIBOutletSwiftRule", "GradeType"]
+- ["C14Moulinette_2_021WeakIBOutletSwiftRule", "AuditGrade"]
+- ["C14Moulinette_2_021WeakIBOutletSwiftRule", "AuditGrader"]
+- !private ["C14Moulinette_2_021WeakIBOutletSwiftRule", "PIOSAuditGrader"]
 - ["C14Moulinette_2_021WeakIBOutletSwiftRule", "ProjectData"]
 - ["C14Moulinette_2_021WeakIBOutletSwiftRule", "RulePriority"]
 - ["C14Moulinette_2_021WeakIBOutletSwiftRule", "String"]
+- !private ["C14Moulinette_2_021WeakIBOutletSwiftRule", "auditGrader"]
+- !private ["C14Moulinette_2_021WeakIBOutletSwiftRule", "auditGrader.storage"]
 - ["C14Moulinette_2_021WeakIBOutletSwiftRule", "deinit"]
-- !private ["C14Moulinette_2_021WeakIBOutletSwiftRule", "failedString"]
-- !private ["C14Moulinette_2_021WeakIBOutletSwiftRule", "formattedFailedString"]
 - ["C14Moulinette_2_021WeakIBOutletSwiftRule", "init"]
 - ["C14Moulinette_2_021WeakIBOutletSwiftRule", "name"]
 - ["C14Moulinette_2_021WeakIBOutletSwiftRule", "priority"]
@@ -209,9 +215,11 @@ depends-member:
 depends-nominal:
 - "Ps9AnyObject"
 - "Sa"
+- "V14Moulinette_2_010AuditGrade"
+- !private "P14Moulinette_2_011AuditGrader"
 - !private "Ps23BidirectionalCollection"
 - !private "Ps22BidirectionalIndexable"
-- "Sb"
+- !private "Sb"
 - "Ps7CVarArg"
 - !private "Ps10Collection"
 - "Ps10Comparable"
@@ -229,7 +237,6 @@ depends-nominal:
 - "Ps32ExpressibleByStringInterpolation"
 - "Ps26ExpressibleByStringLiteral"
 - "Ps33ExpressibleByUnicodeScalarLiteral"
-- "O14Moulinette_2_09GradeType"
 - "Ps8Hashable"
 - !private "Ps9Indexable"
 - !private "Ps13IndexableBase"
@@ -246,6 +253,8 @@ depends-nominal:
 - "PSo16NSObjectProtocol"
 - "PSo14NSSecureCoding"
 - "CSo8NSString"
+- "Sq"
+- !private "C14Moulinette_2_015PIOSAuditGrader"
 - "C14Moulinette_2_011ProjectData"
 - !private "Ps22RandomAccessCollection"
 - !private "Ps21RandomAccessIndexable"
@@ -278,4 +287,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "c52adc04e8d9943ddcb4ea0d9ea6c503"
+interface-hash: "be177a843f728a2e47f19bcbaec371bf"

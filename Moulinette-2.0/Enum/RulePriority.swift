@@ -18,7 +18,7 @@ enum RulePriority {
     ///
     /// - Parameter violations: Number of violations found
     /// - Returns: Updated score with weight and violations taken into consideration.
-    func score(with violations: Int) -> Double {
+    func score(violations: Int) -> Double {
         let wt = weight()
         let score = wt * (wt / (Double(violations) + wt))
         return round(score * 100) / 100

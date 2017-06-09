@@ -14,7 +14,7 @@ protocol SwiftRule {
     
     var priority: RulePriority { get }
     
-    func run() -> GradeType
+    func run() -> AuditGrade
 }
 
 extension SwiftRule {
