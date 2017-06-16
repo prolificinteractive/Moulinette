@@ -26,5 +26,3 @@ var projectData = ProjectData(applicationComponents: applicationFileComponents)
 let auditScore = PIOSAudit(projectData: projectData).runRules()
 
 //NetworkRequester().submitAuditScore(score: AuditScore(score: 10))
-
-print(UserDefaults.standard.dictionaryRepresentation()["projectName"])
