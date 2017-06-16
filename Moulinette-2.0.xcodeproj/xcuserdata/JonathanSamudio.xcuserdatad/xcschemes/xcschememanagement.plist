@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Moulinette-2.0-Tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Moulinette-2.0.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2053EE871EF4862B00AAE36D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>20C40C531ED8D47C00695CA7</key>
 		<dict>
 			<key>primary</key>

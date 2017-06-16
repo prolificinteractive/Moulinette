@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2053EE871EF4862B00AAE36D"
+               BuildableName = "Moulinette-2.0-Tests.xctest"
+               BlueprintName = "Moulinette-2.0-Tests"
+               ReferencedContainer = "container:Moulinette-2.0.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

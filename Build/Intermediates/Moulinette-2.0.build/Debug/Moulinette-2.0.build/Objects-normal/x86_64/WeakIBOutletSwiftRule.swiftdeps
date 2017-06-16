@@ -7,18 +7,18 @@ provides-member:
 - ["C14Moulinette_2_021WeakIBOutletSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "&&"
-- "AssignmentPrecedence"
-- "RulePriority"
-- "AuditGrader"
-- "WeakIBOutletSwiftRule"
-- !private "PIOSAuditGrader"
-- "SwiftRule"
-- !private "!"
-- "ProjectData"
 - "AuditGrade"
-- "String"
+- "SwiftRule"
+- "WeakIBOutletSwiftRule"
+- "ProjectData"
 - "StringLiteralType"
+- "AuditGrader"
+- !private "!"
+- "AssignmentPrecedence"
+- !private "PIOSAuditGrader"
+- !private "&&"
+- "String"
+- "RulePriority"
 depends-member:
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
 - !private ["Ps9AnyObject", "applicationComponents"]
@@ -160,6 +160,7 @@ depends-member:
 - !private ["SS", "contains"]
 - ["SS", "deinit"]
 - ["SS", "init"]
+- !private ["P14Moulinette_2_09SwiftData", "applicationComponents"]
 - !private ["P14Moulinette_2_09SwiftRule", "PIOSAuditGrader"]
 - !private ["P14Moulinette_2_09SwiftRule", "auditGrader"]
 - ["P14Moulinette_2_09SwiftRule", "name"]
@@ -263,6 +264,7 @@ depends-nominal:
 - "O14Moulinette_2_012RulePriority"
 - !private "Ps8Sequence"
 - "SS"
+- !private "P14Moulinette_2_09SwiftData"
 - "P14Moulinette_2_09SwiftRule"
 - "Ps16TextOutputStream"
 - "Ps20TextOutputStreamable"

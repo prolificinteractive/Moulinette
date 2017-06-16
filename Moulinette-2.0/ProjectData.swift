@@ -12,7 +12,7 @@ typealias FileComponents = [String]
 typealias ApplicationComponents = [String : FileComponents]
 typealias ClassInfo = (className: String, subClassName: String?)
 
-final class ProjectData {
+final class ProjectData: SwiftData {
     
     var applicationComponents: ApplicationComponents
     

@@ -9,17 +9,17 @@ provides-nominal:
 provides-member:
 provides-dynamic-lookup:
 depends-top-level:
-- "ProjectParser"
-- "print"
-- "settings"
 - "auditScore"
-- "PIOSAudit"
-- "ProjectSettings"
 - "StringLiteralType"
-- "ProjectData"
-- "applicationFileComponents"
+- "settings"
+- "PIOSAudit"
+- "ProjectParser"
 - "projectData"
+- "ProjectSettings"
 - "projectParser"
+- "applicationFileComponents"
+- "ProjectData"
+- "print"
 depends-member:
 - ["Ps9AnyObject", "applicationComponents"]
 - ["Ps9AnyObject", "init"]
@@ -60,6 +60,7 @@ depends-member:
 - ["V14Moulinette_2_015ProjectSettings", "init"]
 - ["SS", "deinit"]
 - ["SS", "init"]
+- ["P14Moulinette_2_09SwiftData", "init"]
 - ["Ps16TextOutputStream", "init"]
 - ["Ps20TextOutputStreamable", "init"]
 - ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
@@ -100,6 +101,7 @@ depends-nominal:
 - "C14Moulinette_2_013ProjectParser"
 - "V14Moulinette_2_015ProjectSettings"
 - "SS"
+- "P14Moulinette_2_09SwiftData"
 - "Ps16TextOutputStream"
 - "Ps20TextOutputStreamable"
 - "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"

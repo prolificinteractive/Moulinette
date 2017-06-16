@@ -36,14 +36,6 @@ final class SemiColonSwiftRule: SwiftRule {
 }
 
 
-protocol AuditGrader {
-    
-    func violationFound(fileName: String, description: String)
-    
-    func generateGrade() -> AuditGrade
-}
-
-
 class PIOSAuditGrader: AuditGrader {
     
     let priority: RulePriority

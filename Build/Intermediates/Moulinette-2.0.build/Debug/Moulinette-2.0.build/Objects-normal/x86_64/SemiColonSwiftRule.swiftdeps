@@ -1,37 +1,34 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "SemiColonSwiftRule"
-- "AuditGrader"
 - "PIOSAuditGrader"
 provides-nominal:
 - "C14Moulinette_2_018SemiColonSwiftRule"
-- "P14Moulinette_2_011AuditGrader"
 - "C14Moulinette_2_015PIOSAuditGrader"
 provides-member:
 - ["C14Moulinette_2_018SemiColonSwiftRule", ""]
-- ["P14Moulinette_2_011AuditGrader", ""]
 - ["C14Moulinette_2_015PIOSAuditGrader", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- "String"
+- "ProjectData"
+- "RulePriority"
+- "UnicodeScalarType"
 - !private "+"
-- "SwiftRule"
-- "AuditGrade"
 - "SemiColonSwiftRule"
+- "StringLiteralType"
+- "SwiftRule"
+- "PIOSAuditGrader"
+- "ExtendedGraphemeClusterType"
 - "AssignmentPrecedence"
 - !private "=="
-- "IntegerLiteralType"
-- "ExtendedGraphemeClusterType"
-- "TernaryPrecedence"
-- "RulePriority"
-- "FloatLiteralType"
 - !private "GradeType"
-- "ProjectData"
-- "PIOSAuditGrader"
-- "UnicodeScalarType"
-- "AuditGrader"
-- "StringLiteralType"
-- "String"
+- "TernaryPrecedence"
+- "AuditGrade"
 - !private "+="
+- "IntegerLiteralType"
+- "AuditGrader"
+- "FloatLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "AuditGrade"]
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
@@ -56,8 +53,7 @@ depends-member:
 - !private ["Sa", "forEach"]
 - ["V14Moulinette_2_010AuditGrade", "deinit"]
 - !private ["V14Moulinette_2_010AuditGrade", "init"]
-- ["P14Moulinette_2_011AuditGrader", "AuditGrade"]
-- ["P14Moulinette_2_011AuditGrader", "String"]
+- !private ["P14Moulinette_2_011AuditGrader", "AuditGrade"]
 - !private ["P14Moulinette_2_011AuditGrader", "deinit"]
 - !private ["P14Moulinette_2_011AuditGrader", "failedString"]
 - !private ["P14Moulinette_2_011AuditGrader", "formattedFailedString"]
@@ -252,6 +248,7 @@ depends-member:
 - ["SS", "deinit"]
 - ["SS", "init"]
 - !private ["SS", "isEmpty"]
+- !private ["P14Moulinette_2_09SwiftData", "applicationComponents"]
 - !private ["P14Moulinette_2_09SwiftRule", "PIOSAuditGrader"]
 - !private ["P14Moulinette_2_09SwiftRule", "auditGrader"]
 - ["P14Moulinette_2_09SwiftRule", "name"]
@@ -356,6 +353,7 @@ depends-nominal:
 - "C14Moulinette_2_018SemiColonSwiftRule"
 - !private "Ps8Sequence"
 - "SS"
+- !private "P14Moulinette_2_09SwiftData"
 - "P14Moulinette_2_09SwiftRule"
 - "Ps16TextOutputStream"
 - "Ps20TextOutputStreamable"
@@ -380,4 +378,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "0013c3b9438a37c01a925042c3f7bef3"
+interface-hash: "05639d05e81676aa10f8095e25f0ebb3"
