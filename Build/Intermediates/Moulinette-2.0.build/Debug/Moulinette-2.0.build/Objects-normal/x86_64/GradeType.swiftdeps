@@ -11,13 +11,13 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - !private "+"
-- "Int"
-- "GradeType"
 - "Double"
 - "RulePriority"
+- "Int"
 - "AuditGrade"
 - !private "StringLiteralType"
 - "String"
+- "GradeType"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - ["V14Moulinette_2_010AuditGrade", "Double"]

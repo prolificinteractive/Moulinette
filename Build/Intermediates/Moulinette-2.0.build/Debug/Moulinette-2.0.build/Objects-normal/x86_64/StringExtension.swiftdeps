@@ -13,16 +13,16 @@ provides-member:
 - ["SS", "subClassName"]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "<"
-- "AssignmentPrecedence"
-- !private "!"
-- !private "Range"
 - !private "UnicodeScalarType"
+- !private "!"
 - !private "&&"
-- "Bool"
 - !private "..<"
-- !private "StringLiteralType"
+- "AssignmentPrecedence"
 - "String"
+- "Bool"
+- !private "<"
+- !private "Range"
+- !private "StringLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "contains"]
 - !private ["Ps9AnyObject", "endIndex"]

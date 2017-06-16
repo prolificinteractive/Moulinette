@@ -10,7 +10,9 @@ import Foundation
 
 struct ProjectSettings {
     
-    static let baseDir = "/Users/jonsamudio/Prolific-Projects/HSN/HSN/"
+    var baseDir: String
+    
+    var projectName: String
     
     static let excludedFiles = ["Constants.swift"]
     
@@ -24,4 +26,15 @@ struct ProjectSettings {
     }
     
     static var injectableDependencies = [""]
+    
+    init() {
+        let userDefaults = UserDefaults.standard.dictionaryRepresentation()
+        guard let baseDir = userDefaults["baseDirectory"] as? String,
+            let projectName = userDefaults["projectName"] as? String else {
+                print("Project Settings Not Specified")
+                exit(1)
+        }
+        self.baseDir = baseDir
+        self.projectName = projectName
+    }
 }

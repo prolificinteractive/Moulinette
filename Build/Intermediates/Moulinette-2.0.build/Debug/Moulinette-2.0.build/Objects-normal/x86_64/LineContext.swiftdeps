@@ -8,10 +8,10 @@ provides-member:
 - ["O14Moulinette_2_011LineContext", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "LineContext"
+- !private "&&"
 - "=="
 - !private "StringLiteralType"
-- !private "&&"
+- "LineContext"
 - "String"
 depends-member:
 - !private ["Ps9AnyObject", "contains"]

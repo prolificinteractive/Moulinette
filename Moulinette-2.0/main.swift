@@ -12,7 +12,8 @@ import Foundation
 
 print("Moulinette 2.0")
 
-let baseDir = ProjectSettings.baseDir
+let settings = ProjectSettings()
+let baseDir = settings.baseDir
 
 // Parse Project
 let projectParser = ProjectParser(baseDirectory: baseDir)
@@ -25,3 +26,5 @@ var projectData = ProjectData(applicationComponents: applicationFileComponents)
 let auditScore = PIOSAudit(projectData: projectData).runRules()
 
 //NetworkRequester().submitAuditScore(score: AuditScore(score: 10))
+
+print(UserDefaults.standard.dictionaryRepresentation()["projectName"])

@@ -8,17 +8,17 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - !private ">"
-- !private "+"
-- !private "Constants"
+- "String"
 - "ProjectData"
+- !private "Constants"
 - "AppDelegateSwiftRule"
 - "AssignmentPrecedence"
 - "StringLiteralType"
 - "RulePriority"
 - "AuditGrader"
-- !private "PIOSAuditGrader"
+- !private "+"
 - "SwiftRule"
-- "String"
+- !private "PIOSAuditGrader"
 - "AuditGrade"
 depends-member:
 - !private ["Ps9AnyObject", "Constants"]

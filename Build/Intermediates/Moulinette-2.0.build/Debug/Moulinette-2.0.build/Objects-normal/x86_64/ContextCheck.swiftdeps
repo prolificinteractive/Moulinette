@@ -8,14 +8,14 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "Dictionary"
-- "ContextCheck"
-- "Check"
-- "String"
 - "LineContext"
+- "BracketContextCheck"
+- "ContextCheck"
+- "String"
 - "AssignmentPrecedence"
 - !private "=="
-- "BracketContextCheck"
 - !private "!="
+- "Check"
 depends-member:
 - !private ["Ps9AnyObject", "BracketContextCheck"]
 - !private ["Ps9AnyObject", "LineContext"]

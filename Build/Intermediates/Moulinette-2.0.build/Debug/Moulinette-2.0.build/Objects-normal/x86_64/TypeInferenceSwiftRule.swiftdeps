@@ -7,21 +7,21 @@ provides-member:
 - ["C14Moulinette_2_022TypeInferenceSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "StringLiteralType"
-- "AuditGrade"
-- "TypeInferenceSwiftRule"
-- !private "||"
-- "SwiftRule"
-- !private "Bool"
-- "RulePriority"
 - "ProjectData"
-- !private "BooleanLiteralType"
-- "String"
-- !private "PIOSAuditGrader"
-- "AuditGrader"
-- !private "UnicodeScalarType"
 - "AssignmentPrecedence"
+- "TypeInferenceSwiftRule"
 - !private "=="
+- !private "||"
+- "RulePriority"
+- "AuditGrader"
+- !private "BooleanLiteralType"
+- !private "UnicodeScalarType"
+- "SwiftRule"
+- !private "PIOSAuditGrader"
+- "StringLiteralType"
+- "String"
+- "AuditGrade"
+- !private "Bool"
 depends-member:
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
 - !private ["Ps9AnyObject", "applicationComponents"]

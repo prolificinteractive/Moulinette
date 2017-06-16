@@ -11,8 +11,8 @@ provides-member:
 - ["VV14Moulinette_2_09Constants15SwiftComponents", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "StringLiteralType"
 - "Constants"
+- "StringLiteralType"
 depends-member:
 - ["Ps9AnyObject", "init"]
 - ["Ps7CVarArg", "init"]
