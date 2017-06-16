@@ -34,7 +34,8 @@ enum CodeRuleType {
                 TypeInferenceSwiftRule(projectData: projectData),
                 FontEncapsulationSwiftRule(projectData: projectData),
                 ColorEncapsulationSwiftRule(projectData: projectData),
-                CompletionWeakSwiftRule(projectData: projectData)]
+                CompletionWeakSwiftRule(projectData: projectData),
+                ToDoStorySwiftRule(projectData: projectData)]
     }
 }
 
@@ -58,6 +59,7 @@ struct CodeConventionRuleCollection: RuleCollection {
                 TypeInferenceSwiftRule(projectData: projectData),
                 FontEncapsulationSwiftRule(projectData: projectData),
                 ColorEncapsulationSwiftRule(projectData: projectData),
-                CompletionWeakSwiftRule(projectData: projectData)]
+                CompletionWeakSwiftRule(projectData: projectData),
+                ToDoStorySwiftRule(projectData: projectData)]
     }
 }

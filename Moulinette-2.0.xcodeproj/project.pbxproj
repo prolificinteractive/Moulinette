@@ -82,6 +82,8 @@
 		20E4140F1EDF7FAA0000E447 /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4140E1EDF7FAA0000E447 /* Check.swift */; };
 		20E414111EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E414101EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift */; };
 		20E414131EDF8C500000E447 /* SemiColonSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E414121EDF8C500000E447 /* SemiColonSwiftRule.swift */; };
+		6608445A1EF45E0E002340C9 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844591EF45E0E002340C9 /* Regex.swift */; };
+		6655C66F1EF317F000878A71 /* ToDoStorySwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +150,8 @@
 		20E4140E1EDF7FAA0000E447 /* Check.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
 		20E414101EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiredSelfSwiftRule.swift; sourceTree = "<group>"; };
 		20E414121EDF8C500000E447 /* SemiColonSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiColonSwiftRule.swift; sourceTree = "<group>"; };
+		660844591EF45E0E002340C9 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoStorySwiftRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,7 @@
 				20161D131EE0C31000997AF6 /* FontEncapsulationSwiftRule.swift */,
 				20161D151EE0C56000997AF6 /* ColorEncapsulationSwiftRule.swift */,
 				209696BF1EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift */,
+				6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				208173531EEB28E60077106A /* AuditScore.swift */,
+				660844591EF45E0E002340C9 /* Regex.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -364,7 +370,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Prolific Interactive";
 				TargetAttributes = {
 					2053EE871EF4862B00AAE36D = {
@@ -469,6 +475,7 @@
 				20161D121EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift in Sources */,
 				20161D061EE09C8F00997AF6 /* FileType.swift in Sources */,
 				20161D0C1EE0B28A00997AF6 /* MarkUsageSwiftRule.swift in Sources */,
+				6655C66F1EF317F000878A71 /* ToDoStorySwiftRule.swift in Sources */,
 				209696C21EE9F4270035C7AE /* RulePriority.swift in Sources */,
 				20E413FF1EDF41660000E447 /* Audit.swift in Sources */,
 				20161CFB1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift in Sources */,
@@ -485,6 +492,7 @@
 				2053EEA11EF48AA300AAE36D /* AuditGrader.swift in Sources */,
 				209696C01EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift in Sources */,
 				2053EE9F1EF489E400AAE36D /* SwiftData.swift in Sources */,
+				6608445A1EF45E0E002340C9 /* Regex.swift in Sources */,
 				20E4140B1EDF7F8B0000E447 /* StringExtension.swift in Sources */,
 				20161D141EE0C31000997AF6 /* FontEncapsulationSwiftRule.swift in Sources */,
 				20161D0A1EE0A04700997AF6 /* ForceUnwrapSwiftRule.swift in Sources */,
@@ -625,6 +633,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};

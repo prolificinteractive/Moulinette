@@ -10,6 +10,8 @@ import Foundation
 
 protocol SwiftRule {
     
+    init(projectData: ProjectData)
+    
     var name: String { get }
     
     var priority: RulePriority { get }

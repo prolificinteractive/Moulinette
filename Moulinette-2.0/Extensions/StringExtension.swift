@@ -86,4 +86,17 @@ extension String {
         }
         return nil
     }
+
+    func isTodoComment() -> Bool {
+        return self.isComment() && self.contains("TODO")
+    }
+
+    func isComment() -> Bool {
+        return Regex.commentRegex().hasMatch(input: self)
+    }
+
+    func hasPivotalStory() -> Bool {
+        return self.contains("https://www.pivotaltracker.com/")
+    }
+
 }
