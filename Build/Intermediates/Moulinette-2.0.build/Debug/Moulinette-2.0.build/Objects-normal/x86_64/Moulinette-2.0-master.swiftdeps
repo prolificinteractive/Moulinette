@@ -1,6 +1,6 @@
 version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
 options: "eb6acd13495ce91340775c4a5a0d21f5"
-build_time: [550952639, 820796000]
+build_time: [550952841, 521686000]
 inputs:
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/ProjectParser.swift": [549659683, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Checks/BracketContextCheck.swift": [549586349, 0]
@@ -16,7 +16,7 @@ inputs:
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Enum/RulePriority.swift": [550940132, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Protocols/Audit.swift": [550354956, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/WeakIBOutletSwiftRule.swift": [550352892, 0]
-  "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/main.swift": [550952425, 0]
+  "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/main.swift": [550952841, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Model/AuditScore.swift": [550940132, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Audits/PIOSAudit.swift": [550940132, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/InternalModifierSwiftRule.swift": [550353427, 0]
