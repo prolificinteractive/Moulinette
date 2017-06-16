@@ -19,8 +19,6 @@
 		20161D141EE0C31000997AF6 /* FontEncapsulationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D131EE0C31000997AF6 /* FontEncapsulationSwiftRule.swift */; };
 		20161D161EE0C56000997AF6 /* ColorEncapsulationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D151EE0C56000997AF6 /* ColorEncapsulationSwiftRule.swift */; };
 		2053EE921EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */; };
-		2053EE9A1EF4882C00AAE36D /* AppDelegateSwiftRule_Clean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053EE991EF4882C00AAE36D /* AppDelegateSwiftRule_Clean.swift */; };
-		2053EE9D1EF4884C00AAE36D /* AppDelegateSwiftRule_Long.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053EE9C1EF4884C00AAE36D /* AppDelegateSwiftRule_Long.swift */; };
 		2053EE9F1EF489E400AAE36D /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053EE9E1EF489E400AAE36D /* SwiftData.swift */; };
 		2053EEA11EF48AA300AAE36D /* AuditGrader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053EEA01EF48AA300AAE36D /* AuditGrader.swift */; };
 		2053EEB91EF4921B00AAE36D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C40C571ED8D47C00695CA7 /* main.swift */; };
@@ -123,8 +121,6 @@
 		2053EE881EF4862B00AAE36D /* Moulinette-2.0-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moulinette-2.0-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2053EE8C1EF4862B00AAE36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRuleTests.swift; sourceTree = "<group>"; };
-		2053EE991EF4882C00AAE36D /* AppDelegateSwiftRule_Clean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRule_Clean.swift; sourceTree = "<group>"; };
-		2053EE9C1EF4884C00AAE36D /* AppDelegateSwiftRule_Long.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRule_Long.swift; sourceTree = "<group>"; };
 		2053EE9E1EF489E400AAE36D /* SwiftData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftData.swift; sourceTree = "<group>"; };
 		2053EEA01EF48AA300AAE36D /* AuditGrader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditGrader.swift; sourceTree = "<group>"; };
 		206837A31EDE1D5D008CB7F3 /* ProjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectData.swift; sourceTree = "<group>"; };
@@ -193,18 +189,8 @@
 		2053EE971EF487FA00AAE36D /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				2053EE981EF4880D00AAE36D /* AppDelegateMocks */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		2053EE981EF4880D00AAE36D /* AppDelegateMocks */ = {
-			isa = PBXGroup;
-			children = (
-				2053EE991EF4882C00AAE36D /* AppDelegateSwiftRule_Clean.swift */,
-				2053EE9C1EF4884C00AAE36D /* AppDelegateSwiftRule_Long.swift */,
-			);
-			path = AppDelegateMocks;
 			sourceTree = "<group>";
 		};
 		206837A91EDE22A8008CB7F3 /* Rules */ = {
@@ -464,9 +450,7 @@
 				2053EEDB1EF4921B00AAE36D /* APIEnvironment.swift in Sources */,
 				2053EEDC1EF4921B00AAE36D /* Endpoints.swift in Sources */,
 				2053EEDD1EF4921B00AAE36D /* AuditScore.swift in Sources */,
-				2053EE9A1EF4882C00AAE36D /* AppDelegateSwiftRule_Clean.swift in Sources */,
 				2053EE921EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift in Sources */,
-				2053EE9D1EF4884C00AAE36D /* AppDelegateSwiftRule_Long.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
