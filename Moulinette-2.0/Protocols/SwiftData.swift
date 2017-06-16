@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal protocol SwiftData {
+protocol SwiftData {
     
     var applicationComponents: ApplicationComponents { get set }
     

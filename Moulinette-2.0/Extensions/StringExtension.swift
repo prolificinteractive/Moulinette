@@ -96,7 +96,7 @@ extension String {
     }
 
     func hasPivotalStory() -> Bool {
-        return self.contains("https://www.pivotaltracker.com/")
+        return self.contains(Constants.URL.pivotal)
     }
 
 }

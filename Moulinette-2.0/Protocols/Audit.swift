@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal protocol Audit {
+protocol Audit {
     
     func runRules() -> AuditScore
 }

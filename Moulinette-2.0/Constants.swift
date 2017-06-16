@@ -23,4 +23,8 @@ struct Constants {
         static let comment = "(/\\*([^*]|[\\r\\n]|(\\*+([^*/]|[\\r\\n])))*\\*+/)|(//.*)"
     }
 
+    struct URL {
+        static let pivotal = "https://www.pivotaltracker.com/"
+    }
+
 }

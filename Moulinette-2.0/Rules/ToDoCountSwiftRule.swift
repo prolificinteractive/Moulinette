@@ -1,17 +1,17 @@
 //
-//  ToDoStorySwiftRule.swift
+//  ToDoCountSwiftRule.swift
 //  Moulinette-2.0
 //
-//  Created by Adam Tecle on 6/15/17.
+//  Created by Adam Tecle on 6/16/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
 //
 
 import Foundation
 
 /// Defines rule that every comment with a TODO should have a pivotal story linked
-final class ToDoStorySwiftRule: SwiftRule {
+final class ToDoCountSwiftRule: SwiftRule {
 
-    let name: String = "Every TODO comment should have a link to a story in Pivotal"
+    let name: String = "There should be less than 10 TODOs"
     let priority: RulePriority = .medium
 
     private let projectData: ProjectData
@@ -25,8 +25,10 @@ final class ToDoStorySwiftRule: SwiftRule {
 
     func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents {
+            var todoCount = 0
             CommentParser.parse(fileComponents: fileComponents) { (comment, line) in
-                if comment.isTodoComment() && !comment.hasPivotalStory() {
+                todoCount = comment.isTodoComment() ? todoCount + 1 : todoCount
+                if todoCount > 10 {
                     auditGrader.violationFound(fileName: fileName, description: line)
                 }
             }
