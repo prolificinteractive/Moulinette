@@ -67,7 +67,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "baseDirectory"
+            argument = "auditSubDirectory"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

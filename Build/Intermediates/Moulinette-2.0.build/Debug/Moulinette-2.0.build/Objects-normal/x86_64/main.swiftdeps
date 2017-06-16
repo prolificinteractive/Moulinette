@@ -1,7 +1,6 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "settings"
-- "baseDir"
 - "projectParser"
 - "applicationFileComponents"
 - "projectData"
@@ -10,18 +9,17 @@ provides-nominal:
 provides-member:
 provides-dynamic-lookup:
 depends-top-level:
-- "ProjectData"
+- "ProjectParser"
+- "print"
+- "settings"
 - "auditScore"
+- "PIOSAudit"
+- "ProjectSettings"
+- "StringLiteralType"
+- "ProjectData"
+- "applicationFileComponents"
 - "projectData"
 - "projectParser"
-- "ProjectParser"
-- "PIOSAudit"
-- "baseDir"
-- "StringLiteralType"
-- "ProjectSettings"
-- "settings"
-- "applicationFileComponents"
-- "print"
 depends-member:
 - ["Ps9AnyObject", "applicationComponents"]
 - ["Ps9AnyObject", "init"]
@@ -58,7 +56,6 @@ depends-member:
 - ["C14Moulinette_2_013ProjectParser", "applicationComponents"]
 - ["C14Moulinette_2_013ProjectParser", "deinit"]
 - ["C14Moulinette_2_013ProjectParser", "init"]
-- ["V14Moulinette_2_015ProjectSettings", "baseDir"]
 - ["V14Moulinette_2_015ProjectSettings", "deinit"]
 - ["V14Moulinette_2_015ProjectSettings", "init"]
 - ["SS", "deinit"]
@@ -122,4 +119,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "0f375c5582c2fcfa020eb40f343de524"
+interface-hash: "3d4add66dec9cb38d92b01411f6e26eb"

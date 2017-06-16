@@ -7,22 +7,23 @@ provides-member:
 - ["V14Moulinette_2_09PIOSAudit", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "Int"
-- "PIOSAudit"
-- "CodeConventionRuleCollection"
-- !private "+"
-- "AssignmentPrecedence"
-- "AuditScore"
 - !private "print"
-- "RuleCollection"
-- "Double"
-- !private "/"
+- !private "settings"
+- "AuditScore"
 - !private "*"
-- "ProjectData"
-- "Audit"
-- !private "String"
-- !private "StringLiteralType"
+- "PIOSAudit"
+- "AssignmentPrecedence"
+- !private "Int"
 - !private "+="
+- "CodeConventionRuleCollection"
+- "ProjectData"
+- !private "StringLiteralType"
+- !private "String"
+- "Double"
+- "RuleCollection"
+- !private "/"
+- "Audit"
+- !private "+"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - !private ["Sa", "Iterator"]
@@ -38,6 +39,7 @@ depends-member:
 - !private ["P14Moulinette_2_05Audit", "projectData"]
 - !private ["P14Moulinette_2_05Audit", "ruleCollection"]
 - ["P14Moulinette_2_05Audit", "runRules"]
+- !private ["P14Moulinette_2_05Audit", "settings"]
 - ["P14Moulinette_2_05Audit", ""]
 - !private ["V14Moulinette_2_010AuditGrade", "deinit"]
 - !private ["V14Moulinette_2_010AuditGrade", "score"]
@@ -127,7 +129,10 @@ depends-member:
 - !private ["V14Moulinette_2_09PIOSAudit", "projectData"]
 - !private ["V14Moulinette_2_09PIOSAudit", "ruleCollection"]
 - ["V14Moulinette_2_09PIOSAudit", "runRules"]
+- !private ["V14Moulinette_2_09PIOSAudit", "settings"]
 - ["C14Moulinette_2_011ProjectData", "deinit"]
+- ["V14Moulinette_2_015ProjectSettings", "deinit"]
+- !private ["V14Moulinette_2_015ProjectSettings", "projectName"]
 - !private ["Ps22RandomAccessCollection", "Iterator"]
 - !private ["Ps22RandomAccessCollection", "_Element"]
 - !private ["Ps22RandomAccessCollection", "forEach"]
@@ -229,6 +234,7 @@ depends-nominal:
 - !private "CSo8NSString"
 - "V14Moulinette_2_09PIOSAudit"
 - "C14Moulinette_2_011ProjectData"
+- "V14Moulinette_2_015ProjectSettings"
 - !private "Ps22RandomAccessCollection"
 - !private "Ps21RandomAccessIndexable"
 - !private "Ps26RangeReplaceableCollection"

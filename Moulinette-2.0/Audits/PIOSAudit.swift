@@ -18,7 +18,7 @@ internal struct PIOSAudit: Audit {
     }
     
     func runRules() -> AuditScore {
-        print("Running PiOS Rules:")
+        print("Running PiOS Rules for " + settings.projectName + ":")
         
         var auditScore: Double = 0
         

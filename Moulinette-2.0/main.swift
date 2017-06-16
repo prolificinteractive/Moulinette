@@ -13,10 +13,9 @@ import Foundation
 print("Moulinette 2.0")
 
 let settings = ProjectSettings()
-let baseDir = settings.baseDir
 
 // Parse Project
-let projectParser = ProjectParser(baseDirectory: baseDir)
+let projectParser = ProjectParser()
 let applicationFileComponents = projectParser.applicationComponents()
 
 // Generate data store

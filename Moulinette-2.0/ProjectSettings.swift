@@ -10,11 +10,26 @@ import Foundation
 
 struct ProjectSettings {
     
-    var baseDir: String
-    
-    var projectName: String
-    
     static let excludedFiles = ["Constants.swift"]
+    
+    static var injectableDependencies = [""]
+    
+    /// Name of the project.
+    let projectName: String
+    
+    /// Directory of the project.
+    let projectDirectory: String
+    
+    init() {
+        let userDefaults = UserDefaults.standard.dictionaryRepresentation()
+        guard let projectName = userDefaults["projectName"] as? String,
+            let auditSubDirectory = userDefaults["auditSubDirectory"] as? String else {
+            print("Error: projectName or auditSubDirectory not specified!")
+            exit(1)
+        }
+        self.projectName = projectName
+        projectDirectory = FileManager.default.currentDirectoryPath + auditSubDirectory
+    }
     
     static func isExcluded(file: String) -> Bool {
         for excludedFile in excludedFiles {
@@ -23,18 +38,5 @@ struct ProjectSettings {
             }
         }
         return false
-    }
-    
-    static var injectableDependencies = [""]
-    
-    init() {
-        let userDefaults = UserDefaults.standard.dictionaryRepresentation()
-        guard let baseDir = userDefaults["baseDirectory"] as? String,
-            let projectName = userDefaults["projectName"] as? String else {
-                print("Project Settings Not Specified")
-                exit(1)
-        }
-        self.baseDir = baseDir
-        self.projectName = projectName
     }
 }

@@ -10,18 +10,12 @@ import Foundation
 
 class ProjectParser {
     
-    private let baseDirectory: String
-    
-    init(baseDirectory: String) {
-        self.baseDirectory = baseDirectory
-    }
-    
     func applicationComponents() -> ApplicationComponents {
         let swiftFileNames = retrieveSwiftFileNames()
         var applicationFileComponents = ApplicationComponents()
         
         for swiftFile in swiftFileNames {
-            let fileToParse = baseDir + swiftFile
+            let fileToParse = settings.projectDirectory + swiftFile
             
             do {
                 let content = try String(contentsOfFile: fileToParse, encoding: String.Encoding.utf8)
@@ -36,7 +30,7 @@ class ProjectParser {
     }
     
     private func retrieveSwiftFileNames() -> [String] {
-        let fileEnumerator = FileManager.default.enumerator(atPath: baseDir)
+        let fileEnumerator = FileManager.default.enumerator(atPath: settings.projectDirectory)
         var swiftFiles = [String]()
                 
         while let file = fileEnumerator?.nextObject() {

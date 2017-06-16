@@ -7,19 +7,23 @@ provides-member:
 - ["V14Moulinette_2_015ProjectSettings", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "exit"
 - "CastingPrecedence"
 - "AssignmentPrecedence"
-- "Bool"
-- "ProjectSettings"
-- !private "BooleanLiteralType"
-- "StringLiteralType"
-- "String"
 - "Array"
 - !private "UserDefaults"
+- "ProjectSettings"
+- !private "exit"
+- !private "FileManager"
+- !private "BooleanLiteralType"
+- "String"
+- "Bool"
+- !private "+"
+- "StringLiteralType"
 - !private "print"
 depends-member:
 - !private ["Ps9AnyObject", "contains"]
+- !private ["Ps9AnyObject", "currentDirectoryPath"]
+- !private ["Ps9AnyObject", "default"]
 - !private ["Ps9AnyObject", "dictionaryRepresentation"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "standard"]
@@ -41,6 +45,8 @@ depends-member:
 - !private ["Ps7CVarArg", "SubSequence"]
 - !private ["Ps7CVarArg", "_Element"]
 - !private ["Ps7CVarArg", "contains"]
+- !private ["Ps7CVarArg", "currentDirectoryPath"]
+- !private ["Ps7CVarArg", "default"]
 - !private ["Ps7CVarArg", "dictionaryRepresentation"]
 - ["Ps7CVarArg", "init"]
 - !private ["Ps7CVarArg", "standard"]
@@ -59,6 +65,8 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
 - !private ["Ps28CustomDebugStringConvertible", "_Element"]
 - !private ["Ps28CustomDebugStringConvertible", "contains"]
+- !private ["Ps28CustomDebugStringConvertible", "currentDirectoryPath"]
+- !private ["Ps28CustomDebugStringConvertible", "default"]
 - !private ["Ps28CustomDebugStringConvertible", "dictionaryRepresentation"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "standard"]
@@ -82,6 +90,8 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "_Element"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "contains"]
+- !private ["Ps23CustomStringConvertible", "currentDirectoryPath"]
+- !private ["Ps23CustomStringConvertible", "default"]
 - !private ["Ps23CustomStringConvertible", "dictionaryRepresentation"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "standard"]
@@ -92,6 +102,8 @@ depends-member:
 - !private ["Vs10Dictionary", "subscript"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "contains"]
+- !private ["Ps9Equatable", "currentDirectoryPath"]
+- !private ["Ps9Equatable", "default"]
 - !private ["Ps9Equatable", "dictionaryRepresentation"]
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "standard"]
@@ -110,8 +122,13 @@ depends-member:
 - ["Ps26ExpressibleByStringLiteral", "init"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "contains"]
 - ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["CSo11FileManager", "currentDirectoryPath"]
+- !private ["CSo11FileManager", "default"]
+- ["CSo11FileManager", "deinit"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "contains"]
+- !private ["Ps8Hashable", "currentDirectoryPath"]
+- !private ["Ps8Hashable", "default"]
 - !private ["Ps8Hashable", "dictionaryRepresentation"]
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "standard"]
@@ -148,10 +165,14 @@ depends-member:
 - !private ["PSo16NSMutableCopying", "contains"]
 - ["PSo16NSMutableCopying", "init"]
 - !private ["CSo8NSObject", "contains"]
+- !private ["CSo8NSObject", "currentDirectoryPath"]
+- !private ["CSo8NSObject", "default"]
 - !private ["CSo8NSObject", "dictionaryRepresentation"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "standard"]
 - !private ["PSo16NSObjectProtocol", "contains"]
+- !private ["PSo16NSObjectProtocol", "currentDirectoryPath"]
+- !private ["PSo16NSObjectProtocol", "default"]
 - !private ["PSo16NSObjectProtocol", "dictionaryRepresentation"]
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "standard"]
@@ -162,9 +183,9 @@ depends-member:
 - ["Os5Never", "deinit"]
 - ["Sq", "deinit"]
 - ["V14Moulinette_2_015ProjectSettings", "Bool"]
+- !private ["V14Moulinette_2_015ProjectSettings", "FileManager"]
 - ["V14Moulinette_2_015ProjectSettings", "String"]
 - !private ["V14Moulinette_2_015ProjectSettings", "UserDefaults"]
-- ["V14Moulinette_2_015ProjectSettings", "baseDir"]
 - ["V14Moulinette_2_015ProjectSettings", "deinit"]
 - ["V14Moulinette_2_015ProjectSettings", "excludedFiles"]
 - !private ["V14Moulinette_2_015ProjectSettings", "exit"]
@@ -172,6 +193,7 @@ depends-member:
 - ["V14Moulinette_2_015ProjectSettings", "injectableDependencies"]
 - ["V14Moulinette_2_015ProjectSettings", "isExcluded"]
 - !private ["V14Moulinette_2_015ProjectSettings", "print"]
+- ["V14Moulinette_2_015ProjectSettings", "projectDirectory"]
 - ["V14Moulinette_2_015ProjectSettings", "projectName"]
 - ["Ps22RandomAccessCollection", "Element"]
 - !private ["Ps22RandomAccessCollection", "Iterator"]
@@ -224,6 +246,8 @@ depends-member:
 - ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps9_Hashable", "contains"]
+- !private ["Ps9_Hashable", "currentDirectoryPath"]
+- !private ["Ps9_Hashable", "default"]
 - !private ["Ps9_Hashable", "dictionaryRepresentation"]
 - ["Ps9_Hashable", "init"]
 - !private ["Ps9_Hashable", "standard"]
@@ -258,6 +282,7 @@ depends-nominal:
 - "Ps32ExpressibleByStringInterpolation"
 - "Ps26ExpressibleByStringLiteral"
 - "Ps33ExpressibleByUnicodeScalarLiteral"
+- "CSo11FileManager"
 - "Ps8Hashable"
 - "Ps9Indexable"
 - "Ps13IndexableBase"
@@ -308,4 +333,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "ce211db4460130e4eab800e4482a3fbd"
+interface-hash: "9207602c7f38512b50c3b296a5f9126f"
