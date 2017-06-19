@@ -8,20 +8,20 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "AssignmentPrecedence"
-- !private "print"
-- !private "CastingPrecedence"
-- "ProjectParser"
-- !private "NSError"
-- !private "UnicodeScalarType"
-- !private "settings"
-- !private "!"
 - !private "FileManager"
-- !private "ProjectSettings"
-- !private "String"
-- !private "Constants"
+- !private "CastingPrecedence"
 - "ApplicationComponents"
-- !private "StringLiteralType"
+- !private "String"
+- !private "UnicodeScalarType"
+- !private "Constants"
 - !private "+"
+- !private "print"
+- !private "settings"
+- !private "NSError"
+- !private "ProjectSettings"
+- !private "StringLiteralType"
+- !private "!"
+- "ProjectParser"
 depends-member:
 - !private ["Ps9AnyObject", "ApplicationComponents"]
 - !private ["Ps9AnyObject", "Constants"]
