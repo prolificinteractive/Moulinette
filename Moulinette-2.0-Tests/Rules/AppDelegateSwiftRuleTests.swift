@@ -27,7 +27,7 @@ class AppDelegateSwiftRuleTests: XCTestCase {
     }
     
     func testRun_ShortAppDelegate() {
-        let data = ProjectData(applicationComponents: file(length: 30))
+        let data = ProjectData(applicationComponents: emptyFile(length: 30))
         sut = AppDelegateSwiftRule(projectData: data)
         
         let grade = sut.run()
@@ -36,7 +36,7 @@ class AppDelegateSwiftRuleTests: XCTestCase {
     }
     
     func testRun_LongAppDelegate() {
-        let data = ProjectData(applicationComponents: file(length: 300))
+        let data = ProjectData(applicationComponents: emptyFile(length: 300))
         sut = AppDelegateSwiftRule(projectData: data)
         
         let grade = sut.run()
@@ -47,7 +47,7 @@ class AppDelegateSwiftRuleTests: XCTestCase {
 
 extension AppDelegateSwiftRuleTests {
     
-    func file(length: Int) -> ApplicationComponents {
+    func emptyFile(length: Int) -> ApplicationComponents {
         var file = [""]
         for _ in 0..<length {
             file.append("Hello")

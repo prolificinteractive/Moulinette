@@ -8,12 +8,12 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "String"
-- "AssignmentPrecedence"
-- !private "=="
 - "Check"
 - "Dictionary"
-- !private "!="
+- "AssignmentPrecedence"
+- !private "=="
 - "ContextCheck"
+- !private "!="
 - "LineContext"
 - "BracketContextCheck"
 depends-member:

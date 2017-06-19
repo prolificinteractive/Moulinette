@@ -10,24 +10,24 @@ provides-member:
 - ["C14Moulinette_2_015PIOSAuditGrader", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "String"
-- "ProjectData"
-- "RulePriority"
-- "UnicodeScalarType"
 - !private "+"
-- "SemiColonSwiftRule"
-- "StringLiteralType"
+- "UnicodeScalarType"
+- !private "+="
 - "SwiftRule"
-- "PIOSAuditGrader"
-- "ExtendedGraphemeClusterType"
+- "SemiColonSwiftRule"
+- "String"
+- "StringLiteralType"
+- "AuditGrader"
 - "AssignmentPrecedence"
 - !private "=="
+- "RulePriority"
+- "AuditGrade"
 - !private "GradeType"
 - "TernaryPrecedence"
-- "AuditGrade"
-- !private "+="
 - "IntegerLiteralType"
-- "AuditGrader"
+- "PIOSAuditGrader"
+- "ExtendedGraphemeClusterType"
+- "ProjectData"
 - "FloatLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "AuditGrade"]
@@ -251,6 +251,7 @@ depends-member:
 - !private ["P14Moulinette_2_09SwiftData", "applicationComponents"]
 - !private ["P14Moulinette_2_09SwiftRule", "PIOSAuditGrader"]
 - !private ["P14Moulinette_2_09SwiftRule", "auditGrader"]
+- ["P14Moulinette_2_09SwiftRule", "init"]
 - ["P14Moulinette_2_09SwiftRule", "name"]
 - ["P14Moulinette_2_09SwiftRule", "priority"]
 - !private ["P14Moulinette_2_09SwiftRule", "projectData"]

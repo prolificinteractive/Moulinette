@@ -8,20 +8,20 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "AssignmentPrecedence"
-- "String"
-- !private "PIOSAuditGrader"
-- "SwiftRule"
-- !private "UnicodeScalarType"
-- "AuditGrade"
 - !private "=="
-- "AuditGrader"
+- "String"
 - "ProjectData"
-- "RulePriority"
+- "AuditGrader"
+- !private "Bool"
 - "TypeInferenceSwiftRule"
+- !private "UnicodeScalarType"
+- "SwiftRule"
+- !private "||"
 - !private "BooleanLiteralType"
 - "StringLiteralType"
-- !private "Bool"
-- !private "||"
+- !private "PIOSAuditGrader"
+- "AuditGrade"
+- "RulePriority"
 depends-member:
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
 - !private ["Ps9AnyObject", "applicationComponents"]
@@ -213,6 +213,7 @@ depends-member:
 - !private ["P14Moulinette_2_09SwiftData", "applicationComponents"]
 - !private ["P14Moulinette_2_09SwiftRule", "PIOSAuditGrader"]
 - !private ["P14Moulinette_2_09SwiftRule", "auditGrader"]
+- ["P14Moulinette_2_09SwiftRule", "init"]
 - ["P14Moulinette_2_09SwiftRule", "name"]
 - ["P14Moulinette_2_09SwiftRule", "priority"]
 - !private ["P14Moulinette_2_09SwiftRule", "projectData"]
