@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal struct PIOSAudit: Audit {
+struct PIOSAudit: Audit {
     
     private var projectData: ProjectData
     private var ruleCollection: [RuleCollection] = [CodeConventionRuleCollection()]

@@ -8,14 +8,23 @@
 
 import Foundation
 
-internal struct Constants {
+struct Constants {
     
-    internal struct FileNameConstants {
+    struct FileNameConstants {
         static let swiftSuffix = ".swift"
         static let appDelegate = "AppDelegate.swift"
     }
     
-    internal struct SwiftComponents {
+    struct SwiftComponents {
         
     }
+
+    struct Regex {
+        static let comment = "(/\\*([^*]|[\\r\\n]|(\\*+([^*/]|[\\r\\n])))*\\*+/)|(//.*)"
+    }
+
+    struct URL {
+        static let pivotal = "https://www.pivotaltracker.com/"
+    }
+
 }

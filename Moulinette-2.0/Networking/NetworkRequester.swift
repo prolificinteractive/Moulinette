@@ -41,7 +41,7 @@ final class NetworkRequester {
                 return
             }
 //            let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            print("*****Data: \(response)")
+            print("*****Data: \(String(describing: response))")
             sema.signal()
         }
         
