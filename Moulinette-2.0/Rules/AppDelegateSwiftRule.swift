@@ -25,14 +25,14 @@ final class AppDelegateSwiftRule: SwiftRule {
     
     func run() -> AuditGrade {
         guard let fileComponent = projectData.applicationComponents[Constants.FileNameConstants.appDelegate] else {
-            auditGrader.violationFound(fileName: Constants.FileNameConstants.appDelegate,
-                                       description: "No App Delegate Found!!!")
+            auditGrader.failed(fileName: Constants.FileNameConstants.appDelegate,
+                               description: "No App Delegate Found!!!")
             return auditGrader.generateGrade()
         }
         
         if fileComponent.count > 80 {
-            auditGrader.violationFound(fileName: Constants.FileNameConstants.appDelegate,
-                                       description: "Line Count Above 80, Actual: " + String(fileComponent.count))
+            auditGrader.failed(fileName: Constants.FileNameConstants.appDelegate,
+                               description: "Line Count Above 80, Actual: " + String(fileComponent.count))
         }
         return auditGrader.generateGrade()
     }

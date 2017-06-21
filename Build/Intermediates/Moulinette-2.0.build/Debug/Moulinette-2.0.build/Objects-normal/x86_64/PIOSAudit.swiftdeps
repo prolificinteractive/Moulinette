@@ -7,23 +7,23 @@ provides-member:
 - ["V14Moulinette_2_09PIOSAudit", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Audit"
-- "RuleCollection"
-- !private "Int"
-- !private "settings"
-- !private "/"
-- "Double"
-- !private "StringLiteralType"
-- !private "+="
-- "AuditScore"
 - "ProjectData"
-- !private "*"
 - "AssignmentPrecedence"
-- !private "String"
+- !private "*"
 - !private "+"
+- !private "String"
+- !private "print"
 - "PIOSAudit"
 - "CodeConventionRuleCollection"
-- !private "print"
+- !private "Int"
+- "Audit"
+- "RuleCollection"
+- !private "/"
+- !private "Double"
+- !private "StringLiteralType"
+- !private "settings"
+- !private "+="
+- "AuditScore"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - !private ["Sa", "Iterator"]
@@ -117,14 +117,14 @@ depends-member:
 - !private ["CSo8NSString", "init"]
 - ["V14Moulinette_2_09PIOSAudit", "AuditScore"]
 - ["V14Moulinette_2_09PIOSAudit", "CodeConventionRuleCollection"]
-- ["V14Moulinette_2_09PIOSAudit", "Double"]
+- !private ["V14Moulinette_2_09PIOSAudit", "Double"]
 - !private ["V14Moulinette_2_09PIOSAudit", "Int"]
 - ["V14Moulinette_2_09PIOSAudit", "ProjectData"]
 - ["V14Moulinette_2_09PIOSAudit", "RuleCollection"]
 - !private ["V14Moulinette_2_09PIOSAudit", "String"]
 - ["V14Moulinette_2_09PIOSAudit", "deinit"]
 - ["V14Moulinette_2_09PIOSAudit", "init"]
-- ["V14Moulinette_2_09PIOSAudit", "maxPoints"]
+- !private ["V14Moulinette_2_09PIOSAudit", "maxPoints"]
 - !private ["V14Moulinette_2_09PIOSAudit", "print"]
 - !private ["V14Moulinette_2_09PIOSAudit", "projectData"]
 - !private ["V14Moulinette_2_09PIOSAudit", "ruleCollection"]
@@ -274,4 +274,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "3dc2a54cb2e6786ebc45a0f47ca77df0"
+interface-hash: "4d10c516733ee1436079e3df0f2089e7"

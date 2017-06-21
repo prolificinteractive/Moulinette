@@ -7,17 +7,17 @@ provides-member:
 - ["C14Moulinette_2_029SinglePublicInternalSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "FileType"
-- "String"
-- "SwiftRule"
-- "StringLiteralType"
-- !private "!="
-- !private "PIOSAuditGrader"
-- "RulePriority"
 - "ProjectData"
-- "AuditGrade"
-- "AssignmentPrecedence"
 - "AuditGrader"
+- "String"
+- "AssignmentPrecedence"
+- "RulePriority"
+- "AuditGrade"
+- "StringLiteralType"
+- !private "PIOSAuditGrader"
+- "FileType"
+- !private "!="
+- "SwiftRule"
 - "SinglePublicInternalSwiftRule"
 depends-member:
 - !private ["Ps9AnyObject", "FileType"]

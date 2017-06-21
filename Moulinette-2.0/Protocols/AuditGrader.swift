@@ -13,4 +13,6 @@ protocol AuditGrader {
     func violationFound(fileName: String, description: String)
     
     func generateGrade() -> AuditGrade
+    
+    func failed(fileName: String, description: String)
 }

@@ -35,7 +35,7 @@ struct PIOSAudit: Audit {
         return AuditScore(score: score)
     }
     
-    func maxPoints() -> Double {
+    private func maxPoints() -> Double {
         var points: Double = 0
         ruleCollection.forEach {
             $0.rules(projectData: projectData).forEach {

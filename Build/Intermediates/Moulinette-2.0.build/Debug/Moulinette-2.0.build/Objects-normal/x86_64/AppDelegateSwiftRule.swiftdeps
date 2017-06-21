@@ -7,19 +7,19 @@ provides-member:
 - ["C14Moulinette_2_020AppDelegateSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "PIOSAuditGrader"
-- !private "Constants"
-- "AuditGrade"
 - "ProjectData"
 - !private ">"
-- "StringLiteralType"
-- !private "+"
-- "SwiftRule"
-- "AssignmentPrecedence"
-- "AuditGrader"
-- "AppDelegateSwiftRule"
-- "String"
 - "RulePriority"
+- "AuditGrade"
+- "SwiftRule"
+- "String"
+- !private "+"
+- "AppDelegateSwiftRule"
+- "AssignmentPrecedence"
+- "StringLiteralType"
+- !private "Constants"
+- "AuditGrader"
+- !private "PIOSAuditGrader"
 depends-member:
 - !private ["Ps9AnyObject", "Constants"]
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
@@ -52,9 +52,9 @@ depends-member:
 - ["Sa", "deinit"]
 - ["V14Moulinette_2_010AuditGrade", "deinit"]
 - !private ["P14Moulinette_2_011AuditGrader", "deinit"]
+- !private ["P14Moulinette_2_011AuditGrader", "failed"]
 - !private ["P14Moulinette_2_011AuditGrader", "generateGrade"]
 - !private ["P14Moulinette_2_011AuditGrader", "init"]
-- !private ["P14Moulinette_2_011AuditGrader", "violationFound"]
 - !private ["Ps23BidirectionalCollection", "IndexDistance"]
 - !private ["Ps23BidirectionalCollection", "count"]
 - !private ["Ps22BidirectionalIndexable", "IndexDistance"]
