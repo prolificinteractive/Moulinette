@@ -8,11 +8,11 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "String"
-- !private "UnicodeScalarType"
-- "BracketContextCheck"
-- "AssignmentPrecedence"
 - "Check"
+- "AssignmentPrecedence"
+- !private "UnicodeScalarType"
 - !private "StringLiteralType"
+- "BracketContextCheck"
 depends-member:
 - ["Ps9AnyObject", "String"]
 - !private ["Ps9AnyObject", "bracketsArray"]

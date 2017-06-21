@@ -10,16 +10,16 @@ provides-member:
 - ["C14Moulinette_2_011ProjectData", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "ClassInfo"
-- "SwiftData"
 - "AssignmentPrecedence"
 - !private "=="
-- "ProjectData"
-- "ApplicationComponents"
-- "String"
-- !private "BooleanLiteralType"
-- "FileComponents"
 - "Bool"
+- "String"
+- "SwiftData"
+- "ApplicationComponents"
+- !private "BooleanLiteralType"
+- "ClassInfo"
+- "ProjectData"
+- "FileComponents"
 depends-member:
 - ["Ps9AnyObject", "ClassInfo"]
 - ["Ps9AnyObject", "applicationComponents"]

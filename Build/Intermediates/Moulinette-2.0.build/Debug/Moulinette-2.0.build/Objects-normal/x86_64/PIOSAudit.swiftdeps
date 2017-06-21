@@ -7,22 +7,22 @@ provides-member:
 - ["V14Moulinette_2_09PIOSAudit", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "CodeConventionRuleCollection"
-- "AuditScore"
+- "ProjectData"
 - !private "+"
+- !private "*"
 - !private "print"
+- "PIOSAudit"
+- !private "String"
+- "CodeConventionRuleCollection"
+- "AssignmentPrecedence"
+- "Audit"
+- !private "Int"
 - "RuleCollection"
 - !private "StringLiteralType"
-- !private "String"
-- "PIOSAudit"
-- "Audit"
-- !private "+="
-- "Double"
-- "AssignmentPrecedence"
 - !private "/"
-- !private "*"
-- "ProjectData"
-- !private "Int"
+- "Double"
+- !private "+="
+- "AuditScore"
 - !private "settings"
 depends-member:
 - !private ["Ps9AnyObject", "init"]

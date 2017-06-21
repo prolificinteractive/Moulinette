@@ -7,19 +7,19 @@ provides-member:
 - ["V14Moulinette_2_015ProjectSettings", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Bool"
-- !private "UserDefaults"
-- "Array"
-- "ProjectSettings"
-- "CastingPrecedence"
 - "AssignmentPrecedence"
+- "CastingPrecedence"
+- "ProjectSettings"
 - !private "FileManager"
-- "StringLiteralType"
-- "String"
+- "Array"
 - !private "+"
-- !private "BooleanLiteralType"
-- !private "exit"
+- "String"
 - !private "print"
+- !private "UserDefaults"
+- !private "exit"
+- !private "BooleanLiteralType"
+- "StringLiteralType"
+- "Bool"
 depends-member:
 - !private ["Ps9AnyObject", "contains"]
 - !private ["Ps9AnyObject", "currentDirectoryPath"]

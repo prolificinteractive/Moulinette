@@ -1,68 +1,45 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "SemiColonSwiftRule"
-- "PIOSAuditGrader"
 provides-nominal:
 - "C14Moulinette_2_018SemiColonSwiftRule"
-- "C14Moulinette_2_015PIOSAuditGrader"
 provides-member:
 - ["C14Moulinette_2_018SemiColonSwiftRule", ""]
-- ["C14Moulinette_2_015PIOSAuditGrader", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "UnicodeScalarType"
-- "FloatLiteralType"
-- "TernaryPrecedence"
 - "String"
-- "AuditGrade"
-- "ProjectData"
-- !private "+="
-- "IntegerLiteralType"
 - "AssignmentPrecedence"
 - !private "=="
-- !private "+"
+- !private "PIOSAuditGrader"
 - "SemiColonSwiftRule"
-- "StringLiteralType"
+- "ProjectData"
+- "UnicodeScalarType"
 - "AuditGrader"
-- !private "GradeType"
 - "ExtendedGraphemeClusterType"
 - "RulePriority"
 - "SwiftRule"
-- "PIOSAuditGrader"
+- "StringLiteralType"
+- "AuditGrade"
 depends-member:
-- !private ["Ps9AnyObject", "AuditGrade"]
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
 - !private ["Ps9AnyObject", "applicationComponents"]
 - !private ["Ps9AnyObject", "auditGrader"]
 - !private ["Ps9AnyObject", "characters"]
-- !private ["Ps9AnyObject", "failedString"]
-- !private ["Ps9AnyObject", "formattedFailedString"]
-- ["Ps9AnyObject", "generateGrade"]
 - ["Ps9AnyObject", "init"]
-- !private ["Ps9AnyObject", "isEmpty"]
 - ["Ps9AnyObject", "name"]
 - ["Ps9AnyObject", "priority"]
 - !private ["Ps9AnyObject", "projectData"]
 - ["Ps9AnyObject", "run"]
-- ["Ps9AnyObject", "violationFound"]
-- !private ["Ps9AnyObject", "violations"]
 - ["Ps9AnyObject", ""]
 - !private ["Sa", "Iterator"]
 - !private ["Sa", "_Element"]
 - ["Sa", "deinit"]
 - !private ["Sa", "forEach"]
 - ["V14Moulinette_2_010AuditGrade", "deinit"]
-- !private ["V14Moulinette_2_010AuditGrade", "init"]
-- !private ["P14Moulinette_2_011AuditGrader", "AuditGrade"]
 - !private ["P14Moulinette_2_011AuditGrader", "deinit"]
-- !private ["P14Moulinette_2_011AuditGrader", "failedString"]
-- !private ["P14Moulinette_2_011AuditGrader", "formattedFailedString"]
-- ["P14Moulinette_2_011AuditGrader", "generateGrade"]
+- !private ["P14Moulinette_2_011AuditGrader", "generateGrade"]
 - !private ["P14Moulinette_2_011AuditGrader", "init"]
-- !private ["P14Moulinette_2_011AuditGrader", "priority"]
-- ["P14Moulinette_2_011AuditGrader", "violationFound"]
-- !private ["P14Moulinette_2_011AuditGrader", "violations"]
-- ["P14Moulinette_2_011AuditGrader", ""]
+- !private ["P14Moulinette_2_011AuditGrader", "violationFound"]
 - !private ["Ps23BidirectionalCollection", "Iterator"]
 - !private ["Ps23BidirectionalCollection", "_Element"]
 - !private ["Ps23BidirectionalCollection", "forEach"]
@@ -72,13 +49,12 @@ depends-member:
 - !private ["Ps22BidirectionalIndexable", "forEach"]
 - !private ["Ps22BidirectionalIndexable", "last"]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- ["Sb", "deinit"]
+- !private ["Sb", "deinit"]
 - !private ["Ps7CVarArg", "Iterator"]
 - !private ["Ps7CVarArg", "_Element"]
 - !private ["Ps7CVarArg", "characters"]
 - !private ["Ps7CVarArg", "forEach"]
 - ["Ps7CVarArg", "init"]
-- !private ["Ps7CVarArg", "isEmpty"]
 - !private ["Vs9Character", "deinit"]
 - !private ["Vs9Character", "init"]
 - !private ["VSS13CharacterView", "Iterator"]
@@ -91,17 +67,14 @@ depends-member:
 - !private ["Ps10Collection", "last"]
 - !private ["Ps10Comparable", "characters"]
 - ["Ps10Comparable", "init"]
-- !private ["Ps10Comparable", "isEmpty"]
 - !private ["Ps28CustomDebugStringConvertible", "Iterator"]
 - !private ["Ps28CustomDebugStringConvertible", "_Element"]
 - !private ["Ps28CustomDebugStringConvertible", "characters"]
 - !private ["Ps28CustomDebugStringConvertible", "forEach"]
 - ["Ps28CustomDebugStringConvertible", "init"]
-- !private ["Ps28CustomDebugStringConvertible", "isEmpty"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "characters"]
 - ["Ps29CustomPlaygroundQuickLookable", "init"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "isEmpty"]
 - !private ["Ps17CustomReflectable", "Element"]
 - !private ["Ps17CustomReflectable", "Iterator"]
 - !private ["Ps17CustomReflectable", "_Element"]
@@ -109,20 +82,17 @@ depends-member:
 - !private ["Ps17CustomReflectable", "characters"]
 - !private ["Ps17CustomReflectable", "forEach"]
 - ["Ps17CustomReflectable", "init"]
-- !private ["Ps17CustomReflectable", "isEmpty"]
 - !private ["Ps23CustomStringConvertible", "Iterator"]
 - !private ["Ps23CustomStringConvertible", "_Element"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "characters"]
 - !private ["Ps23CustomStringConvertible", "forEach"]
 - ["Ps23CustomStringConvertible", "init"]
-- !private ["Ps23CustomStringConvertible", "isEmpty"]
 - !private ["Vs10Dictionary", "Iterator"]
 - !private ["Vs18DictionaryIterator", "Element"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "characters"]
 - ["Ps9Equatable", "init"]
-- !private ["Ps9Equatable", "isEmpty"]
 - ["Ps9Equatable", "low"]
 - !private ["Ps25ExpressibleByArrayLiteral", "Iterator"]
 - !private ["Ps25ExpressibleByArrayLiteral", "_Element"]
@@ -131,23 +101,15 @@ depends-member:
 - !private ["Ps30ExpressibleByDictionaryLiteral", "Iterator"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "characters"]
 - ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
-- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "isEmpty"]
 - !private ["Ps32ExpressibleByStringInterpolation", "characters"]
 - ["Ps32ExpressibleByStringInterpolation", "init"]
-- !private ["Ps32ExpressibleByStringInterpolation", "isEmpty"]
 - !private ["Ps26ExpressibleByStringLiteral", "characters"]
 - ["Ps26ExpressibleByStringLiteral", "init"]
-- !private ["Ps26ExpressibleByStringLiteral", "isEmpty"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "characters"]
 - ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
-- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "isEmpty"]
-- ["O14Moulinette_2_09GradeType", "deinit"]
-- !private ["O14Moulinette_2_09GradeType", "fail"]
-- !private ["O14Moulinette_2_09GradeType", "pass"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "characters"]
 - ["Ps8Hashable", "init"]
-- !private ["Ps8Hashable", "isEmpty"]
 - ["Ps8Hashable", "low"]
 - !private ["Ps9Indexable", "Iterator"]
 - !private ["Ps9Indexable", "_Element"]
@@ -158,15 +120,12 @@ depends-member:
 - !private ["Ps13IndexableBase", "forEach"]
 - !private ["Ps13IndexableBase", "last"]
 - !private ["Vs16IndexingIterator", "Element"]
-- ["Si", "deinit"]
 - !private ["Ps16IteratorProtocol", "Element"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps25LosslessStringConvertible", "characters"]
 - ["Ps25LosslessStringConvertible", "init"]
-- !private ["Ps25LosslessStringConvertible", "isEmpty"]
 - !private ["Ps10MirrorPath", "characters"]
 - ["Ps10MirrorPath", "init"]
-- !private ["Ps10MirrorPath", "isEmpty"]
 - !private ["Ps17MutableCollection", "Iterator"]
 - !private ["Ps17MutableCollection", "_Element"]
 - !private ["Ps17MutableCollection", "forEach"]
@@ -175,38 +134,21 @@ depends-member:
 - !private ["Ps16MutableIndexable", "forEach"]
 - !private ["PSo8NSCoding", "characters"]
 - ["PSo8NSCoding", "init"]
-- !private ["PSo8NSCoding", "isEmpty"]
 - !private ["PSo9NSCopying", "characters"]
 - ["PSo9NSCopying", "init"]
-- !private ["PSo9NSCopying", "isEmpty"]
 - !private ["PSo16NSMutableCopying", "characters"]
 - ["PSo16NSMutableCopying", "init"]
-- !private ["PSo16NSMutableCopying", "isEmpty"]
 - !private ["CSo8NSObject", "characters"]
 - ["CSo8NSObject", "init"]
-- !private ["CSo8NSObject", "isEmpty"]
 - !private ["PSo16NSObjectProtocol", "characters"]
 - ["PSo16NSObjectProtocol", "init"]
-- !private ["PSo16NSObjectProtocol", "isEmpty"]
 - !private ["PSo14NSSecureCoding", "characters"]
 - ["PSo14NSSecureCoding", "init"]
-- !private ["PSo14NSSecureCoding", "isEmpty"]
 - !private ["CSo8NSString", "characters"]
 - ["CSo8NSString", "init"]
-- !private ["CSo8NSString", "isEmpty"]
 - ["Sq", "deinit"]
-- ["C14Moulinette_2_015PIOSAuditGrader", "AuditGrade"]
-- !private ["C14Moulinette_2_015PIOSAuditGrader", "GradeType"]
-- ["C14Moulinette_2_015PIOSAuditGrader", "RulePriority"]
-- ["C14Moulinette_2_015PIOSAuditGrader", "String"]
-- ["C14Moulinette_2_015PIOSAuditGrader", "deinit"]
-- !private ["C14Moulinette_2_015PIOSAuditGrader", "failedString"]
-- !private ["C14Moulinette_2_015PIOSAuditGrader", "formattedFailedString"]
-- ["C14Moulinette_2_015PIOSAuditGrader", "generateGrade"]
-- ["C14Moulinette_2_015PIOSAuditGrader", "init"]
-- ["C14Moulinette_2_015PIOSAuditGrader", "priority"]
-- ["C14Moulinette_2_015PIOSAuditGrader", "violationFound"]
-- !private ["C14Moulinette_2_015PIOSAuditGrader", "violations"]
+- !private ["C14Moulinette_2_015PIOSAuditGrader", "deinit"]
+- !private ["C14Moulinette_2_015PIOSAuditGrader", "init"]
 - !private ["C14Moulinette_2_011ProjectData", "applicationComponents"]
 - ["C14Moulinette_2_011ProjectData", "deinit"]
 - !private ["Ps22RandomAccessCollection", "Iterator"]
@@ -247,7 +189,6 @@ depends-member:
 - !private ["SS", "characters"]
 - ["SS", "deinit"]
 - ["SS", "init"]
-- !private ["SS", "isEmpty"]
 - !private ["P14Moulinette_2_09SwiftData", "applicationComponents"]
 - !private ["P14Moulinette_2_09SwiftRule", "PIOSAuditGrader"]
 - !private ["P14Moulinette_2_09SwiftRule", "auditGrader"]
@@ -259,10 +200,8 @@ depends-member:
 - ["P14Moulinette_2_09SwiftRule", ""]
 - !private ["Ps16TextOutputStream", "characters"]
 - ["Ps16TextOutputStream", "init"]
-- !private ["Ps16TextOutputStream", "isEmpty"]
 - !private ["Ps20TextOutputStreamable", "characters"]
 - ["Ps20TextOutputStreamable", "init"]
-- !private ["Ps20TextOutputStreamable", "isEmpty"]
 - !private ["Ps14_ArrayProtocol", "Iterator"]
 - !private ["Ps14_ArrayProtocol", "_Element"]
 - !private ["Ps14_ArrayProtocol", "forEach"]
@@ -272,23 +211,17 @@ depends-member:
 - !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "characters"]
 - ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
-- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "isEmpty"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "characters"]
 - ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
-- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "isEmpty"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "characters"]
 - ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
-- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "isEmpty"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "characters"]
 - ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
-- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "isEmpty"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "characters"]
 - ["Ps35_HasCustomAnyHashableRepresentation", "init"]
-- !private ["Ps35_HasCustomAnyHashableRepresentation", "isEmpty"]
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps9_Hashable", "characters"]
 - ["Ps9_Hashable", "init"]
-- !private ["Ps9_Hashable", "isEmpty"]
 - ["Ps9_Hashable", "low"]
 - !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
 - !private ["Ps21_ObjectiveCBridgeable", "_Element"]
@@ -296,16 +229,15 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "characters"]
 - !private ["Ps21_ObjectiveCBridgeable", "forEach"]
 - ["Ps21_ObjectiveCBridgeable", "init"]
-- !private ["Ps21_ObjectiveCBridgeable", "isEmpty"]
 - !private ["Vs26_OptionalNilComparisonType", "deinit"]
 depends-nominal:
 - "Ps9AnyObject"
 - "Sa"
 - "V14Moulinette_2_010AuditGrade"
-- "P14Moulinette_2_011AuditGrader"
+- !private "P14Moulinette_2_011AuditGrader"
 - !private "Ps23BidirectionalCollection"
 - !private "Ps22BidirectionalIndexable"
-- "Sb"
+- !private "Sb"
 - "Ps7CVarArg"
 - !private "Vs9Character"
 - !private "VSS13CharacterView"
@@ -325,12 +257,10 @@ depends-nominal:
 - "Ps32ExpressibleByStringInterpolation"
 - "Ps26ExpressibleByStringLiteral"
 - "Ps33ExpressibleByUnicodeScalarLiteral"
-- "O14Moulinette_2_09GradeType"
 - "Ps8Hashable"
 - !private "Ps9Indexable"
 - !private "Ps13IndexableBase"
 - !private "Vs16IndexingIterator"
-- "Si"
 - !private "Ps16IteratorProtocol"
 - "Ps25LosslessStringConvertible"
 - "Ps10MirrorPath"
@@ -344,7 +274,7 @@ depends-nominal:
 - "PSo14NSSecureCoding"
 - "CSo8NSString"
 - "Sq"
-- "C14Moulinette_2_015PIOSAuditGrader"
+- !private "C14Moulinette_2_015PIOSAuditGrader"
 - "C14Moulinette_2_011ProjectData"
 - !private "Ps22RandomAccessCollection"
 - !private "Ps21RandomAccessIndexable"
@@ -379,4 +309,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "05639d05e81676aa10f8095e25f0ebb3"
+interface-hash: "81e20521842587fdf2a3a075e7386c27"

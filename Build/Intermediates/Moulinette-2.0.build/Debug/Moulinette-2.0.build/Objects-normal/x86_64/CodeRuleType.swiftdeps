@@ -7,25 +7,25 @@ provides-member:
 - ["V14Moulinette_2_028CodeConventionRuleCollection", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "SemiColonSwiftRule"
-- !private "ForceUnwrapSwiftRule"
 - !private "InternalModifierSwiftRule"
-- "RuleCollection"
-- !private "SinglePublicInternalSwiftRule"
 - !private "MarkUsageSwiftRule"
-- "CodeConventionRuleCollection"
-- "SwiftRule"
 - !private "CompletionWeakSwiftRule"
-- !private "SingleEnumCaseSwiftRule"
-- "ProjectData"
-- !private "ToDoStorySwiftRule"
 - !private "WeakIBOutletSwiftRule"
+- !private "AppDelegateSwiftRule"
+- !private "SinglePublicInternalSwiftRule"
+- !private "ToDoCountSwiftRule"
+- "ProjectData"
 - !private "ColorEncapsulationSwiftRule"
+- !private "SingleEnumCaseSwiftRule"
+- "SwiftRule"
+- !private "TypeInferenceSwiftRule"
+- "CodeConventionRuleCollection"
 - !private "FinalClassesSwiftRule"
 - !private "FontEncapsulationSwiftRule"
-- !private "TypeInferenceSwiftRule"
-- !private "ToDoCountSwiftRule"
-- !private "AppDelegateSwiftRule"
+- !private "ToDoStorySwiftRule"
+- "RuleCollection"
+- !private "SemiColonSwiftRule"
+- !private "ForceUnwrapSwiftRule"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - ["C14Moulinette_2_020AppDelegateSwiftRule", "deinit"]
