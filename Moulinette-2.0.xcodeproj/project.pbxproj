@@ -32,6 +32,7 @@
 		201D74261EFAC77900361ECD /* CommentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844601EF47153002340C9 /* CommentParser.swift */; };
 		201D74281EFAC7F200361ECD /* AuditGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D74271EFAC7F200361ECD /* AuditGrade.swift */; };
 		201D74291EFAC80500361ECD /* AuditGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D74271EFAC7F200361ECD /* AuditGrade.swift */; };
+		2023AD141EFB122800B66438 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023AD131EFB122800B66438 /* StringExtensionTests.swift */; };
 		2053EE921EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */; };
 		2053EEB91EF4921B00AAE36D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C40C571ED8D47C00695CA7 /* main.swift */; };
 		2053EEBA1EF4921B00AAE36D /* ProjectSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D071EE09EAE00997AF6 /* ProjectSettings.swift */; };
@@ -137,6 +138,7 @@
 		201D741A1EFAC48300361ECD /* PIOSAuditGrader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIOSAuditGrader.swift; sourceTree = "<group>"; };
 		201D741C1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiColonSwiftRuleTests.swift; sourceTree = "<group>"; };
 		201D74271EFAC7F200361ECD /* AuditGrade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditGrade.swift; sourceTree = "<group>"; };
+		2023AD131EFB122800B66438 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		2053EE881EF4862B00AAE36D /* Moulinette-2.0-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moulinette-2.0-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2053EE8C1EF4862B00AAE36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRuleTests.swift; sourceTree = "<group>"; };
@@ -200,11 +202,20 @@
 			path = PIOSAudit;
 			sourceTree = "<group>";
 		};
+		2023AD121EFB120900B66438 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2023AD131EFB122800B66438 /* StringExtensionTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2053EE891EF4862B00AAE36D /* Moulinette-2.0-Tests */ = {
 			isa = PBXGroup;
 			children = (
 				2053EE971EF487FA00AAE36D /* Mocks */,
 				2053EE901EF486F500AAE36D /* Rules */,
+				2023AD121EFB120900B66438 /* Extensions */,
 				2053EE8C1EF4862B00AAE36D /* Info.plist */,
 			);
 			path = "Moulinette-2.0-Tests";
@@ -520,6 +531,7 @@
 				2053EEBF1EF4921B00AAE36D /* AppDelegateSwiftRule.swift in Sources */,
 				2053EEC01EF4921B00AAE36D /* RequiredSelfSwiftRule.swift in Sources */,
 				2053EEC11EF4921B00AAE36D /* SemiColonSwiftRule.swift in Sources */,
+				2023AD141EFB122800B66438 /* StringExtensionTests.swift in Sources */,
 				2053EEC21EF4921B00AAE36D /* FinalClassesSwiftRule.swift in Sources */,
 				2053EEC31EF4921B00AAE36D /* WeakIBOutletSwiftRule.swift in Sources */,
 				2053EEC41EF4921B00AAE36D /* SinglePublicInternalSwiftRule.swift in Sources */,
