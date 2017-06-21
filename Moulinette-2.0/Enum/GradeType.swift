@@ -21,13 +21,3 @@ enum GradeType {
         }
     }
 }
-
-struct AuditGrade {
-    var gradeType: GradeType
-    var priority: RulePriority
-    var violations: Int
-    
-    func score() -> Double {
-        return priority.score(violations: violations)
-    }
-}
