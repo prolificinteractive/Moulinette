@@ -9,7 +9,7 @@
 import Foundation
 
 typealias FileComponents = [String]
-typealias ApplicationComponents = [String : FileComponents]
+typealias ApplicationComponents = [String : [String]]
 typealias ClassInfo = (className: String, subClassName: String?)
 
 final class ProjectData: SwiftData {

@@ -8,24 +8,24 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - !private "SemiColonSwiftRule"
-- !private "TypeInferenceSwiftRule"
 - !private "ForceUnwrapSwiftRule"
-- "SwiftRule"
 - !private "InternalModifierSwiftRule"
-- !private "SinglePublicInternalSwiftRule"
 - "RuleCollection"
+- !private "SinglePublicInternalSwiftRule"
 - !private "MarkUsageSwiftRule"
 - "CodeConventionRuleCollection"
+- "SwiftRule"
 - !private "CompletionWeakSwiftRule"
 - !private "SingleEnumCaseSwiftRule"
+- "ProjectData"
 - !private "ToDoStorySwiftRule"
-- !private "AppDelegateSwiftRule"
 - !private "WeakIBOutletSwiftRule"
+- !private "ColorEncapsulationSwiftRule"
 - !private "FinalClassesSwiftRule"
 - !private "FontEncapsulationSwiftRule"
-- "ProjectData"
-- !private "ColorEncapsulationSwiftRule"
+- !private "TypeInferenceSwiftRule"
 - !private "ToDoCountSwiftRule"
+- !private "AppDelegateSwiftRule"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - ["C14Moulinette_2_020AppDelegateSwiftRule", "deinit"]

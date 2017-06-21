@@ -10,25 +10,25 @@ provides-member:
 - ["C14Moulinette_2_015PIOSAuditGrader", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "+"
 - "UnicodeScalarType"
-- !private "+="
-- "SwiftRule"
-- "SemiColonSwiftRule"
+- "FloatLiteralType"
+- "TernaryPrecedence"
 - "String"
-- "StringLiteralType"
-- "AuditGrader"
+- "AuditGrade"
+- "ProjectData"
+- !private "+="
+- "IntegerLiteralType"
 - "AssignmentPrecedence"
 - !private "=="
-- "RulePriority"
-- "AuditGrade"
+- !private "+"
+- "SemiColonSwiftRule"
+- "StringLiteralType"
+- "AuditGrader"
 - !private "GradeType"
-- "TernaryPrecedence"
-- "IntegerLiteralType"
-- "PIOSAuditGrader"
 - "ExtendedGraphemeClusterType"
-- "ProjectData"
-- "FloatLiteralType"
+- "RulePriority"
+- "SwiftRule"
+- "PIOSAuditGrader"
 depends-member:
 - !private ["Ps9AnyObject", "AuditGrade"]
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
