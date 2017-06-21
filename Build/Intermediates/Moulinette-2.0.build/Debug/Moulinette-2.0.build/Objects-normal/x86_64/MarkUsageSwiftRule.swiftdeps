@@ -7,20 +7,20 @@ provides-member:
 - ["C14Moulinette_2_018MarkUsageSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "Bool"
-- "AuditGrader"
 - "SwiftRule"
-- !private "||"
+- "AuditGrader"
 - !private "&&"
+- !private "!"
+- "AssignmentPrecedence"
 - "String"
-- !private "PIOSAuditGrader"
-- "MarkUsageSwiftRule"
 - "RulePriority"
 - "AuditGrade"
-- !private "!"
-- "ProjectData"
-- "AssignmentPrecedence"
+- !private "PIOSAuditGrader"
+- "MarkUsageSwiftRule"
+- !private "Bool"
 - "StringLiteralType"
+- !private "||"
+- "ProjectData"
 depends-member:
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
 - !private ["Ps9AnyObject", "applicationComponents"]

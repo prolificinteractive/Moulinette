@@ -8,14 +8,14 @@ provides-member:
 - ["P14Moulinette_2_09SwiftRule", "formattedFailedString"]
 provides-dynamic-lookup:
 depends-top-level:
-- "ProjectData"
-- !private "UnicodeScalarType"
 - "SwiftRule"
-- !private "StringLiteralType"
+- "String"
+- !private "UnicodeScalarType"
 - !private "+"
 - "RulePriority"
-- "String"
 - "AuditGrade"
+- "ProjectData"
+- !private "StringLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - !private ["Ps7CVarArg", "init"]

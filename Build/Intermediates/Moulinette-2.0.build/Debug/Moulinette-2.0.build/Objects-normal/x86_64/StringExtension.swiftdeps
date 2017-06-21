@@ -16,18 +16,18 @@ provides-member:
 - ["SS", "hasPivotalStory"]
 provides-dynamic-lookup:
 depends-top-level:
-- "AssignmentPrecedence"
+- !private "Range"
 - "String"
 - !private "Constants"
-- !private "Range"
-- !private "<"
-- !private "Regex"
-- !private "UnicodeScalarType"
+- "AssignmentPrecedence"
 - !private "..<"
 - !private "&&"
-- !private "StringLiteralType"
-- !private "!"
 - "Bool"
+- !private "StringLiteralType"
+- !private "Regex"
+- !private "<"
+- !private "!"
+- !private "UnicodeScalarType"
 depends-member:
 - !private ["Ps9AnyObject", "commentRegex"]
 - !private ["Ps9AnyObject", "contains"]

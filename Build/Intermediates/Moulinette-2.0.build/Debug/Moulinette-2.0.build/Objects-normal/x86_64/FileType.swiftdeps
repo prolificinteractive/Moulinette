@@ -9,11 +9,11 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "=="
-- "String"
-- !private "&&"
-- "FileType"
-- !private "StringLiteralType"
 - !private "!"
+- "FileType"
+- !private "&&"
+- !private "StringLiteralType"
+- "String"
 depends-member:
 - !private ["Ps9AnyObject", "contains"]
 - !private ["Ps9AnyObject", "init"]
