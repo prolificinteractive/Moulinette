@@ -8,19 +8,19 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "AssignmentPrecedence"
-- "String"
 - !private "PIOSAuditGrader"
-- "SwiftRule"
 - "AuditGrader"
 - !private "Bool"
-- "AuditGrade"
+- "SwiftRule"
+- !private "!"
 - "ProjectData"
+- "AuditGrade"
 - !private "&&"
+- "MarkUsageSwiftRule"
 - "RulePriority"
 - "StringLiteralType"
-- "MarkUsageSwiftRule"
 - !private "||"
-- !private "!"
+- "String"
 depends-member:
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
 - !private ["Ps9AnyObject", "applicationComponents"]

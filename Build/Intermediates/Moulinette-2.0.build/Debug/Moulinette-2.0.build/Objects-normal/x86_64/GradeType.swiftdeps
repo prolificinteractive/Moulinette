@@ -14,10 +14,10 @@ depends-top-level:
 - "Int"
 - "Double"
 - "String"
+- !private "+"
+- !private "StringLiteralType"
 - "RulePriority"
 - "AuditGrade"
-- !private "StringLiteralType"
-- !private "+"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - ["V14Moulinette_2_010AuditGrade", "Double"]

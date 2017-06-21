@@ -17,17 +17,17 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "AssignmentPrecedence"
-- !private "<"
-- !private "Regex"
-- !private "&&"
-- "Bool"
-- !private "!"
 - "String"
 - !private "Constants"
 - !private "Range"
-- !private "StringLiteralType"
-- !private "..<"
+- !private "<"
+- !private "Regex"
 - !private "UnicodeScalarType"
+- !private "..<"
+- !private "&&"
+- !private "StringLiteralType"
+- !private "!"
+- "Bool"
 depends-member:
 - !private ["Ps9AnyObject", "commentRegex"]
 - !private ["Ps9AnyObject", "contains"]

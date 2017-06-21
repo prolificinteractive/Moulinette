@@ -1,6 +1,6 @@
 version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
 options: "eb6acd13495ce91340775c4a5a0d21f5"
-build_time: [551373203, 168634000]
+build_time: [551373853, 921483000]
 inputs:
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/ProjectParser.swift": [550956562, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Checks/BracketContextCheck.swift": [549586349, 0]

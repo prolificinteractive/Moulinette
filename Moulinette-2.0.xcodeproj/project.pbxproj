@@ -20,6 +20,16 @@
 		20161D161EE0C56000997AF6 /* ColorEncapsulationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D151EE0C56000997AF6 /* ColorEncapsulationSwiftRule.swift */; };
 		201D74191EFAC45700361ECD /* PIOSAudit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D74181EFAC45700361ECD /* PIOSAudit.swift */; };
 		201D741B1EFAC48300361ECD /* PIOSAuditGrader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D741A1EFAC48300361ECD /* PIOSAuditGrader.swift */; };
+		201D741D1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D741C1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift */; };
+		201D741E1EFAC73F00361ECD /* PIOSAuditGrader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D741A1EFAC48300361ECD /* PIOSAuditGrader.swift */; };
+		201D741F1EFAC75700361ECD /* AuditGrader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844691EF80536002340C9 /* AuditGrader.swift */; };
+		201D74201EFAC77900361ECD /* PIOSAudit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D74181EFAC45700361ECD /* PIOSAudit.swift */; };
+		201D74211EFAC77900361ECD /* ToDoStorySwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */; };
+		201D74221EFAC77900361ECD /* ToDoCountSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844571EF41B42002340C9 /* ToDoCountSwiftRule.swift */; };
+		201D74231EFAC77900361ECD /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6608446B1EF8053F002340C9 /* SwiftData.swift */; };
+		201D74241EFAC77900361ECD /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844591EF45E0E002340C9 /* Regex.swift */; };
+		201D74251EFAC77900361ECD /* RuleCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844631EF47352002340C9 /* RuleCollection.swift */; };
+		201D74261EFAC77900361ECD /* CommentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844601EF47153002340C9 /* CommentParser.swift */; };
 		2053EE921EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */; };
 		2053EEB91EF4921B00AAE36D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C40C571ED8D47C00695CA7 /* main.swift */; };
 		2053EEBA1EF4921B00AAE36D /* ProjectSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D071EE09EAE00997AF6 /* ProjectSettings.swift */; };
@@ -45,8 +55,6 @@
 		2053EECF1EF4921B00AAE36D /* SwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837AB1EDE22C3008CB7F3 /* SwiftRule.swift */; };
 		2053EED01EF4921B00AAE36D /* Audit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E413FE1EDF41660000E447 /* Audit.swift */; };
 		2053EED11EF4921B00AAE36D /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4140E1EDF7FAA0000E447 /* Check.swift */; };
-		2053EED21EF4921B00AAE36D /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053EE9E1EF489E400AAE36D /* SwiftData.swift */; };
-		2053EED31EF4921B00AAE36D /* AuditGrader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053EEA01EF48AA300AAE36D /* AuditGrader.swift */; };
 		2053EED41EF4921B00AAE36D /* GradeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837AE1EDE22E8008CB7F3 /* GradeType.swift */; };
 		2053EED51EF4921B00AAE36D /* CodeRuleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E414001EDF41900000E447 /* CodeRuleType.swift */; };
 		2053EED61EF4921B00AAE36D /* LineContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4140C1EDF7F9B0000E447 /* LineContext.swift */; };
@@ -125,11 +133,10 @@
 		20161D151EE0C56000997AF6 /* ColorEncapsulationSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorEncapsulationSwiftRule.swift; sourceTree = "<group>"; };
 		201D74181EFAC45700361ECD /* PIOSAudit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIOSAudit.swift; sourceTree = "<group>"; };
 		201D741A1EFAC48300361ECD /* PIOSAuditGrader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIOSAuditGrader.swift; sourceTree = "<group>"; };
+		201D741C1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiColonSwiftRuleTests.swift; sourceTree = "<group>"; };
 		2053EE881EF4862B00AAE36D /* Moulinette-2.0-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moulinette-2.0-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2053EE8C1EF4862B00AAE36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRuleTests.swift; sourceTree = "<group>"; };
-		2053EE9E1EF489E400AAE36D /* SwiftData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftData.swift; sourceTree = "<group>"; };
-		2053EEA01EF48AA300AAE36D /* AuditGrader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditGrader.swift; sourceTree = "<group>"; };
 		206837A31EDE1D5D008CB7F3 /* ProjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectData.swift; path = ../ProjectData.swift; sourceTree = "<group>"; };
 		206837A51EDE1E35008CB7F3 /* ProjectParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectParser.swift; sourceTree = "<group>"; };
 		206837A71EDE20E5008CB7F3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
@@ -204,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */,
+				201D741C1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -490,6 +498,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201D74201EFAC77900361ECD /* PIOSAudit.swift in Sources */,
+				201D74211EFAC77900361ECD /* ToDoStorySwiftRule.swift in Sources */,
+				201D74221EFAC77900361ECD /* ToDoCountSwiftRule.swift in Sources */,
+				201D74231EFAC77900361ECD /* SwiftData.swift in Sources */,
+				201D74241EFAC77900361ECD /* Regex.swift in Sources */,
+				201D74251EFAC77900361ECD /* RuleCollection.swift in Sources */,
+				201D74261EFAC77900361ECD /* CommentParser.swift in Sources */,
+				201D741F1EFAC75700361ECD /* AuditGrader.swift in Sources */,
+				201D741E1EFAC73F00361ECD /* PIOSAuditGrader.swift in Sources */,
 				2053EEB91EF4921B00AAE36D /* main.swift in Sources */,
 				2053EEBA1EF4921B00AAE36D /* ProjectSettings.swift in Sources */,
 				2053EEBB1EF4921B00AAE36D /* ProjectData.swift in Sources */,
@@ -501,6 +518,7 @@
 				2053EEC21EF4921B00AAE36D /* FinalClassesSwiftRule.swift in Sources */,
 				2053EEC31EF4921B00AAE36D /* WeakIBOutletSwiftRule.swift in Sources */,
 				2053EEC41EF4921B00AAE36D /* SinglePublicInternalSwiftRule.swift in Sources */,
+				201D741D1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift in Sources */,
 				2053EEC51EF4921B00AAE36D /* ForceUnwrapSwiftRule.swift in Sources */,
 				2053EEC61EF4921B00AAE36D /* MarkUsageSwiftRule.swift in Sources */,
 				2053EEC71EF4921B00AAE36D /* SingleEnumCaseSwiftRule.swift in Sources */,
@@ -514,8 +532,6 @@
 				2053EECF1EF4921B00AAE36D /* SwiftRule.swift in Sources */,
 				2053EED01EF4921B00AAE36D /* Audit.swift in Sources */,
 				2053EED11EF4921B00AAE36D /* Check.swift in Sources */,
-				2053EED21EF4921B00AAE36D /* SwiftData.swift in Sources */,
-				2053EED31EF4921B00AAE36D /* AuditGrader.swift in Sources */,
 				2053EED41EF4921B00AAE36D /* GradeType.swift in Sources */,
 				2053EED51EF4921B00AAE36D /* CodeRuleType.swift in Sources */,
 				2053EED61EF4921B00AAE36D /* LineContext.swift in Sources */,

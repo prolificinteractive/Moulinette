@@ -7,18 +7,18 @@ provides-member:
 - ["C14Moulinette_2_021WeakIBOutletSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "SwiftRule"
 - "AssignmentPrecedence"
-- "AuditGrader"
-- "String"
 - !private "PIOSAuditGrader"
+- "SwiftRule"
+- "AuditGrader"
+- !private "!"
+- "ProjectData"
+- "RulePriority"
 - "AuditGrade"
 - !private "&&"
-- "RulePriority"
-- "WeakIBOutletSwiftRule"
-- "ProjectData"
-- !private "!"
 - "StringLiteralType"
+- "String"
+- "WeakIBOutletSwiftRule"
 depends-member:
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
 - !private ["Ps9AnyObject", "applicationComponents"]

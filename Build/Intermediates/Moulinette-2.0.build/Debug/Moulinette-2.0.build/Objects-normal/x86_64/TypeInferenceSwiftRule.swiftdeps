@@ -9,19 +9,19 @@ provides-dynamic-lookup:
 depends-top-level:
 - "AssignmentPrecedence"
 - !private "=="
-- "String"
-- !private "PIOSAuditGrader"
-- "ProjectData"
-- "AuditGrader"
-- !private "||"
-- !private "Bool"
-- "TypeInferenceSwiftRule"
-- !private "BooleanLiteralType"
 - "SwiftRule"
-- "StringLiteralType"
+- "TypeInferenceSwiftRule"
+- "String"
+- "AuditGrader"
+- !private "BooleanLiteralType"
+- !private "||"
 - "RulePriority"
 - "AuditGrade"
+- "StringLiteralType"
 - !private "UnicodeScalarType"
+- "ProjectData"
+- !private "PIOSAuditGrader"
+- !private "Bool"
 depends-member:
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
 - !private ["Ps9AnyObject", "applicationComponents"]

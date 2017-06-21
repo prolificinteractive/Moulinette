@@ -9,10 +9,10 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "=="
-- "String"
 - "LineContext"
-- !private "&&"
+- "String"
 - !private "StringLiteralType"
+- !private "&&"
 depends-member:
 - !private ["Ps9AnyObject", "contains"]
 - !private ["Ps9AnyObject", "init"]
