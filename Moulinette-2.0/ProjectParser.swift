@@ -9,14 +9,14 @@
 import Foundation
 
 class ProjectParser {
-    
+
     func applicationComponents() -> ApplicationComponents {
-        let swiftFileNames = retrieveSwiftFileNames()
+        let swiftFileNames = retrieveFileNames()
         var applicationFileComponents = ApplicationComponents()
-        
+
         for swiftFile in swiftFileNames {
             let fileToParse = settings.projectDirectory + swiftFile
-            
+
             do {
                 let content = try String(contentsOfFile: fileToParse, encoding: String.Encoding.utf8)
                 let fileComponents = content.components(separatedBy: "\n")
@@ -25,24 +25,24 @@ class ProjectParser {
                 print("Error")
             }
         }
-        
+
         return applicationFileComponents
     }
-    
-    private func retrieveSwiftFileNames() -> [String] {
+
+    private func retrieveFileNames() -> [String] {
         let fileEnumerator = FileManager.default.enumerator(atPath: settings.projectDirectory)
-        var swiftFiles = [String]()
-                
+        var files = [String]()
+
         while let file = fileEnumerator?.nextObject() {
-            guard let file = file as? String, file.contains(Constants.FileNameConstants.swiftSuffix) else {
+            guard let file = file as? String, file.hasValidFileExtension() else {
                 continue
             }
-            
+
             if !ProjectSettings.isExcluded(file: file) {
-                swiftFiles.append(file)
+                files.append(file)
             }
         }
-        
-        return swiftFiles
+
+        return files
     }
 }

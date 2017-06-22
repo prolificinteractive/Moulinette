@@ -25,6 +25,7 @@ struct CodeConventionRuleCollection: RuleCollection {
                 ColorEncapsulationSwiftRule(projectData: projectData),
                 CompletionWeakSwiftRule(projectData: projectData),
                 ToDoStorySwiftRule(projectData: projectData),
-                ToDoCountSwiftRule(projectData: projectData)]
+                ToDoCountSwiftRule(projectData: projectData),
+                UsesLocalizationSwiftRule(projectData: projectData)]
     }
 }

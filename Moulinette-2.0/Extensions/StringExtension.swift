@@ -99,4 +99,13 @@ extension String {
         return self.contains(Constants.URL.pivotal)
     }
 
+    func hasValidFileExtension() -> Bool {
+        var valid = false
+        for fileExtension in Constants.fileExtensions {
+           valid = valid || contains(fileExtension)
+        }
+
+        return valid
+    }
+    
 }
