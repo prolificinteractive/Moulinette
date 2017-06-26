@@ -22,7 +22,7 @@ struct ProjectSettings {
     init() {
         #if INTERNAL
             projectName = "HSN"
-            projectDirectory = "/Users/jonsamudio/Prolific-Projects/HSN/HSN/"
+            projectDirectory = "/Users/adam/Documents/workspace/hsn-ios/HSN/"
             return
         #else
             
