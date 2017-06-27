@@ -20,12 +20,6 @@ struct ProjectSettings {
     let projectDirectory: String
 
     init() {
-        #if INTERNAL
-            projectName = "HSN"
-            projectDirectory = "/Users/adam/Documents/workspace/hsn-ios/HSN/"
-            return
-        #else
-            
         let userDefaults = UserDefaults.standard.dictionaryRepresentation()
         guard let projectName = userDefaults["projectName"] as? String,
             let auditSubDirectory = userDefaults["auditSubDirectory"] as? String else {
@@ -34,7 +28,6 @@ struct ProjectSettings {
         }
         self.projectName = projectName
         projectDirectory = FileManager.default.currentDirectoryPath + auditSubDirectory
-        #endif
     }
     
     static func isExcluded(file: String) -> Bool {
