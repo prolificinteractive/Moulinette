@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum ParseError: Error {
+    case error(String)
+}
+
 class ProjectParser {
 
     func applicationComponents() -> ApplicationComponents {
@@ -20,9 +24,12 @@ class ProjectParser {
             do {
                 let content = try String(contentsOfFile: fileToParse, encoding: String.Encoding.utf8)
                 let fileComponents = content.components(separatedBy: "\n")
-                applicationFileComponents[swiftFile] = fileComponents
-            } catch _ as NSError {
-                print("Error")
+                guard let strippedFileName = swiftFile.fileName() else {
+                    throw ParseError.error("Failed to parse Swift file name")
+                }
+                applicationFileComponents[strippedFileName] = fileComponents
+            } catch {
+                print("Error caught with message: \(error.localizedDescription)")
             }
         }
 

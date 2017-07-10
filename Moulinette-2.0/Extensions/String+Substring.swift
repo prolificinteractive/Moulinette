@@ -1,15 +1,20 @@
 //
-//  StringExtension.swift
+//  String+Substring.swift
 //  Moulinette-2.0
 //
-//  Created by Jonathan Samudio on 5/31/17.
+//  Created by Adam Tecle on 6/22/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
 //
 
 import Foundation
 
+/// Defines helper functions on objects of type String to create various substrings
 extension String {
-    
+
+    /// Returns the string separated by the provided `string` parameter as a tuple
+    ///
+    /// - Parameter string: The separator string
+    /// - Returns: The string separated by the provided `string` parameter as a tuple
     func split(at string: String) -> (leftString: String, rightString: String)? {
         if let range = range(of: string)  {
             let leftString = substring(with: Range(uncheckedBounds: (lower: startIndex, upper: range.lowerBound)))
@@ -18,17 +23,27 @@ extension String {
         }
         return nil
     }
-    
+
+    /// Returns the substring that falls between the provided startString and endString
+    ///
+    /// - Parameters:
+    ///   - startString: The start string
+    ///   - endString: The end string
+    /// - Returns: The substring that falls between startString and endString
     func stringBetween(startString: String, endString: String) -> String? {
         if let startRange = range(of: startString),
             let endRange = range(of: endString),
             startRange.upperBound < endRange.lowerBound {
-            
+
             return substring(with: Range(uncheckedBounds: (lower: startRange.upperBound, upper: endRange.lowerBound)))
         }
         return nil
     }
-    
+
+    /// Returns the substring that contains the characters after first occurrence of the provided token.
+    ///
+    /// - Parameter token: The token
+    /// - Returns: The substring that contains the characters after first occurrence of the provided token.
     func removeLeading(startWith token: String) -> String {
         var string = self
         while let range = range(of: token) {
@@ -36,8 +51,7 @@ extension String {
         }
         return string
     }
-    
-    /// Returns string with all characters after and including the token removed.
+
     ///
     /// - Parameter token: Token to search for.
     /// - Returns: String that has all characters after the token removed.
@@ -49,54 +63,23 @@ extension String {
         }
         return self
     }
-    
+
     /// Returns a string without white spaces.
     ///
     /// - Returns: String without white spaces.
     func stringWithoutWhitespaces() -> String {
         return replacingOccurrences(of: " ", with: "")
     }
-    
-    /// Determines if the line is a class.
+
+    /// Returns the file name if the String is a path to a file.
     ///
-    /// - Returns: A flag to determine if the current string is a class.
-    func isProjectClass() -> Bool {
-        return (contains("class") &&
-            !contains("//") &&
-            !contains("protocol") &&
-            !contains("func"))
-    }
-    
-    func className() -> String? {
-        let fileLine = stringWithoutWhitespaces()
-        if let className = fileLine.stringBetween(startString: "class", endString: ":") {
-            return className
-        } else if let className = fileLine.stringBetween(startString: "class", endString: "{") {
-            return className
+    /// - Returns: The file name if the String is a path to a file, nil if not.
+    func fileName() -> String? {
+        guard let file = components(separatedBy: "/").last else {
+            return nil
         }
-        return nil
-    }
-    
-    func subClassName() -> String? {
-        let fileLine = stringWithoutWhitespaces()
-        if let subClassName = fileLine.stringBetween(startString: ":", endString: ",") {
-            return subClassName
-        } else if let subClassName = fileLine.stringBetween(startString: ":", endString: "{") {
-            return subClassName
-        }
-        return nil
-    }
 
-    func isTodoComment() -> Bool {
-        return self.isComment() && self.contains("TODO")
-    }
-
-    func isComment() -> Bool {
-        return Regex.commentRegex().hasMatch(input: self)
-    }
-
-    func hasPivotalStory() -> Bool {
-        return self.contains(Constants.URL.pivotal)
+        return file
     }
 
     func hasValidFileExtension() -> Bool {
