@@ -84,8 +84,9 @@ extension String {
 
     func hasValidFileExtension() -> Bool {
         var valid = false
+        let nsstring = self as NSString
         for fileExtension in Constants.fileExtensions {
-           valid = valid || contains(fileExtension)
+            valid = valid || nsstring.pathExtension == fileExtension
         }
 
         return valid

@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
 
-    static let fileExtensions = [".swift", ".strings"]
+    static let fileExtensions = ["swift", "strings"]
 
     struct FileNameConstants {
         static let swiftSuffix = ".swift"

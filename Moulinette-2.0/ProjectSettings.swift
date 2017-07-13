@@ -11,6 +11,9 @@ import Foundation
 struct ProjectSettings {
     
     static let excludedFiles = ["Constants.swift"]
+    static let excludedDirectories = ["Pods", "Scripts", "Tools", "fastlane"]
+    static let excludedDirectoryRegex = ["^[#].*", "]*Test]*", "]*.framework", "]*.xcodeproj", "]*.xcworkspace", "^[\\.].*"]
+    
     static var injectableDependencies = [""]
     
     /// Name of the project.
