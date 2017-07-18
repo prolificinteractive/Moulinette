@@ -23,14 +23,19 @@ struct ProjectSettings {
     let projectDirectory: String
 
     init() {
-        let userDefaults = UserDefaults.standard.dictionaryRepresentation()
-        guard let projectName = userDefaults["projectName"] as? String,
-            let auditSubDirectory = userDefaults["auditSubDirectory"] as? String else {
-            print("Error: projectName or auditSubDirectory not specified!")
-            exit(1)
-        }
-        self.projectName = projectName
-        projectDirectory = FileManager.default.currentDirectoryPath + auditSubDirectory
+        #if INTERNAL
+            projectName = ProjectSettings.getEnvironmentVar("PROJECT_NAME")!
+            projectDirectory = ProjectSettings.getEnvironmentVar("PROJECT_DIR")!
+        #else
+            let userDefaults = UserDefaults.standard.dictionaryRepresentation()
+            guard let projectName = userDefaults["projectName"] as? String,
+                let auditSubDirectory = userDefaults["auditSubDirectory"] as? String else {
+                    print("Error: projectName or auditSubDirectory not specified!")
+                    exit(1)
+            }
+            self.projectName = projectName
+            projectDirectory = FileManager.default.currentDirectoryPath + auditSubDirectory
+        #endif
     }
     
     static func isExcluded(file: String) -> Bool {
@@ -41,4 +46,10 @@ struct ProjectSettings {
         }
         return false
     }
+    
+    static func getEnvironmentVar(_ name: String) -> String? {
+        guard let rawValue = getenv(name) else { return nil }
+        return String(utf8String: rawValue)
+    }
+    
 }
