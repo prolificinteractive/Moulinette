@@ -24,7 +24,7 @@ final class TypeInferenceSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
-        for (fileName, fileComponents) in projectData.applicationComponents {
+        for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 if unnecessaryTypeInference(fileLine: $0) {
                     auditGrader.violationFound(fileName: fileName, description: $0)

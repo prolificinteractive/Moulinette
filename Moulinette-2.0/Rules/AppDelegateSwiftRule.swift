@@ -24,7 +24,7 @@ final class AppDelegateSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
-        guard let fileComponent = projectData.applicationComponents[Constants.FileNameConstants.appDelegate] else {
+        guard let fileComponent = projectData.applicationComponents.file(by: Constants.FileNameConstants.appDelegate) else {
             auditGrader.failed(fileName: Constants.FileNameConstants.appDelegate,
                                description: "No App Delegate Found!!!")
             return auditGrader.generateGrade()

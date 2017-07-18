@@ -24,7 +24,7 @@ final class FinalClassesSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
-        for (fileName, fileComponents) in projectData.applicationComponents {
+        for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 if $0.isProjectClass(),
                     !$0.contains("final"),

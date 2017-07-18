@@ -24,7 +24,7 @@ final class UsesLocalizationSwiftRule: SwiftRule {
     }
 
     func run() -> AuditGrade {
-        guard let _ = projectData.applicationComponents[Constants.FileNameConstants.localizable] else {
+        guard let _ = projectData.applicationComponents.file(by: Constants.FileNameConstants.localizable) else {
             auditGrader.failed(fileName: Constants.FileNameConstants.localizable,
                                description: "No Localizable.strings file found.")
             return auditGrader.generateGrade()

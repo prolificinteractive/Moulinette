@@ -34,8 +34,8 @@ final class LocalizedStringSwiftRule: SwiftRule {
     // MARK: - Public functions
     
     func run() -> AuditGrade {
-        let stringFiles = files(for: Constants.FileNameConstants.stringSuffix)
-        let swiftFiles = files(for: Constants.FileNameConstants.swiftSuffix)
+        let stringFiles = projectData.applicationComponents.stringFiles
+        let swiftFiles = projectData.applicationComponents.swiftFiles
         
         let allSwiftFilesContent = allFilesContent(with: swiftFiles)
         let keys = getKeys(with: stringFiles)
@@ -46,15 +46,6 @@ final class LocalizedStringSwiftRule: SwiftRule {
     }
     
     // MARK: - Private functions
-    
-    private func files(for pathExtension: String) -> [(String, [String])] {
-        let files = projectData.applicationComponents.filter { (fileName, content) -> Bool in
-            let nsstring = fileName as NSString
-            return nsstring.pathExtension == pathExtension
-        }
-        
-        return files
-    }
     
     private func allFilesContent(with files: [(String, [String])]) -> String {
         return files.flatMap { (fileName, fileContents) -> String? in

@@ -27,7 +27,7 @@ final class SinglePublicInternalSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
-        for (fileName, fileComponents) in projectData.applicationComponents {
+        for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 if let fileType = FileType.type(fileLine: $0) {
                     if type != nil {
