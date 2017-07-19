@@ -7,23 +7,23 @@ provides-member:
 - ["V14Moulinette_2_09PIOSAudit", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "PIOSAudit"
-- !private "StringLiteralType"
-- "RuleCollection"
-- !private "+"
-- !private "/"
-- !private "String"
-- "CodeConventionRuleCollection"
-- !private "Int"
-- "AuditScore"
-- !private "settings"
-- !private "Double"
-- !private "print"
-- "ProjectData"
 - "Audit"
-- !private "+="
-- "AssignmentPrecedence"
+- !private "/"
+- "AuditScore"
+- "RuleCollection"
+- !private "settings"
 - !private "*"
+- !private "Double"
+- "PIOSAudit"
+- "CodeConventionRuleCollection"
+- !private "StringLiteralType"
+- "AssignmentPrecedence"
+- "ProjectData"
+- !private "+"
+- !private "String"
+- !private "+="
+- !private "Int"
+- !private "print"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - !private ["Sa", "Iterator"]
@@ -42,6 +42,7 @@ depends-member:
 - !private ["P14Moulinette_2_05Audit", "settings"]
 - ["P14Moulinette_2_05Audit", ""]
 - !private ["V14Moulinette_2_010AuditGrade", "deinit"]
+- !private ["V14Moulinette_2_010AuditGrade", "gradeType"]
 - !private ["V14Moulinette_2_010AuditGrade", "score"]
 - ["V14Moulinette_2_010AuditScore", "deinit"]
 - !private ["V14Moulinette_2_010AuditScore", "init"]
@@ -86,6 +87,8 @@ depends-member:
 - !private ["Ps32ExpressibleByStringInterpolation", "init"]
 - !private ["Ps26ExpressibleByStringLiteral", "init"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["O14Moulinette_2_09GradeType", "deinit"]
+- !private ["O14Moulinette_2_09GradeType", "gradeText"]
 - !private ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "weight"]
 - !private ["Ps9Indexable", "Iterator"]
@@ -213,6 +216,7 @@ depends-nominal:
 - !private "Ps32ExpressibleByStringInterpolation"
 - !private "Ps26ExpressibleByStringLiteral"
 - !private "Ps33ExpressibleByUnicodeScalarLiteral"
+- !private "O14Moulinette_2_09GradeType"
 - !private "Ps8Hashable"
 - !private "Ps9Indexable"
 - !private "Ps13IndexableBase"

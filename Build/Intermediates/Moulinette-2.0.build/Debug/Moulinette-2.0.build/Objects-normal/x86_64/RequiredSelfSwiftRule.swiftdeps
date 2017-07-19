@@ -7,28 +7,27 @@ provides-member:
 - ["C14Moulinette_2_021RequiredSelfSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "StringLiteralType"
-- !private "UnicodeScalarType"
+- !private "PIOSAuditGrader"
+- "AssignmentPrecedence"
 - "ProjectData"
-- !private "!"
-- "String"
+- !private "+"
+- "FloatLiteralType"
 - "RulePriority"
-- !private "Bool"
-- !private "+="
-- !private "BooleanLiteralType"
-- "AuditGrader"
+- "IntegerLiteralType"
 - "AuditGrade"
 - !private "||"
-- "FloatLiteralType"
+- !private "UnicodeScalarType"
 - "RequiredSelfSwiftRule"
-- "IntegerLiteralType"
-- !private "PIOSAuditGrader"
-- !private "print"
-- !private "+"
+- "String"
+- !private "Bool"
+- !private "!"
+- !private "+="
+- "StringLiteralType"
 - "ContextCheck"
-- "AssignmentPrecedence"
-- !private "=="
+- !private "BooleanLiteralType"
 - "SwiftRule"
+- !private "print"
+- "AuditGrader"
 depends-member:
 - ["Ps9AnyObject", "ContextCheck"]
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
@@ -38,8 +37,8 @@ depends-member:
 - !private ["Ps9AnyObject", "contains"]
 - !private ["Ps9AnyObject", "contextCheck"]
 - !private ["Ps9AnyObject", "count"]
-- !private ["Ps9AnyObject", "currentContext"]
 - ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "insideContext"]
 - ["Ps9AnyObject", "name"]
 - !private ["Ps9AnyObject", "print"]
 - ["Ps9AnyObject", "priority"]
@@ -76,8 +75,8 @@ depends-member:
 - !private ["Ps7CVarArg", "replacingOccurrences"]
 - !private ["Ps7CVarArg", "split"]
 - !private ["P14Moulinette_2_05Check", "check"]
-- !private ["P14Moulinette_2_05Check", "currentContext"]
 - ["P14Moulinette_2_05Check", "init"]
+- !private ["P14Moulinette_2_05Check", "insideContext"]
 - !private ["Ps10Collection", "Iterator"]
 - !private ["Ps10Collection", "_Element"]
 - !private ["Ps10Collection", "forEach"]
@@ -86,16 +85,14 @@ depends-member:
 - !private ["Ps10Comparable", "replacingOccurrences"]
 - !private ["Ps10Comparable", "split"]
 - !private ["C14Moulinette_2_012ContextCheck", "check"]
-- !private ["C14Moulinette_2_012ContextCheck", "currentContext"]
 - ["C14Moulinette_2_012ContextCheck", "deinit"]
 - ["C14Moulinette_2_012ContextCheck", "init"]
+- !private ["C14Moulinette_2_012ContextCheck", "insideContext"]
 - !private ["Ps28CustomDebugStringConvertible", "Iterator"]
 - !private ["Ps28CustomDebugStringConvertible", "_Element"]
 - !private ["Ps28CustomDebugStringConvertible", "contains"]
-- !private ["Ps28CustomDebugStringConvertible", "dispatchMain"]
 - !private ["Ps28CustomDebugStringConvertible", "forEach"]
 - ["Ps28CustomDebugStringConvertible", "init"]
-- !private ["Ps28CustomDebugStringConvertible", "lazy"]
 - !private ["Ps28CustomDebugStringConvertible", "replacingOccurrences"]
 - !private ["Ps28CustomDebugStringConvertible", "split"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
@@ -108,10 +105,8 @@ depends-member:
 - !private ["Ps17CustomReflectable", "_Element"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - !private ["Ps17CustomReflectable", "contains"]
-- !private ["Ps17CustomReflectable", "dispatchMain"]
 - !private ["Ps17CustomReflectable", "forEach"]
 - ["Ps17CustomReflectable", "init"]
-- !private ["Ps17CustomReflectable", "lazy"]
 - !private ["Ps17CustomReflectable", "replacingOccurrences"]
 - !private ["Ps17CustomReflectable", "split"]
 - !private ["Ps23CustomStringConvertible", "Iterator"]
@@ -141,8 +136,6 @@ depends-member:
 - ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "replacingOccurrences"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "split"]
-- !private ["Ps23ExpressibleByNilLiteral", "dispatchMain"]
-- !private ["Ps23ExpressibleByNilLiteral", "lazy"]
 - !private ["Ps32ExpressibleByStringInterpolation", "contains"]
 - ["Ps32ExpressibleByStringInterpolation", "init"]
 - !private ["Ps32ExpressibleByStringInterpolation", "replacingOccurrences"]
@@ -219,8 +212,6 @@ depends-member:
 - !private ["CSo8NSString", "replacingOccurrences"]
 - !private ["CSo8NSString", "split"]
 - ["Sq", "deinit"]
-- !private ["Sq", "dispatchMain"]
-- !private ["Sq", "lazy"]
 - !private ["C14Moulinette_2_015PIOSAuditGrader", "deinit"]
 - !private ["C14Moulinette_2_015PIOSAuditGrader", "init"]
 - !private ["C14Moulinette_2_011ProjectData", "applicationComponents"]
@@ -331,14 +322,10 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "_Element"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "contains"]
-- !private ["Ps21_ObjectiveCBridgeable", "dispatchMain"]
 - !private ["Ps21_ObjectiveCBridgeable", "forEach"]
 - ["Ps21_ObjectiveCBridgeable", "init"]
-- !private ["Ps21_ObjectiveCBridgeable", "lazy"]
 - !private ["Ps21_ObjectiveCBridgeable", "replacingOccurrences"]
 - !private ["Ps21_ObjectiveCBridgeable", "split"]
-- !private ["Vs26_OptionalNilComparisonType", "dispatchMain"]
-- !private ["Vs26_OptionalNilComparisonType", "lazy"]
 depends-nominal:
 - "Ps9AnyObject"
 - !private "V14Moulinette_2_021ApplicationComponents"
@@ -364,7 +351,6 @@ depends-nominal:
 - !private "Ps27ExpressibleByBooleanLiteral"
 - !private "Ps30ExpressibleByDictionaryLiteral"
 - "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
-- !private "Ps23ExpressibleByNilLiteral"
 - "Ps32ExpressibleByStringInterpolation"
 - "Ps26ExpressibleByStringLiteral"
 - "Ps33ExpressibleByUnicodeScalarLiteral"
@@ -411,7 +397,6 @@ depends-nominal:
 - "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
 - "Ps21_ObjectiveCBridgeable"
-- !private "Vs26_OptionalNilComparisonType"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"

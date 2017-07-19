@@ -10,9 +10,9 @@ import Foundation
 
 class ContextCheck: Check {
     
-    var lineContextDict: [LineContext : BracketContextCheck] = [:]
+    fileprivate var lineContextDict: [LineContext : BracketContextCheck] = [:]
     
-    var currentContext: LineContext = .none
+    private var currentContext: LineContext = .none
     
     func check(fileLine: String) {
         let contextType = LineContext.type(fileLine: fileLine)
@@ -26,6 +26,15 @@ class ContextCheck: Check {
         }
         
         checkLineContext(contextType: currentContext, fileLine: fileLine)
+    }
+    
+    func insideContext(type: LineContext) -> Bool {
+        return lineContextDict[type] != nil
+    }
+    
+    func resetContext() {
+        lineContextDict = [:]
+        currentContext = .none
     }
 }
 

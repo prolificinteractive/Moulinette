@@ -8,14 +8,15 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "BracketContextCheck"
-- "String"
+- !private "!="
 - "LineContext"
 - "AssignmentPrecedence"
 - !private "=="
-- !private "!="
-- "Check"
+- "String"
 - "ContextCheck"
+- "Bool"
 - "Dictionary"
+- "Check"
 depends-member:
 - !private ["Ps9AnyObject", "BracketContextCheck"]
 - !private ["Ps9AnyObject", "LineContext"]
@@ -56,15 +57,18 @@ depends-member:
 - !private ["Ps10Collection", "_Element"]
 - !private ["Ps10Collection", "isEmpty"]
 - !private ["Ps10Collection", "subscript"]
+- ["C14Moulinette_2_012ContextCheck", "Bool"]
 - ["C14Moulinette_2_012ContextCheck", "BracketContextCheck"]
 - ["C14Moulinette_2_012ContextCheck", "LineContext"]
 - ["C14Moulinette_2_012ContextCheck", "String"]
 - ["C14Moulinette_2_012ContextCheck", "check"]
 - !private ["C14Moulinette_2_012ContextCheck", "checkLineContext"]
-- ["C14Moulinette_2_012ContextCheck", "currentContext"]
+- !private ["C14Moulinette_2_012ContextCheck", "currentContext"]
 - ["C14Moulinette_2_012ContextCheck", "deinit"]
 - ["C14Moulinette_2_012ContextCheck", "init"]
-- ["C14Moulinette_2_012ContextCheck", "lineContextDict"]
+- ["C14Moulinette_2_012ContextCheck", "insideContext"]
+- !private ["C14Moulinette_2_012ContextCheck", "lineContextDict"]
+- ["C14Moulinette_2_012ContextCheck", "resetContext"]
 - ["Ps28CustomDebugStringConvertible", "Key"]
 - ["Ps28CustomDebugStringConvertible", "Value"]
 - !private ["Ps28CustomDebugStringConvertible", "isEmpty"]
@@ -203,4 +207,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "8f5e3ced39cd2cfda257d7a06d4e6768"
+interface-hash: "11892d146bca53e3306d37267cbd60b5"

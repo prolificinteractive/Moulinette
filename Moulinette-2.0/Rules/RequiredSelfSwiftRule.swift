@@ -61,7 +61,7 @@ private extension RequiredSelfSwiftRule {
     }
     
     func validContext() -> Bool {
-        if contextCheck.currentContext == .lazy || contextCheck.currentContext == .dispatchMain {
+        if contextCheck.insideContext(type: .lazy) || contextCheck.insideContext(type: .dispatchMain) {
             return false
         }
         return true

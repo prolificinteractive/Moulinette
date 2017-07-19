@@ -27,10 +27,11 @@ final class CompletionWeakSwiftRule: SwiftRule {
     
     func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
-            contextCheck.lineContextDict = [:]
+            contextCheck.resetContext()
             fileComponents.forEach {
-                if contextCheck.currentContext == .completion, $0.contains("self"),
-                    contextCheck.lineContextDict[.structContext] == nil {
+                if contextCheck.insideContext(type: .completion) &&
+                    $0.contains("self.") &&
+                    !contextCheck.insideContext(type: .structContext) {
                     auditGrader.violationFound(fileName: fileName, description: $0)
                 }
                 
