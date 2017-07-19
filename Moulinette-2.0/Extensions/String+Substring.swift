@@ -82,6 +82,9 @@ extension String {
         return file
     }
 
+    /// Has valid file extension.
+    ///
+    /// - Returns: Boolean value. True if value, False else.
     func hasValidFileExtension() -> Bool {
         var valid = false
         let nsstring = self as NSString
