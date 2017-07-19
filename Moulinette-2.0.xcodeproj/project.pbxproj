@@ -76,6 +76,7 @@
 		206837B11EDE2305008CB7F3 /* AppDelegateSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837B01EDE2305008CB7F3 /* AppDelegateSwiftRule.swift */; };
 		2078AAF11F200B4F00E78126 /* ApplicationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */; };
 		2078AAF21F200C3A00E78126 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CBA021EFC6EC4006743DF /* String+Substring.swift */; };
+		2078AAF61F200D2B00E78126 /* CompletionWeakSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078AAF51F200D2B00E78126 /* CompletionWeakSwiftRuleTests.swift */; };
 		207F1DE31EE06BC200284498 /* FinalClassesSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207F1DE21EE06BC200284498 /* FinalClassesSwiftRule.swift */; };
 		2081734D1EEB25510077106A /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2081734C1EEB25510077106A /* NetworkRequester.swift */; };
 		2081734F1EEB27ED0077106A /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2081734E1EEB27ED0077106A /* APIEnvironment.swift */; };
@@ -154,6 +155,7 @@
 		206837AB1EDE22C3008CB7F3 /* SwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftRule.swift; path = ../Protocols/SwiftRule.swift; sourceTree = "<group>"; };
 		206837AE1EDE22E8008CB7F3 /* GradeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeType.swift; sourceTree = "<group>"; };
 		206837B01EDE2305008CB7F3 /* AppDelegateSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRule.swift; sourceTree = "<group>"; };
+		2078AAF51F200D2B00E78126 /* CompletionWeakSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionWeakSwiftRuleTests.swift; sourceTree = "<group>"; };
 		207F1DE21EE06BC200284498 /* FinalClassesSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalClassesSwiftRule.swift; sourceTree = "<group>"; };
 		2081734C1EEB25510077106A /* NetworkRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequester.swift; sourceTree = "<group>"; };
 		2081734E1EEB27ED0077106A /* APIEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			children = (
 				2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */,
 				201D741C1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift */,
+				2078AAF51F200D2B00E78126 /* CompletionWeakSwiftRuleTests.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				201D74291EFAC80500361ECD /* AuditGrade.swift in Sources */,
 				201D74201EFAC77900361ECD /* PIOSAudit.swift in Sources */,
 				201D74211EFAC77900361ECD /* ToDoStorySwiftRule.swift in Sources */,
+				2078AAF61F200D2B00E78126 /* CompletionWeakSwiftRuleTests.swift in Sources */,
 				201D74221EFAC77900361ECD /* ToDoCountSwiftRule.swift in Sources */,
 				201D74231EFAC77900361ECD /* SwiftData.swift in Sources */,
 				201D74241EFAC77900361ECD /* Regex.swift in Sources */,
