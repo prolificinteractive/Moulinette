@@ -24,11 +24,9 @@ struct PIOSAudit: Audit {
         
         for collection in ruleCollection {
             collection.rules(projectData: projectData).forEach {
-                let grade = $0.run()
-                let score = grade.score()
+                let score = $0.run().score()
                 auditScore += score
                 print(" - " + $0.name + ": " + String(score) + " / " + String($0.priority.weight()))
-                print(grade.gradeType.gradeText())
             }
         }
         
