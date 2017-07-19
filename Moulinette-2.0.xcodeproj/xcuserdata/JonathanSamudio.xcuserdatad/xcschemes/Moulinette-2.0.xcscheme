@@ -71,16 +71,18 @@
             ReferencedContainer = "container:Moulinette-2.0.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "projectName"
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "PROJECT_DIR"
+            value = "/Users/jonsamudio/Prolific-Projects/HSN/"
             isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "auditSubDirectory"
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "PROJECT_NAME"
+            value = "HSN"
             isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

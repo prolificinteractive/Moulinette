@@ -7,21 +7,21 @@ provides-member:
 - ["C14Moulinette_2_022TypeInferenceSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "StringLiteralType"
-- !private "Bool"
-- "ProjectData"
-- !private "||"
-- "TypeInferenceSwiftRule"
-- "String"
-- !private "BooleanLiteralType"
-- !private "PIOSAuditGrader"
-- "AuditGrader"
 - !private "UnicodeScalarType"
-- "RulePriority"
+- "TypeInferenceSwiftRule"
 - "AssignmentPrecedence"
 - !private "=="
+- !private "PIOSAuditGrader"
+- "ProjectData"
+- "String"
+- !private "Bool"
+- "AuditGrader"
+- "StringLiteralType"
 - "SwiftRule"
+- "RulePriority"
+- !private "||"
 - "AuditGrade"
+- !private "BooleanLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
 - !private ["Ps9AnyObject", "applicationComponents"]
@@ -36,6 +36,7 @@ depends-member:
 - !private ["Ps9AnyObject", "stringWithoutWhitespaces"]
 - !private ["Ps9AnyObject", "unnecessaryTypeInference"]
 - ["Ps9AnyObject", ""]
+- !private ["V14Moulinette_2_021ApplicationComponents", "components"]
 - !private ["Sa", "Iterator"]
 - !private ["Sa", "_Element"]
 - ["Sa", "deinit"]
@@ -287,6 +288,7 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "stringWithoutWhitespaces"]
 depends-nominal:
 - "Ps9AnyObject"
+- !private "V14Moulinette_2_021ApplicationComponents"
 - "Sa"
 - "V14Moulinette_2_010AuditGrade"
 - !private "P14Moulinette_2_011AuditGrader"

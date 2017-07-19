@@ -9,20 +9,21 @@ provides-nominal:
 provides-member:
 provides-dynamic-lookup:
 depends-top-level:
-- "PIOSAudit"
-- "applicationFileComponents"
-- "ProjectParser"
+- "projectParser"
 - "print"
-- "StringLiteralType"
-- "ProjectSettings"
 - "ProjectData"
 - "projectData"
-- "projectParser"
 - "auditScore"
+- "StringLiteralType"
 - "settings"
+- "ProjectParser"
+- "ProjectSettings"
+- "PIOSAudit"
+- "applicationFileComponents"
 depends-member:
 - ["Ps9AnyObject", "applicationComponents"]
 - ["Ps9AnyObject", "init"]
+- ["V14Moulinette_2_021ApplicationComponents", "deinit"]
 - ["P14Moulinette_2_05Audit", "init"]
 - ["P14Moulinette_2_05Audit", "runRules"]
 - ["V14Moulinette_2_010AuditScore", "deinit"]
@@ -32,7 +33,6 @@ depends-member:
 - ["Ps29CustomPlaygroundQuickLookable", "init"]
 - ["Ps17CustomReflectable", "init"]
 - ["Ps23CustomStringConvertible", "init"]
-- ["Vs10Dictionary", "deinit"]
 - ["Ps9Equatable", "init"]
 - ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - ["Ps32ExpressibleByStringInterpolation", "init"]
@@ -72,6 +72,7 @@ depends-member:
 - ["Ps21_ObjectiveCBridgeable", "init"]
 depends-nominal:
 - "Ps9AnyObject"
+- "V14Moulinette_2_021ApplicationComponents"
 - "P14Moulinette_2_05Audit"
 - "V14Moulinette_2_010AuditScore"
 - "Ps7CVarArg"
@@ -80,7 +81,6 @@ depends-nominal:
 - "Ps29CustomPlaygroundQuickLookable"
 - "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
-- "Vs10Dictionary"
 - "Ps9Equatable"
 - "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - "Ps32ExpressibleByStringInterpolation"

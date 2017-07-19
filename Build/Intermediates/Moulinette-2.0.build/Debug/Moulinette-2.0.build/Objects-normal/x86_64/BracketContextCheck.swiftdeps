@@ -7,12 +7,12 @@ provides-member:
 - ["C14Moulinette_2_019BracketContextCheck", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "BracketContextCheck"
+- !private "UnicodeScalarType"
+- "AssignmentPrecedence"
 - "Check"
 - "String"
-- !private "UnicodeScalarType"
 - !private "StringLiteralType"
-- "AssignmentPrecedence"
+- "BracketContextCheck"
 depends-member:
 - ["Ps9AnyObject", "String"]
 - !private ["Ps9AnyObject", "bracketsArray"]

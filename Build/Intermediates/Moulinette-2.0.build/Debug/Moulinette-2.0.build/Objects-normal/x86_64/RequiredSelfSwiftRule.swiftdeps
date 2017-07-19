@@ -7,28 +7,28 @@ provides-member:
 - ["C14Moulinette_2_021RequiredSelfSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "ContextCheck"
-- !private "Bool"
-- !private "+"
-- "RulePriority"
-- "FloatLiteralType"
-- "AuditGrader"
-- "SwiftRule"
-- "AuditGrade"
-- !private "print"
-- "IntegerLiteralType"
-- !private "||"
+- "StringLiteralType"
 - !private "UnicodeScalarType"
+- "ProjectData"
+- !private "!"
+- "String"
+- "RulePriority"
+- !private "Bool"
+- !private "+="
+- !private "BooleanLiteralType"
+- "AuditGrader"
+- "AuditGrade"
+- !private "||"
+- "FloatLiteralType"
 - "RequiredSelfSwiftRule"
+- "IntegerLiteralType"
+- !private "PIOSAuditGrader"
+- !private "print"
+- !private "+"
+- "ContextCheck"
 - "AssignmentPrecedence"
 - !private "=="
-- "String"
-- "StringLiteralType"
-- !private "+="
-- !private "!"
-- !private "PIOSAuditGrader"
-- "ProjectData"
-- !private "BooleanLiteralType"
+- "SwiftRule"
 depends-member:
 - ["Ps9AnyObject", "ContextCheck"]
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
@@ -50,6 +50,7 @@ depends-member:
 - !private ["Ps9AnyObject", "validContext"]
 - !private ["Ps9AnyObject", "variableSetCheck"]
 - ["Ps9AnyObject", ""]
+- !private ["V14Moulinette_2_021ApplicationComponents", "components"]
 - !private ["Sa", "Iterator"]
 - !private ["Sa", "_Element"]
 - ["Sa", "deinit"]
@@ -340,6 +341,7 @@ depends-member:
 - !private ["Vs26_OptionalNilComparisonType", "lazy"]
 depends-nominal:
 - "Ps9AnyObject"
+- !private "V14Moulinette_2_021ApplicationComponents"
 - "Sa"
 - "V14Moulinette_2_010AuditGrade"
 - !private "P14Moulinette_2_011AuditGrader"

@@ -7,19 +7,19 @@ provides-member:
 - ["C14Moulinette_2_020AppDelegateSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "String"
-- !private "PIOSAuditGrader"
-- !private "Constants"
-- "AssignmentPrecedence"
-- "RulePriority"
-- "SwiftRule"
-- "AuditGrade"
-- "AppDelegateSwiftRule"
 - !private "+"
+- "AssignmentPrecedence"
+- !private "Constants"
 - "ProjectData"
+- !private "PIOSAuditGrader"
+- "SwiftRule"
+- "String"
 - !private ">"
 - "AuditGrader"
+- "AppDelegateSwiftRule"
 - "StringLiteralType"
+- "AuditGrade"
+- "RulePriority"
 depends-member:
 - !private ["Ps9AnyObject", "Constants"]
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
@@ -47,6 +47,7 @@ depends-member:
 - ["C14Moulinette_2_020AppDelegateSwiftRule", "priority"]
 - !private ["C14Moulinette_2_020AppDelegateSwiftRule", "projectData"]
 - ["C14Moulinette_2_020AppDelegateSwiftRule", "run"]
+- !private ["V14Moulinette_2_021ApplicationComponents", "file"]
 - !private ["Sa", "IndexDistance"]
 - !private ["Sa", "count"]
 - ["Sa", "deinit"]
@@ -64,40 +65,29 @@ depends-member:
 - !private ["Ps7CVarArg", "IndexDistance"]
 - !private ["Ps7CVarArg", "count"]
 - ["Ps7CVarArg", "init"]
-- !private ["Ps7CVarArg", "subscript"]
-- !private ["Ps10Collection", "Index"]
 - !private ["Ps10Collection", "IndexDistance"]
-- !private ["Ps10Collection", "Iterator"]
-- !private ["Ps10Collection", "SubSequence"]
-- !private ["Ps10Collection", "_Element"]
 - !private ["Ps10Collection", "count"]
-- !private ["Ps10Collection", "subscript"]
 - ["Ps10Comparable", "init"]
 - !private ["V14Moulinette_2_09Constants", "FileNameConstants"]
 - !private ["Ps28CustomDebugStringConvertible", "IndexDistance"]
 - !private ["Ps28CustomDebugStringConvertible", "count"]
 - ["Ps28CustomDebugStringConvertible", "init"]
-- !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
 - ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps17CustomReflectable", "IndexDistance"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - !private ["Ps17CustomReflectable", "count"]
 - ["Ps17CustomReflectable", "init"]
-- !private ["Ps17CustomReflectable", "subscript"]
 - !private ["Ps23CustomStringConvertible", "IndexDistance"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "count"]
 - ["Ps23CustomStringConvertible", "init"]
-- !private ["Ps23CustomStringConvertible", "subscript"]
-- !private ["Vs10Dictionary", "subscript"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - ["Ps9Equatable", "init"]
 - ["Ps9Equatable", "medium"]
 - !private ["Ps25ExpressibleByArrayLiteral", "IndexDistance"]
 - !private ["Ps25ExpressibleByArrayLiteral", "count"]
 - !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
-- !private ["Ps30ExpressibleByDictionaryLiteral", "subscript"]
 - ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - ["Ps32ExpressibleByStringInterpolation", "init"]
 - ["Ps26ExpressibleByStringLiteral", "init"]
@@ -106,23 +96,11 @@ depends-member:
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - ["Ps8Hashable", "init"]
 - ["Ps8Hashable", "medium"]
-- !private ["Ps9Indexable", "Index"]
 - !private ["Ps9Indexable", "IndexDistance"]
-- !private ["Ps9Indexable", "Iterator"]
-- !private ["Ps9Indexable", "SubSequence"]
-- !private ["Ps9Indexable", "_Element"]
 - !private ["Ps9Indexable", "count"]
-- !private ["Ps9Indexable", "subscript"]
-- !private ["Ps13IndexableBase", "Index"]
 - !private ["Ps13IndexableBase", "IndexDistance"]
-- !private ["Ps13IndexableBase", "Iterator"]
-- !private ["Ps13IndexableBase", "SubSequence"]
-- !private ["Ps13IndexableBase", "_Element"]
 - !private ["Ps13IndexableBase", "count"]
-- !private ["Ps13IndexableBase", "subscript"]
-- !private ["Vs16IndexingIterator", "Element"]
 - ["Si", "deinit"]
-- !private ["Ps16IteratorProtocol", "Element"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
 - ["Ps25LosslessStringConvertible", "init"]
 - ["Ps10MirrorPath", "init"]
@@ -152,18 +130,8 @@ depends-member:
 - !private ["Ps25RangeReplaceableIndexable", "count"]
 - ["O14Moulinette_2_012RulePriority", "deinit"]
 - ["O14Moulinette_2_012RulePriority", "medium"]
-- !private ["Ps8Sequence", "Element"]
-- !private ["Ps8Sequence", "Index"]
 - !private ["Ps8Sequence", "IndexDistance"]
-- !private ["Ps8Sequence", "Iterator"]
-- !private ["Ps8Sequence", "SubSequence"]
-- !private ["Ps8Sequence", "_Element"]
 - !private ["Ps8Sequence", "count"]
-- !private ["Ps8Sequence", "subscript"]
-- !private ["Vs5Slice", "Index"]
-- !private ["Vs5Slice", "Iterator"]
-- !private ["Vs5Slice", "SubSequence"]
-- !private ["Vs5Slice", "_Element"]
 - ["SS", "deinit"]
 - ["SS", "init"]
 - !private ["P14Moulinette_2_09SwiftData", "applicationComponents"]
@@ -196,10 +164,10 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "count"]
 - ["Ps21_ObjectiveCBridgeable", "init"]
-- !private ["Ps21_ObjectiveCBridgeable", "subscript"]
 depends-nominal:
 - "Ps9AnyObject"
 - "C14Moulinette_2_020AppDelegateSwiftRule"
+- !private "V14Moulinette_2_021ApplicationComponents"
 - "Sa"
 - "V14Moulinette_2_010AuditGrade"
 - !private "P14Moulinette_2_011AuditGrader"
@@ -214,11 +182,9 @@ depends-nominal:
 - "Ps29CustomPlaygroundQuickLookable"
 - "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
-- !private "Vs10Dictionary"
 - "Ps9Equatable"
 - !private "Ps25ExpressibleByArrayLiteral"
 - !private "Ps27ExpressibleByBooleanLiteral"
-- !private "Ps30ExpressibleByDictionaryLiteral"
 - "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - "Ps32ExpressibleByStringInterpolation"
 - "Ps26ExpressibleByStringLiteral"
@@ -227,9 +193,7 @@ depends-nominal:
 - "Ps8Hashable"
 - !private "Ps9Indexable"
 - !private "Ps13IndexableBase"
-- !private "Vs16IndexingIterator"
 - "Si"
-- !private "Ps16IteratorProtocol"
 - "Ps25LosslessStringConvertible"
 - "Ps10MirrorPath"
 - !private "Ps17MutableCollection"
@@ -250,7 +214,6 @@ depends-nominal:
 - !private "Ps25RangeReplaceableIndexable"
 - "O14Moulinette_2_012RulePriority"
 - !private "Ps8Sequence"
-- !private "Vs5Slice"
 - "SS"
 - !private "P14Moulinette_2_09SwiftData"
 - "P14Moulinette_2_09SwiftRule"

@@ -7,20 +7,20 @@ provides-member:
 - ["C14Moulinette_2_023SingleEnumCaseSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "SingleEnumCaseSwiftRule"
-- "StringLiteralType"
-- "String"
 - "ProjectData"
-- "UnicodeScalarType"
-- "ContextCheck"
-- "AuditGrader"
-- "RulePriority"
 - "AuditGrade"
+- "RulePriority"
+- "AuditGrader"
 - "AssignmentPrecedence"
 - !private "=="
+- "ContextCheck"
+- "UnicodeScalarType"
+- "SingleEnumCaseSwiftRule"
+- "StringLiteralType"
 - !private "PIOSAuditGrader"
-- "SwiftRule"
 - !private "&&"
+- "String"
+- "SwiftRule"
 depends-member:
 - ["Ps9AnyObject", "ContextCheck"]
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
@@ -36,6 +36,7 @@ depends-member:
 - !private ["Ps9AnyObject", "projectData"]
 - ["Ps9AnyObject", "run"]
 - ["Ps9AnyObject", ""]
+- !private ["V14Moulinette_2_021ApplicationComponents", "components"]
 - !private ["Sa", "Iterator"]
 - !private ["Sa", "_Element"]
 - ["Sa", "deinit"]
@@ -244,6 +245,7 @@ depends-member:
 - !private ["Vs26_OptionalNilComparisonType", "enumContext"]
 depends-nominal:
 - "Ps9AnyObject"
+- !private "V14Moulinette_2_021ApplicationComponents"
 - "Sa"
 - "V14Moulinette_2_010AuditGrade"
 - !private "P14Moulinette_2_011AuditGrader"
