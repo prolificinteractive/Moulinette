@@ -1,6 +1,6 @@
 version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
 options: "ad2457fee6b2019e57648010660f7d38"
-build_time: [553816309, 747013000]
+build_time: [553817658, 19833000]
 inputs:
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/ProjectParser.swift": [553812279, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Checks/BracketContextCheck.swift": [549586349, 0]
@@ -36,7 +36,7 @@ inputs:
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Enum/GradeType.swift": [551374086, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/ProjectData.swift": [553812279, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/SemiColonSwiftRule.swift": [553812279, 0]
-  "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/CompletionWeakSwiftRule.swift": [553815769, 0]
+  "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Rules/CompletionWeakSwiftRule.swift": [553817625, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Audits/PIOSAudit/PIOSAuditGrader.swift": [551395276, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Model/Regex.swift": [551213184, 0]
   "/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Moulinette-2.0/Extensions/String+SwiftCode.swift": [553270781, 0]

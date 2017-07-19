@@ -52,6 +52,14 @@ class CompletionWeakSwiftRuleTests: XCTestCase {
         
         XCTAssertEqual(grade.violations, 0)
     }
+    
+    func testCompletionBlock_Struct() {
+        sut = CompletionWeakSwiftRule(projectData: completionNoSelfSample())
+        
+        let grade = sut.run()
+        
+        XCTAssertEqual(grade.violations, 0)
+    }
 }
 
 private extension CompletionWeakSwiftRuleTests {
@@ -92,6 +100,16 @@ private extension CompletionWeakSwiftRuleTests {
         let fileComponents = ["networkProvider.applePayLoader.applePayBag(completion: { (_) in",
                               "something.somethingCool()",
                               "}?"]
+        
+        return ProjectData(applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
+    }
+    
+    func structCompletionNonWeakSelfSample() -> ProjectData {
+        let fileComponents = ["struct {",
+                              "networkProvider.applePayLoader.applePayBag(completion: { (_) in",
+                              "self.something = something",
+                              "}?",
+                              "}"]
         
         return ProjectData(applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
     }
