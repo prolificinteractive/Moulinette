@@ -8,9 +8,9 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "SwiftRule"
+- "CodeConventionRuleCollection"
 - !private "CompletionWeakSwiftRule"
 - "RuleCollection"
-- "CodeConventionRuleCollection"
 - "ProjectData"
 depends-member:
 - !private ["Ps9AnyObject", "init"]

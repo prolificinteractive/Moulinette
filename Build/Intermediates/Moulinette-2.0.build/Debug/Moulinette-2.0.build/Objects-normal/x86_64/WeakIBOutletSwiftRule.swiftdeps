@@ -10,15 +10,15 @@ depends-top-level:
 - "ProjectData"
 - "AssignmentPrecedence"
 - !private "PIOSAuditGrader"
-- "WeakIBOutletSwiftRule"
 - "AuditGrader"
-- !private "&&"
 - "StringLiteralType"
-- "SwiftRule"
+- !private "&&"
 - !private "!"
+- "SwiftRule"
 - "AuditGrade"
-- "RulePriority"
 - "String"
+- "RulePriority"
+- "WeakIBOutletSwiftRule"
 depends-member:
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
 - !private ["Ps9AnyObject", "applicationComponents"]

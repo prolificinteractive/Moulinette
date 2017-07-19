@@ -7,19 +7,19 @@ provides-member:
 - ["C14Moulinette_2_018SemiColonSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "RulePriority"
-- "AuditGrader"
-- "SemiColonSwiftRule"
-- "SwiftRule"
+- "ProjectData"
 - "AuditGrade"
-- "UnicodeScalarType"
-- "AssignmentPrecedence"
-- !private "=="
 - "String"
-- "ExtendedGraphemeClusterType"
+- "RulePriority"
+- "AssignmentPrecedence"
+- "AuditGrader"
+- !private "=="
+- "UnicodeScalarType"
 - "StringLiteralType"
 - !private "PIOSAuditGrader"
-- "ProjectData"
+- "ExtendedGraphemeClusterType"
+- "SemiColonSwiftRule"
+- "SwiftRule"
 depends-member:
 - !private ["Ps9AnyObject", "PIOSAuditGrader"]
 - !private ["Ps9AnyObject", "applicationComponents"]

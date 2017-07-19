@@ -74,6 +74,8 @@
 		206837AC1EDE22C3008CB7F3 /* SwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837AB1EDE22C3008CB7F3 /* SwiftRule.swift */; };
 		206837AF1EDE22E8008CB7F3 /* GradeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837AE1EDE22E8008CB7F3 /* GradeType.swift */; };
 		206837B11EDE2305008CB7F3 /* AppDelegateSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837B01EDE2305008CB7F3 /* AppDelegateSwiftRule.swift */; };
+		2078AAF11F200B4F00E78126 /* ApplicationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */; };
+		2078AAF21F200C3A00E78126 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CBA021EFC6EC4006743DF /* String+Substring.swift */; };
 		207F1DE31EE06BC200284498 /* FinalClassesSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207F1DE21EE06BC200284498 /* FinalClassesSwiftRule.swift */; };
 		2081734D1EEB25510077106A /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2081734C1EEB25510077106A /* NetworkRequester.swift */; };
 		2081734F1EEB27ED0077106A /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2081734E1EEB27ED0077106A /* APIEnvironment.swift */; };
@@ -541,6 +543,7 @@
 				2053EEBC1EF4921B00AAE36D /* ProjectParser.swift in Sources */,
 				2053EEBD1EF4921B00AAE36D /* Constants.swift in Sources */,
 				2053EEBF1EF4921B00AAE36D /* AppDelegateSwiftRule.swift in Sources */,
+				2078AAF11F200B4F00E78126 /* ApplicationComponents.swift in Sources */,
 				2053EEC01EF4921B00AAE36D /* RequiredSelfSwiftRule.swift in Sources */,
 				2053EEC11EF4921B00AAE36D /* SemiColonSwiftRule.swift in Sources */,
 				2023AD141EFB122800B66438 /* StringExtensionTests.swift in Sources */,
@@ -559,6 +562,7 @@
 				2053EECD1EF4921B00AAE36D /* ContextCheck.swift in Sources */,
 				2053EECE1EF4921B00AAE36D /* BracketContextCheck.swift in Sources */,
 				2053EECF1EF4921B00AAE36D /* SwiftRule.swift in Sources */,
+				2078AAF21F200C3A00E78126 /* String+Substring.swift in Sources */,
 				2053EED01EF4921B00AAE36D /* Audit.swift in Sources */,
 				2053EED11EF4921B00AAE36D /* Check.swift in Sources */,
 				2053EED41EF4921B00AAE36D /* GradeType.swift in Sources */,

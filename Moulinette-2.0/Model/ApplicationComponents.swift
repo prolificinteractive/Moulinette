@@ -44,6 +44,13 @@ struct ApplicationComponents {
         }
     }
     
+    /// Init function for components. Used for testing.
+    ///
+    /// - Parameter components: components of the app.
+    init(with components: [String : [String]]) {
+        self.components = components
+    }
+    
     /// Filtering function to get component for given file name.
     ///
     /// - Parameter name: File name,

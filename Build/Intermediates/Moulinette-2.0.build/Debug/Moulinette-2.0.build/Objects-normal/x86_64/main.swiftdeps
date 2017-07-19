@@ -9,17 +9,17 @@ provides-nominal:
 provides-member:
 provides-dynamic-lookup:
 depends-top-level:
-- "auditScore"
-- "settings"
-- "print"
-- "applicationFileComponents"
-- "StringLiteralType"
-- "ProjectParser"
 - "PIOSAudit"
-- "ProjectData"
 - "projectData"
-- "projectParser"
+- "ProjectData"
+- "applicationFileComponents"
 - "ProjectSettings"
+- "print"
+- "StringLiteralType"
+- "projectParser"
+- "ProjectParser"
+- "settings"
+- "auditScore"
 depends-member:
 - ["Ps9AnyObject", "applicationComponents"]
 - ["Ps9AnyObject", "init"]

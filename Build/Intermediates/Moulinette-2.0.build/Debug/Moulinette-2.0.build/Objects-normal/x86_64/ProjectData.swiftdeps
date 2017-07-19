@@ -10,15 +10,15 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "FileComponents"
-- "ClassInfo"
-- "AssignmentPrecedence"
-- "SwiftData"
-- !private "=="
 - "String"
 - "Bool"
-- "ProjectData"
-- "ApplicationComponents"
 - !private "BooleanLiteralType"
+- "SwiftData"
+- "ApplicationComponents"
+- "ClassInfo"
+- "AssignmentPrecedence"
+- !private "=="
+- "ProjectData"
 depends-member:
 - ["Ps9AnyObject", "ClassInfo"]
 - ["Ps9AnyObject", "applicationComponents"]
