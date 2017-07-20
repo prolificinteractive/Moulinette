@@ -18,7 +18,7 @@ final class ProjectParser {
     // MARK: - Private properties
     
     // Private file filter closure.
-    private var filterClosure: ((Any) throws -> Bool) = { (file) -> Bool in
+    let filterClosure: ((Any) throws -> Bool) = { (file) -> Bool in
         guard let fileName = file as? String else {
             return false
         }

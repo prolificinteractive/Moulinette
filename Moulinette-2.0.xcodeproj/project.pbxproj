@@ -93,6 +93,11 @@
 		20E414131EDF8C500000E447 /* SemiColonSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E414121EDF8C500000E447 /* SemiColonSwiftRule.swift */; };
 		4C14008A1F19173C007506FE /* LocalizedStringSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */; };
 		4CA5E00B1F1E8E2F00EBE48B /* ApplicationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */; };
+		4CA5E0111F1FA46500EBE48B /* FileFilteringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */; };
+		4CA5E0121F1FA69B00EBE48B /* ApplicationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */; };
+		4CA5E0131F1FAB0100EBE48B /* UsesLocalizationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CB9FE1EFC34D7006743DF /* UsesLocalizationSwiftRule.swift */; };
+		4CA5E0141F1FAB0800EBE48B /* LocalizedStringSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */; };
+		4CA5E0151F1FAB8700EBE48B /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CBA021EFC6EC4006743DF /* String+Substring.swift */; };
 		660844581EF41B42002340C9 /* ToDoCountSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844571EF41B42002340C9 /* ToDoCountSwiftRule.swift */; };
 		6608445A1EF45E0E002340C9 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844591EF45E0E002340C9 /* Regex.swift */; };
 		660844611EF47153002340C9 /* CommentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844601EF47153002340C9 /* CommentParser.swift */; };
@@ -172,6 +177,7 @@
 		20E414121EDF8C500000E447 /* SemiColonSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiColonSwiftRule.swift; sourceTree = "<group>"; };
 		4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringSwiftRule.swift; sourceTree = "<group>"; };
 		4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationComponents.swift; sourceTree = "<group>"; };
+		4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFilteringTests.swift; sourceTree = "<group>"; };
 		660844571EF41B42002340C9 /* ToDoCountSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCountSwiftRule.swift; sourceTree = "<group>"; };
 		660844591EF45E0E002340C9 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		660844601EF47153002340C9 /* CommentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentParser.swift; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 		2053EE891EF4862B00AAE36D /* Moulinette-2.0-Tests */ = {
 			isa = PBXGroup;
 			children = (
+				4CA5E00F1F1FA44B00EBE48B /* Core */,
 				2053EE971EF487FA00AAE36D /* Mocks */,
 				2053EE901EF486F500AAE36D /* Rules */,
 				2023AD121EFB120900B66438 /* Extensions */,
@@ -369,6 +376,14 @@
 				660CBA021EFC6EC4006743DF /* String+Substring.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4CA5E00F1F1FA44B00EBE48B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		6608445B1EF47024002340C9 /* Protocols */ = {
@@ -528,6 +543,8 @@
 				201D74291EFAC80500361ECD /* AuditGrade.swift in Sources */,
 				201D74201EFAC77900361ECD /* PIOSAudit.swift in Sources */,
 				201D74211EFAC77900361ECD /* ToDoStorySwiftRule.swift in Sources */,
+				4CA5E0121F1FA69B00EBE48B /* ApplicationComponents.swift in Sources */,
+				4CA5E0141F1FAB0800EBE48B /* LocalizedStringSwiftRule.swift in Sources */,
 				201D74221EFAC77900361ECD /* ToDoCountSwiftRule.swift in Sources */,
 				201D74231EFAC77900361ECD /* SwiftData.swift in Sources */,
 				201D74241EFAC77900361ECD /* Regex.swift in Sources */,
@@ -551,6 +568,8 @@
 				2053EEC51EF4921B00AAE36D /* ForceUnwrapSwiftRule.swift in Sources */,
 				2053EEC61EF4921B00AAE36D /* MarkUsageSwiftRule.swift in Sources */,
 				2053EEC71EF4921B00AAE36D /* SingleEnumCaseSwiftRule.swift in Sources */,
+				4CA5E0111F1FA46500EBE48B /* FileFilteringTests.swift in Sources */,
+				4CA5E0131F1FAB0100EBE48B /* UsesLocalizationSwiftRule.swift in Sources */,
 				2053EEC81EF4921B00AAE36D /* InternalModifierSwiftRule.swift in Sources */,
 				2053EEC91EF4921B00AAE36D /* TypeInferenceSwiftRule.swift in Sources */,
 				2053EECA1EF4921B00AAE36D /* FontEncapsulationSwiftRule.swift in Sources */,
@@ -569,6 +588,7 @@
 				2053EED91EF4921B00AAE36D /* String+SwiftCode.swift in Sources */,
 				2053EEDA1EF4921B00AAE36D /* NetworkRequester.swift in Sources */,
 				2053EEDB1EF4921B00AAE36D /* APIEnvironment.swift in Sources */,
+				4CA5E0151F1FAB8700EBE48B /* String+Substring.swift in Sources */,
 				2053EEDC1EF4921B00AAE36D /* Endpoints.swift in Sources */,
 				2053EEDD1EF4921B00AAE36D /* AuditScore.swift in Sources */,
 				2053EE921EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift in Sources */,

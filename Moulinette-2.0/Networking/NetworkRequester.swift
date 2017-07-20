@@ -32,7 +32,7 @@ final class NetworkRequester {
         }
         
         // Thread lock
-        let sema = DispatchSemaphore( value: 0)
+        let sema = DispatchSemaphore(value: 0)
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
             guard let _: Data = data, let _: URLResponse = response, error == nil else {
