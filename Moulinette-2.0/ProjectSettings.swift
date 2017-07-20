@@ -21,20 +21,25 @@ struct ProjectSettings {
     
     /// Directory of the project.
     let projectDirectory: String
+    
+    /// Project identifier.
+    let projectIdentifier: String
 
     init() {
         #if INTERNAL
             projectName = ProjectSettings.getEnvironmentVar("PROJECT_NAME")!
             projectDirectory = ProjectSettings.getEnvironmentVar("PROJECT_DIR")!
+            projectIdentifier = "TEST"
         #else
             let userDefaults = UserDefaults.standard.dictionaryRepresentation()
             guard let projectName = userDefaults["projectName"] as? String,
-                let auditSubDirectory = userDefaults["auditSubDirectory"] as? String else {
-                    print("Error: projectName or auditSubDirectory not specified!")
+                let bundleIdentifier = userDefaults["bundleIdentifier"] as? String else {
+                    print("Error: projectName or bundle identifier not specified!")
                     exit(1)
             }
             self.projectName = projectName
-            projectDirectory = FileManager.default.currentDirectoryPath + auditSubDirectory
+            projectDirectory = FileManager.default.currentDirectoryPath
+            self.projectIdentifier = bundleIdentifier
         #endif
     }
     

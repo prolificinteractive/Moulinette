@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// PiOS Audit.
 struct PIOSAudit: Audit {
     
     private var projectData: ProjectData
@@ -17,22 +18,20 @@ struct PIOSAudit: Audit {
         self.projectData = projectData
     }
     
-    func runRules() -> AuditScore {
-        print("Running PiOS Rules for " + settings.projectName + ":")
-        
+    func runRules() -> Output {
+        let output = Output(with: settings.projectIdentifier, projectName: settings.projectName) 
         var auditScore: Double = 0
-        
         for collection in ruleCollection {
             collection.rules(projectData: projectData).forEach {
                 let score = $0.run().score()
                 auditScore += score
-                print(" - " + $0.name + ": " + String(score) + " / " + String($0.priority.weight()))
+                output.record(rule: $0.name, score: score, weight: $0.priority.weight())
             }
         }
         
         let score = Int((auditScore / maxPoints()) * 100)
-        print("Score: " + String(score))
-        return AuditScore(score: score)
+        output.record(overallScore: score)
+        return output
     }
     
     private func maxPoints() -> Double {
