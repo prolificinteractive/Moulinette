@@ -14,7 +14,7 @@ final class NetworkRequester {
     
     private var environment = APIEnvironment()
     
-    func submitAuditScore(score: AuditScore) {
+    func submitAuditScore(score: JSON) {
         guard let url = environment.baseURL else {
             return
         }
@@ -24,7 +24,7 @@ final class NetworkRequester {
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
         // Parameters
-        let parameters = score.jsonSerialize()
+        let parameters = score
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         } catch let error {
