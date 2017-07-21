@@ -22,7 +22,7 @@ final class ProjectParser {
         guard let fileName = file as? String else {
             return false
         }
-        
+
         return try !ProjectParser.isExcluded(with: fileName)
     }
     
@@ -55,10 +55,10 @@ final class ProjectParser {
     
     private static func isExcluded(with file: String) throws -> Bool {
         let fileName = file as NSString
-        
+ 
         return try checkExcludedDirectory(fileName: fileName)
             || checkExcludedDirectoryRegex(fileName: fileName)
-            || !file.hasValidFileExtension()
+            || (!file.hasValidFileExtension() && !file.isValidFile())
             || ProjectSettings.isExcluded(file: file)
     }
     

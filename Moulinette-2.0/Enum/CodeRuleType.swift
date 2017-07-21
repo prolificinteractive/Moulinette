@@ -31,7 +31,9 @@ struct CodeConventionRuleCollection: RuleCollection {
                 RequiredSelfSwiftRule(projectData: projectData),
                 LocalizedStringSwiftRule(projectData: projectData),
                 ATSExceptionSwiftRule(projectData: projectData),
-                ReadMeSwiftRule(projectData: projectData)
+                ReadMeSwiftRule(projectData: projectData),
+                LocalizedStringSwiftRule(projectData: projectData),
+                PodVersionsPinnedSwiftRule(projectData: projectData)
         ]
     }
 }
