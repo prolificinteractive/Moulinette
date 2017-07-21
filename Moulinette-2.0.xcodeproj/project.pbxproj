@@ -113,6 +113,7 @@
 		660CB9FF1EFC34D7006743DF /* UsesLocalizationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CB9FE1EFC34D7006743DF /* UsesLocalizationSwiftRule.swift */; };
 		660CBA031EFC6EC4006743DF /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CBA021EFC6EC4006743DF /* String+Substring.swift */; };
 		664E7D1D1F22579C00041CAC /* PodfileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E7D1C1F22579C00041CAC /* PodfileParser.swift */; };
+		664E7D1F1F225FBA00041CAC /* DefaultPodsSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E7D1E1F225FBA00041CAC /* DefaultPodsSwiftRule.swift */; };
 		6655C66F1EF317F000878A71 /* ToDoStorySwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */; };
 		C7488B511F224B8000B5213C /* ReadMeSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */; };
 		666386E91F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */; };
@@ -200,6 +201,7 @@
 		660CB9FE1EFC34D7006743DF /* UsesLocalizationSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsesLocalizationSwiftRule.swift; sourceTree = "<group>"; };
 		660CBA021EFC6EC4006743DF /* String+Substring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		664E7D1C1F22579C00041CAC /* PodfileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodfileParser.swift; sourceTree = "<group>"; };
+		664E7D1E1F225FBA00041CAC /* DefaultPodsSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPodsSwiftRule.swift; sourceTree = "<group>"; };
 		6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoStorySwiftRule.swift; sourceTree = "<group>"; };
 		C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeSwiftRule.swift; sourceTree = "<group>"; };
 		666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodVersionsPinnedSwiftRule.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */,
 				599567C01F38C06C00243191 /* ATSExceptionSwiftRule.swift */,
 				666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */,
+				664E7D1E1F225FBA00041CAC /* DefaultPodsSwiftRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				206837AC1EDE22C3008CB7F3 /* SwiftRule.swift in Sources */,
 				20E414111EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift in Sources */,
 				20E414041EDF7F370000E447 /* ContextCheck.swift in Sources */,
+				664E7D1F1F225FBA00041CAC /* DefaultPodsSwiftRule.swift in Sources */,
 				206837B11EDE2305008CB7F3 /* AppDelegateSwiftRule.swift in Sources */,
 				20161D121EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift in Sources */,
 				201D74191EFAC45700361ECD /* PIOSAudit.swift in Sources */,
