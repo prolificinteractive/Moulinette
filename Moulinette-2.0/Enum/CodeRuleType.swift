@@ -26,6 +26,7 @@ struct CodeConventionRuleCollection: RuleCollection {
                 CompletionWeakSwiftRule(projectData: projectData),
                 ToDoStorySwiftRule(projectData: projectData),
                 ToDoCountSwiftRule(projectData: projectData),
-                UsesLocalizationSwiftRule(projectData: projectData)]
+                UsesLocalizationSwiftRule(projectData: projectData),
+                RequiredSelfSwiftRule(projectData: projectData)]
     }
 }
