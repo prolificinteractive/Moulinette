@@ -25,5 +25,7 @@ var projectData = ProjectData(applicationComponents: applicationFileComponents)
 let output = PIOSAudit(projectData: projectData).runRules()
 
 print(output.description())
-print(output.representation())
-//NetworkRequester().submitAuditScore(score: AuditScore(score: 10))
+
+if settings.silentMode == false {
+    NetworkRequester().submitAuditScore(score: output.representation())
+}

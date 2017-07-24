@@ -15,14 +15,15 @@ final class NetworkRequester {
     private var environment = APIEnvironment()
     
     func submitAuditScore(score: JSON) {
-        guard let url = environment.baseURL else {
+        guard let url = environment.url(endpoint: "report") else {
             return
         }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
-        
+        request.setValue("application/json;", forHTTPHeaderField: "Content-Type")
+
         // Parameters
         let parameters = score
         do {
@@ -35,13 +36,16 @@ final class NetworkRequester {
         let sema = DispatchSemaphore(value: 0)
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
-            guard let _: Data = data, let _: URLResponse = response, error == nil else {
-                print("*****error")
-                sema.signal()
-                return
+            do {
+                guard let data = data, let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any] else {
+                    print("Data or json response missing.")
+                    return
+                }
+                print(json)
+            } catch let error as NSError {
+                print(error)
             }
-//            let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            print("*****Data: \(String(describing: response))")
+            
             sema.signal()
         }
         

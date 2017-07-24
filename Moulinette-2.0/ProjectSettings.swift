@@ -25,21 +25,27 @@ struct ProjectSettings {
     /// Project identifier.
     let projectIdentifier: String
 
+    /// Silent mode. (No output call to API)
+    let silentMode: Bool
+    
     init() {
         #if INTERNAL
             projectName = ProjectSettings.getEnvironmentVar("PROJECT_NAME")!
             projectDirectory = ProjectSettings.getEnvironmentVar("PROJECT_DIR")!
-            projectIdentifier = "TEST"
+            projectIdentifier = ProjectSettings.getEnvironmentVar("PROJECT_IDENTIFIER")!
+            silentMode = ProjectSettings.getEnvironmentVar("SILENT_MODE") == "TRUE"
         #else
             let userDefaults = UserDefaults.standard.dictionaryRepresentation()
             guard let projectName = userDefaults["projectName"] as? String,
-                let bundleIdentifier = userDefaults["bundleIdentifier"] as? String else {
+                let bundleIdentifier = userDefaults["bundleIdentifier"] as? String,
+                let silentMode = userDefaults["silent"] as? Bool else {
                     print("Error: projectName or bundle identifier not specified!")
                     exit(1)
             }
             self.projectName = projectName
             projectDirectory = FileManager.default.currentDirectoryPath
             self.projectIdentifier = bundleIdentifier
+            self.silentMode = silentMode
         #endif
     }
     
