@@ -11,7 +11,8 @@ import Foundation
 struct CodeConventionRuleCollection: RuleCollection {
     
     func rules(projectData: ProjectData) -> [SwiftRule] {
-        return [AppDelegateSwiftRule(projectData: projectData),
+        return [
+                AppDelegateSwiftRule(projectData: projectData),
                 SemiColonSwiftRule(projectData: projectData),
                 FinalClassesSwiftRule(projectData: projectData),
                 WeakIBOutletSwiftRule(projectData: projectData),
@@ -27,6 +28,8 @@ struct CodeConventionRuleCollection: RuleCollection {
                 ToDoStorySwiftRule(projectData: projectData),
                 ToDoCountSwiftRule(projectData: projectData),
                 UsesLocalizationSwiftRule(projectData: projectData),
-                RequiredSelfSwiftRule(projectData: projectData)]
+                RequiredSelfSwiftRule(projectData: projectData),
+                LocalizedStringSwiftRule(projectData: projectData)
+        ]
     }
 }

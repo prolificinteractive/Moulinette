@@ -9,7 +9,6 @@
 import Foundation
 
 typealias FileComponents = [String]
-typealias ApplicationComponents = [String : [String]]
 typealias ClassInfo = (className: String, subClassName: String?)
 
 final class ProjectData: SwiftData {
@@ -33,7 +32,7 @@ final class ProjectData: SwiftData {
     }
     
     private func parseAllClasses() {
-        for (_, fileComponents) in applicationComponents {
+        for (_, fileComponents) in applicationComponents.components {
             fileComponents.forEach {
                 if $0.isProjectClass(), let info = generateClassInfo(fileLine: $0) {
                     classInfo.append(info)

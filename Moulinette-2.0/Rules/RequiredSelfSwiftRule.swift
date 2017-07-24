@@ -25,7 +25,7 @@ final class RequiredSelfSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
-        for (fileName, fileComponents) in projectData.applicationComponents {
+        for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 contextCheck.check(fileLine: $0)
                 

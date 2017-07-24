@@ -49,6 +49,7 @@ class SemiColonSwiftRuleTests: XCTestCase {
 private extension SemiColonSwiftRuleTests {
     
     func projectData(line: String) -> ProjectData {
-        return ProjectData(applicationComponents: ["Sample": [line]])
+        let applicationComponents = ApplicationComponents(with: ["Sample": [line]])
+        return ProjectData(applicationComponents: applicationComponents)
     }
 }

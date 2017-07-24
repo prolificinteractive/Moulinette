@@ -12,44 +12,77 @@ enum ParseError: Error {
     case error(String)
 }
 
-class ProjectParser {
+/// Project parser.
+final class ProjectParser {
 
+    // MARK: - Private properties
+    
+    // Private file filter closure.
+    let filterClosure: ((Any) throws -> Bool) = { (file) -> Bool in
+        guard let fileName = file as? String else {
+            return false
+        }
+        
+        return try !ProjectParser.isExcluded(with: fileName)
+    }
+    
+    // MARK: - Public functions
+    
     func applicationComponents() -> ApplicationComponents {
-        let swiftFileNames = retrieveFileNames()
-        var applicationFileComponents = ApplicationComponents()
-
-        for swiftFile in swiftFileNames {
-            let fileToParse = settings.projectDirectory + swiftFile
-
-            do {
-                let content = try String(contentsOfFile: fileToParse, encoding: String.Encoding.utf8)
-                let fileComponents = content.components(separatedBy: "\n")
-                guard let strippedFileName = swiftFile.fileName() else {
-                    throw ParseError.error("Failed to parse Swift file name")
-                }
-                applicationFileComponents[strippedFileName] = fileComponents
-            } catch {
-                print("Error caught with message: \(error.localizedDescription)")
-            }
-        }
-
-        return applicationFileComponents
+        let fileNames = retrieveFilenames()
+        return ApplicationComponents(with: fileNames)
     }
 
-    private func retrieveFileNames() -> [String] {
+    // MARK: - Private functions
+    
+    private func retrieveFilenames() -> [String] {
         let fileEnumerator = FileManager.default.enumerator(atPath: settings.projectDirectory)
-        var files = [String]()
-
-        while let file = fileEnumerator?.nextObject() {
-            guard let file = file as? String, file.hasValidFileExtension() else {
-                continue
+        do {
+            guard let filteredFileEnumerator = try fileEnumerator?.filter(filterClosure) as? [String] else {
+                print("Error filtering files.")
+                return []
             }
+ 
+            return filteredFileEnumerator
+        } catch {
+            print("Error caught with message: \(error.localizedDescription)")
+        }
+        
+        return []
+    }
+    
+    // MARK: - Private static functions
+    
+    private static func isExcluded(with file: String) throws -> Bool {
+        let fileName = file as NSString
+        
+        return try checkExcludedDirectory(fileName: fileName)
+            || checkExcludedDirectoryRegex(fileName: fileName)
+            || !file.hasValidFileExtension()
+            || ProjectSettings.isExcluded(file: file)
+    }
+    
+    private static func checkExcludedDirectory(fileName: NSString) -> Bool {
+        var isExcluded = false
 
-            if !ProjectSettings.isExcluded(file: file) {
-                files.append(file)
-            }
+        for excludedDirectory in ProjectSettings.excludedDirectories {
+            isExcluded = isExcluded || fileName.pathComponents.first == excludedDirectory
+        }
+        
+        return isExcluded
+    }
+    
+    private static func checkExcludedDirectoryRegex(fileName: NSString) throws -> Bool {
+        var isExcluded = false
+
+        for excludedDirectoryPattern in ProjectSettings.excludedDirectoryRegex {
+            let regex = try NSRegularExpression(pattern: excludedDirectoryPattern, options: .caseInsensitive)
+            let matches = regex.matches(in: fileName as String, options: [], range: NSRange(location: 0, length: fileName.length))
+            
+            isExcluded = isExcluded || matches.count > 0
         }
 
-        return files
+        return isExcluded
     }
+    
 }

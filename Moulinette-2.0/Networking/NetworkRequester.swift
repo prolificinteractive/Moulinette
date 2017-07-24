@@ -14,7 +14,7 @@ final class NetworkRequester {
     
     private var environment = APIEnvironment()
     
-    func submitAuditScore(score: AuditScore) {
+    func submitAuditScore(score: JSON) {
         guard let url = environment.baseURL else {
             return
         }
@@ -24,7 +24,7 @@ final class NetworkRequester {
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
         // Parameters
-        let parameters = score.jsonSerialize()
+        let parameters = score
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         } catch let error {
@@ -32,7 +32,7 @@ final class NetworkRequester {
         }
         
         // Thread lock
-        let sema = DispatchSemaphore( value: 0)
+        let sema = DispatchSemaphore(value: 0)
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
             guard let _: Data = data, let _: URLResponse = response, error == nil else {

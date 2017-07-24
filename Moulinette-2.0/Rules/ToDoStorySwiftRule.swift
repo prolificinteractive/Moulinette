@@ -24,7 +24,7 @@ final class ToDoStorySwiftRule: SwiftRule {
     }
 
     func run() -> AuditGrade {
-        for (fileName, fileComponents) in projectData.applicationComponents {
+        for (fileName, fileComponents) in projectData.applicationComponents.components {
             CommentParser.parse(fileComponents: fileComponents) { (comment, line) in
                 if comment.isTodoComment() && !comment.hasPivotalStory() {
                     auditGrader.violationFound(fileName: fileName, description: line)

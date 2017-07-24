@@ -25,7 +25,7 @@ final class ColorEncapsulationSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
-        for (fileName, fileComponents) in projectData.applicationComponents {
+        for (fileName, fileComponents) in projectData.applicationComponents.components {
             var fileContainsColor = false
             fileComponents.forEach {
                 if $0.contains("UIColor.") && colorCount >= 1 {

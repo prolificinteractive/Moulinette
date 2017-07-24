@@ -24,7 +24,7 @@ final class ToDoCountSwiftRule: SwiftRule {
     }
 
     func run() -> AuditGrade {
-        for (fileName, fileComponents) in projectData.applicationComponents {
+        for (fileName, fileComponents) in projectData.applicationComponents.components {
             var todoCount = 0
             CommentParser.parse(fileComponents: fileComponents) { (comment, line) in
                 todoCount = comment.isTodoComment() ? todoCount + 1 : todoCount

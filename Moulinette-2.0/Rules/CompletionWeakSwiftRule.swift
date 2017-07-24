@@ -26,7 +26,7 @@ final class CompletionWeakSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
-        for (fileName, fileComponents) in projectData.applicationComponents {
+        for (fileName, fileComponents) in projectData.applicationComponents.components {
             contextCheck.lineContextDict = [:]
             fileComponents.forEach {
                 if contextCheck.currentContext == .completion, $0.contains("self"),
