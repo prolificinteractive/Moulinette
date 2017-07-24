@@ -17,6 +17,7 @@ final class Output {
     static var rulesKey = "rules"
     static var scoreKey = "score"
     static var identifierKey = "bundleIdentifier"
+    static var weightKey = "weight"
     
     // MARK: - Private properties
 
@@ -33,7 +34,8 @@ final class Output {
 
     func record(rule: String, score: Double, weight: Double) {
         var rules = rulesDictionary()
-        rules[rule] = (score, weight)
+        rules[rule] = [Output.scoreKey: score,
+                       Output.weightKey: weight]
         values[Output.rulesKey] = rules
     }
     
@@ -50,7 +52,11 @@ final class Output {
         let rules = rulesDictionary()
         var iterator = rules.makeIterator()
         while let item = iterator.next() {
-            output += " - " + item.key + ": " + String(item.value.0) + " / " + String(item.value.1) + "\n"
+            guard let score = item.value[Output.scoreKey],
+                let weight = item.value[Output.weightKey] else {
+                    continue
+            }
+            output += " - " + item.key + ": " + String(score) + " / " + String(weight) + "\n"
         }
         output += "Score: " + String(values[Output.scoreKey] as! Int) + "\n"
         return output
@@ -58,9 +64,9 @@ final class Output {
     
     // MARK: - Private functions
     
-    private func rulesDictionary() -> [String: (Double, Double)] {
-        guard let rules = values[Output.rulesKey] as? [String: (Double, Double)] else {
-            return [String: (Double, Double)]()
+    private func rulesDictionary() -> [String: [String: Double]] {
+        guard let rules = values[Output.rulesKey] as? [String: [String: Double]] else {
+            return [String: [String: Double]]()
         }
         
         return rules
