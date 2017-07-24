@@ -90,6 +90,7 @@
 		20E414111EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E414101EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift */; };
 		20E414131EDF8C500000E447 /* SemiColonSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E414121EDF8C500000E447 /* SemiColonSwiftRule.swift */; };
 		4C14008A1F19173C007506FE /* LocalizedStringSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */; };
+		4C8BA7711F264B4900F617E7 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E0161F2122E000EBE48B /* Output.swift */; };
 		4CA5E00B1F1E8E2F00EBE48B /* ApplicationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */; };
 		4CA5E0111F1FA46500EBE48B /* FileFilteringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */; };
 		4CA5E0121F1FA69B00EBE48B /* ApplicationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */; };
@@ -551,6 +552,7 @@
 				201D74261EFAC77900361ECD /* CommentParser.swift in Sources */,
 				201D741F1EFAC75700361ECD /* AuditGrader.swift in Sources */,
 				201D741E1EFAC73F00361ECD /* PIOSAuditGrader.swift in Sources */,
+				4C8BA7711F264B4900F617E7 /* Output.swift in Sources */,
 				2053EEB91EF4921B00AAE36D /* main.swift in Sources */,
 				2053EEBA1EF4921B00AAE36D /* ProjectSettings.swift in Sources */,
 				2053EEBB1EF4921B00AAE36D /* ProjectData.swift in Sources */,
