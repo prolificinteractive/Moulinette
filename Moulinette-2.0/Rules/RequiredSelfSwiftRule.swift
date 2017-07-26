@@ -10,6 +10,8 @@ import Foundation
 
 final class RequiredSelfSwiftRule: SwiftRule {
     
+    static fileprivate let selfString = "self."
+    
     let name: String = "Use of self only when required"
     let priority: RulePriority = .medium
     
@@ -46,7 +48,7 @@ private extension RequiredSelfSwiftRule {
             return false
         }
         
-        return fileLine.contains("self.")
+        return fileLine.contains(RequiredSelfSwiftRule.selfString)
     }
     
     func variableSetCheck(fileLine: String, fileName: String) -> Bool {
@@ -54,8 +56,8 @@ private extension RequiredSelfSwiftRule {
             return false
         }
         
-        if fileLine.contains("self.") {
-            let line = fileLine.replacingOccurrences(of: "self.", with: "")
+        if fileLine.contains(RequiredSelfSwiftRule.selfString) {
+            let line = fileLine.replacingOccurrences(of: RequiredSelfSwiftRule.selfString, with: "")
             
             if let splitString = line.split(at: " = "), !splitString.rightString.contains(splitString.leftString) {
                 return true
