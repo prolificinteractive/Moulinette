@@ -27,10 +27,19 @@ final class PrivateVariableSwiftRule: SwiftRule {
     
     func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
+            
+            var protocolsAndSubclassesInFile: [String]?
+            
             fileComponents.forEach {
                 contextCheck.check(fileLine: $0)
                 
-                if publicIBOutletVariablePubliclyUsedCheck(fileLine: $0, fileName: fileName) {
+                if let protocolsAndSubclasses = fileProtocolsAndSubclasses(fileLine: $0) {
+                    protocolsAndSubclassesInFile = protocolsAndSubclasses
+                }
+                
+                if publicIBOutletVariablePubliclyUsedCheck(fileLine: $0,
+                                                           fileName: fileName,
+                                                           protocolsAndSubClassesInFile: protocolsAndSubclassesInFile) {
                     print($0)
                     print(fileName)
                     count += 1
@@ -45,7 +54,9 @@ final class PrivateVariableSwiftRule: SwiftRule {
 
 private extension PrivateVariableSwiftRule {
     
-    func publicIBOutletVariablePubliclyUsedCheck(fileLine: String, fileName: String) -> Bool {
+    func publicIBOutletVariablePubliclyUsedCheck(fileLine: String,
+                                                 fileName: String,
+                                                 protocolsAndSubClassesInFile: [String]?) -> Bool {
         guard isPublicVariable(fileLine: fileLine) else {
             return false
         }
@@ -54,11 +65,54 @@ private extension PrivateVariableSwiftRule {
         let variableName = variableNameFromLine(fileLine: fileLine)
         
         let didFindPublicOccurrences = publicOccurrencesFound(classNameOfPublicVariable: className,
-                                                               variableName: variableName)
+                                                              variableName: variableName)
         
         let isVariableOverriden = isPublicIBOutletVariableOverridden(className: className, variableName: variableName)
         
-        return !didFindPublicOccurrences && !isVariableOverriden
+        let isProtocolVariable = isPublicIBOutletProtocolVariable(variableName: variableName,
+                                                                  protocolsAndSubClassesInFile: protocolsAndSubClassesInFile)
+        
+        return !didFindPublicOccurrences && !isVariableOverriden && !isProtocolVariable
+    }
+    
+    func fileProtocolsAndSubclasses(fileLine: String) -> [String]? {
+        guard fileLine.contains(Constants.SwiftComponents.classString)
+            && fileLine.contains(Constants.SwiftComponents.internalString) else {
+            return nil
+        }
+        
+        let noSpaceLine = fileLine.stringWithoutWhitespaces()
+        
+        guard let protocolAndSubclassesString = noSpaceLine.stringBetween(startString: Constants.SwiftComponents.colonString,
+                                                                          endString: Constants.SwiftComponents.openCurlyBracketString) else {
+            return nil
+        }
+        
+        return protocolAndSubclassesString.components(separatedBy: ",")
+    }
+    
+    private func isPublicIBOutletProtocolVariable(variableName: String, protocolsAndSubClassesInFile: [String]?) -> Bool {
+        guard let protocolsAndSubClassesInFile = protocolsAndSubClassesInFile else {
+            return false
+        }
+        
+        var numberOfProtocolVariables = 0
+        
+        protocolsAndSubClassesInFile.forEach { (protocolName) in
+            for (_, fileComponents) in projectData.applicationComponents.components {
+                fileComponents.forEach {
+                    if $0.contains(protocolName) && $0.contains(Constants.SwiftComponents.protocolString) {
+                        fileComponents.forEach {
+                            if $0.contains(variableName) {
+                                numberOfProtocolVariables += 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        return numberOfProtocolVariables > 0
     }
     
     private func isPublicIBOutletVariableOverridden(className: String, variableName: String) -> Bool {

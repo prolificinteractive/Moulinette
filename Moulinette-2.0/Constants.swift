@@ -29,6 +29,9 @@ struct Constants {
         static let colonString = ":"
         static let classString = "class"
         static let internalString = "internal"
+        static let openCurlyBracketString = "{"
+        static let commaString = ","
+        static let protocolString = "protocol"
     }
 
     struct Regex {
