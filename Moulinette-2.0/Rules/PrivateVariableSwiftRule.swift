@@ -70,9 +70,9 @@ private extension PrivateVariableSwiftRule {
                 if isSubClass(className: className, fileLine: $0) {
                     fileComponents.forEach {
                         if $0.contains(variableName)
-                            && $0.contains("override")
-                            && $0.contains("var")
-                            && $0.contains("IBOutlet") {
+                            && $0.contains(Constants.SwiftComponents.overrideString)
+                            && $0.contains(Constants.SwiftComponents.varString)
+                            && $0.contains(Constants.SwiftComponents.ibOutletString) {
                             numberOfTimesOverriden += 1
                         }
                     }
@@ -84,13 +84,13 @@ private extension PrivateVariableSwiftRule {
     }
     
     private func isSubClass(className: String, fileLine: String) -> Bool {
-        return fileLine.contains("class") && fileLine.contains(":") && fileLine.contains(className)
+        return fileLine.contains(Constants.SwiftComponents.classString) && fileLine.contains(Constants.SwiftComponents.colonString) && fileLine.contains(className)
     }
     
     private func variableNameFromLine(fileLine: String) -> String {
         let noSpacefileLine = fileLine.stringWithoutWhitespaces()
         
-        guard let variableName = noSpacefileLine.stringBetween(startString: "var", endString: ":") else {
+        guard let variableName = noSpacefileLine.stringBetween(startString: Constants.SwiftComponents.varString, endString: Constants.SwiftComponents.colonString) else {
             return ""
         }
         
@@ -98,7 +98,7 @@ private extension PrivateVariableSwiftRule {
     }
     
     private func classNameFromFile(fileName: String) -> String {
-        return fileName.replacingOccurrences(of: ".swift", with: "")
+        return fileName.replacingOccurrences(of: Constants.FileNameConstants.swiftDotSuffix, with: "")
     }
     
     private func searchForPublicVariable(classNameOfPublicVariable: String,
@@ -108,9 +108,9 @@ private extension PrivateVariableSwiftRule {
         
         for (_, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
-                if $0.contains(classNameOfPublicVariable) && $0.contains("var") || $0.contains("@IBOutlet")  {
+                if $0.contains(classNameOfPublicVariable) && $0.contains(Constants.SwiftComponents.varString) || $0.contains(Constants.SwiftComponents.ibOutletString)  {
                     let noSpacefileLine = $0.stringWithoutWhitespaces()
-                    guard let classVariableName = noSpacefileLine.stringBetween(startString: "var", endString: ":") else {
+                    guard let classVariableName = noSpacefileLine.stringBetween(startString: Constants.SwiftComponents.varString, endString: Constants.SwiftComponents.colonString) else {
                         return
                     }
                     let publicVariable = classVariableName + "." + variableName
@@ -128,10 +128,10 @@ private extension PrivateVariableSwiftRule {
     }
     
     private func isPublicVariable(fileLine: String) -> Bool {
-        return fileLine.contains("@IBOutlet")
-            && !fileLine.contains("private")
-            && !fileLine.contains("fileprivate")
-            && !fileLine.contains("internal")
-            && !fileLine.contains("override")
+        return fileLine.contains(Constants.SwiftComponents.ibOutletString)
+            && !fileLine.contains(Constants.SwiftComponents.privateString)
+            && !fileLine.contains(Constants.SwiftComponents.fileprivateString)
+            && !fileLine.contains(Constants.SwiftComponents.internalString)
+            && !fileLine.contains(Constants.SwiftComponents.overrideString)
     }
 }

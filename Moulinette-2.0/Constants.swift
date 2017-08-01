@@ -17,10 +17,18 @@ struct Constants {
         static let stringSuffix = "strings"
         static let appDelegate = "AppDelegate.swift"
         static let localizable = "Localizable.strings"
+        static let swiftDotSuffix = ".swift"
     }
     
     struct SwiftComponents {
-        
+        static let varString = "var"
+        static let overrideString = "override"
+        static let privateString = "private"
+        static let fileprivateString = "fileprivate"
+        static let ibOutletString = "@IBOutlet"
+        static let colonString = ":"
+        static let classString = "class"
+        static let internalString = "internal"
     }
 
     struct Regex {
