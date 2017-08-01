@@ -53,13 +53,12 @@ private extension PrivateVariableSwiftRule {
         let className = classNameFromFile(fileName: fileName)
         let variableName = variableNameFromLine(fileLine: fileLine)
         
-        let publicOccurencesFound = searchForPublicVariable(classNameOfPublicVariable: className,
-                                                               variableName: variableName,
-                                                               publicVariable: nil)
+        let didFindPublicOccurrences = publicOccurrencesFound(classNameOfPublicVariable: className,
+                                                               variableName: variableName)
         
         let isVariableOverriden = isPublicIBOutletVariableOverridden(className: className, variableName: variableName)
         
-        return !publicOccurencesFound && !isVariableOverriden
+        return !didFindPublicOccurrences && !isVariableOverriden
     }
     
     private func isPublicIBOutletVariableOverridden(className: String, variableName: String) -> Bool {
@@ -83,36 +82,15 @@ private extension PrivateVariableSwiftRule {
         return numberOfTimesOverriden > 0
     }
     
-    private func isSubClass(className: String, fileLine: String) -> Bool {
-        return fileLine.contains(Constants.SwiftComponents.classString) && fileLine.contains(Constants.SwiftComponents.colonString) && fileLine.contains(className)
-    }
-    
-    private func variableNameFromLine(fileLine: String) -> String {
-        let noSpacefileLine = fileLine.stringWithoutWhitespaces()
-        
-        guard let variableName = noSpacefileLine.stringBetween(startString: Constants.SwiftComponents.varString, endString: Constants.SwiftComponents.colonString) else {
-            return ""
-        }
-        
-        return variableName
-    }
-    
-    private func classNameFromFile(fileName: String) -> String {
-        return fileName.replacingOccurrences(of: Constants.FileNameConstants.swiftDotSuffix, with: "")
-    }
-    
-    private func searchForPublicVariable(classNameOfPublicVariable: String,
-                                         variableName: String,
-                                         publicVariable: String?) -> Bool {
+    private func publicOccurrencesFound(classNameOfPublicVariable: String,
+                                         variableName: String) -> Bool {
         var publicUsesOfVariable = 0
         
         for (_, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
-                if $0.contains(classNameOfPublicVariable) && $0.contains(Constants.SwiftComponents.varString) || $0.contains(Constants.SwiftComponents.ibOutletString)  {
-                    let noSpacefileLine = $0.stringWithoutWhitespaces()
-                    guard let classVariableName = noSpacefileLine.stringBetween(startString: Constants.SwiftComponents.varString, endString: Constants.SwiftComponents.colonString) else {
-                        return
-                    }
+                if $0.contains(classNameOfPublicVariable) && $0.contains(Constants.SwiftComponents.varString)
+                    || $0.contains(Constants.SwiftComponents.ibOutletString)  {
+                    let classVariableName = variableNameFromLine(fileLine: $0)
                     let publicVariable = classVariableName + "." + variableName
                     
                     fileComponents.forEach {
@@ -125,6 +103,27 @@ private extension PrivateVariableSwiftRule {
         }
         
         return publicUsesOfVariable > 0
+    }
+    
+    private func variableNameFromLine(fileLine: String) -> String {
+        let noSpacefileLine = fileLine.stringWithoutWhitespaces()
+        
+        guard let variableName = noSpacefileLine.stringBetween(startString: Constants.SwiftComponents.varString,
+                                                               endString: Constants.SwiftComponents.colonString) else {
+                                                                return ""
+        }
+        
+        return variableName
+    }
+    
+    private func classNameFromFile(fileName: String) -> String {
+        return fileName.replacingOccurrences(of: Constants.FileNameConstants.swiftDotSuffix, with: "")
+    }
+    
+    private func isSubClass(className: String, fileLine: String) -> Bool {
+        return fileLine.contains(Constants.SwiftComponents.classString)
+            && fileLine.contains(Constants.SwiftComponents.colonString)
+            && fileLine.contains(className)
     }
     
     private func isPublicVariable(fileLine: String) -> Bool {
