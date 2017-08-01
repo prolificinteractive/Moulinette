@@ -10,7 +10,7 @@ import Foundation
 
 struct APIEnvironment {
     
-    var baseURL = URL(string: "localhost:8000/") // URL(string: "arkham.prolific.io")
+    var baseURL = URL(string: "http://0.0.0.0/api/") // URL(string: "arkham.prolific.io")
     
     /// Generates the url from the base url.
     ///

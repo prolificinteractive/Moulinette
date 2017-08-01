@@ -44,6 +44,13 @@ struct ApplicationComponents {
         }
     }
     
+    /// Init with custom components.
+    ///
+    /// - Parameter components: Components.
+    init(with components: [String: [String]]) {
+        self.components = components
+    }
+    
     /// Filtering function to get component for given file name.
     ///
     /// - Parameter name: File name,

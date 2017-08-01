@@ -28,6 +28,7 @@ struct CodeConventionRuleCollection: RuleCollection {
                 ToDoStorySwiftRule(projectData: projectData),
                 ToDoCountSwiftRule(projectData: projectData),
                 UsesLocalizationSwiftRule(projectData: projectData),
+                RequiredSelfSwiftRule(projectData: projectData),
                 LocalizedStringSwiftRule(projectData: projectData)
         ]
     }
