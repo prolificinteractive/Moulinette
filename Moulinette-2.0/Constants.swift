@@ -32,6 +32,9 @@ struct Constants {
         static let openCurlyBracketString = "{"
         static let commaString = ","
         static let protocolString = "protocol"
+        static let letString = "let"
+        static let getString = "get"
+        static let equalString = "="
     }
 
     struct Regex {
