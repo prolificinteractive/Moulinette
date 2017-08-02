@@ -124,8 +124,7 @@ private extension PrivateVariableSwiftRule {
                     fileComponents.forEach {
                         if $0.contains(variableName)
                             && $0.contains(Constants.SwiftComponents.overrideString)
-                            && $0.contains(Constants.SwiftComponents.varString)
-                            && $0.contains(Constants.SwiftComponents.ibOutletString) {
+                            && $0.contains(Constants.SwiftComponents.varString) {
                             numberOfTimesOverriden += 1
                         }
                     }
@@ -142,9 +141,12 @@ private extension PrivateVariableSwiftRule {
         
         for (_, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
-                if $0.contains(classNameOfPublicVariable) && $0.contains(Constants.SwiftComponents.varString)
-                    || $0.contains(Constants.SwiftComponents.ibOutletString)  {
+                if $0.contains(classNameOfPublicVariable) &&
+                    ($0.contains(Constants.SwiftComponents.varString) || $0.contains(Constants.SwiftComponents.letString)) {
                     let classVariableName = variableNameFromLine(fileLine: $0)
+                    if $0.contains("AnimationImageViewModel(") {
+                        print(classVariableName)
+                    }
                     let publicVariable = classVariableName + "." + variableName
                     
                     fileComponents.forEach {
@@ -161,13 +163,37 @@ private extension PrivateVariableSwiftRule {
     
     private func variableNameFromLine(fileLine: String) -> String {
         let noSpacefileLine = fileLine.stringWithoutWhitespaces()
+        let noSpacefileLineArray = noSpacefileLine.components(separatedBy: "")
         
-        guard let variableName = noSpacefileLine.stringBetween(startString: Constants.SwiftComponents.varString,
-                                                               endString: Constants.SwiftComponents.colonString) else {
-                                                                return ""
+        var variableNameFromLine = ""
+        
+        noSpacefileLineArray.forEach {
+            if $0 == Constants.SwiftComponents.colonString {
+                variableNameStringBetween(noSpacefileLine: noSpacefileLine,
+                                          endString: Constants.SwiftComponents.colonString,
+                                          variableNameFromLine: &variableNameFromLine)
+            } else if $0 == Constants.SwiftComponents.equalString {
+                variableNameStringBetween(noSpacefileLine: noSpacefileLine,
+                                          endString: Constants.SwiftComponents.equalString,
+                                          variableNameFromLine: &variableNameFromLine)
+            }
         }
         
-        return variableName
+        return variableNameFromLine
+    }
+    
+    private func variableNameStringBetween(noSpacefileLine: String,
+                                           endString: String,
+                                           variableNameFromLine: inout String) {
+        if let variableName = noSpacefileLine.stringBetween(startString: Constants.SwiftComponents.varString,
+                                                            endString: Constants.SwiftComponents.equalString) {
+            variableNameFromLine = variableName
+            return
+        } else if let variableName = noSpacefileLine.stringBetween(startString: Constants.SwiftComponents.letString,
+                                                                   endString: Constants.SwiftComponents.equalString) {
+            variableNameFromLine = variableName
+            return
+        }
     }
     
     private func classNameFromFile(fileName: String) -> String {
@@ -181,10 +207,11 @@ private extension PrivateVariableSwiftRule {
     }
     
     private func isPublicVariable(fileLine: String) -> Bool {
-        return fileLine.contains(Constants.SwiftComponents.ibOutletString)
+        return fileLine.contains(Constants.SwiftComponents.varString)
             && !fileLine.contains(Constants.SwiftComponents.privateString)
             && !fileLine.contains(Constants.SwiftComponents.fileprivateString)
             && !fileLine.contains(Constants.SwiftComponents.internalString)
             && !fileLine.contains(Constants.SwiftComponents.overrideString)
+            && !fileLine.contains(Constants.SwiftComponents.getString)
     }
 }
