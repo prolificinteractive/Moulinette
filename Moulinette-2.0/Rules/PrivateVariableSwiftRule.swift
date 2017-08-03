@@ -30,12 +30,12 @@ final class PrivateVariableSwiftRule: SwiftRule {
             
             var protocolsAndSubclassesInFile: [String]?
             
+            if let protocolsAndSubclasses = fileProtocolsAndSubclasses(fileComponents: fileComponents) {
+                protocolsAndSubclassesInFile = protocolsAndSubclasses
+            }
+            
             fileComponents.forEach {
                 contextCheck.check(fileLine: $0)
-                
-                if let protocolsAndSubclasses = fileProtocolsAndSubclasses(fileLine: $0) {
-                    protocolsAndSubclassesInFile = protocolsAndSubclasses
-                }
                 
                 if publicIBOutletVariablePubliclyUsedCheck(fileLine: $0,
                                                            fileName: fileName,
@@ -77,20 +77,29 @@ private extension PrivateVariableSwiftRule {
         return !didFindPublicOccurrences && !isVariableOverriden && !isProtocolVariable
     }
     
-    func fileProtocolsAndSubclasses(fileLine: String) -> [String]? {
-        guard fileLine.contains(Constants.SwiftComponents.classString)
-            && fileLine.contains(Constants.SwiftComponents.internalString) else {
+    func fileProtocolsAndSubclasses(fileComponents: [String]) -> [String]? {
+        var fileComponentsArray = fileComponents.joined().components(separatedBy: " ")
+        
+        guard let classIndex = fileComponentsArray.index(of: Constants.SwiftComponents.classString) else {
             return nil
         }
         
-        let noSpaceLine = fileLine.stringWithoutWhitespaces()
+        fileComponentsArray.replaceSubrange(0..<classIndex, with: [])
         
-        guard let protocolAndSubclassesString = noSpaceLine.stringBetween(startString: Constants.SwiftComponents.colonString,
+        let fileComponentsString = fileComponentsArray.joined(separator: " ")
+        
+        guard let protocolAndSubclassesString = fileComponentsString.stringBetween(startString: Constants.SwiftComponents.classString,
                                                                           endString: Constants.SwiftComponents.openCurlyBracketString) else {
             return nil
         }
         
-        return protocolAndSubclassesString.components(separatedBy: ",")
+        let protocolsNoCommas = protocolAndSubclassesString.replacingOccurrences(of: ",", with: "")
+        let protocolAndSubclassesArray = protocolsNoCommas.components(separatedBy: " ")
+        let protocolArrayNoSpace = protocolAndSubclassesArray.filter {
+            return $0 != ""
+        }
+        
+        return protocolArrayNoSpace
     }
     
     private func isPublicIBOutletProtocolVariable(variableName: String, protocolsAndSubClassesInFile: [String]?) -> Bool {
@@ -101,13 +110,12 @@ private extension PrivateVariableSwiftRule {
         var numberOfProtocolVariables = 0
         
         protocolsAndSubClassesInFile.forEach { (protocolName) in
-            for (_, fileComponents) in projectData.applicationComponents.components {
-                fileComponents.forEach {
-                    if $0.contains(protocolName) && $0.contains(Constants.SwiftComponents.protocolString) {
-                        fileComponents.forEach {
-                            if $0.contains(variableName) {
-                                numberOfProtocolVariables += 1
-                            }
+            for (fileName, fileComponents) in projectData.applicationComponents.components {
+                let fileClassName = fileName.replacingOccurrences(of: Constants.FileNameConstants.swiftDotSuffix, with: "")
+                if fileClassName == protocolName {
+                    fileComponents.forEach {
+                        if $0.contains(variableName) {
+                            numberOfProtocolVariables += 1
                         }
                     }
                 }
@@ -162,7 +170,7 @@ private extension PrivateVariableSwiftRule {
     
     private func variableNameFromLine(fileLine: String) -> String {
         let noSpacefileLine = fileLine.stringWithoutWhitespaces()
-        let noSpacefileLineArray = noSpacefileLine.characters.map {
+        var noSpacefileLineArray = noSpacefileLine.characters.map {
             String($0)
         }
         
@@ -172,9 +180,9 @@ private extension PrivateVariableSwiftRule {
             return variableName
         }
         
-        let varArray = Array(noSpacefileLineArray.suffix(equalsIndex))
+        noSpacefileLineArray.replaceSubrange(equalsIndex..<noSpacefileLineArray.count, with: [])
         
-        let variableNameFromLine = extractVariableNameFrom(array: varArray, noSpacefileLine: noSpacefileLine)
+        let variableNameFromLine = extractVariableNameFrom(array: noSpacefileLineArray, noSpacefileLine: noSpacefileLine)
         
         return variableNameFromLine
     }
