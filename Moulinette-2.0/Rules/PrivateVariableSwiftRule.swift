@@ -62,7 +62,9 @@ private extension PrivateVariableSwiftRule {
         }
         
         let className = classNameFromFile(fileName: fileName)
-        let variableName = variableNameFromLine(fileLine: fileLine)
+        let noSpacefileLine = fileLine.stringWithoutWhitespaces()
+        let variableName = variableNameStringBetween(noSpacefileLine: noSpacefileLine,
+                                                     endString: Constants.SwiftComponents.colonString)
         
         let didFindPublicOccurrences = publicOccurrencesFound(classNameOfPublicVariable: className,
                                                               variableName: variableName)
@@ -144,9 +146,6 @@ private extension PrivateVariableSwiftRule {
                 if $0.contains(classNameOfPublicVariable) &&
                     ($0.contains(Constants.SwiftComponents.varString) || $0.contains(Constants.SwiftComponents.letString)) {
                     let classVariableName = variableNameFromLine(fileLine: $0)
-                    if $0.contains("AnimationImageViewModel(") {
-                        print(classVariableName)
-                    }
                     let publicVariable = classVariableName + "." + variableName
                     
                     fileComponents.forEach {
@@ -163,37 +162,49 @@ private extension PrivateVariableSwiftRule {
     
     private func variableNameFromLine(fileLine: String) -> String {
         let noSpacefileLine = fileLine.stringWithoutWhitespaces()
-        let noSpacefileLineArray = noSpacefileLine.components(separatedBy: "")
+        let noSpacefileLineArray = noSpacefileLine.characters.map {
+            String($0)
+        }
         
+        guard let equalsIndex = noSpacefileLineArray.index(of: Constants.SwiftComponents.equalString) else {
+            return ""
+        }
+        
+        let varArray = Array(noSpacefileLineArray.suffix(equalsIndex))
+        
+        let variableNameFromLine = extractVariableNameFrom(array: varArray, noSpacefileLine: noSpacefileLine)
+        
+        return variableNameFromLine
+    }
+    
+    private func extractVariableNameFrom(array: [String],
+                                         noSpacefileLine: String) -> String {
         var variableNameFromLine = ""
         
-        noSpacefileLineArray.forEach {
-            if $0 == Constants.SwiftComponents.colonString {
-                variableNameStringBetween(noSpacefileLine: noSpacefileLine,
-                                          endString: Constants.SwiftComponents.colonString,
-                                          variableNameFromLine: &variableNameFromLine)
-            } else if $0 == Constants.SwiftComponents.equalString {
-                variableNameStringBetween(noSpacefileLine: noSpacefileLine,
-                                          endString: Constants.SwiftComponents.equalString,
-                                          variableNameFromLine: &variableNameFromLine)
-            }
+        if let _ = array.index(of: Constants.SwiftComponents.colonString) {
+            variableNameFromLine = variableNameStringBetween(noSpacefileLine: noSpacefileLine,
+                                      endString: Constants.SwiftComponents.colonString)
+        } else {
+            variableNameFromLine = variableNameStringBetween(noSpacefileLine: noSpacefileLine,
+                                      endString: Constants.SwiftComponents.equalString)
         }
         
         return variableNameFromLine
     }
     
     private func variableNameStringBetween(noSpacefileLine: String,
-                                           endString: String,
-                                           variableNameFromLine: inout String) {
+                                           endString: String) -> String {
+        var variableNameFromLine = ""
+        
         if let variableName = noSpacefileLine.stringBetween(startString: Constants.SwiftComponents.varString,
-                                                            endString: Constants.SwiftComponents.equalString) {
+                                                            endString: endString) {
             variableNameFromLine = variableName
-            return
         } else if let variableName = noSpacefileLine.stringBetween(startString: Constants.SwiftComponents.letString,
-                                                                   endString: Constants.SwiftComponents.equalString) {
+                                                              endString: endString) {
             variableNameFromLine = variableName
-            return
         }
+        
+        return variableNameFromLine
     }
     
     private func classNameFromFile(fileName: String) -> String {
