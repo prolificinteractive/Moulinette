@@ -119,7 +119,7 @@
 			containerPortal = 20C40C4C1ED8D47C00695CA7 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 20C40C531ED8D47C00695CA7;
-			remoteInfo = "Moulinette-2.0";
+			remoteInfo = Moulinette;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -152,7 +152,7 @@
 		201D741C1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiColonSwiftRuleTests.swift; sourceTree = "<group>"; };
 		201D74271EFAC7F200361ECD /* AuditGrade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditGrade.swift; sourceTree = "<group>"; };
 		2023AD131EFB122800B66438 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
-		2053EE881EF4862B00AAE36D /* Moulinette-2.0-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moulinette-2.0-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2053EE881EF4862B00AAE36D /* Moulinette-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moulinette-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2053EE8C1EF4862B00AAE36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRuleTests.swift; sourceTree = "<group>"; };
 		206837A31EDE1D5D008CB7F3 /* ProjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectData.swift; path = ../ProjectData.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 		208173501EEB27F90077106A /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		209696BF1EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionWeakSwiftRule.swift; sourceTree = "<group>"; };
 		209696C11EE9F4270035C7AE /* RulePriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulePriority.swift; sourceTree = "<group>"; };
-		20C40C541ED8D47C00695CA7 /* Moulinette-2.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Moulinette-2.0"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20C40C541ED8D47C00695CA7 /* Moulinette */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Moulinette; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C40C571ED8D47C00695CA7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		20E413FE1EDF41660000E447 /* Audit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Audit.swift; path = ../Protocols/Audit.swift; sourceTree = "<group>"; };
 		20E414001EDF41900000E447 /* CodeRuleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeRuleType.swift; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		2053EE891EF4862B00AAE36D /* Moulinette-2.0-Tests */ = {
+		2053EE891EF4862B00AAE36D /* Moulinette-Tests */ = {
 			isa = PBXGroup;
 			children = (
 				4CA5E00F1F1FA44B00EBE48B /* Core */,
@@ -241,7 +241,7 @@
 				2023AD121EFB120900B66438 /* Extensions */,
 				2053EE8C1EF4862B00AAE36D /* Info.plist */,
 			);
-			path = "Moulinette-2.0-Tests";
+			path = "Moulinette-Tests";
 			sourceTree = "<group>";
 		};
 		2053EE901EF486F500AAE36D /* Rules */ = {
@@ -341,8 +341,8 @@
 		20C40C4B1ED8D47C00695CA7 = {
 			isa = PBXGroup;
 			children = (
-				20C40C561ED8D47C00695CA7 /* Moulinette-2.0 */,
-				2053EE891EF4862B00AAE36D /* Moulinette-2.0-Tests */,
+				20C40C561ED8D47C00695CA7 /* Moulinette */,
+				2053EE891EF4862B00AAE36D /* Moulinette-Tests */,
 				20C40C551ED8D47C00695CA7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -350,13 +350,13 @@
 		20C40C551ED8D47C00695CA7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				20C40C541ED8D47C00695CA7 /* Moulinette-2.0 */,
-				2053EE881EF4862B00AAE36D /* Moulinette-2.0-Tests.xctest */,
+				20C40C541ED8D47C00695CA7 /* Moulinette */,
+				2053EE881EF4862B00AAE36D /* Moulinette-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		20C40C561ED8D47C00695CA7 /* Moulinette-2.0 */ = {
+		20C40C561ED8D47C00695CA7 /* Moulinette */ = {
 			isa = PBXGroup;
 			children = (
 				20C40C571ED8D47C00695CA7 /* main.swift */,
@@ -366,7 +366,7 @@
 				208173521EEB28DA0077106A /* Model */,
 				6608445E1EF47057002340C9 /* Utility */,
 			);
-			path = "Moulinette-2.0";
+			path = Moulinette;
 			sourceTree = "<group>";
 		};
 		20E414021EDF7F2C0000E447 /* Context Checks */ = {
@@ -461,9 +461,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2053EE871EF4862B00AAE36D /* Moulinette-2.0-Tests */ = {
+		2053EE871EF4862B00AAE36D /* Moulinette-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2053EE8F1EF4862B00AAE36D /* Build configuration list for PBXNativeTarget "Moulinette-2.0-Tests" */;
+			buildConfigurationList = 2053EE8F1EF4862B00AAE36D /* Build configuration list for PBXNativeTarget "Moulinette-Tests" */;
 			buildPhases = (
 				2053EE841EF4862B00AAE36D /* Sources */,
 				2053EE851EF4862B00AAE36D /* Frameworks */,
@@ -474,14 +474,14 @@
 			dependencies = (
 				2053EEA51EF48FBC00AAE36D /* PBXTargetDependency */,
 			);
-			name = "Moulinette-2.0-Tests";
-			productName = "Moulinette-2.0-Tests";
-			productReference = 2053EE881EF4862B00AAE36D /* Moulinette-2.0-Tests.xctest */;
+			name = "Moulinette-Tests";
+			productName = MoulinetteTests;
+			productReference = 2053EE881EF4862B00AAE36D /* Moulinette-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		20C40C531ED8D47C00695CA7 /* Moulinette-2.0 */ = {
+		20C40C531ED8D47C00695CA7 /* Moulinette */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20C40C5B1ED8D47C00695CA7 /* Build configuration list for PBXNativeTarget "Moulinette-2.0" */;
+			buildConfigurationList = 20C40C5B1ED8D47C00695CA7 /* Build configuration list for PBXNativeTarget "Moulinette" */;
 			buildPhases = (
 				20C40C501ED8D47C00695CA7 /* Sources */,
 				20C40C511ED8D47C00695CA7 /* Frameworks */,
@@ -491,9 +491,9 @@
 			);
 			dependencies = (
 			);
-			name = "Moulinette-2.0";
-			productName = "Moulinette-2.0";
-			productReference = 20C40C541ED8D47C00695CA7 /* Moulinette-2.0 */;
+			name = Moulinette;
+			productName = Moulinette;
+			productReference = 20C40C541ED8D47C00695CA7 /* Moulinette */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -519,7 +519,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 20C40C4F1ED8D47C00695CA7 /* Build configuration list for PBXProject "Moulinette-2.0" */;
+			buildConfigurationList = 20C40C4F1ED8D47C00695CA7 /* Build configuration list for PBXProject "Moulinette" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -531,8 +531,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				20C40C531ED8D47C00695CA7 /* Moulinette-2.0 */,
-				2053EE871EF4862B00AAE36D /* Moulinette-2.0-Tests */,
+				20C40C531ED8D47C00695CA7 /* Moulinette */,
+				2053EE871EF4862B00AAE36D /* Moulinette-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -671,7 +671,7 @@
 /* Begin PBXTargetDependency section */
 		2053EEA51EF48FBC00AAE36D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 20C40C531ED8D47C00695CA7 /* Moulinette-2.0 */;
+			target = 20C40C531ED8D47C00695CA7 /* Moulinette */;
 			targetProxy = 2053EEA41EF48FBC00AAE36D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -682,10 +682,12 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
-				INFOPLIST_FILE = "Moulinette-2.0-Tests/Info.plist";
+				INFOPLIST_FILE = "Moulinette-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.Moulinette-2-0-Tests";
+				MODULE_NAME = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.Moulinette-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -698,10 +700,12 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
-				INFOPLIST_FILE = "Moulinette-2.0-Tests/Info.plist";
+				INFOPLIST_FILE = "Moulinette-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.Moulinette-2-0-Tests";
+				MODULE_NAME = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.Moulinette-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
@@ -800,8 +804,11 @@
 		20C40C5C1ED8D47C00695CA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				MODULE_NAME = "";
+				MODULE_VERSION = "";
 				OTHER_SWIFT_FLAGS = "-D INTERNAL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -811,8 +818,11 @@
 		20C40C5D1ED8D47C00695CA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				MODULE_NAME = "";
+				MODULE_VERSION = "";
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -822,7 +832,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2053EE8F1EF4862B00AAE36D /* Build configuration list for PBXNativeTarget "Moulinette-2.0-Tests" */ = {
+		2053EE8F1EF4862B00AAE36D /* Build configuration list for PBXNativeTarget "Moulinette-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2053EE8D1EF4862B00AAE36D /* Debug */,
@@ -831,7 +841,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		20C40C4F1ED8D47C00695CA7 /* Build configuration list for PBXProject "Moulinette-2.0" */ = {
+		20C40C4F1ED8D47C00695CA7 /* Build configuration list for PBXProject "Moulinette" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20C40C591ED8D47C00695CA7 /* Debug */,
@@ -840,7 +850,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		20C40C5B1ED8D47C00695CA7 /* Build configuration list for PBXNativeTarget "Moulinette-2.0" */ = {
+		20C40C5B1ED8D47C00695CA7 /* Build configuration list for PBXNativeTarget "Moulinette" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20C40C5C1ED8D47C00695CA7 /* Debug */,

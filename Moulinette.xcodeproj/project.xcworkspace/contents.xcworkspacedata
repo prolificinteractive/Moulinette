@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Moulinette-2.0.xcodeproj">
+      location = "self:/Users/morgancollino/Desktop/Projects/moulinette/Moulinette.xcodeproj">
    </FileRef>
 </Workspace>

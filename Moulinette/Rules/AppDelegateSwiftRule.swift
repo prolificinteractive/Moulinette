@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// App delegate swift rule.
 final class AppDelegateSwiftRule: SwiftRule {
     
     let name: String = "AppDelegate Clean"
@@ -23,6 +24,9 @@ final class AppDelegateSwiftRule: SwiftRule {
         self.projectData = projectData
     }
     
+    /// Run
+    ///
+    /// - Returns: Run
     func run() -> AuditGrade {
         guard let fileComponent = projectData.applicationComponents.file(by: Constants.FileNameConstants.appDelegate) else {
             auditGrader.failed(fileName: Constants.FileNameConstants.appDelegate,

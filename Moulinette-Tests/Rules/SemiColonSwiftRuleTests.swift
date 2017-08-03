@@ -13,6 +13,7 @@ class SemiColonSwiftRuleTests: XCTestCase {
 
     var sut: SemiColonSwiftRule!
     
+    /// Semicolon test.
     func testRun_SemiColonFound() {
         sut = SemiColonSwiftRule(projectData: projectData(line: "let hello = 0;"))
         
@@ -21,6 +22,7 @@ class SemiColonSwiftRuleTests: XCTestCase {
         XCTAssertEqual(grade.violations, 1)
     }
     
+    /// No semicolon found test.
     func testRun_NoSemiColonFound() {
         sut = SemiColonSwiftRule(projectData: projectData(line: "let hello = 0"))
         
