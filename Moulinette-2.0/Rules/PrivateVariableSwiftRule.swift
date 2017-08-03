@@ -62,9 +62,7 @@ private extension PrivateVariableSwiftRule {
         }
         
         let className = classNameFromFile(fileName: fileName)
-        let noSpacefileLine = fileLine.stringWithoutWhitespaces()
-        let variableName = variableNameStringBetween(noSpacefileLine: noSpacefileLine,
-                                                     endString: Constants.SwiftComponents.colonString)
+        let variableName = variableNameFromLine(fileLine: fileLine)
         
         let didFindPublicOccurrences = publicOccurrencesFound(classNameOfPublicVariable: className,
                                                               variableName: variableName)
