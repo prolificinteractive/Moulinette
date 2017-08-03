@@ -167,7 +167,9 @@ private extension PrivateVariableSwiftRule {
         }
         
         guard let equalsIndex = noSpacefileLineArray.index(of: Constants.SwiftComponents.equalString) else {
-            return ""
+            let variableName = variableNameStringBetween(noSpacefileLine: noSpacefileLine,
+                                                         endString: Constants.SwiftComponents.colonString)
+            return variableName
         }
         
         let varArray = Array(noSpacefileLineArray.suffix(equalsIndex))
