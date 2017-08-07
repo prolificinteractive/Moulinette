@@ -31,7 +31,7 @@ struct ProjectSettings {
     init() {
         #if INTERNAL
             projectName = ProjectSettings.getEnvironmentVar("PROJECT_NAME")!
-            projectDirectory = ProjectSettings.getEnvironmentVar("PROJECT_DIR")!
+            projectDirectory = ProjectSettings.getEnvironmentVar("PROJECT_DIR")! + "/"
             projectIdentifier = ProjectSettings.getEnvironmentVar("PROJECT_IDENTIFIER")!
             silentMode = ProjectSettings.getEnvironmentVar("SILENT_MODE") == "TRUE"
         #else
@@ -43,7 +43,7 @@ struct ProjectSettings {
                     exit(1)
             }
             self.projectName = projectName
-            projectDirectory = FileManager.default.currentDirectoryPath
+            projectDirectory = FileManager.default.currentDirectoryPath + "/"
             self.projectIdentifier = bundleIdentifier
             self.silentMode = silentMode
         #endif

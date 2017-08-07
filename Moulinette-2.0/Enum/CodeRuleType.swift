@@ -30,7 +30,8 @@ struct CodeConventionRuleCollection: RuleCollection {
                 UsesLocalizationSwiftRule(projectData: projectData),
                 RequiredSelfSwiftRule(projectData: projectData),
                 LocalizedStringSwiftRule(projectData: projectData),
-                ATSExceptionSwiftRule(projectData: projectData)
+                ATSExceptionSwiftRule(projectData: projectData),
+                ReadMeSwiftRule(projectData: projectData)
         ]
     }
 }
