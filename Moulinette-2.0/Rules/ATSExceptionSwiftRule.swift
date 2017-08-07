@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Check to see if there are any exception domains in the NSAppTransportSecurity key in the Info.plits.
+/// Check to see if there are any exception domains in the NSAppTransportSecurity key in the Info.plists.
 final class ATSExceptionSwiftRule: SwiftRule {
     
     let name: String = "Check if there are any ATS exception domain in the targets' Info.plists."
@@ -17,13 +17,13 @@ final class ATSExceptionSwiftRule: SwiftRule {
     fileprivate var contextCheck = ContextCheck()
     private var projectData: ProjectData
     
+    private let appTransportSecurityString = "NSAppTransportSecurity"
+    private let exceptionDomainsString = "NSExceptionDomains"
+    private let supportingFilesString = "/Supporting Files/"
+    
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
-    
-    static private let appTransportSecurityString = "NSAppTransportSecurity"
-    static private let exceptionDomainsString = "NSExceptionDomains"
-    static private let supportingFilesString = "/Supporting Files/"
     
     init(projectData: ProjectData) {
         self.projectData = projectData
@@ -33,37 +33,17 @@ final class ATSExceptionSwiftRule: SwiftRule {
         let plistFiles = projectData.applicationComponents.files(for: Constants.FileNameConstants.plistSuffix)
         
         plistFiles.forEach { (fileName, _) in
-            let plistXMLDictionary = parsedXMLDictionary(fileName: fileName)
+            let plistPath = settings.projectDirectory + supportingFilesString + fileName
+            let plistXMLDictionary: [String : AnyObject]? = plistPath.parsedXMLDictionary()
             
             if let plistXMLDictionary = plistXMLDictionary,
-                let appTransportValue = plistXMLDictionary[ATSExceptionSwiftRule.appTransportSecurityString],
-                let exceptionDomains = appTransportValue[ATSExceptionSwiftRule.exceptionDomainsString] as? [String : Any],
+                let appTransportValue = plistXMLDictionary[appTransportSecurityString],
+                let exceptionDomains = appTransportValue[exceptionDomainsString] as? [String : Any],
                 exceptionDomains.count > 0  {
                 auditGrader.violationFound(fileName: fileName, description: "Exception Domains found")
             }
         }
         
         return auditGrader.generateGrade()
-    }
-    
-    /// Parses the Info.plist XML into a readable dictionary.
-    ///
-    /// - Parameter fileName: Filename of the plist file.
-    /// - Returns: Dictionary of parsed XML data.
-    private func parsedXMLDictionary(fileName: String) -> [String : AnyObject]? {
-        var propertyListFormat = PropertyListSerialization.PropertyListFormat.xml
-        var plistData: [String : AnyObject]?
-        let plistPath: String? = settings.projectDirectory + ATSExceptionSwiftRule.supportingFilesString + fileName
-        
-        if let plistPath = plistPath, let plistXML = FileManager.default.contents(atPath: plistPath) {
-            do {
-                plistData = try PropertyListSerialization.propertyList(from: plistXML,
-                                                                       options: .mutableContainersAndLeaves,
-                                                                       format: &propertyListForamt) as? [String : AnyObject]
-            } catch {
-                print("Error reading plist: \(error), format: \(propertyListForamt)")
-            }
-        }
-        return plistData
     }
 }
