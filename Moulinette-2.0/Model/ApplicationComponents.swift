@@ -24,6 +24,11 @@ struct ApplicationComponents {
         return files(for: Constants.FileNameConstants.stringSuffix)
     }
     
+    // README file components.
+    var readmeComponents: [String]? {
+        return file(by: Constants.FileNameConstants.readme)
+    }
+    
     /// Init function with file names.
     ///
     /// - Parameter fileNames: File names.

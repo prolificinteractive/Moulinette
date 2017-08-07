@@ -6,6 +6,7 @@ An internal audit tool for Prolific Interactive brought to you by the PiOS team.
 * Adam Tecle
 * Morgan Collino
 * Ruchi Jain
+* Lee Pollard
 
 ## Requirements
 * Xcode 8.3.3 or up
@@ -17,7 +18,7 @@ How to build and run Moulinette on a Prolific Interactive project.
 1. Open the project in Xcode by double clicking on the `.xcodeproj` file or running `open Moulinette-2.0.xcodeproj`.
 2. Build the project using `CMD B`.
 3. Copy the executable file titled `Moulinette-2.0` from `/Build/Products/Debug/` to your `your_project_repo/subdirectory`.
-4. Run from the command line: `./Moulinette-2.0 --projectName <project-name> --auditSubDirectory <subdirectory>`.
+4. Run from the command line: `./Moulinette-2.0 -projectName <project-name> -auditSubDirectory <subdirectory>`.
 
 ### From Xcode
 1. Open the project in Xcode as in step 1 from above.
