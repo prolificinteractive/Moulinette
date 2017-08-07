@@ -26,4 +26,23 @@ How to build and run Moulinette on a Prolific Interactive project.
 3. Build and run the project using `CMD R`.
 
 ## How To Contribute
-1. New rules conform to the `SwiftRule` protocol in `SwiftRule.swift`.
+### How to create a rule
+#### Process
+1. Pick a rule on the Trello board (https://trello.com/b/CNYIKBlQ/pios-moulinette).
+2. Assess the requirements to create this rule (eg: talk with other members of the moulinette team).
+3. Start working on the rule
+    1. New rules conform to the `SwiftRule` protocol in `SwiftRule.swift`.
+    2. Comment the rule:
+        1. A comment explaining what the rule is checking should be present before the class declaration.
+        2. Each methods (public / private / internal) should be commented and their behavior explained.
+    3. Create the Unit Tests for the rule or create a task on Trello to remind to do it.
+        1. If you create the unit tests:
+            - Comment every test with a clear explanation of what you're testing and what you're expecting.
+        2. If you create a task on Trello.
+            - Comment the task and provide  edge cases that the rule should cover and their expectations.
+4. Make a PR.
+    1. Add all the PiOS Moulinette members in the PR.
+    2. Only 2 approvals are required for merging the rule.
+    3. Explain in your PR what your rule is testing and provided urls for your story and any other story related to this rule (eg: Provide also unit test link even if not made).
+
+
