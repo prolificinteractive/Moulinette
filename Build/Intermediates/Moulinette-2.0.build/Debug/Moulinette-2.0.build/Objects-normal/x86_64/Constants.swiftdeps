@@ -15,9 +15,9 @@ provides-member:
 - ["VV14Moulinette_2_09Constants3URL", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Array"
-- "StringLiteralType"
 - "Constants"
+- "StringLiteralType"
+- "Array"
 depends-member:
 - ["Ps9AnyObject", "init"]
 - ["Sa", "Element"]

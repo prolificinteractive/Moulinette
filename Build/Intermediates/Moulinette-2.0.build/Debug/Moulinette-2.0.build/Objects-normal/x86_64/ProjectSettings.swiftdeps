@@ -7,16 +7,16 @@ provides-member:
 - ["V14Moulinette_2_015ProjectSettings", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "String"
-- "ProjectSettings"
 - !private "+"
+- !private "UnicodeScalarType"
+- "String"
+- "Bool"
+- "ProjectSettings"
 - "AssignmentPrecedence"
 - !private "=="
-- !private "UnicodeScalarType"
-- "Array"
-- "Bool"
-- "StringLiteralType"
 - !private "getenv"
+- "StringLiteralType"
+- "Array"
 - !private "BooleanLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "contains"]
