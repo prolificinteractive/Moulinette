@@ -7,10 +7,10 @@ provides-member:
 - ["O14Moulinette_2_09GradeType", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "String"
-- "GradeType"
-- !private "StringLiteralType"
 - !private "+"
+- !private "StringLiteralType"
+- "GradeType"
+- "String"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - !private ["Ps7CVarArg", "init"]

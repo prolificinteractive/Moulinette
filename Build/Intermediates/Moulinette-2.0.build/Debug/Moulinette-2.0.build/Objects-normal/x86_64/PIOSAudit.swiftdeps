@@ -7,35 +7,32 @@ provides-member:
 - ["V14Moulinette_2_09PIOSAudit", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "PIOSAudit"
-- !private "StringLiteralType"
-- "RuleCollection"
-- !private "+"
-- !private "/"
-- !private "String"
-- "CodeConventionRuleCollection"
-- !private "Int"
-- "AuditScore"
-- !private "settings"
-- !private "Double"
-- !private "print"
 - "ProjectData"
+- "RuleCollection"
+- !private "/"
+- !private "settings"
 - "Audit"
-- !private "+="
-- "AssignmentPrecedence"
 - !private "*"
+- "Output"
+- !private "Double"
+- !private "IntegerLiteralType"
+- !private "FloatLiteralType"
+- !private "+="
+- !private "Int"
+- "PIOSAudit"
+- "AssignmentPrecedence"
+- "CodeConventionRuleCollection"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "record"]
 - !private ["Sa", "Iterator"]
 - !private ["Sa", "_Element"]
 - ["Sa", "deinit"]
 - !private ["Sa", "forEach"]
-- !private ["P14Moulinette_2_05Audit", "AuditScore"]
 - ["P14Moulinette_2_05Audit", "CodeConventionRuleCollection"]
 - !private ["P14Moulinette_2_05Audit", "Int"]
-- !private ["P14Moulinette_2_05Audit", "String"]
+- !private ["P14Moulinette_2_05Audit", "Output"]
 - !private ["P14Moulinette_2_05Audit", "maxPoints"]
-- !private ["P14Moulinette_2_05Audit", "print"]
 - !private ["P14Moulinette_2_05Audit", "projectData"]
 - !private ["P14Moulinette_2_05Audit", "ruleCollection"]
 - ["P14Moulinette_2_05Audit", "runRules"]
@@ -43,8 +40,6 @@ depends-member:
 - ["P14Moulinette_2_05Audit", ""]
 - !private ["V14Moulinette_2_010AuditGrade", "deinit"]
 - !private ["V14Moulinette_2_010AuditGrade", "score"]
-- ["V14Moulinette_2_010AuditScore", "deinit"]
-- !private ["V14Moulinette_2_010AuditScore", "init"]
 - !private ["Ps23BidirectionalCollection", "Iterator"]
 - !private ["Ps23BidirectionalCollection", "_Element"]
 - !private ["Ps23BidirectionalCollection", "forEach"]
@@ -65,7 +60,6 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "Iterator"]
 - !private ["Ps28CustomDebugStringConvertible", "_Element"]
 - !private ["Ps28CustomDebugStringConvertible", "forEach"]
-- !private ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps17CustomReflectable", "Iterator"]
 - !private ["Ps17CustomReflectable", "_Element"]
@@ -81,11 +75,7 @@ depends-member:
 - !private ["Ps25ExpressibleByArrayLiteral", "Iterator"]
 - !private ["Ps25ExpressibleByArrayLiteral", "_Element"]
 - !private ["Ps25ExpressibleByArrayLiteral", "forEach"]
-- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "init"]
-- !private ["Ps32ExpressibleByStringInterpolation", "init"]
-- !private ["Ps26ExpressibleByStringLiteral", "init"]
-- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
 - !private ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "weight"]
 - !private ["Ps9Indexable", "Iterator"]
@@ -100,7 +90,6 @@ depends-member:
 - !private ["Ps7Integer", "init"]
 - !private ["Ps17IntegerArithmetic", "init"]
 - !private ["Ps16IteratorProtocol", "Element"]
-- !private ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps10MirrorPath", "init"]
 - !private ["Ps17MutableCollection", "Iterator"]
 - !private ["Ps17MutableCollection", "_Element"]
@@ -108,30 +97,25 @@ depends-member:
 - !private ["Ps16MutableIndexable", "Iterator"]
 - !private ["Ps16MutableIndexable", "_Element"]
 - !private ["Ps16MutableIndexable", "forEach"]
-- !private ["PSo8NSCoding", "init"]
-- !private ["PSo9NSCopying", "init"]
-- !private ["PSo16NSMutableCopying", "init"]
-- !private ["CSo8NSObject", "init"]
-- !private ["PSo16NSObjectProtocol", "init"]
-- !private ["PSo14NSSecureCoding", "init"]
-- !private ["CSo8NSString", "init"]
-- ["V14Moulinette_2_09PIOSAudit", "AuditScore"]
+- ["C14Moulinette_2_06Output", "deinit"]
+- !private ["C14Moulinette_2_06Output", "init"]
+- !private ["C14Moulinette_2_06Output", "record"]
 - ["V14Moulinette_2_09PIOSAudit", "CodeConventionRuleCollection"]
 - !private ["V14Moulinette_2_09PIOSAudit", "Double"]
 - !private ["V14Moulinette_2_09PIOSAudit", "Int"]
+- ["V14Moulinette_2_09PIOSAudit", "Output"]
 - ["V14Moulinette_2_09PIOSAudit", "ProjectData"]
 - ["V14Moulinette_2_09PIOSAudit", "RuleCollection"]
-- !private ["V14Moulinette_2_09PIOSAudit", "String"]
 - ["V14Moulinette_2_09PIOSAudit", "deinit"]
 - ["V14Moulinette_2_09PIOSAudit", "init"]
 - !private ["V14Moulinette_2_09PIOSAudit", "maxPoints"]
-- !private ["V14Moulinette_2_09PIOSAudit", "print"]
 - !private ["V14Moulinette_2_09PIOSAudit", "projectData"]
 - !private ["V14Moulinette_2_09PIOSAudit", "ruleCollection"]
 - ["V14Moulinette_2_09PIOSAudit", "runRules"]
 - !private ["V14Moulinette_2_09PIOSAudit", "settings"]
 - ["C14Moulinette_2_011ProjectData", "deinit"]
 - ["V14Moulinette_2_015ProjectSettings", "deinit"]
+- !private ["V14Moulinette_2_015ProjectSettings", "projectIdentifier"]
 - !private ["V14Moulinette_2_015ProjectSettings", "projectName"]
 - !private ["Ps22RandomAccessCollection", "Iterator"]
 - !private ["Ps22RandomAccessCollection", "_Element"]
@@ -158,25 +142,17 @@ depends-member:
 - !private ["Ps12SignedNumber", "init"]
 - !private ["Ps10Strideable", "init"]
 - ["SS", "deinit"]
-- !private ["SS", "init"]
 - !private ["P14Moulinette_2_09SwiftRule", "deinit"]
 - !private ["P14Moulinette_2_09SwiftRule", "name"]
 - !private ["P14Moulinette_2_09SwiftRule", "priority"]
 - !private ["P14Moulinette_2_09SwiftRule", "run"]
-- !private ["Ps16TextOutputStream", "init"]
-- !private ["Ps20TextOutputStreamable", "init"]
 - !private ["Ps14_ArrayProtocol", "Iterator"]
 - !private ["Ps14_ArrayProtocol", "_Element"]
 - !private ["Ps14_ArrayProtocol", "forEach"]
 - !private ["Ps24_DestructorSafeContainer", "Iterator"]
 - !private ["Ps24_DestructorSafeContainer", "_Element"]
 - !private ["Ps24_DestructorSafeContainer", "forEach"]
-- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "init"]
-- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
-- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
-- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
-- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps9_Hashable", "init"]
 - !private ["Ps9_Hashable", "weight"]
 - !private ["Ps14_Incrementable", "init"]
@@ -193,7 +169,6 @@ depends-nominal:
 - "Sa"
 - "P14Moulinette_2_05Audit"
 - !private "V14Moulinette_2_010AuditGrade"
-- "V14Moulinette_2_010AuditScore"
 - !private "Ps23BidirectionalCollection"
 - !private "Ps22BidirectionalIndexable"
 - !private "Ps17BitwiseOperations"
@@ -208,11 +183,7 @@ depends-nominal:
 - "Sd"
 - !private "Ps9Equatable"
 - !private "Ps25ExpressibleByArrayLiteral"
-- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - !private "Ps27ExpressibleByIntegerLiteral"
-- !private "Ps32ExpressibleByStringInterpolation"
-- !private "Ps26ExpressibleByStringLiteral"
-- !private "Ps33ExpressibleByUnicodeScalarLiteral"
 - !private "Ps8Hashable"
 - !private "Ps9Indexable"
 - !private "Ps13IndexableBase"
@@ -221,17 +192,10 @@ depends-nominal:
 - !private "Ps7Integer"
 - !private "Ps17IntegerArithmetic"
 - !private "Ps16IteratorProtocol"
-- !private "Ps25LosslessStringConvertible"
 - !private "Ps10MirrorPath"
 - !private "Ps17MutableCollection"
 - !private "Ps16MutableIndexable"
-- !private "PSo8NSCoding"
-- !private "PSo9NSCopying"
-- !private "PSo16NSMutableCopying"
-- !private "CSo8NSObject"
-- !private "PSo16NSObjectProtocol"
-- !private "PSo14NSSecureCoding"
-- !private "CSo8NSString"
+- "C14Moulinette_2_06Output"
 - "V14Moulinette_2_09PIOSAudit"
 - "C14Moulinette_2_011ProjectData"
 - "V14Moulinette_2_015ProjectSettings"
@@ -247,16 +211,9 @@ depends-nominal:
 - !private "Ps10Strideable"
 - "SS"
 - !private "P14Moulinette_2_09SwiftRule"
-- !private "Ps16TextOutputStream"
-- !private "Ps20TextOutputStreamable"
 - !private "Ps14_ArrayProtocol"
 - !private "Ps24_DestructorSafeContainer"
-- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
 - !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
-- !private "Ps34_ExpressibleByBuiltinStringLiteral"
-- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
-- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
-- !private "Ps35_HasCustomAnyHashableRepresentation"
 - !private "Ps9_Hashable"
 - !private "Ps14_Incrementable"
 - !private "Ps8_Integer"
@@ -274,4 +231,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "4d10c516733ee1436079e3df0f2089e7"
+interface-hash: "b02a2833fbe25a4373b854a1974069d0"

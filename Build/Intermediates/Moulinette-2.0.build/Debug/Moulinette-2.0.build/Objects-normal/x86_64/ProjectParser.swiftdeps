@@ -10,26 +10,26 @@ provides-member:
 - ["C14Moulinette_2_013ProjectParser", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "!"
+- !private ">"
 - !private "NSRegularExpression"
+- "Error"
+- !private "FileManager"
+- !private "=="
+- !private "AssignmentPrecedence"
+- "ProjectParser"
+- "CastingPrecedence"
+- "String"
+- !private "||"
+- "ParseError"
+- !private "ProjectSettings"
+- !private "print"
+- !private "settings"
+- !private "StringLiteralType"
+- "!"
 - "ApplicationComponents"
+- "Bool"
 - !private "NSRange"
 - !private "NSString"
-- !private ">"
-- "Bool"
-- !private "=="
-- "CastingPrecedence"
-- !private "AssignmentPrecedence"
-- "String"
-- "ParseError"
-- !private "print"
-- !private "StringLiteralType"
-- !private "FileManager"
-- !private "ProjectSettings"
-- !private "||"
-- "Error"
-- "ProjectParser"
-- !private "settings"
 - "BooleanLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "ApplicationComponents"]
@@ -311,7 +311,7 @@ depends-member:
 - !private ["C14Moulinette_2_013ProjectParser", "checkExcludedDirectory"]
 - !private ["C14Moulinette_2_013ProjectParser", "checkExcludedDirectoryRegex"]
 - ["C14Moulinette_2_013ProjectParser", "deinit"]
-- !private ["C14Moulinette_2_013ProjectParser", "filterClosure"]
+- ["C14Moulinette_2_013ProjectParser", "filterClosure"]
 - ["C14Moulinette_2_013ProjectParser", "init"]
 - ["C14Moulinette_2_013ProjectParser", "isExcluded"]
 - !private ["C14Moulinette_2_013ProjectParser", "print"]
@@ -509,4 +509,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "b9144129c43afcd03f6d733c29c0c880"
+interface-hash: "f1ba1a405cd0cf3e9335cdec89f3c9c7"

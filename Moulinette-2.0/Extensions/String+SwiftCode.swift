@@ -11,6 +11,26 @@ import Foundation
 /// Defines helper functions on objects of type String to parse information about the Swift code 
 /// contained in the string
 extension String {
+    
+    /// Parses an XML file, such as an Info.plist, into a readable dictionary using the string as the source path of 
+    /// the XML file.
+    ///
+    /// - Returns: Dictionary of parsed XML data.
+    func parsedXMLDictionary<T>() -> [String : T]? {
+        var propertyListFormat = PropertyListSerialization.PropertyListFormat.xml
+        var plistData: [String : T]?
+        
+        if let plistXML = FileManager.default.contents(atPath: self) {
+            do {
+                plistData = try PropertyListSerialization.propertyList(from: plistXML,
+                                                                       options: .mutableContainersAndLeaves,
+                                                                       format: &propertyListFormat) as? [String : T]
+            } catch {
+                print("Error reading plist: \(error), format: \(propertyListFormat)")
+            }
+        }
+        return plistData
+    }
 
     /// Determines if the line is a class.
     ///

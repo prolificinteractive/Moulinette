@@ -29,7 +29,9 @@ struct CodeConventionRuleCollection: RuleCollection {
                 ToDoCountSwiftRule(projectData: projectData),
                 UsesLocalizationSwiftRule(projectData: projectData),
                 RequiredSelfSwiftRule(projectData: projectData),
-                LocalizedStringSwiftRule(projectData: projectData)
+                LocalizedStringSwiftRule(projectData: projectData),
+                ATSExceptionSwiftRule(projectData: projectData),
+                ReadMeSwiftRule(projectData: projectData)
         ]
     }
 }

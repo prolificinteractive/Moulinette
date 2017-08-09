@@ -4,41 +4,56 @@ provides-top-level:
 - "projectParser"
 - "applicationFileComponents"
 - "projectData"
-- "auditScore"
+- "output"
 provides-nominal:
 provides-member:
 provides-dynamic-lookup:
 depends-top-level:
+- "=="
 - "projectParser"
-- "print"
-- "ProjectData"
-- "projectData"
-- "auditScore"
-- "StringLiteralType"
-- "settings"
-- "ProjectParser"
-- "ProjectSettings"
-- "PIOSAudit"
 - "applicationFileComponents"
+- "NetworkRequester"
+- "projectData"
+- "output"
+- "ProjectData"
+- "print"
+- "BooleanLiteralType"
+- "ProjectSettings"
+- "ProjectParser"
+- "settings"
+- "PIOSAudit"
+- "StringLiteralType"
 depends-member:
 - ["Ps9AnyObject", "applicationComponents"]
+- ["Ps9AnyObject", "description"]
 - ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "representation"]
+- ["Ps9AnyObject", "submitAuditScore"]
 - ["V14Moulinette_2_021ApplicationComponents", "deinit"]
 - ["P14Moulinette_2_05Audit", "init"]
 - ["P14Moulinette_2_05Audit", "runRules"]
-- ["V14Moulinette_2_010AuditScore", "deinit"]
+- ["Sb", "_getBuiltinLogicValue"]
+- ["Sb", "deinit"]
 - ["Ps7CVarArg", "init"]
 - ["Ps10Comparable", "init"]
 - ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
 - ["Ps29CustomPlaygroundQuickLookable", "init"]
+- ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - ["Ps17CustomReflectable", "init"]
+- ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - ["Ps23CustomStringConvertible", "init"]
+- ["Vs10Dictionary", "deinit"]
+- ["Ps9Equatable", "_getBuiltinLogicValue"]
 - ["Ps9Equatable", "init"]
+- ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
 - ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - ["Ps32ExpressibleByStringInterpolation", "init"]
 - ["Ps26ExpressibleByStringLiteral", "init"]
 - ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- ["Ps8Hashable", "_getBuiltinLogicValue"]
 - ["Ps8Hashable", "init"]
+- ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
 - ["Ps25LosslessStringConvertible", "init"]
 - ["Ps10MirrorPath", "init"]
 - ["PSo8NSCoding", "init"]
@@ -48,6 +63,12 @@ depends-member:
 - ["PSo16NSObjectProtocol", "init"]
 - ["PSo14NSSecureCoding", "init"]
 - ["CSo8NSString", "init"]
+- ["C14Moulinette_2_016NetworkRequester", "deinit"]
+- ["C14Moulinette_2_016NetworkRequester", "init"]
+- ["C14Moulinette_2_016NetworkRequester", "submitAuditScore"]
+- ["C14Moulinette_2_06Output", "deinit"]
+- ["C14Moulinette_2_06Output", "description"]
+- ["C14Moulinette_2_06Output", "representation"]
 - ["V14Moulinette_2_09PIOSAudit", "deinit"]
 - ["V14Moulinette_2_09PIOSAudit", "init"]
 - ["V14Moulinette_2_09PIOSAudit", "runRules"]
@@ -58,30 +79,36 @@ depends-member:
 - ["C14Moulinette_2_013ProjectParser", "init"]
 - ["V14Moulinette_2_015ProjectSettings", "deinit"]
 - ["V14Moulinette_2_015ProjectSettings", "init"]
+- ["V14Moulinette_2_015ProjectSettings", "silentMode"]
 - ["SS", "deinit"]
 - ["SS", "init"]
 - ["P14Moulinette_2_09SwiftData", "init"]
 - ["Ps16TextOutputStream", "init"]
 - ["Ps20TextOutputStreamable", "init"]
+- ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
 - ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
 - ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
 - ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
 - ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - ["Ps9_Hashable", "init"]
+- ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - ["Ps21_ObjectiveCBridgeable", "init"]
 depends-nominal:
 - "Ps9AnyObject"
 - "V14Moulinette_2_021ApplicationComponents"
 - "P14Moulinette_2_05Audit"
-- "V14Moulinette_2_010AuditScore"
+- "Sb"
 - "Ps7CVarArg"
 - "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
 - "Ps29CustomPlaygroundQuickLookable"
 - "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
+- "Vs10Dictionary"
 - "Ps9Equatable"
+- "Ps27ExpressibleByBooleanLiteral"
 - "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - "Ps32ExpressibleByStringInterpolation"
 - "Ps26ExpressibleByStringLiteral"
@@ -96,6 +123,8 @@ depends-nominal:
 - "PSo16NSObjectProtocol"
 - "PSo14NSSecureCoding"
 - "CSo8NSString"
+- "C14Moulinette_2_016NetworkRequester"
+- "C14Moulinette_2_06Output"
 - "V14Moulinette_2_09PIOSAudit"
 - "C14Moulinette_2_011ProjectData"
 - "C14Moulinette_2_013ProjectParser"
@@ -104,6 +133,7 @@ depends-nominal:
 - "P14Moulinette_2_09SwiftData"
 - "Ps16TextOutputStream"
 - "Ps20TextOutputStreamable"
+- "Ps35_ExpressibleByBuiltinBooleanLiteral"
 - "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
 - "Ps34_ExpressibleByBuiltinStringLiteral"
 - "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
@@ -121,4 +151,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "d0df8d6df1ae31409cb1eca2596d5261"
+interface-hash: "c7031e1f6459c0e7c116566b2161eda9"
