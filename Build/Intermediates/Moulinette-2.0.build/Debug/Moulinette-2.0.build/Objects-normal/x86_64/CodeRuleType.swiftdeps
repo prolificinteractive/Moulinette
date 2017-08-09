@@ -1,0 +1,163 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "CodeConventionRuleCollection"
+provides-nominal:
+- "V14Moulinette_2_028CodeConventionRuleCollection"
+provides-member:
+- ["V14Moulinette_2_028CodeConventionRuleCollection", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "MarkUsageSwiftRule"
+- !private "ATSExceptionSwiftRule"
+- !private "ToDoCountSwiftRule"
+- !private "SemiColonSwiftRule"
+- !private "ReadMeSwiftRule"
+- !private "TypeInferenceSwiftRule"
+- !private "ForceUnwrapSwiftRule"
+- !private "ToDoStorySwiftRule"
+- !private "WeakIBOutletSwiftRule"
+- !private "LocalizedStringSwiftRule"
+- !private "FinalClassesSwiftRule"
+- !private "FontEncapsulationSwiftRule"
+- !private "AppDelegateSwiftRule"
+- !private "InternalModifierSwiftRule"
+- !private "UsesLocalizationSwiftRule"
+- !private "ColorEncapsulationSwiftRule"
+- "ProjectData"
+- !private "SingleEnumCaseSwiftRule"
+- "RuleCollection"
+- "SwiftRule"
+- !private "RequiredSelfSwiftRule"
+- !private "CompletionWeakSwiftRule"
+- !private "SinglePublicInternalSwiftRule"
+- "CodeConventionRuleCollection"
+depends-member:
+- ["C14Moulinette_2_021ATSExceptionSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_021ATSExceptionSwiftRule", "init"]
+- !private ["Ps9AnyObject", "init"]
+- ["C14Moulinette_2_020AppDelegateSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_020AppDelegateSwiftRule", "init"]
+- ["Sa", "deinit"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "ATSExceptionSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "AppDelegateSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "ColorEncapsulationSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "CompletionWeakSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "FinalClassesSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "FontEncapsulationSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "ForceUnwrapSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "InternalModifierSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "LocalizedStringSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "MarkUsageSwiftRule"]
+- ["V14Moulinette_2_028CodeConventionRuleCollection", "ProjectData"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "ReadMeSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "RequiredSelfSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "SemiColonSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "SingleEnumCaseSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "SinglePublicInternalSwiftRule"]
+- ["V14Moulinette_2_028CodeConventionRuleCollection", "SwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "ToDoCountSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "ToDoStorySwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "TypeInferenceSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "UsesLocalizationSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "WeakIBOutletSwiftRule"]
+- ["V14Moulinette_2_028CodeConventionRuleCollection", "deinit"]
+- ["V14Moulinette_2_028CodeConventionRuleCollection", "init"]
+- ["V14Moulinette_2_028CodeConventionRuleCollection", "rules"]
+- ["C14Moulinette_2_027ColorEncapsulationSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_027ColorEncapsulationSwiftRule", "init"]
+- ["C14Moulinette_2_023CompletionWeakSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_023CompletionWeakSwiftRule", "init"]
+- ["C14Moulinette_2_021FinalClassesSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_021FinalClassesSwiftRule", "init"]
+- ["C14Moulinette_2_026FontEncapsulationSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_026FontEncapsulationSwiftRule", "init"]
+- ["C14Moulinette_2_020ForceUnwrapSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_020ForceUnwrapSwiftRule", "init"]
+- ["C14Moulinette_2_025InternalModifierSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_025InternalModifierSwiftRule", "init"]
+- ["C14Moulinette_2_024LocalizedStringSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_024LocalizedStringSwiftRule", "init"]
+- ["C14Moulinette_2_018MarkUsageSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_018MarkUsageSwiftRule", "init"]
+- ["C14Moulinette_2_011ProjectData", "deinit"]
+- ["C14Moulinette_2_015ReadMeSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_015ReadMeSwiftRule", "init"]
+- ["C14Moulinette_2_021RequiredSelfSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_021RequiredSelfSwiftRule", "init"]
+- !private ["P14Moulinette_2_014RuleCollection", "ATSExceptionSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "AppDelegateSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "ColorEncapsulationSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "CompletionWeakSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "FinalClassesSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "FontEncapsulationSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "ForceUnwrapSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "InternalModifierSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "LocalizedStringSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "MarkUsageSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "ReadMeSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "RequiredSelfSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "SemiColonSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "SingleEnumCaseSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "SinglePublicInternalSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "ToDoCountSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "ToDoStorySwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "TypeInferenceSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "UsesLocalizationSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "WeakIBOutletSwiftRule"]
+- ["P14Moulinette_2_014RuleCollection", "rules"]
+- ["P14Moulinette_2_014RuleCollection", ""]
+- ["C14Moulinette_2_018SemiColonSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_018SemiColonSwiftRule", "init"]
+- ["C14Moulinette_2_023SingleEnumCaseSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_023SingleEnumCaseSwiftRule", "init"]
+- ["C14Moulinette_2_029SinglePublicInternalSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_029SinglePublicInternalSwiftRule", "init"]
+- !private ["P14Moulinette_2_09SwiftRule", "init"]
+- ["C14Moulinette_2_018ToDoCountSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_018ToDoCountSwiftRule", "init"]
+- ["C14Moulinette_2_018ToDoStorySwiftRule", "deinit"]
+- !private ["C14Moulinette_2_018ToDoStorySwiftRule", "init"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "init"]
+- ["C14Moulinette_2_025UsesLocalizationSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_025UsesLocalizationSwiftRule", "init"]
+- ["C14Moulinette_2_021WeakIBOutletSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_021WeakIBOutletSwiftRule", "init"]
+depends-nominal:
+- "C14Moulinette_2_021ATSExceptionSwiftRule"
+- !private "Ps9AnyObject"
+- "C14Moulinette_2_020AppDelegateSwiftRule"
+- "Sa"
+- "V14Moulinette_2_028CodeConventionRuleCollection"
+- "C14Moulinette_2_027ColorEncapsulationSwiftRule"
+- "C14Moulinette_2_023CompletionWeakSwiftRule"
+- "C14Moulinette_2_021FinalClassesSwiftRule"
+- "C14Moulinette_2_026FontEncapsulationSwiftRule"
+- "C14Moulinette_2_020ForceUnwrapSwiftRule"
+- "C14Moulinette_2_025InternalModifierSwiftRule"
+- "C14Moulinette_2_024LocalizedStringSwiftRule"
+- "C14Moulinette_2_018MarkUsageSwiftRule"
+- "C14Moulinette_2_011ProjectData"
+- "C14Moulinette_2_015ReadMeSwiftRule"
+- "C14Moulinette_2_021RequiredSelfSwiftRule"
+- "P14Moulinette_2_014RuleCollection"
+- "C14Moulinette_2_018SemiColonSwiftRule"
+- "C14Moulinette_2_023SingleEnumCaseSwiftRule"
+- "C14Moulinette_2_029SinglePublicInternalSwiftRule"
+- !private "P14Moulinette_2_09SwiftRule"
+- "C14Moulinette_2_018ToDoCountSwiftRule"
+- "C14Moulinette_2_018ToDoStorySwiftRule"
+- "C14Moulinette_2_022TypeInferenceSwiftRule"
+- "C14Moulinette_2_025UsesLocalizationSwiftRule"
+- "C14Moulinette_2_021WeakIBOutletSwiftRule"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+interface-hash: "a221dc033548faf17ca94435e8929461"

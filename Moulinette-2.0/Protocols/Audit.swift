@@ -10,5 +10,5 @@ import Foundation
 
 protocol Audit {
     
-    func runRules() -> AuditScore
+    func runRules() -> Output
 }

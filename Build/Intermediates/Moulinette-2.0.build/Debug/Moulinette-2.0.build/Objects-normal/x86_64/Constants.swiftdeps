@@ -1,0 +1,159 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Constants"
+provides-nominal:
+- "V14Moulinette_2_09Constants"
+- "VV14Moulinette_2_09Constants17FileNameConstants"
+- "VV14Moulinette_2_09Constants15SwiftComponents"
+- "VV14Moulinette_2_09Constants5Regex"
+- "VV14Moulinette_2_09Constants3URL"
+provides-member:
+- ["V14Moulinette_2_09Constants", ""]
+- ["VV14Moulinette_2_09Constants17FileNameConstants", ""]
+- ["VV14Moulinette_2_09Constants15SwiftComponents", ""]
+- ["VV14Moulinette_2_09Constants5Regex", ""]
+- ["VV14Moulinette_2_09Constants3URL", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "Array"
+- "StringLiteralType"
+- "Constants"
+depends-member:
+- ["Ps9AnyObject", "init"]
+- ["Sa", "Element"]
+- ["Sa", "deinit"]
+- ["Ps23BidirectionalCollection", "Element"]
+- ["Ps22BidirectionalIndexable", "Element"]
+- ["Ps7CVarArg", "Element"]
+- ["Ps7CVarArg", "init"]
+- ["Ps10Collection", "Element"]
+- ["Ps10Comparable", "init"]
+- ["V14Moulinette_2_09Constants", "FileNameConstants"]
+- ["V14Moulinette_2_09Constants", "Regex"]
+- ["V14Moulinette_2_09Constants", "SwiftComponents"]
+- ["V14Moulinette_2_09Constants", "URL"]
+- ["V14Moulinette_2_09Constants", "fileExtensions"]
+- ["V14Moulinette_2_09Constants", "init"]
+- ["Ps28CustomDebugStringConvertible", "Element"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps29CustomPlaygroundQuickLookable", "init"]
+- ["Ps17CustomReflectable", "Element"]
+- ["Ps17CustomReflectable", "init"]
+- ["Ps23CustomStringConvertible", "Element"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps9Equatable", "init"]
+- ["Ps25ExpressibleByArrayLiteral", "Element"]
+- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- ["Ps32ExpressibleByStringInterpolation", "init"]
+- ["Ps26ExpressibleByStringLiteral", "init"]
+- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- ["VV14Moulinette_2_09Constants17FileNameConstants", "appDelegate"]
+- ["VV14Moulinette_2_09Constants17FileNameConstants", "init"]
+- ["VV14Moulinette_2_09Constants17FileNameConstants", "localizable"]
+- ["VV14Moulinette_2_09Constants17FileNameConstants", "plistSuffix"]
+- ["VV14Moulinette_2_09Constants17FileNameConstants", "readme"]
+- ["VV14Moulinette_2_09Constants17FileNameConstants", "stringSuffix"]
+- ["VV14Moulinette_2_09Constants17FileNameConstants", "swiftSuffix"]
+- ["Ps8Hashable", "init"]
+- ["Ps9Indexable", "Element"]
+- ["Ps13IndexableBase", "Element"]
+- ["Ps25LosslessStringConvertible", "init"]
+- ["Ps10MirrorPath", "init"]
+- ["Ps17MutableCollection", "Element"]
+- ["Ps16MutableIndexable", "Element"]
+- ["PSo8NSCoding", "init"]
+- ["PSo9NSCopying", "init"]
+- ["PSo16NSMutableCopying", "init"]
+- ["CSo8NSObject", "init"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo14NSSecureCoding", "init"]
+- ["CSo8NSString", "init"]
+- ["Ps22RandomAccessCollection", "Element"]
+- ["Ps21RandomAccessIndexable", "Element"]
+- ["Ps26RangeReplaceableCollection", "Element"]
+- ["Ps25RangeReplaceableIndexable", "Element"]
+- ["VV14Moulinette_2_09Constants5Regex", "comment"]
+- ["VV14Moulinette_2_09Constants5Regex", "init"]
+- ["Ps8Sequence", "Element"]
+- ["SS", "deinit"]
+- ["SS", "init"]
+- ["VV14Moulinette_2_09Constants15SwiftComponents", "init"]
+- ["Ps16TextOutputStream", "init"]
+- ["Ps20TextOutputStreamable", "init"]
+- ["VV14Moulinette_2_09Constants3URL", "init"]
+- ["VV14Moulinette_2_09Constants3URL", "pivotal"]
+- ["Ps14_ArrayProtocol", "Element"]
+- ["Ps24_DestructorSafeContainer", "Element"]
+- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- ["Ps9_Hashable", "init"]
+- ["Ps21_ObjectiveCBridgeable", "Element"]
+- ["Ps21_ObjectiveCBridgeable", "init"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Sa"
+- "Ps23BidirectionalCollection"
+- "Ps22BidirectionalIndexable"
+- "Ps7CVarArg"
+- "Ps10Collection"
+- "Ps10Comparable"
+- "V14Moulinette_2_09Constants"
+- "Ps28CustomDebugStringConvertible"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps25ExpressibleByArrayLiteral"
+- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- "Ps32ExpressibleByStringInterpolation"
+- "Ps26ExpressibleByStringLiteral"
+- "Ps33ExpressibleByUnicodeScalarLiteral"
+- "VV14Moulinette_2_09Constants17FileNameConstants"
+- "Ps8Hashable"
+- "Ps9Indexable"
+- "Ps13IndexableBase"
+- "Ps25LosslessStringConvertible"
+- "Ps10MirrorPath"
+- "Ps17MutableCollection"
+- "Ps16MutableIndexable"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo14NSSecureCoding"
+- "CSo8NSString"
+- "Ps22RandomAccessCollection"
+- "Ps21RandomAccessIndexable"
+- "Ps26RangeReplaceableCollection"
+- "Ps25RangeReplaceableIndexable"
+- "VV14Moulinette_2_09Constants5Regex"
+- "Ps8Sequence"
+- "SS"
+- "VV14Moulinette_2_09Constants15SwiftComponents"
+- "Ps16TextOutputStream"
+- "Ps20TextOutputStreamable"
+- "VV14Moulinette_2_09Constants3URL"
+- "Ps14_ArrayProtocol"
+- "Ps24_DestructorSafeContainer"
+- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- "Ps34_ExpressibleByBuiltinStringLiteral"
+- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- "Ps21_ObjectiveCBridgeable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+interface-hash: "42db5cb932380e1a68b1e810da30d01d"

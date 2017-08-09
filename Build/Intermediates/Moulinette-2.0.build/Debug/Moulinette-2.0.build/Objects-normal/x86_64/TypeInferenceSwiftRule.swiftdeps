@@ -1,0 +1,366 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "TypeInferenceSwiftRule"
+provides-nominal:
+- "C14Moulinette_2_022TypeInferenceSwiftRule"
+provides-member:
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "PIOSAuditGrader"
+- "TypeInferenceSwiftRule"
+- "AuditGrader"
+- "AuditGrade"
+- "String"
+- "AssignmentPrecedence"
+- !private "||"
+- !private "=="
+- "SwiftRule"
+- "RulePriority"
+- "StringLiteralType"
+- !private "UnicodeScalarType"
+- "ProjectData"
+- !private "Bool"
+- !private "BooleanLiteralType"
+depends-member:
+- !private ["Ps9AnyObject", "PIOSAuditGrader"]
+- !private ["Ps9AnyObject", "applicationComponents"]
+- !private ["Ps9AnyObject", "auditGrader"]
+- !private ["Ps9AnyObject", "contains"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "name"]
+- ["Ps9AnyObject", "priority"]
+- !private ["Ps9AnyObject", "projectData"]
+- ["Ps9AnyObject", "run"]
+- !private ["Ps9AnyObject", "stringBetween"]
+- !private ["Ps9AnyObject", "stringWithoutWhitespaces"]
+- !private ["Ps9AnyObject", "unnecessaryTypeInference"]
+- ["Ps9AnyObject", ""]
+- !private ["V14Moulinette_2_021ApplicationComponents", "components"]
+- !private ["Sa", "Iterator"]
+- !private ["Sa", "_Element"]
+- ["Sa", "deinit"]
+- !private ["Sa", "forEach"]
+- ["V14Moulinette_2_010AuditGrade", "deinit"]
+- !private ["P14Moulinette_2_011AuditGrader", "deinit"]
+- !private ["P14Moulinette_2_011AuditGrader", "generateGrade"]
+- !private ["P14Moulinette_2_011AuditGrader", "init"]
+- !private ["P14Moulinette_2_011AuditGrader", "violationFound"]
+- !private ["Ps23BidirectionalCollection", "Iterator"]
+- !private ["Ps23BidirectionalCollection", "_Element"]
+- !private ["Ps23BidirectionalCollection", "forEach"]
+- !private ["Ps22BidirectionalIndexable", "Iterator"]
+- !private ["Ps22BidirectionalIndexable", "_Element"]
+- !private ["Ps22BidirectionalIndexable", "forEach"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["Sb", "deinit"]
+- !private ["Ps7CVarArg", "Iterator"]
+- !private ["Ps7CVarArg", "_Element"]
+- !private ["Ps7CVarArg", "contains"]
+- !private ["Ps7CVarArg", "forEach"]
+- ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "stringBetween"]
+- !private ["Ps7CVarArg", "stringWithoutWhitespaces"]
+- !private ["Ps10Collection", "Iterator"]
+- !private ["Ps10Collection", "_Element"]
+- !private ["Ps10Collection", "forEach"]
+- !private ["Ps10Comparable", "contains"]
+- ["Ps10Comparable", "init"]
+- !private ["Ps10Comparable", "stringBetween"]
+- !private ["Ps10Comparable", "stringWithoutWhitespaces"]
+- !private ["Ps28CustomDebugStringConvertible", "Iterator"]
+- !private ["Ps28CustomDebugStringConvertible", "_Element"]
+- !private ["Ps28CustomDebugStringConvertible", "contains"]
+- !private ["Ps28CustomDebugStringConvertible", "forEach"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "stringBetween"]
+- !private ["Ps28CustomDebugStringConvertible", "stringWithoutWhitespaces"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "contains"]
+- ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "stringBetween"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "stringWithoutWhitespaces"]
+- !private ["Ps17CustomReflectable", "Element"]
+- !private ["Ps17CustomReflectable", "Iterator"]
+- !private ["Ps17CustomReflectable", "_Element"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "contains"]
+- !private ["Ps17CustomReflectable", "forEach"]
+- ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "stringBetween"]
+- !private ["Ps17CustomReflectable", "stringWithoutWhitespaces"]
+- !private ["Ps23CustomStringConvertible", "Iterator"]
+- !private ["Ps23CustomStringConvertible", "_Element"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "contains"]
+- !private ["Ps23CustomStringConvertible", "forEach"]
+- ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "stringBetween"]
+- !private ["Ps23CustomStringConvertible", "stringWithoutWhitespaces"]
+- !private ["Vs10Dictionary", "Iterator"]
+- !private ["Vs18DictionaryIterator", "Element"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "contains"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "medium"]
+- !private ["Ps9Equatable", "stringBetween"]
+- !private ["Ps9Equatable", "stringWithoutWhitespaces"]
+- !private ["Ps25ExpressibleByArrayLiteral", "Iterator"]
+- !private ["Ps25ExpressibleByArrayLiteral", "_Element"]
+- !private ["Ps25ExpressibleByArrayLiteral", "forEach"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "Iterator"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "contains"]
+- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "stringBetween"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "stringWithoutWhitespaces"]
+- !private ["Ps32ExpressibleByStringInterpolation", "contains"]
+- ["Ps32ExpressibleByStringInterpolation", "init"]
+- !private ["Ps32ExpressibleByStringInterpolation", "stringBetween"]
+- !private ["Ps32ExpressibleByStringInterpolation", "stringWithoutWhitespaces"]
+- !private ["Ps26ExpressibleByStringLiteral", "contains"]
+- ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "stringBetween"]
+- !private ["Ps26ExpressibleByStringLiteral", "stringWithoutWhitespaces"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "contains"]
+- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "stringBetween"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "stringWithoutWhitespaces"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps8Hashable", "contains"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "medium"]
+- !private ["Ps8Hashable", "stringBetween"]
+- !private ["Ps8Hashable", "stringWithoutWhitespaces"]
+- !private ["Ps9Indexable", "Iterator"]
+- !private ["Ps9Indexable", "_Element"]
+- !private ["Ps9Indexable", "forEach"]
+- !private ["Ps13IndexableBase", "Iterator"]
+- !private ["Ps13IndexableBase", "_Element"]
+- !private ["Ps13IndexableBase", "forEach"]
+- !private ["Vs16IndexingIterator", "Element"]
+- !private ["Ps16IteratorProtocol", "Element"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps25LosslessStringConvertible", "contains"]
+- ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps25LosslessStringConvertible", "stringBetween"]
+- !private ["Ps25LosslessStringConvertible", "stringWithoutWhitespaces"]
+- !private ["Ps10MirrorPath", "contains"]
+- ["Ps10MirrorPath", "init"]
+- !private ["Ps10MirrorPath", "stringBetween"]
+- !private ["Ps10MirrorPath", "stringWithoutWhitespaces"]
+- !private ["Ps17MutableCollection", "Iterator"]
+- !private ["Ps17MutableCollection", "_Element"]
+- !private ["Ps17MutableCollection", "forEach"]
+- !private ["Ps16MutableIndexable", "Iterator"]
+- !private ["Ps16MutableIndexable", "_Element"]
+- !private ["Ps16MutableIndexable", "forEach"]
+- !private ["PSo8NSCoding", "contains"]
+- ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "stringBetween"]
+- !private ["PSo8NSCoding", "stringWithoutWhitespaces"]
+- !private ["PSo9NSCopying", "contains"]
+- ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "stringBetween"]
+- !private ["PSo9NSCopying", "stringWithoutWhitespaces"]
+- !private ["PSo16NSMutableCopying", "contains"]
+- ["PSo16NSMutableCopying", "init"]
+- !private ["PSo16NSMutableCopying", "stringBetween"]
+- !private ["PSo16NSMutableCopying", "stringWithoutWhitespaces"]
+- !private ["CSo8NSObject", "contains"]
+- ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "stringBetween"]
+- !private ["CSo8NSObject", "stringWithoutWhitespaces"]
+- !private ["PSo16NSObjectProtocol", "contains"]
+- ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "stringBetween"]
+- !private ["PSo16NSObjectProtocol", "stringWithoutWhitespaces"]
+- !private ["PSo14NSSecureCoding", "contains"]
+- ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "stringBetween"]
+- !private ["PSo14NSSecureCoding", "stringWithoutWhitespaces"]
+- !private ["CSo8NSString", "contains"]
+- ["CSo8NSString", "init"]
+- !private ["CSo8NSString", "stringBetween"]
+- !private ["CSo8NSString", "stringWithoutWhitespaces"]
+- ["Sq", "deinit"]
+- !private ["C14Moulinette_2_015PIOSAuditGrader", "deinit"]
+- !private ["C14Moulinette_2_015PIOSAuditGrader", "init"]
+- !private ["C14Moulinette_2_011ProjectData", "applicationComponents"]
+- ["C14Moulinette_2_011ProjectData", "deinit"]
+- !private ["Ps22RandomAccessCollection", "Iterator"]
+- !private ["Ps22RandomAccessCollection", "_Element"]
+- !private ["Ps22RandomAccessCollection", "forEach"]
+- !private ["Ps21RandomAccessIndexable", "Iterator"]
+- !private ["Ps21RandomAccessIndexable", "_Element"]
+- !private ["Ps21RandomAccessIndexable", "forEach"]
+- !private ["Ps26RangeReplaceableCollection", "Iterator"]
+- !private ["Ps26RangeReplaceableCollection", "_Element"]
+- !private ["Ps26RangeReplaceableCollection", "forEach"]
+- !private ["Ps25RangeReplaceableIndexable", "Iterator"]
+- !private ["Ps25RangeReplaceableIndexable", "_Element"]
+- !private ["Ps25RangeReplaceableIndexable", "forEach"]
+- ["O14Moulinette_2_012RulePriority", "deinit"]
+- ["O14Moulinette_2_012RulePriority", "medium"]
+- !private ["Ps8Sequence", "Element"]
+- !private ["Ps8Sequence", "Iterator"]
+- !private ["Ps8Sequence", "_Element"]
+- !private ["Ps8Sequence", "forEach"]
+- !private ["SS", "contains"]
+- ["SS", "deinit"]
+- ["SS", "init"]
+- !private ["SS", "stringBetween"]
+- !private ["SS", "stringWithoutWhitespaces"]
+- !private ["P14Moulinette_2_09SwiftData", "applicationComponents"]
+- !private ["P14Moulinette_2_09SwiftRule", "PIOSAuditGrader"]
+- !private ["P14Moulinette_2_09SwiftRule", "auditGrader"]
+- ["P14Moulinette_2_09SwiftRule", "init"]
+- ["P14Moulinette_2_09SwiftRule", "name"]
+- ["P14Moulinette_2_09SwiftRule", "priority"]
+- !private ["P14Moulinette_2_09SwiftRule", "projectData"]
+- ["P14Moulinette_2_09SwiftRule", "run"]
+- !private ["P14Moulinette_2_09SwiftRule", "unnecessaryTypeInference"]
+- ["P14Moulinette_2_09SwiftRule", ""]
+- !private ["Ps16TextOutputStream", "contains"]
+- ["Ps16TextOutputStream", "init"]
+- !private ["Ps16TextOutputStream", "stringBetween"]
+- !private ["Ps16TextOutputStream", "stringWithoutWhitespaces"]
+- !private ["Ps20TextOutputStreamable", "contains"]
+- ["Ps20TextOutputStreamable", "init"]
+- !private ["Ps20TextOutputStreamable", "stringBetween"]
+- !private ["Ps20TextOutputStreamable", "stringWithoutWhitespaces"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "AuditGrade"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "AuditGrader"]
+- !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "Bool"]
+- !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "PIOSAuditGrader"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "ProjectData"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "RulePriority"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "String"]
+- !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "auditGrader"]
+- !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "auditGrader.storage"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "deinit"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "init"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "name"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "priority"]
+- !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "projectData"]
+- ["C14Moulinette_2_022TypeInferenceSwiftRule", "run"]
+- !private ["C14Moulinette_2_022TypeInferenceSwiftRule", "unnecessaryTypeInference"]
+- !private ["Ps14_ArrayProtocol", "Iterator"]
+- !private ["Ps14_ArrayProtocol", "_Element"]
+- !private ["Ps14_ArrayProtocol", "forEach"]
+- !private ["Ps24_DestructorSafeContainer", "Iterator"]
+- !private ["Ps24_DestructorSafeContainer", "_Element"]
+- !private ["Ps24_DestructorSafeContainer", "forEach"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "contains"]
+- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "stringBetween"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "stringWithoutWhitespaces"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "contains"]
+- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "stringBetween"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "stringWithoutWhitespaces"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "contains"]
+- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "stringBetween"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "stringWithoutWhitespaces"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "contains"]
+- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "stringBetween"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "stringWithoutWhitespaces"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "contains"]
+- ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "stringBetween"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "stringWithoutWhitespaces"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps9_Hashable", "contains"]
+- ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", "medium"]
+- !private ["Ps9_Hashable", "stringBetween"]
+- !private ["Ps9_Hashable", "stringWithoutWhitespaces"]
+- !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
+- !private ["Ps21_ObjectiveCBridgeable", "_Element"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "contains"]
+- !private ["Ps21_ObjectiveCBridgeable", "forEach"]
+- ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "stringBetween"]
+- !private ["Ps21_ObjectiveCBridgeable", "stringWithoutWhitespaces"]
+depends-nominal:
+- "Ps9AnyObject"
+- !private "V14Moulinette_2_021ApplicationComponents"
+- "Sa"
+- "V14Moulinette_2_010AuditGrade"
+- !private "P14Moulinette_2_011AuditGrader"
+- !private "Ps23BidirectionalCollection"
+- !private "Ps22BidirectionalIndexable"
+- !private "Sb"
+- "Ps7CVarArg"
+- !private "Ps10Collection"
+- "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- !private "Vs10Dictionary"
+- !private "Vs18DictionaryIterator"
+- "Ps9Equatable"
+- !private "Ps25ExpressibleByArrayLiteral"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- !private "Ps30ExpressibleByDictionaryLiteral"
+- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- "Ps32ExpressibleByStringInterpolation"
+- "Ps26ExpressibleByStringLiteral"
+- "Ps33ExpressibleByUnicodeScalarLiteral"
+- "Ps8Hashable"
+- !private "Ps9Indexable"
+- !private "Ps13IndexableBase"
+- !private "Vs16IndexingIterator"
+- !private "Ps16IteratorProtocol"
+- "Ps25LosslessStringConvertible"
+- "Ps10MirrorPath"
+- !private "Ps17MutableCollection"
+- !private "Ps16MutableIndexable"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo14NSSecureCoding"
+- "CSo8NSString"
+- "Sq"
+- !private "C14Moulinette_2_015PIOSAuditGrader"
+- "C14Moulinette_2_011ProjectData"
+- !private "Ps22RandomAccessCollection"
+- !private "Ps21RandomAccessIndexable"
+- !private "Ps26RangeReplaceableCollection"
+- !private "Ps25RangeReplaceableIndexable"
+- "O14Moulinette_2_012RulePriority"
+- !private "Ps8Sequence"
+- "SS"
+- !private "P14Moulinette_2_09SwiftData"
+- "P14Moulinette_2_09SwiftRule"
+- "Ps16TextOutputStream"
+- "Ps20TextOutputStreamable"
+- "C14Moulinette_2_022TypeInferenceSwiftRule"
+- !private "Ps14_ArrayProtocol"
+- !private "Ps24_DestructorSafeContainer"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- "Ps34_ExpressibleByBuiltinStringLiteral"
+- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- "Ps21_ObjectiveCBridgeable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+interface-hash: "afd16ab9e01c24eea1db513ad0d2125f"

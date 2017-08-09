@@ -18,7 +18,12 @@ class AppDelegateSwiftRuleTests: XCTestCase {
     }
     
     func testRun_NoAppDelegate() {
+<<<<<<< HEAD
         let data = ProjectData(applicationComponents: ApplicationComponents(with: ["": [""]]))
+=======
+        let applicationComponents = ApplicationComponents(with: [""])
+        let data = ProjectData(applicationComponents: applicationComponents)
+>>>>>>> develop
         sut = AppDelegateSwiftRule(projectData: data)
         
         let grade = sut.run()

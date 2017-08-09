@@ -24,6 +24,11 @@ struct ApplicationComponents {
         return files(for: Constants.FileNameConstants.stringSuffix)
     }
     
+    // README file components.
+    var readmeComponents: [String]? {
+        return file(by: Constants.FileNameConstants.readme)
+    }
+    
     /// Init function with file names.
     ///
     /// - Parameter fileNames: File names.
@@ -44,10 +49,10 @@ struct ApplicationComponents {
         }
     }
     
-    /// Init function for components. Used for testing.
+    /// Init with custom components.
     ///
-    /// - Parameter components: components of the app.
-    init(with components: [String : [String]]) {
+    /// - Parameter components: Components.
+    init(with components: [String: [String]]) {
         self.components = components
     }
     
