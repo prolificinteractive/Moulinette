@@ -1,0 +1,7 @@
+# Cartfile
+# Work on carthage 0.24.0
+
+github "jpsim/SourceKitten"
+
+# if you run into an issue like compiled with older version of Swift language (3.0) than previous files (unknown ABI 0x05..)
+# > upgrade your carthage binary by running `brew upgrade carthage`

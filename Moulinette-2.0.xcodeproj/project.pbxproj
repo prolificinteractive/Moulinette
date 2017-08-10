@@ -98,6 +98,9 @@
 		4CA5E0141F1FAB0800EBE48B /* LocalizedStringSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */; };
 		4CA5E0151F1FAB8700EBE48B /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CBA021EFC6EC4006743DF /* String+Substring.swift */; };
 		4CA5E0171F2122E000EBE48B /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E0161F2122E000EBE48B /* Output.swift */; };
+		4CC517321F3B95B80069E102 /* SourceKittenFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4CC5172E1F3B94AD0069E102 /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CC517331F3B95B80069E102 /* SWXMLHash.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4CC5172D1F3B94AC0069E102 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4CC517341F3B95B80069E102 /* Yams.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4CC5172C1F3B94AC0069E102 /* Yams.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		599567C11F38C06C00243191 /* ATSExceptionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599567C01F38C06C00243191 /* ATSExceptionSwiftRule.swift */; };
 		660844581EF41B42002340C9 /* ToDoCountSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844571EF41B42002340C9 /* ToDoCountSwiftRule.swift */; };
 		6608445A1EF45E0E002340C9 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844591EF45E0E002340C9 /* Regex.swift */; };
@@ -130,6 +133,27 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		4C609A641F3B922C0000B06E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4CC517321F3B95B80069E102 /* SourceKittenFramework.framework in CopyFiles */,
+				4CC517331F3B95B80069E102 /* SWXMLHash.framework in CopyFiles */,
+				4CC517341F3B95B80069E102 /* Yams.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBAFC371F3BB2E500FE6BED /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -177,9 +201,17 @@
 		20E414101EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiredSelfSwiftRule.swift; sourceTree = "<group>"; };
 		20E414121EDF8C500000E447 /* SemiColonSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiColonSwiftRule.swift; sourceTree = "<group>"; };
 		4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringSwiftRule.swift; sourceTree = "<group>"; };
+		4C4EDAAB1F3BB7E700B07CEB /* libswiftCore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCore.tbd; path = System/Library/PrivateFrameworks/Swift/libswiftCore.tbd; sourceTree = SDKROOT; };
+		4C4EDAAD1F3BB88A00B07CEB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationComponents.swift; sourceTree = "<group>"; };
 		4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFilteringTests.swift; sourceTree = "<group>"; };
 		4CA5E0161F2122E000EBE48B /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
+		4CBAFC391F3BB31800FE6BED /* SWXMLHash.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SWXMLHash.framework.dSYM; path = Carthage/Build/Mac/SWXMLHash.framework.dSYM; sourceTree = "<group>"; };
+		4CBAFC3B1F3BB33900FE6BED /* Yams.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Yams.framework.dSYM; path = Carthage/Build/Mac/Yams.framework.dSYM; sourceTree = "<group>"; };
+		4CBAFC3D1F3BB33900FE6BED /* SourceKittenFramework.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SourceKittenFramework.framework.dSYM; path = Carthage/Build/Mac/SourceKittenFramework.framework.dSYM; sourceTree = "<group>"; };
+		4CC5172C1F3B94AC0069E102 /* Yams.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yams.framework; path = Carthage/Build/Mac/Yams.framework; sourceTree = "<group>"; };
+		4CC5172D1F3B94AC0069E102 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/Mac/SWXMLHash.framework; sourceTree = "<group>"; };
+		4CC5172E1F3B94AD0069E102 /* SourceKittenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceKittenFramework.framework; path = Carthage/Build/Mac/SourceKittenFramework.framework; sourceTree = "<group>"; };
 		599567C01F38C06C00243191 /* ATSExceptionSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATSExceptionSwiftRule.swift; sourceTree = "<group>"; };
 		660844571EF41B42002340C9 /* ToDoCountSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCountSwiftRule.swift; sourceTree = "<group>"; };
 		660844591EF45E0E002340C9 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
@@ -339,6 +371,7 @@
 				20C40C561ED8D47C00695CA7 /* Moulinette-2.0 */,
 				2053EE891EF4862B00AAE36D /* Moulinette-2.0-Tests */,
 				20C40C551ED8D47C00695CA7 /* Products */,
+				4CC5172B1F3B94AC0069E102 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -390,6 +423,21 @@
 				4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		4CC5172B1F3B94AC0069E102 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C4EDAAD1F3BB88A00B07CEB /* CoreFoundation.framework */,
+				4C4EDAAB1F3BB7E700B07CEB /* libswiftCore.tbd */,
+				4CBAFC3D1F3BB33900FE6BED /* SourceKittenFramework.framework.dSYM */,
+				4CBAFC391F3BB31800FE6BED /* SWXMLHash.framework.dSYM */,
+				4CBAFC3B1F3BB33900FE6BED /* Yams.framework.dSYM */,
+				4CC5172E1F3B94AD0069E102 /* SourceKittenFramework.framework */,
+				4CC5172D1F3B94AC0069E102 /* SWXMLHash.framework */,
+				4CC5172C1F3B94AC0069E102 /* Yams.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		6608445B1EF47024002340C9 /* Protocols */ = {
@@ -480,6 +528,8 @@
 				20C40C501ED8D47C00695CA7 /* Sources */,
 				20C40C511ED8D47C00695CA7 /* Frameworks */,
 				20C40C521ED8D47C00695CA7 /* CopyFiles */,
+				4C609A641F3B922C0000B06E /* CopyFiles */,
+				4CBAFC371F3BB2E500FE6BED /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -676,7 +726,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
 				INFOPLIST_FILE = "Moulinette-2.0-Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.Moulinette-2-0-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -692,7 +742,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
 				INFOPLIST_FILE = "Moulinette-2.0-Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.Moulinette-2-0-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -703,6 +753,7 @@
 		20C40C591ED8D47C00695CA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -740,6 +791,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -751,6 +803,7 @@
 		20C40C5A1ED8D47C00695CA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -782,6 +835,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -792,22 +846,38 @@
 		20C40C5C1ED8D47C00695CA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @executable_path/Frameworks @loader_path/Frameworks @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "-D INTERNAL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		20C40C5D1ED8D47C00695CA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @executable_path/Frameworks @loader_path/Frameworks @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

@@ -7,20 +7,21 @@
 //
 
 import Foundation
+import SourceKittenFramework
 
 /// Application components.
 struct ApplicationComponents {
     
     // [Filename: [Lines]]
-    var components: [String : [String]] = [:]
+    var components: [String: [String]] = [:]
 
     /// Swift files.
-    var swiftFiles: [(String, [String])] {
+    var swiftFiles: [String: [String]] {
         return files(for: Constants.FileNameConstants.swiftSuffix)
     }
     
     // String files.
-    var stringFiles: [(String, [String])] {
+    var stringFiles: [String: [String]] {
         return files(for: Constants.FileNameConstants.stringSuffix)
     }
     
@@ -33,19 +34,18 @@ struct ApplicationComponents {
     ///
     /// - Parameter fileNames: File names.
     init(with fileNames: [String]) {
-        for file in fileNames {
-            let fileToParse = settings.projectDirectory + file
-            
-            do {
-                let content = try String(contentsOfFile: fileToParse, encoding: String.Encoding.utf8)
-                let fileComponents = content.components(separatedBy: "\n")
-                guard let strippedFileName = file.fileName() else {
-                    throw ParseError.error("Failed to parse Swift file name")
-                }
-                components[strippedFileName] = fileComponents
-            } catch {
-                print("Error caught with message: \(error.localizedDescription)")
+        for fileName in fileNames {
+            let fileToParse = settings.projectDirectory + fileName
+            guard let file = File(path: fileToParse) else {
+                continue
             }
+            
+            let content = file.contents
+            let fileComponents = content.components(separatedBy: "\n")
+            guard let strippedFileName = fileName.fileName() else {
+                continue
+            }
+            components[strippedFileName] = fileComponents
         }
     }
     
@@ -68,7 +68,7 @@ struct ApplicationComponents {
     ///
     /// - Parameter pathExtension: Path extension.
     /// - Returns: Array of potential components with the path extension given.
-    func files(for pathExtension: String) -> [(String, [String])] {
+    func files(for pathExtension: String) -> [String: [String]] {
         let files = components.filter { (fileName, content) -> Bool in
             let nsstring = fileName as NSString
             return nsstring.pathExtension == pathExtension

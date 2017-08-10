@@ -47,13 +47,13 @@ final class LocalizedStringSwiftRule: SwiftRule {
     
     // MARK: - Private functions
     
-    private func allFilesContent(with files: [(String, [String])]) -> String {
+    private func allFilesContent(with files: [String: [String]]) -> String {
         return files.flatMap { (fileName, fileContents) -> String? in
             return fileContents.joined()
             }.joined()
     }
     
-    private func getKeys(with stringFiles: [(String, [String])]) -> [String] {
+    private func getKeys(with stringFiles: [String: [String]]) -> [String] {
         var keys: [String] = []
         
         for (_, fileComponents) in stringFiles {
