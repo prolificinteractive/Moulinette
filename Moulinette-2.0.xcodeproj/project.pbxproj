@@ -201,8 +201,14 @@
 		20E414101EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiredSelfSwiftRule.swift; sourceTree = "<group>"; };
 		20E414121EDF8C500000E447 /* SemiColonSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiColonSwiftRule.swift; sourceTree = "<group>"; };
 		4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringSwiftRule.swift; sourceTree = "<group>"; };
-		4C4EDAAB1F3BB7E700B07CEB /* libswiftCore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCore.tbd; path = System/Library/PrivateFrameworks/Swift/libswiftCore.tbd; sourceTree = SDKROOT; };
-		4C4EDAAD1F3BB88A00B07CEB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		4C291FDF1F3CF320001628A4 /* libswiftCore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftCore.dylib; path = Libraries/libswiftCore.dylib; sourceTree = "<group>"; };
+		4C291FE01F3CF320001628A4 /* libswiftCoreFoundation.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftCoreFoundation.dylib; path = Libraries/libswiftCoreFoundation.dylib; sourceTree = "<group>"; };
+		4C291FE31F3CF365001628A4 /* libswiftCoreGraphics.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftCoreGraphics.dylib; path = Libraries/libswiftCoreGraphics.dylib; sourceTree = "<group>"; };
+		4C291FE51F3CF39B001628A4 /* libswiftDarwin.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftDarwin.dylib; path = Libraries/libswiftDarwin.dylib; sourceTree = "<group>"; };
+		4C291FE71F3CF3E5001628A4 /* libswiftDispatch.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftDispatch.dylib; path = Libraries/libswiftDispatch.dylib; sourceTree = "<group>"; };
+		4C291FE81F3CF3E5001628A4 /* libswiftIOKit.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftIOKit.dylib; path = Libraries/libswiftIOKit.dylib; sourceTree = "<group>"; };
+		4C291FEB1F3CF418001628A4 /* libswiftFoundation.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftFoundation.dylib; path = Libraries/libswiftFoundation.dylib; sourceTree = "<group>"; };
+		4C291FED1F3CF440001628A4 /* libswiftObjectiveC.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftObjectiveC.dylib; path = Libraries/libswiftObjectiveC.dylib; sourceTree = "<group>"; };
 		4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationComponents.swift; sourceTree = "<group>"; };
 		4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFilteringTests.swift; sourceTree = "<group>"; };
 		4CA5E0161F2122E000EBE48B /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
@@ -428,8 +434,14 @@
 		4CC5172B1F3B94AC0069E102 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C4EDAAD1F3BB88A00B07CEB /* CoreFoundation.framework */,
-				4C4EDAAB1F3BB7E700B07CEB /* libswiftCore.tbd */,
+				4C291FED1F3CF440001628A4 /* libswiftObjectiveC.dylib */,
+				4C291FEB1F3CF418001628A4 /* libswiftFoundation.dylib */,
+				4C291FE71F3CF3E5001628A4 /* libswiftDispatch.dylib */,
+				4C291FE81F3CF3E5001628A4 /* libswiftIOKit.dylib */,
+				4C291FE51F3CF39B001628A4 /* libswiftDarwin.dylib */,
+				4C291FE31F3CF365001628A4 /* libswiftCoreGraphics.dylib */,
+				4C291FDF1F3CF320001628A4 /* libswiftCore.dylib */,
+				4C291FE01F3CF320001628A4 /* libswiftCoreFoundation.dylib */,
 				4CBAFC3D1F3BB33900FE6BED /* SourceKittenFramework.framework.dSYM */,
 				4CBAFC391F3BB31800FE6BED /* SWXMLHash.framework.dSYM */,
 				4CBAFC3B1F3BB33900FE6BED /* Yams.framework.dSYM */,
@@ -855,7 +867,10 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @executable_path/Frameworks @loader_path/Frameworks @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
 				OTHER_SWIFT_FLAGS = "-D INTERNAL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -874,7 +889,10 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @executable_path/Frameworks @loader_path/Frameworks @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
