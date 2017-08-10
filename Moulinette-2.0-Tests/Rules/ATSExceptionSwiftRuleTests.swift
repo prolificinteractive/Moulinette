@@ -34,7 +34,12 @@ private extension ATSExceptionSwiftRuleTests {
     
     func atsExceptionSwiftRule(fileName: String) -> ATSExceptionSwiftRule {
         let rule = ATSExceptionSwiftRule(projectData: projectData(fileName: fileName))
-        rule.plistPath = "/Users/leepollard/Documents/Prolific_Repos/PiOS/Moulinette-2.0-Tests/"
+        
+        // The location of the two test plists on your machine.
+        if let firstBundle = Bundle.allBundles.first, let resourcePath = firstBundle.resourcePath {
+            rule.plistPath = resourcePath + "/"
+        }
+        
         return rule
     }
     

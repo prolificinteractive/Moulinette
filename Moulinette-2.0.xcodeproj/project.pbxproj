@@ -185,8 +185,8 @@
 		4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationComponents.swift; sourceTree = "<group>"; };
 		4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFilteringTests.swift; sourceTree = "<group>"; };
 		4CA5E0161F2122E000EBE48B /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
-		59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExceptionDomains.plist; sourceTree = "<group>"; };
-		59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NoExceptionDomains.plist; sourceTree = "<group>"; };
+		59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ExceptionDomains.plist; path = "Moulinette-2.0-Tests/ExceptionDomains.plist"; sourceTree = SOURCE_ROOT; };
+		59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NoExceptionDomains.plist; path = "Moulinette-2.0-Tests/NoExceptionDomains.plist"; sourceTree = SOURCE_ROOT; };
 		5932B4D81F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATSExceptionSwiftRuleTests.swift; sourceTree = "<group>"; };
 		599567C01F38C06C00243191 /* ATSExceptionSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATSExceptionSwiftRule.swift; sourceTree = "<group>"; };
 		660844571EF41B42002340C9 /* ToDoCountSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCountSwiftRule.swift; sourceTree = "<group>"; };
@@ -239,12 +239,12 @@
 		2053EE891EF4862B00AAE36D /* Moulinette-2.0-Tests */ = {
 			isa = PBXGroup;
 			children = (
-				59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */,
-				59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */,
 				4CA5E00F1F1FA44B00EBE48B /* Core */,
 				2053EE901EF486F500AAE36D /* Rules */,
 				2023AD121EFB120900B66438 /* Extensions */,
 				2053EE8C1EF4862B00AAE36D /* Info.plist */,
+				59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */,
+				59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */,
 			);
 			path = "Moulinette-2.0-Tests";
 			sourceTree = "<group>";
