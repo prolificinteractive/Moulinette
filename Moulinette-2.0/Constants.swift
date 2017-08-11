@@ -11,6 +11,7 @@ import Foundation
 struct Constants {
 
     static let fileExtensions = ["swift", "strings", "plist", "md"]
+    static let validNonSwiftFiles = ["Podfile", "Localizable.strings"]
 
     struct FileNameConstants {
         static let swiftSuffix = "swift"
@@ -19,10 +20,6 @@ struct Constants {
         static let localizable = "Localizable.strings"
         static let plistSuffix = "plist"
         static let readme = "README.md"
-    }
-    
-    struct SwiftComponents {
-        
     }
 
     struct Regex {

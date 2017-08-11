@@ -82,6 +82,18 @@ extension String {
         return file
     }
 
+    /// Returns true if the String is a file that should be parsed
+    ///
+    /// - Returns: True if the String is a file that should be parsed, false if it should not be parsed.
+    func isValidFile() -> Bool {
+        var valid = false
+        Constants.validNonSwiftFiles.forEach { file in
+            valid = file == self ? true : valid
+        }
+
+        return hasValidFileExtension() || valid
+    }
+
     /// Has valid file extension.
     ///
     /// - Returns: Boolean value. True if value, False else.

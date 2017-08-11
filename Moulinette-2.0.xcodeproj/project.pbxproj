@@ -107,8 +107,10 @@
 		6608446C1EF8053F002340C9 /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6608446B1EF8053F002340C9 /* SwiftData.swift */; };
 		660CB9FF1EFC34D7006743DF /* UsesLocalizationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CB9FE1EFC34D7006743DF /* UsesLocalizationSwiftRule.swift */; };
 		660CBA031EFC6EC4006743DF /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CBA021EFC6EC4006743DF /* String+Substring.swift */; };
+		664E7D1D1F22579C00041CAC /* PodfileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E7D1C1F22579C00041CAC /* PodfileParser.swift */; };
 		6655C66F1EF317F000878A71 /* ToDoStorySwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */; };
 		C7488B511F224B8000B5213C /* ReadMeSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */; };
+		666386E91F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,8 +191,10 @@
 		6608446B1EF8053F002340C9 /* SwiftData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftData.swift; path = ../Protocols/SwiftData.swift; sourceTree = "<group>"; };
 		660CB9FE1EFC34D7006743DF /* UsesLocalizationSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsesLocalizationSwiftRule.swift; sourceTree = "<group>"; };
 		660CBA021EFC6EC4006743DF /* String+Substring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
+		664E7D1C1F22579C00041CAC /* PodfileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodfileParser.swift; sourceTree = "<group>"; };
 		6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoStorySwiftRule.swift; sourceTree = "<group>"; };
 		C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeSwiftRule.swift; sourceTree = "<group>"; };
+		666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodVersionsPinnedSwiftRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +284,7 @@
 				20161CFA1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift */,
 				4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */,
 				599567C01F38C06C00243191 /* ATSExceptionSwiftRule.swift */,
+				666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 			children = (
 				206837A51EDE1E35008CB7F3 /* ProjectParser.swift */,
 				660844601EF47153002340C9 /* CommentParser.swift */,
+				664E7D1C1F22579C00041CAC /* PodfileParser.swift */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -634,11 +640,13 @@
 				20161D101EE0B99B00997AF6 /* InternalModifierSwiftRule.swift in Sources */,
 				20E414011EDF41900000E447 /* CodeRuleType.swift in Sources */,
 				660844611EF47153002340C9 /* CommentParser.swift in Sources */,
+				666386E91F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift in Sources */,
 				20161D0E1EE0B53A00997AF6 /* SingleEnumCaseSwiftRule.swift in Sources */,
 				20E4140D1EDF7F9B0000E447 /* LineContext.swift in Sources */,
 				660CBA031EFC6EC4006743DF /* String+Substring.swift in Sources */,
 				206837AF1EDE22E8008CB7F3 /* GradeType.swift in Sources */,
 				206837A41EDE1D5D008CB7F3 /* ProjectData.swift in Sources */,
+				664E7D1D1F22579C00041CAC /* PodfileParser.swift in Sources */,
 				20E414131EDF8C500000E447 /* SemiColonSwiftRule.swift in Sources */,
 				209696C01EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift in Sources */,
 				201D741B1EFAC48300361ECD /* PIOSAuditGrader.swift in Sources */,
