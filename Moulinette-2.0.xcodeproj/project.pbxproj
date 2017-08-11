@@ -89,18 +89,19 @@
 		20E4140F1EDF7FAA0000E447 /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4140E1EDF7FAA0000E447 /* Check.swift */; };
 		20E414111EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E414101EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift */; };
 		20E414131EDF8C500000E447 /* SemiColonSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E414121EDF8C500000E447 /* SemiColonSwiftRule.swift */; };
+		4C0FC49F1F3E2DDE005111D9 /* libswiftCore.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C35920D1F3DF55500B57DFE /* libswiftCore.dylib */; };
+		4C0FC4A01F3E2DDE005111D9 /* libswiftCoreFoundation.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C35920C1F3DF55500B57DFE /* libswiftCoreFoundation.dylib */; };
+		4C0FC4A11F3E2DDE005111D9 /* libswiftCoreGraphics.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C3592061F3DF55400B57DFE /* libswiftCoreGraphics.dylib */; };
+		4C0FC4A21F3E2DDE005111D9 /* libswiftDarwin.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C3592111F3DF55600B57DFE /* libswiftDarwin.dylib */; };
+		4C0FC4A31F3E2DDE005111D9 /* libswiftDispatch.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C3592101F3DF55600B57DFE /* libswiftDispatch.dylib */; };
+		4C0FC4A41F3E2DDE005111D9 /* libswiftFoundation.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C35920B1F3DF55500B57DFE /* libswiftFoundation.dylib */; };
+		4C0FC4A51F3E2DDE005111D9 /* libswiftIOKit.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C35920F1F3DF55600B57DFE /* libswiftIOKit.dylib */; };
+		4C0FC4A61F3E2DDE005111D9 /* libswiftObjectiveC.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C35920E1F3DF55500B57DFE /* libswiftObjectiveC.dylib */; };
+		4C0FC4A81F3E2E2B005111D9 /* libswiftSwiftOnoneSupport.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C0FC4A71F3E2E0A005111D9 /* libswiftSwiftOnoneSupport.dylib */; };
+		4C0FC4AC1F3E2EBB005111D9 /* SourceKittenFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C0FC4A91F3E2E99005111D9 /* SourceKittenFramework.framework */; };
+		4C0FC4AD1F3E2EBB005111D9 /* SWXMLHash.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C0FC4AB1F3E2E99005111D9 /* SWXMLHash.framework */; };
+		4C0FC4AE1F3E2EBB005111D9 /* Yams.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C0FC4AA1F3E2E99005111D9 /* Yams.framework */; };
 		4C14008A1F19173C007506FE /* LocalizedStringSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */; };
-		4C291FF31F3D02FD001628A4 /* SourceKittenFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C291FF01F3CF597001628A4 /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4C291FF41F3D02FD001628A4 /* SWXMLHash.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C291FF11F3CF597001628A4 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4C291FF51F3D02FD001628A4 /* Yams.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C291FF21F3CF597001628A4 /* Yams.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4C291FF61F3D02FD001628A4 /* libswiftObjectiveC.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C291FED1F3CF440001628A4 /* libswiftObjectiveC.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		4C291FF71F3D02FD001628A4 /* libswiftFoundation.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C291FEB1F3CF418001628A4 /* libswiftFoundation.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		4C291FF81F3D02FD001628A4 /* libswiftDispatch.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C291FE71F3CF3E5001628A4 /* libswiftDispatch.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		4C291FF91F3D02FD001628A4 /* libswiftIOKit.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C291FE81F3CF3E5001628A4 /* libswiftIOKit.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		4C291FFA1F3D02FD001628A4 /* libswiftDarwin.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C291FE51F3CF39B001628A4 /* libswiftDarwin.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		4C291FFB1F3D02FD001628A4 /* libswiftCoreGraphics.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C291FE31F3CF365001628A4 /* libswiftCoreGraphics.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		4C291FFC1F3D02FD001628A4 /* libswiftCore.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C291FDF1F3CF320001628A4 /* libswiftCore.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		4C291FFD1F3D02FD001628A4 /* libswiftCoreFoundation.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C291FE01F3CF320001628A4 /* libswiftCoreFoundation.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4C8BA7711F264B4900F617E7 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E0161F2122E000EBE48B /* Output.swift */; };
 		4CA5E00B1F1E8E2F00EBE48B /* ApplicationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */; };
 		4CA5E0111F1FA46500EBE48B /* FileFilteringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */; };
@@ -146,19 +147,20 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstSubfolderSpec = 16;
 			files = (
-				4C291FF31F3D02FD001628A4 /* SourceKittenFramework.framework in CopyFiles */,
-				4C291FF41F3D02FD001628A4 /* SWXMLHash.framework in CopyFiles */,
-				4C291FF51F3D02FD001628A4 /* Yams.framework in CopyFiles */,
-				4C291FF61F3D02FD001628A4 /* libswiftObjectiveC.dylib in CopyFiles */,
-				4C291FF71F3D02FD001628A4 /* libswiftFoundation.dylib in CopyFiles */,
-				4C291FF81F3D02FD001628A4 /* libswiftDispatch.dylib in CopyFiles */,
-				4C291FF91F3D02FD001628A4 /* libswiftIOKit.dylib in CopyFiles */,
-				4C291FFA1F3D02FD001628A4 /* libswiftDarwin.dylib in CopyFiles */,
-				4C291FFB1F3D02FD001628A4 /* libswiftCoreGraphics.dylib in CopyFiles */,
-				4C291FFC1F3D02FD001628A4 /* libswiftCore.dylib in CopyFiles */,
-				4C291FFD1F3D02FD001628A4 /* libswiftCoreFoundation.dylib in CopyFiles */,
+				4C0FC4AC1F3E2EBB005111D9 /* SourceKittenFramework.framework in CopyFiles */,
+				4C0FC4AD1F3E2EBB005111D9 /* SWXMLHash.framework in CopyFiles */,
+				4C0FC4AE1F3E2EBB005111D9 /* Yams.framework in CopyFiles */,
+				4C0FC4A81F3E2E2B005111D9 /* libswiftSwiftOnoneSupport.dylib in CopyFiles */,
+				4C0FC49F1F3E2DDE005111D9 /* libswiftCore.dylib in CopyFiles */,
+				4C0FC4A01F3E2DDE005111D9 /* libswiftCoreFoundation.dylib in CopyFiles */,
+				4C0FC4A11F3E2DDE005111D9 /* libswiftCoreGraphics.dylib in CopyFiles */,
+				4C0FC4A21F3E2DDE005111D9 /* libswiftDarwin.dylib in CopyFiles */,
+				4C0FC4A31F3E2DDE005111D9 /* libswiftDispatch.dylib in CopyFiles */,
+				4C0FC4A41F3E2DDE005111D9 /* libswiftFoundation.dylib in CopyFiles */,
+				4C0FC4A51F3E2DDE005111D9 /* libswiftIOKit.dylib in CopyFiles */,
+				4C0FC4A61F3E2DDE005111D9 /* libswiftObjectiveC.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,18 +209,19 @@
 		20E4140E1EDF7FAA0000E447 /* Check.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Check.swift; path = ../Protocols/Check.swift; sourceTree = "<group>"; };
 		20E414101EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiredSelfSwiftRule.swift; sourceTree = "<group>"; };
 		20E414121EDF8C500000E447 /* SemiColonSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiColonSwiftRule.swift; sourceTree = "<group>"; };
+		4C0FC4A71F3E2E0A005111D9 /* libswiftSwiftOnoneSupport.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftSwiftOnoneSupport.dylib; path = Libraries/Build/Mac/libswiftSwiftOnoneSupport.dylib; sourceTree = "<group>"; };
+		4C0FC4A91F3E2E99005111D9 /* SourceKittenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceKittenFramework.framework; path = Libraries/Build/SourceKitten/SourceKittenFramework.framework; sourceTree = "<group>"; };
+		4C0FC4AA1F3E2E99005111D9 /* Yams.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yams.framework; path = Libraries/Build/SourceKitten/Yams.framework; sourceTree = "<group>"; };
+		4C0FC4AB1F3E2E99005111D9 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Libraries/Build/SourceKitten/SWXMLHash.framework; sourceTree = "<group>"; };
 		4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringSwiftRule.swift; sourceTree = "<group>"; };
-		4C291FDF1F3CF320001628A4 /* libswiftCore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftCore.dylib; path = Libraries/libswiftCore.dylib; sourceTree = "<group>"; };
-		4C291FE01F3CF320001628A4 /* libswiftCoreFoundation.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftCoreFoundation.dylib; path = Libraries/libswiftCoreFoundation.dylib; sourceTree = "<group>"; };
-		4C291FE31F3CF365001628A4 /* libswiftCoreGraphics.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftCoreGraphics.dylib; path = Libraries/libswiftCoreGraphics.dylib; sourceTree = "<group>"; };
-		4C291FE51F3CF39B001628A4 /* libswiftDarwin.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftDarwin.dylib; path = Libraries/libswiftDarwin.dylib; sourceTree = "<group>"; };
-		4C291FE71F3CF3E5001628A4 /* libswiftDispatch.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftDispatch.dylib; path = Libraries/libswiftDispatch.dylib; sourceTree = "<group>"; };
-		4C291FE81F3CF3E5001628A4 /* libswiftIOKit.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftIOKit.dylib; path = Libraries/libswiftIOKit.dylib; sourceTree = "<group>"; };
-		4C291FEB1F3CF418001628A4 /* libswiftFoundation.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftFoundation.dylib; path = Libraries/libswiftFoundation.dylib; sourceTree = "<group>"; };
-		4C291FED1F3CF440001628A4 /* libswiftObjectiveC.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftObjectiveC.dylib; path = Libraries/libswiftObjectiveC.dylib; sourceTree = "<group>"; };
-		4C291FF01F3CF597001628A4 /* SourceKittenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceKittenFramework.framework; path = Libraries/SourceKittenFramework.framework; sourceTree = "<group>"; };
-		4C291FF11F3CF597001628A4 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Libraries/SWXMLHash.framework; sourceTree = "<group>"; };
-		4C291FF21F3CF597001628A4 /* Yams.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yams.framework; path = Libraries/Yams.framework; sourceTree = "<group>"; };
+		4C3592061F3DF55400B57DFE /* libswiftCoreGraphics.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftCoreGraphics.dylib; path = Libraries/Build/Mac/libswiftCoreGraphics.dylib; sourceTree = "<group>"; };
+		4C35920B1F3DF55500B57DFE /* libswiftFoundation.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftFoundation.dylib; path = Libraries/Build/Mac/libswiftFoundation.dylib; sourceTree = "<group>"; };
+		4C35920C1F3DF55500B57DFE /* libswiftCoreFoundation.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftCoreFoundation.dylib; path = Libraries/Build/Mac/libswiftCoreFoundation.dylib; sourceTree = "<group>"; };
+		4C35920D1F3DF55500B57DFE /* libswiftCore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftCore.dylib; path = Libraries/Build/Mac/libswiftCore.dylib; sourceTree = "<group>"; };
+		4C35920E1F3DF55500B57DFE /* libswiftObjectiveC.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftObjectiveC.dylib; path = Libraries/Build/Mac/libswiftObjectiveC.dylib; sourceTree = "<group>"; };
+		4C35920F1F3DF55600B57DFE /* libswiftIOKit.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftIOKit.dylib; path = Libraries/Build/Mac/libswiftIOKit.dylib; sourceTree = "<group>"; };
+		4C3592101F3DF55600B57DFE /* libswiftDispatch.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftDispatch.dylib; path = Libraries/Build/Mac/libswiftDispatch.dylib; sourceTree = "<group>"; };
+		4C3592111F3DF55600B57DFE /* libswiftDarwin.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswiftDarwin.dylib; path = Libraries/Build/Mac/libswiftDarwin.dylib; sourceTree = "<group>"; };
 		4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationComponents.swift; sourceTree = "<group>"; };
 		4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFilteringTests.swift; sourceTree = "<group>"; };
 		4CA5E0161F2122E000EBE48B /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
@@ -438,17 +441,18 @@
 		4CC5172B1F3B94AC0069E102 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C291FF01F3CF597001628A4 /* SourceKittenFramework.framework */,
-				4C291FF11F3CF597001628A4 /* SWXMLHash.framework */,
-				4C291FF21F3CF597001628A4 /* Yams.framework */,
-				4C291FED1F3CF440001628A4 /* libswiftObjectiveC.dylib */,
-				4C291FEB1F3CF418001628A4 /* libswiftFoundation.dylib */,
-				4C291FE71F3CF3E5001628A4 /* libswiftDispatch.dylib */,
-				4C291FE81F3CF3E5001628A4 /* libswiftIOKit.dylib */,
-				4C291FE51F3CF39B001628A4 /* libswiftDarwin.dylib */,
-				4C291FE31F3CF365001628A4 /* libswiftCoreGraphics.dylib */,
-				4C291FDF1F3CF320001628A4 /* libswiftCore.dylib */,
-				4C291FE01F3CF320001628A4 /* libswiftCoreFoundation.dylib */,
+				4C0FC4A91F3E2E99005111D9 /* SourceKittenFramework.framework */,
+				4C0FC4AB1F3E2E99005111D9 /* SWXMLHash.framework */,
+				4C0FC4AA1F3E2E99005111D9 /* Yams.framework */,
+				4C0FC4A71F3E2E0A005111D9 /* libswiftSwiftOnoneSupport.dylib */,
+				4C35920D1F3DF55500B57DFE /* libswiftCore.dylib */,
+				4C35920C1F3DF55500B57DFE /* libswiftCoreFoundation.dylib */,
+				4C3592061F3DF55400B57DFE /* libswiftCoreGraphics.dylib */,
+				4C3592111F3DF55600B57DFE /* libswiftDarwin.dylib */,
+				4C3592101F3DF55600B57DFE /* libswiftDispatch.dylib */,
+				4C35920B1F3DF55500B57DFE /* libswiftFoundation.dylib */,
+				4C35920F1F3DF55600B57DFE /* libswiftIOKit.dylib */,
+				4C35920E1F3DF55500B57DFE /* libswiftObjectiveC.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -862,14 +866,16 @@
 				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries",
+					"$(PROJECT_DIR)/Libraries/**",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Checkouts";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @executable_path/Frameworks @loader_path/Frameworks @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries",
+					"$(PROJECT_DIR)/Libraries/Build/Mac",
 				);
 				OTHER_SWIFT_FLAGS = "-D INTERNAL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -884,14 +890,16 @@
 				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries",
+					"$(PROJECT_DIR)/Libraries/**",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Checkouts";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @executable_path/Frameworks @loader_path/Frameworks @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries",
+					"$(PROJECT_DIR)/Libraries/Build/Mac",
 				);
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
