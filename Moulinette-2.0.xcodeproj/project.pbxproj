@@ -867,7 +867,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/**",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Checkouts";
@@ -891,7 +890,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries/**",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Checkouts";
