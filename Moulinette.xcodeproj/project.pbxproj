@@ -109,8 +109,8 @@
 		660CBA031EFC6EC4006743DF /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CBA021EFC6EC4006743DF /* String+Substring.swift */; };
 		664E7D1D1F22579C00041CAC /* PodfileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E7D1C1F22579C00041CAC /* PodfileParser.swift */; };
 		6655C66F1EF317F000878A71 /* ToDoStorySwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */; };
-		C7488B511F224B8000B5213C /* ReadMeSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */; };
 		666386E91F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */; };
+		C7488B511F224B8000B5213C /* ReadMeSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,8 +193,8 @@
 		660CBA021EFC6EC4006743DF /* String+Substring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		664E7D1C1F22579C00041CAC /* PodfileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodfileParser.swift; sourceTree = "<group>"; };
 		6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoStorySwiftRule.swift; sourceTree = "<group>"; };
-		C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeSwiftRule.swift; sourceTree = "<group>"; };
 		666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodVersionsPinnedSwiftRule.swift; sourceTree = "<group>"; };
+		C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeSwiftRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
