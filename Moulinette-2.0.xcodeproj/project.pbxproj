@@ -98,6 +98,11 @@
 		4CA5E0141F1FAB0800EBE48B /* LocalizedStringSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */; };
 		4CA5E0151F1FAB8700EBE48B /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CBA021EFC6EC4006743DF /* String+Substring.swift */; };
 		4CA5E0171F2122E000EBE48B /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E0161F2122E000EBE48B /* Output.swift */; };
+		59178A561F3BB560009E5484 /* ATSExceptionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599567C01F38C06C00243191 /* ATSExceptionSwiftRule.swift */; };
+		59178A571F3BB630009E5484 /* ReadMeSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */; };
+		59178A681F3BC3C4009E5484 /* ExceptionDomains.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */; };
+		59178A691F3BC3C4009E5484 /* NoExceptionDomains.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */; };
+		5932B4D91F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5932B4D81F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift */; };
 		599567C11F38C06C00243191 /* ATSExceptionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599567C01F38C06C00243191 /* ATSExceptionSwiftRule.swift */; };
 		660844581EF41B42002340C9 /* ToDoCountSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844571EF41B42002340C9 /* ToDoCountSwiftRule.swift */; };
 		6608445A1EF45E0E002340C9 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844591EF45E0E002340C9 /* Regex.swift */; };
@@ -182,6 +187,9 @@
 		4CA5E00A1F1E8E2F00EBE48B /* ApplicationComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationComponents.swift; sourceTree = "<group>"; };
 		4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFilteringTests.swift; sourceTree = "<group>"; };
 		4CA5E0161F2122E000EBE48B /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
+		59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ExceptionDomains.plist; path = "Moulinette-2.0-Tests/ExceptionDomains.plist"; sourceTree = SOURCE_ROOT; };
+		59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NoExceptionDomains.plist; path = "Moulinette-2.0-Tests/NoExceptionDomains.plist"; sourceTree = SOURCE_ROOT; };
+		5932B4D81F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATSExceptionSwiftRuleTests.swift; sourceTree = "<group>"; };
 		599567C01F38C06C00243191 /* ATSExceptionSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATSExceptionSwiftRule.swift; sourceTree = "<group>"; };
 		660844571EF41B42002340C9 /* ToDoCountSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCountSwiftRule.swift; sourceTree = "<group>"; };
 		660844591EF45E0E002340C9 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
@@ -236,10 +244,11 @@
 			isa = PBXGroup;
 			children = (
 				4CA5E00F1F1FA44B00EBE48B /* Core */,
-				2053EE971EF487FA00AAE36D /* Mocks */,
 				2053EE901EF486F500AAE36D /* Rules */,
 				2023AD121EFB120900B66438 /* Extensions */,
 				2053EE8C1EF4862B00AAE36D /* Info.plist */,
+				59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */,
+				59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */,
 			);
 			path = "Moulinette-2.0-Tests";
 			sourceTree = "<group>";
@@ -249,15 +258,9 @@
 			children = (
 				2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */,
 				201D741C1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift */,
+				5932B4D81F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift */,
 			);
 			path = Rules;
-			sourceTree = "<group>";
-		};
-		2053EE971EF487FA00AAE36D /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mocks;
 			sourceTree = "<group>";
 		};
 		206837A91EDE22A8008CB7F3 /* Rules */ = {
@@ -542,6 +545,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59178A681F3BC3C4009E5484 /* ExceptionDomains.plist in Resources */,
+				59178A691F3BC3C4009E5484 /* NoExceptionDomains.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +562,7 @@
 				201D74211EFAC77900361ECD /* ToDoStorySwiftRule.swift in Sources */,
 				4CA5E0121F1FA69B00EBE48B /* ApplicationComponents.swift in Sources */,
 				4CA5E0141F1FAB0800EBE48B /* LocalizedStringSwiftRule.swift in Sources */,
+				59178A571F3BB630009E5484 /* ReadMeSwiftRule.swift in Sources */,
 				201D74221EFAC77900361ECD /* ToDoCountSwiftRule.swift in Sources */,
 				201D74231EFAC77900361ECD /* SwiftData.swift in Sources */,
 				201D74241EFAC77900361ECD /* Regex.swift in Sources */,
@@ -592,6 +598,7 @@
 				2053EECE1EF4921B00AAE36D /* BracketContextCheck.swift in Sources */,
 				2053EECF1EF4921B00AAE36D /* SwiftRule.swift in Sources */,
 				2053EED01EF4921B00AAE36D /* Audit.swift in Sources */,
+				59178A561F3BB560009E5484 /* ATSExceptionSwiftRule.swift in Sources */,
 				2053EED11EF4921B00AAE36D /* Check.swift in Sources */,
 				2053EED41EF4921B00AAE36D /* GradeType.swift in Sources */,
 				2053EED51EF4921B00AAE36D /* CodeRuleType.swift in Sources */,
@@ -603,6 +610,7 @@
 				2053EEDB1EF4921B00AAE36D /* APIEnvironment.swift in Sources */,
 				4CA5E0151F1FAB8700EBE48B /* String+Substring.swift in Sources */,
 				2053EEDC1EF4921B00AAE36D /* Endpoints.swift in Sources */,
+				5932B4D91F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift in Sources */,
 				2053EE921EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
