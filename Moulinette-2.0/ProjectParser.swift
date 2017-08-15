@@ -42,7 +42,7 @@ final class ProjectParser {
                 print("Error filtering files.")
                 return []
             }
- 
+
             return filteredFileEnumerator
         } catch {
             print("Error caught with message: \(error.localizedDescription)")
@@ -55,7 +55,7 @@ final class ProjectParser {
     
     private static func isExcluded(with file: String) throws -> Bool {
         let fileName = file as NSString
- 
+        print(fileName)
         return try checkExcludedDirectory(fileName: fileName)
             || checkExcludedDirectoryRegex(fileName: fileName)
             || (!file.hasValidFileExtension() && !file.isValidFile())

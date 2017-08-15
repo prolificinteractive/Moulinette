@@ -115,8 +115,9 @@
 		664E7D1D1F22579C00041CAC /* PodfileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E7D1C1F22579C00041CAC /* PodfileParser.swift */; };
 		664E7D1F1F225FBA00041CAC /* DefaultPodsSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E7D1E1F225FBA00041CAC /* DefaultPodsSwiftRule.swift */; };
 		6655C66F1EF317F000878A71 /* ToDoStorySwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */; };
-		C7488B511F224B8000B5213C /* ReadMeSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */; };
 		666386E91F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */; };
+		66E7974D1F4373E500BED6F6 /* TestCoverageSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7974C1F4373E500BED6F6 /* TestCoverageSwiftRule.swift */; };
+		C7488B511F224B8000B5213C /* ReadMeSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,8 +204,9 @@
 		664E7D1C1F22579C00041CAC /* PodfileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodfileParser.swift; sourceTree = "<group>"; };
 		664E7D1E1F225FBA00041CAC /* DefaultPodsSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPodsSwiftRule.swift; sourceTree = "<group>"; };
 		6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoStorySwiftRule.swift; sourceTree = "<group>"; };
-		C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeSwiftRule.swift; sourceTree = "<group>"; };
 		666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodVersionsPinnedSwiftRule.swift; sourceTree = "<group>"; };
+		66E7974C1F4373E500BED6F6 /* TestCoverageSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoverageSwiftRule.swift; sourceTree = "<group>"; };
+		C7488B501F224B8000B5213C /* ReadMeSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeSwiftRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 				599567C01F38C06C00243191 /* ATSExceptionSwiftRule.swift */,
 				666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */,
 				664E7D1E1F225FBA00041CAC /* DefaultPodsSwiftRule.swift */,
+				66E7974C1F4373E500BED6F6 /* TestCoverageSwiftRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				2081734D1EEB25510077106A /* NetworkRequester.swift in Sources */,
 				20161CFD1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift in Sources */,
 				2081734F1EEB27ED0077106A /* APIEnvironment.swift in Sources */,
+				66E7974D1F4373E500BED6F6 /* TestCoverageSwiftRule.swift in Sources */,
 				206837A81EDE20E5008CB7F3 /* Constants.swift in Sources */,
 				207F1DE31EE06BC200284498 /* FinalClassesSwiftRule.swift in Sources */,
 				660CB9FF1EFC34D7006743DF /* UsesLocalizationSwiftRule.swift in Sources */,

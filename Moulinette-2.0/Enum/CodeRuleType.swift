@@ -34,7 +34,8 @@ struct CodeConventionRuleCollection: RuleCollection {
                 ReadMeSwiftRule(projectData: projectData),
                 LocalizedStringSwiftRule(projectData: projectData),
                 PodVersionsPinnedSwiftRule(projectData: projectData),
-                DefaultPodsSwiftRule(projectData: projectData)
+                DefaultPodsSwiftRule(projectData: projectData),
+                TestCoverageSwiftRule(projectData: projectData)
         ]
     }
 }
