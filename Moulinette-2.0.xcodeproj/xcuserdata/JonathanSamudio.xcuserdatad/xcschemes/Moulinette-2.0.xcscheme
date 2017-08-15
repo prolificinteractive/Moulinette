@@ -78,6 +78,11 @@
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
+            key = "PROJECT_IDENTIFIER"
+            value = "com.prolificinteractive.hsn"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
             key = "PROJECT_NAME"
             value = "HSN"
             isEnabled = "YES">

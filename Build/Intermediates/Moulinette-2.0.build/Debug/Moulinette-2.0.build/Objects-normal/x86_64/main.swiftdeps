@@ -9,20 +9,20 @@ provides-nominal:
 provides-member:
 provides-dynamic-lookup:
 depends-top-level:
-- "NetworkRequester"
-- "StringLiteralType"
-- "output"
-- "PIOSAudit"
-- "ProjectParser"
 - "projectParser"
-- "print"
-- "BooleanLiteralType"
 - "ProjectData"
+- "StringLiteralType"
+- "projectData"
+- "BooleanLiteralType"
+- "print"
+- "settings"
+- "ProjectParser"
 - "applicationFileComponents"
 - "ProjectSettings"
-- "projectData"
+- "NetworkRequester"
+- "output"
+- "PIOSAudit"
 - "=="
-- "settings"
 depends-member:
 - ["Ps9AnyObject", "applicationComponents"]
 - ["Ps9AnyObject", "description"]

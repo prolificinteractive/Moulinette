@@ -7,21 +7,21 @@ provides-member:
 - ["C14Moulinette_2_021RequiredSelfSwiftRule", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "RequiredSelfSwiftRule"
+- "ContextCheck"
+- "String"
+- !private "PIOSAuditGrader"
 - "AssignmentPrecedence"
+- "SwiftRule"
 - !private "=="
 - !private "||"
-- !private "PIOSAuditGrader"
-- !private "Bool"
-- !private "!"
-- "RulePriority"
-- "SwiftRule"
-- "ProjectData"
-- "ContextCheck"
-- !private "BooleanLiteralType"
+- "RequiredSelfSwiftRule"
 - "StringLiteralType"
-- "String"
+- "ProjectData"
+- !private "Bool"
+- "RulePriority"
 - "AuditGrader"
+- !private "!"
+- !private "BooleanLiteralType"
 - "AuditGrade"
 depends-member:
 - ["Ps9AnyObject", "ContextCheck"]

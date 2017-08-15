@@ -7,21 +7,21 @@ provides-member:
 - ["V14Moulinette_2_09PIOSAudit", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "ProjectData"
-- !private "Double"
-- "Output"
-- !private "IntegerLiteralType"
-- !private "Int"
-- !private "FloatLiteralType"
-- !private "+="
-- !private "/"
-- "AssignmentPrecedence"
 - !private "settings"
+- !private "/"
+- !private "Double"
+- "ProjectData"
 - "RuleCollection"
-- "Audit"
-- !private "*"
+- !private "Int"
 - "PIOSAudit"
 - "CodeConventionRuleCollection"
+- !private "IntegerLiteralType"
+- !private "+="
+- "Audit"
+- !private "FloatLiteralType"
+- !private "*"
+- "Output"
+- "AssignmentPrecedence"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "record"]
