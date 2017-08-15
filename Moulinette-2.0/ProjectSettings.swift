@@ -38,14 +38,14 @@ struct ProjectSettings {
             let userDefaults = UserDefaults.standard.dictionaryRepresentation()
             guard let projectName = userDefaults["projectName"] as? String,
                 let bundleIdentifier = userDefaults["bundleIdentifier"] as? String,
-                let silentMode = userDefaults["silent"] as? Bool else {
+                let silentMode = userDefaults["silent"] as? String else {
                     print("Error: projectName or bundle identifier not specified!")
                     exit(1)
             }
             self.projectName = projectName
             projectDirectory = FileManager.default.currentDirectoryPath + "/"
             self.projectIdentifier = bundleIdentifier
-            self.silentMode = silentMode
+            self.silentMode = silentMode.lowercased() == "true"
         #endif
     }
     

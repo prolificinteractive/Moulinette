@@ -55,7 +55,6 @@ final class ProjectParser {
     
     private static func isExcluded(with file: String) throws -> Bool {
         let fileName = file as NSString
- 
         return try checkExcludedDirectory(fileName: fileName)
             || checkExcludedDirectoryRegex(fileName: fileName)
             || (!file.hasValidFileExtension() && !file.isValidFile())
