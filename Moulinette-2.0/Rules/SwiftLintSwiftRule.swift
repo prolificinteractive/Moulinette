@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Checks if the SwiftLint build phase script is included in the project's build phase. 
 final class SwiftLintSwiftRule: SwiftRule {
     
     let name: String = "Uses SwiftLint in Project"
