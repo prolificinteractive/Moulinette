@@ -39,7 +39,6 @@ struct ApplicationComponents {
             do {
                 let content = try String(contentsOfFile: fileToParse, encoding: String.Encoding.utf8)
                 let fileComponents = content.components(separatedBy: "\n")
-                print(file)
 
                 guard let strippedFileName = file.fileName() else {
                     throw ParseError.error("Failed to parse Swift file name")
