@@ -9,18 +9,18 @@
 /// Defines a parser for a podfile, represented by an array of strings
 struct PodfileParser {
 
-    /// Parses a Podfile and executes lineCompletion for each line that declares a new CocoaPod
+    /// Parses a podfile and executes completion block that takes
     ///
     /// - Parameters:
-    ///   - podfile: A Podfile represented by an array of strings, where each item is a line in the Podfile
-    ///   - lineCompletion: A closure to be executed when a CocoaPod is found. The tokens array is an array of words
-    ///     from the line that the pod was found on.
-    static func parse(_ podfile: [String], lineCompletion: @escaping ((_ tokens: [String], _ line: String) -> Void)) {
+    ///   - podfile: A podfile represented by an array of strings
+    ///   - onPodFound: A closure executed when a pod specification is found. Takes as parameters 
+    ///   the line separated by whitespace, and the line.
+    static func parse(_ podfile: [String], onPodFound: @escaping ((_ tokens: [String], _ line: String) -> Void)) {
         for line in podfile {
             let trimmed = line.trimmingCharacters(in: .whitespacesAndNewlines)
             let tokens = trimmed.components(separatedBy: " ")
             if let firstToken = tokens.first, firstToken == "pod" {
-                lineCompletion(tokens, line)
+                onPodFound(tokens, line)
             }
         }
     }

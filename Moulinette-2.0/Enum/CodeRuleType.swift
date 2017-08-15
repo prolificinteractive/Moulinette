@@ -33,7 +33,8 @@ struct CodeConventionRuleCollection: RuleCollection {
                 ATSExceptionSwiftRule(projectData: projectData),
                 ReadMeSwiftRule(projectData: projectData),
                 LocalizedStringSwiftRule(projectData: projectData),
-                PodVersionsPinnedSwiftRule(projectData: projectData)
+                PodVersionsPinnedSwiftRule(projectData: projectData),
+                DefaultPodsSwiftRule(projectData: projectData)
         ]
     }
 }
