@@ -7,6 +7,7 @@
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/SwiftRule.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/RequiredSelfSwiftRule.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/ContextCheck.o
+/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/DefaultPodsSwiftRule.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/AppDelegateSwiftRule.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/TypeInferenceSwiftRule.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/PIOSAudit.o
@@ -27,11 +28,13 @@
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/InternalModifierSwiftRule.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/CodeRuleType.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/CommentParser.o
+/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/PodVersionsPinnedSwiftRule.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/SingleEnumCaseSwiftRule.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/LineContext.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/String+Substring.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/GradeType.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/ProjectData.o
+/Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/PodfileParser.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/SemiColonSwiftRule.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/CompletionWeakSwiftRule.o
 /Users/jonsamudio/Prolific-Projects/moulinette-2.0/Build/Intermediates/Moulinette-2.0.build/Debug/Moulinette-2.0.build/Objects-normal/x86_64/PIOSAuditGrader.o

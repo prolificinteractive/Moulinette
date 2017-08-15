@@ -7,8 +7,8 @@ provides-member:
 - ["P14Moulinette_2_05Audit", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Output"
 - "Audit"
+- "Output"
 depends-member:
 - ["P14Moulinette_2_05Audit", "Output"]
 - ["P14Moulinette_2_05Audit", "runRules"]

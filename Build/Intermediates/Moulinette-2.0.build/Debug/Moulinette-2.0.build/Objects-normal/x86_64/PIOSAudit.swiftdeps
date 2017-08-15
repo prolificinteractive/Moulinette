@@ -8,19 +8,19 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "ProjectData"
-- "RuleCollection"
-- !private "/"
-- !private "settings"
-- "Audit"
-- !private "*"
-- "Output"
 - !private "Double"
+- "Output"
 - !private "IntegerLiteralType"
+- !private "Int"
 - !private "FloatLiteralType"
 - !private "+="
-- !private "Int"
-- "PIOSAudit"
+- !private "/"
 - "AssignmentPrecedence"
+- !private "settings"
+- "RuleCollection"
+- "Audit"
+- !private "*"
+- "PIOSAudit"
 - "CodeConventionRuleCollection"
 depends-member:
 - !private ["Ps9AnyObject", "init"]

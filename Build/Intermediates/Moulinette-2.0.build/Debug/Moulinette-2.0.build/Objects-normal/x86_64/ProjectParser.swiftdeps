@@ -10,26 +10,27 @@ provides-member:
 - ["C14Moulinette_2_013ProjectParser", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private ">"
-- !private "NSRegularExpression"
+- "ProjectParser"
+- !private "ProjectSettings"
 - "Error"
+- !private "print"
+- !private "NSRange"
+- "ApplicationComponents"
+- "CastingPrecedence"
+- "!"
+- !private "||"
+- !private "settings"
+- !private "NSString"
 - !private "FileManager"
 - !private "=="
 - !private "AssignmentPrecedence"
-- "ProjectParser"
-- "CastingPrecedence"
-- "String"
-- !private "||"
-- "ParseError"
-- !private "ProjectSettings"
-- !private "print"
-- !private "settings"
 - !private "StringLiteralType"
-- "!"
-- "ApplicationComponents"
+- !private "&&"
+- !private "NSRegularExpression"
+- "String"
 - "Bool"
-- !private "NSRange"
-- !private "NSString"
+- !private ">"
+- "ParseError"
 - "BooleanLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "ApplicationComponents"]
@@ -49,6 +50,7 @@ depends-member:
 - !private ["Ps9AnyObject", "hasValidFileExtension"]
 - !private ["Ps9AnyObject", "init"]
 - ["Ps9AnyObject", "isExcluded"]
+- !private ["Ps9AnyObject", "isValidFile"]
 - !private ["Ps9AnyObject", "length"]
 - !private ["Ps9AnyObject", "matches"]
 - !private ["Ps9AnyObject", "pathComponents"]
@@ -86,6 +88,7 @@ depends-member:
 - !private ["Ps7CVarArg", "first"]
 - !private ["Ps7CVarArg", "hasValidFileExtension"]
 - !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "isValidFile"]
 - !private ["Ps7CVarArg", "length"]
 - !private ["Ps7CVarArg", "matches"]
 - !private ["Ps7CVarArg", "pathComponents"]
@@ -98,6 +101,7 @@ depends-member:
 - !private ["Ps10Comparable", "RawValue"]
 - !private ["Ps10Comparable", "hasValidFileExtension"]
 - !private ["Ps10Comparable", "init"]
+- !private ["Ps10Comparable", "isValidFile"]
 - !private ["Ps28CustomDebugStringConvertible", "IndexDistance"]
 - !private ["Ps28CustomDebugStringConvertible", "Iterator"]
 - !private ["Ps28CustomDebugStringConvertible", "RawValue"]
@@ -109,12 +113,14 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "first"]
 - !private ["Ps28CustomDebugStringConvertible", "hasValidFileExtension"]
 - !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "isValidFile"]
 - !private ["Ps28CustomDebugStringConvertible", "length"]
 - !private ["Ps28CustomDebugStringConvertible", "matches"]
 - !private ["Ps28CustomDebugStringConvertible", "pathComponents"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "RawValue"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "hasValidFileExtension"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "isValidFile"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "length"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "pathComponents"]
 - !private ["Ps17CustomReflectable", "IndexDistance"]
@@ -125,6 +131,7 @@ depends-member:
 - !private ["Ps17CustomReflectable", "first"]
 - !private ["Ps17CustomReflectable", "hasValidFileExtension"]
 - !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "isValidFile"]
 - !private ["Ps23CustomStringConvertible", "IndexDistance"]
 - !private ["Ps23CustomStringConvertible", "Iterator"]
 - !private ["Ps23CustomStringConvertible", "RawValue"]
@@ -136,6 +143,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "first"]
 - !private ["Ps23CustomStringConvertible", "hasValidFileExtension"]
 - !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "isValidFile"]
 - !private ["Ps23CustomStringConvertible", "length"]
 - !private ["Ps23CustomStringConvertible", "matches"]
 - !private ["Ps23CustomStringConvertible", "pathComponents"]
@@ -152,6 +160,7 @@ depends-member:
 - !private ["Ps9Equatable", "filter"]
 - !private ["Ps9Equatable", "hasValidFileExtension"]
 - !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "isValidFile"]
 - !private ["Ps9Equatable", "length"]
 - !private ["Ps9Equatable", "matches"]
 - !private ["Ps9Equatable", "pathComponents"]
@@ -172,19 +181,23 @@ depends-member:
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "RawValue"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "hasValidFileExtension"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "isValidFile"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "length"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "pathComponents"]
 - !private ["Ps32ExpressibleByStringInterpolation", "RawValue"]
 - !private ["Ps32ExpressibleByStringInterpolation", "hasValidFileExtension"]
 - !private ["Ps32ExpressibleByStringInterpolation", "init"]
+- !private ["Ps32ExpressibleByStringInterpolation", "isValidFile"]
 - !private ["Ps26ExpressibleByStringLiteral", "RawValue"]
 - !private ["Ps26ExpressibleByStringLiteral", "hasValidFileExtension"]
 - !private ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "isValidFile"]
 - !private ["Ps26ExpressibleByStringLiteral", "length"]
 - !private ["Ps26ExpressibleByStringLiteral", "pathComponents"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "RawValue"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "hasValidFileExtension"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "isValidFile"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "length"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "pathComponents"]
 - !private ["CSo11FileManager", "default"]
@@ -198,6 +211,7 @@ depends-member:
 - !private ["Ps8Hashable", "filter"]
 - !private ["Ps8Hashable", "hasValidFileExtension"]
 - !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "isValidFile"]
 - !private ["Ps8Hashable", "length"]
 - !private ["Ps8Hashable", "matches"]
 - !private ["Ps8Hashable", "pathComponents"]
@@ -221,11 +235,13 @@ depends-member:
 - !private ["Ps25LosslessStringConvertible", "RawValue"]
 - !private ["Ps25LosslessStringConvertible", "hasValidFileExtension"]
 - !private ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps25LosslessStringConvertible", "isValidFile"]
 - !private ["VCSo19NSRegularExpression15MatchingOptions", "Element"]
 - !private ["VCSo19NSRegularExpression15MatchingOptions", "deinit"]
 - !private ["Ps10MirrorPath", "RawValue"]
 - !private ["Ps10MirrorPath", "hasValidFileExtension"]
 - !private ["Ps10MirrorPath", "init"]
+- !private ["Ps10MirrorPath", "isValidFile"]
 - !private ["Ps17MutableCollection", "IndexDistance"]
 - !private ["Ps17MutableCollection", "Iterator"]
 - !private ["Ps17MutableCollection", "_Element"]
@@ -238,11 +254,13 @@ depends-member:
 - !private ["Ps16MutableIndexable", "first"]
 - !private ["PSo8NSCoding", "hasValidFileExtension"]
 - !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "isValidFile"]
 - !private ["PSo8NSCoding", "length"]
 - !private ["PSo8NSCoding", "matches"]
 - !private ["PSo8NSCoding", "pathComponents"]
 - !private ["PSo9NSCopying", "hasValidFileExtension"]
 - !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "isValidFile"]
 - !private ["PSo9NSCopying", "length"]
 - !private ["PSo9NSCopying", "matches"]
 - !private ["PSo9NSCopying", "pathComponents"]
@@ -253,6 +271,7 @@ depends-member:
 - !private ["C10Foundation25NSFastEnumerationIterator", "Element"]
 - !private ["PSo16NSMutableCopying", "hasValidFileExtension"]
 - !private ["PSo16NSMutableCopying", "init"]
+- !private ["PSo16NSMutableCopying", "isValidFile"]
 - !private ["PSo16NSMutableCopying", "length"]
 - !private ["PSo16NSMutableCopying", "pathComponents"]
 - !private ["CSo8NSObject", "Iterator"]
@@ -261,6 +280,7 @@ depends-member:
 - !private ["CSo8NSObject", "filter"]
 - !private ["CSo8NSObject", "hasValidFileExtension"]
 - !private ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "isValidFile"]
 - !private ["CSo8NSObject", "length"]
 - !private ["CSo8NSObject", "matches"]
 - !private ["CSo8NSObject", "pathComponents"]
@@ -270,6 +290,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "filter"]
 - !private ["PSo16NSObjectProtocol", "hasValidFileExtension"]
 - !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "isValidFile"]
 - !private ["PSo16NSObjectProtocol", "length"]
 - !private ["PSo16NSObjectProtocol", "matches"]
 - !private ["PSo16NSObjectProtocol", "pathComponents"]
@@ -278,12 +299,14 @@ depends-member:
 - !private ["CSo19NSRegularExpression", "matches"]
 - !private ["PSo14NSSecureCoding", "hasValidFileExtension"]
 - !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "isValidFile"]
 - !private ["PSo14NSSecureCoding", "length"]
 - !private ["PSo14NSSecureCoding", "matches"]
 - !private ["PSo14NSSecureCoding", "pathComponents"]
 - !private ["CSo8NSString", "deinit"]
 - !private ["CSo8NSString", "hasValidFileExtension"]
 - !private ["CSo8NSString", "init"]
+- !private ["CSo8NSString", "isValidFile"]
 - !private ["CSo8NSString", "length"]
 - !private ["CSo8NSString", "pathComponents"]
 - !private ["Ps9OptionSet", "Element"]
@@ -357,12 +380,15 @@ depends-member:
 - ["SS", "deinit"]
 - !private ["SS", "hasValidFileExtension"]
 - !private ["SS", "init"]
+- !private ["SS", "isValidFile"]
 - !private ["Ps16TextOutputStream", "RawValue"]
 - !private ["Ps16TextOutputStream", "hasValidFileExtension"]
 - !private ["Ps16TextOutputStream", "init"]
+- !private ["Ps16TextOutputStream", "isValidFile"]
 - !private ["Ps20TextOutputStreamable", "RawValue"]
 - !private ["Ps20TextOutputStreamable", "hasValidFileExtension"]
 - !private ["Ps20TextOutputStreamable", "init"]
+- !private ["Ps20TextOutputStreamable", "isValidFile"]
 - !private ["Su", "deinit"]
 - !private ["Vs6UInt16", "deinit"]
 - !private ["Vs6UInt32", "deinit"]
@@ -382,17 +408,22 @@ depends-member:
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "RawValue"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "hasValidFileExtension"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "isValidFile"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "RawValue"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "hasValidFileExtension"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "isValidFile"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "RawValue"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "hasValidFileExtension"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "isValidFile"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "RawValue"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "hasValidFileExtension"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "isValidFile"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "hasValidFileExtension"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "isValidFile"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "length"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "pathComponents"]
 - !private ["Ps9_Hashable", "Iterator"]
@@ -402,6 +433,7 @@ depends-member:
 - !private ["Ps9_Hashable", "filter"]
 - !private ["Ps9_Hashable", "hasValidFileExtension"]
 - !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "isValidFile"]
 - !private ["Ps9_Hashable", "length"]
 - !private ["Ps9_Hashable", "matches"]
 - !private ["Ps9_Hashable", "pathComponents"]
@@ -415,6 +447,7 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "first"]
 - !private ["Ps21_ObjectiveCBridgeable", "hasValidFileExtension"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "isValidFile"]
 depends-nominal:
 - "Ps9AnyObject"
 - "V14Moulinette_2_021ApplicationComponents"

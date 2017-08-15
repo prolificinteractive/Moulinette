@@ -4,20 +4,18 @@ provides-top-level:
 provides-nominal:
 - "V14Moulinette_2_09Constants"
 - "VV14Moulinette_2_09Constants17FileNameConstants"
-- "VV14Moulinette_2_09Constants15SwiftComponents"
 - "VV14Moulinette_2_09Constants5Regex"
 - "VV14Moulinette_2_09Constants3URL"
 provides-member:
 - ["V14Moulinette_2_09Constants", ""]
 - ["VV14Moulinette_2_09Constants17FileNameConstants", ""]
-- ["VV14Moulinette_2_09Constants15SwiftComponents", ""]
 - ["VV14Moulinette_2_09Constants5Regex", ""]
 - ["VV14Moulinette_2_09Constants3URL", ""]
 provides-dynamic-lookup:
 depends-top-level:
 - "Constants"
-- "Array"
 - "StringLiteralType"
+- "Array"
 depends-member:
 - ["Ps9AnyObject", "init"]
 - ["Sa", "Element"]
@@ -30,10 +28,10 @@ depends-member:
 - ["Ps10Comparable", "init"]
 - ["V14Moulinette_2_09Constants", "FileNameConstants"]
 - ["V14Moulinette_2_09Constants", "Regex"]
-- ["V14Moulinette_2_09Constants", "SwiftComponents"]
 - ["V14Moulinette_2_09Constants", "URL"]
 - ["V14Moulinette_2_09Constants", "fileExtensions"]
 - ["V14Moulinette_2_09Constants", "init"]
+- ["V14Moulinette_2_09Constants", "validNonSwiftFiles"]
 - ["Ps28CustomDebugStringConvertible", "Element"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - ["Ps29CustomPlaygroundQuickLookable", "init"]
@@ -77,7 +75,6 @@ depends-member:
 - ["Ps8Sequence", "Element"]
 - ["SS", "deinit"]
 - ["SS", "init"]
-- ["VV14Moulinette_2_09Constants15SwiftComponents", "init"]
 - ["Ps16TextOutputStream", "init"]
 - ["Ps20TextOutputStreamable", "init"]
 - ["VV14Moulinette_2_09Constants3URL", "init"]
@@ -133,7 +130,6 @@ depends-nominal:
 - "VV14Moulinette_2_09Constants5Regex"
 - "Ps8Sequence"
 - "SS"
-- "VV14Moulinette_2_09Constants15SwiftComponents"
 - "Ps16TextOutputStream"
 - "Ps20TextOutputStreamable"
 - "VV14Moulinette_2_09Constants3URL"
@@ -156,4 +152,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
-interface-hash: "42db5cb932380e1a68b1e810da30d01d"
+interface-hash: "0ce83f891849d256fb52fafd2acc1bd9"

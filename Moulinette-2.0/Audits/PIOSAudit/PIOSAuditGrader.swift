@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Grader for the PiOS Audit.
 final class PIOSAuditGrader: AuditGrader {
     
     let priority: RulePriority

@@ -7,30 +7,32 @@ provides-member:
 - ["V14Moulinette_2_028CodeConventionRuleCollection", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "SwiftRule"
-- !private "SinglePublicInternalSwiftRule"
-- !private "ToDoStorySwiftRule"
-- !private "WeakIBOutletSwiftRule"
-- !private "TypeInferenceSwiftRule"
-- !private "ToDoCountSwiftRule"
-- !private "ColorEncapsulationSwiftRule"
-- !private "UsesLocalizationSwiftRule"
-- !private "ForceUnwrapSwiftRule"
 - !private "SemiColonSwiftRule"
-- !private "CompletionWeakSwiftRule"
-- !private "RequiredSelfSwiftRule"
-- "ProjectData"
-- !private "MarkUsageSwiftRule"
-- !private "FontEncapsulationSwiftRule"
-- "CodeConventionRuleCollection"
-- !private "FinalClassesSwiftRule"
-- !private "ATSExceptionSwiftRule"
-- !private "SingleEnumCaseSwiftRule"
+- "SwiftRule"
+- !private "PodVersionsPinnedSwiftRule"
+- !private "ForceUnwrapSwiftRule"
 - !private "InternalModifierSwiftRule"
-- !private "ReadMeSwiftRule"
+- "CodeConventionRuleCollection"
+- !private "TypeInferenceSwiftRule"
+- !private "CompletionWeakSwiftRule"
+- !private "SinglePublicInternalSwiftRule"
 - !private "AppDelegateSwiftRule"
-- !private "LocalizedStringSwiftRule"
+- !private "ReadMeSwiftRule"
+- !private "ToDoCountSwiftRule"
+- !private "ToDoStorySwiftRule"
+- !private "ColorEncapsulationSwiftRule"
 - "RuleCollection"
+- !private "UsesLocalizationSwiftRule"
+- !private "SingleEnumCaseSwiftRule"
+- !private "LocalizedStringSwiftRule"
+- "ProjectData"
+- !private "DefaultPodsSwiftRule"
+- !private "MarkUsageSwiftRule"
+- !private "WeakIBOutletSwiftRule"
+- !private "FinalClassesSwiftRule"
+- !private "FontEncapsulationSwiftRule"
+- !private "RequiredSelfSwiftRule"
+- !private "ATSExceptionSwiftRule"
 depends-member:
 - ["C14Moulinette_2_021ATSExceptionSwiftRule", "deinit"]
 - !private ["C14Moulinette_2_021ATSExceptionSwiftRule", "init"]
@@ -42,12 +44,14 @@ depends-member:
 - !private ["V14Moulinette_2_028CodeConventionRuleCollection", "AppDelegateSwiftRule"]
 - !private ["V14Moulinette_2_028CodeConventionRuleCollection", "ColorEncapsulationSwiftRule"]
 - !private ["V14Moulinette_2_028CodeConventionRuleCollection", "CompletionWeakSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "DefaultPodsSwiftRule"]
 - !private ["V14Moulinette_2_028CodeConventionRuleCollection", "FinalClassesSwiftRule"]
 - !private ["V14Moulinette_2_028CodeConventionRuleCollection", "FontEncapsulationSwiftRule"]
 - !private ["V14Moulinette_2_028CodeConventionRuleCollection", "ForceUnwrapSwiftRule"]
 - !private ["V14Moulinette_2_028CodeConventionRuleCollection", "InternalModifierSwiftRule"]
 - !private ["V14Moulinette_2_028CodeConventionRuleCollection", "LocalizedStringSwiftRule"]
 - !private ["V14Moulinette_2_028CodeConventionRuleCollection", "MarkUsageSwiftRule"]
+- !private ["V14Moulinette_2_028CodeConventionRuleCollection", "PodVersionsPinnedSwiftRule"]
 - ["V14Moulinette_2_028CodeConventionRuleCollection", "ProjectData"]
 - !private ["V14Moulinette_2_028CodeConventionRuleCollection", "ReadMeSwiftRule"]
 - !private ["V14Moulinette_2_028CodeConventionRuleCollection", "RequiredSelfSwiftRule"]
@@ -67,6 +71,8 @@ depends-member:
 - !private ["C14Moulinette_2_027ColorEncapsulationSwiftRule", "init"]
 - ["C14Moulinette_2_023CompletionWeakSwiftRule", "deinit"]
 - !private ["C14Moulinette_2_023CompletionWeakSwiftRule", "init"]
+- ["C14Moulinette_2_020DefaultPodsSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_020DefaultPodsSwiftRule", "init"]
 - ["C14Moulinette_2_021FinalClassesSwiftRule", "deinit"]
 - !private ["C14Moulinette_2_021FinalClassesSwiftRule", "init"]
 - ["C14Moulinette_2_026FontEncapsulationSwiftRule", "deinit"]
@@ -79,6 +85,8 @@ depends-member:
 - !private ["C14Moulinette_2_024LocalizedStringSwiftRule", "init"]
 - ["C14Moulinette_2_018MarkUsageSwiftRule", "deinit"]
 - !private ["C14Moulinette_2_018MarkUsageSwiftRule", "init"]
+- ["C14Moulinette_2_026PodVersionsPinnedSwiftRule", "deinit"]
+- !private ["C14Moulinette_2_026PodVersionsPinnedSwiftRule", "init"]
 - ["C14Moulinette_2_011ProjectData", "deinit"]
 - ["C14Moulinette_2_015ReadMeSwiftRule", "deinit"]
 - !private ["C14Moulinette_2_015ReadMeSwiftRule", "init"]
@@ -88,12 +96,14 @@ depends-member:
 - !private ["P14Moulinette_2_014RuleCollection", "AppDelegateSwiftRule"]
 - !private ["P14Moulinette_2_014RuleCollection", "ColorEncapsulationSwiftRule"]
 - !private ["P14Moulinette_2_014RuleCollection", "CompletionWeakSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "DefaultPodsSwiftRule"]
 - !private ["P14Moulinette_2_014RuleCollection", "FinalClassesSwiftRule"]
 - !private ["P14Moulinette_2_014RuleCollection", "FontEncapsulationSwiftRule"]
 - !private ["P14Moulinette_2_014RuleCollection", "ForceUnwrapSwiftRule"]
 - !private ["P14Moulinette_2_014RuleCollection", "InternalModifierSwiftRule"]
 - !private ["P14Moulinette_2_014RuleCollection", "LocalizedStringSwiftRule"]
 - !private ["P14Moulinette_2_014RuleCollection", "MarkUsageSwiftRule"]
+- !private ["P14Moulinette_2_014RuleCollection", "PodVersionsPinnedSwiftRule"]
 - !private ["P14Moulinette_2_014RuleCollection", "ReadMeSwiftRule"]
 - !private ["P14Moulinette_2_014RuleCollection", "RequiredSelfSwiftRule"]
 - !private ["P14Moulinette_2_014RuleCollection", "SemiColonSwiftRule"]
@@ -131,12 +141,14 @@ depends-nominal:
 - "V14Moulinette_2_028CodeConventionRuleCollection"
 - "C14Moulinette_2_027ColorEncapsulationSwiftRule"
 - "C14Moulinette_2_023CompletionWeakSwiftRule"
+- "C14Moulinette_2_020DefaultPodsSwiftRule"
 - "C14Moulinette_2_021FinalClassesSwiftRule"
 - "C14Moulinette_2_026FontEncapsulationSwiftRule"
 - "C14Moulinette_2_020ForceUnwrapSwiftRule"
 - "C14Moulinette_2_025InternalModifierSwiftRule"
 - "C14Moulinette_2_024LocalizedStringSwiftRule"
 - "C14Moulinette_2_018MarkUsageSwiftRule"
+- "C14Moulinette_2_026PodVersionsPinnedSwiftRule"
 - "C14Moulinette_2_011ProjectData"
 - "C14Moulinette_2_015ReadMeSwiftRule"
 - "C14Moulinette_2_021RequiredSelfSwiftRule"
