@@ -10,6 +10,7 @@ import Foundation
 
 class ContextCheck: Check {
     
+    /// Current context of the line.
     var currentContext: LineContext = .none
     
     fileprivate var lineContextDict: [LineContext : BracketContextCheck] = [:]
@@ -28,10 +29,15 @@ class ContextCheck: Check {
         checkLineContext(contextType: currentContext, fileLine: fileLine)
     }
     
+    /// Checks if the line context is found in the current list of contexts.
+    ///
+    /// - Parameter type: Type to check for.
+    /// - Returns: Flag to determine if the rule is within a current context.
     func insideContext(type: LineContext) -> Bool {
         return lineContextDict[type] != nil
     }
     
+    /// Resets the current context.
     func resetContext() {
         lineContextDict = [:]
         currentContext = .none
