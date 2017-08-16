@@ -41,6 +41,8 @@
 		203790531F437D9F00B74151 /* PodfileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E7D1C1F22579C00041CAC /* PodfileParser.swift */; };
 		203790541F4497EF00B74151 /* ApplicationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FB3061F3B4C2E009B0B26 /* ApplicationComponents.swift */; };
 		203790551F4497FC00B74151 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FB3041F3B4C22009B0B26 /* String+Substring.swift */; };
+		203790571F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203790561F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift */; };
+		203790581F44D3EA00B74151 /* ProjectOrganizationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203790561F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift */; };
 		2053EE921EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */; };
 		2053EEB91EF4921B00AAE36D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C40C571ED8D47C00695CA7 /* main.swift */; };
 		2053EEBA1EF4921B00AAE36D /* ProjectSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D071EE09EAE00997AF6 /* ProjectSettings.swift */; };
@@ -166,6 +168,7 @@
 		2023AD131EFB122800B66438 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		2037904C1F4378B700B74151 /* SwiftLintSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLintSwiftRule.swift; sourceTree = "<group>"; };
 		2037904E1F437B2600B74151 /* SwiftLintSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLintSwiftRuleTests.swift; sourceTree = "<group>"; };
+		203790561F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectOrganizationSwiftRule.swift; sourceTree = "<group>"; };
 		2053EE881EF4862B00AAE36D /* Moulinette-2.0-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moulinette-2.0-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2053EE8C1EF4862B00AAE36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRuleTests.swift; sourceTree = "<group>"; };
@@ -301,6 +304,7 @@
 				666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */,
 				664E7D1E1F225FBA00041CAC /* DefaultPodsSwiftRule.swift */,
 				2037904C1F4378B700B74151 /* SwiftLintSwiftRule.swift */,
+				203790561F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -582,6 +586,7 @@
 				201D74261EFAC77900361ECD /* CommentParser.swift in Sources */,
 				201D741F1EFAC75700361ECD /* AuditGrader.swift in Sources */,
 				201D741E1EFAC73F00361ECD /* PIOSAuditGrader.swift in Sources */,
+				203790581F44D3EA00B74151 /* ProjectOrganizationSwiftRule.swift in Sources */,
 				203790531F437D9F00B74151 /* PodfileParser.swift in Sources */,
 				4C8BA7711F264B4900F617E7 /* Output.swift in Sources */,
 				2053EEB91EF4921B00AAE36D /* main.swift in Sources */,
@@ -685,6 +690,7 @@
 				20161D081EE09EAE00997AF6 /* ProjectSettings.swift in Sources */,
 				2081734D1EEB25510077106A /* NetworkRequester.swift in Sources */,
 				20161CFD1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift in Sources */,
+				203790571F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift in Sources */,
 				2081734F1EEB27ED0077106A /* APIEnvironment.swift in Sources */,
 				206837A81EDE20E5008CB7F3 /* Constants.swift in Sources */,
 				207F1DE31EE06BC200284498 /* FinalClassesSwiftRule.swift in Sources */,
