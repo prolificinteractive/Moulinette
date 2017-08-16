@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Checks if the project's organization includes the given default folders.
 final class ProjectOrganizationSwiftRule: SwiftRule {
     
     let name: String = "Default project folders used"
