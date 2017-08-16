@@ -21,12 +21,11 @@ audit:
 	-project Moulinette-2.0.xcodeproj \
 	-target Moulinette-2.0 \
 	-configuration Release
-	./build/Release/Moulinette-2.0 -projectName HSN -bundleIdentifier com.prolificinteractive.com -silent true
+	./build/Release/Moulinette-2.0 -projectName ${projectName} -bundleIdentifier ${bundleID} -silent true
 
 tests:
 	xcodebuild \
   -project Moulinette-2.0.xcodeproj \
   -scheme Moulinette-2.0-Tests \
-  -sdk iphonesimulator \
-  -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.2' \
+  -destination 'platform=macOS,arch=x86_64' \
   test | xcpretty --test --color
