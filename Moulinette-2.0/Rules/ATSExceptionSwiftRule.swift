@@ -14,6 +14,11 @@ final class ATSExceptionSwiftRule: SwiftRule {
     let name: String = "Check if there are any ATS exception domain in the targets' Info.plists."
     let priority: RulePriority = .medium
     
+    /// The path of the plist files. Made public for testing.
+    lazy var plistPath: String = {
+        return settings.projectDirectory + self.supportingFilesString
+    }()
+    
     fileprivate var contextCheck = ContextCheck()
     private var projectData: ProjectData
     
@@ -33,8 +38,8 @@ final class ATSExceptionSwiftRule: SwiftRule {
         let plistFiles = projectData.applicationComponents.files(for: Constants.FileNameConstants.plistSuffix)
         
         plistFiles.forEach { (fileName, _) in
-            let plistPath = settings.projectDirectory + supportingFilesString + fileName
-            let plistXMLDictionary: [String : AnyObject]? = plistPath.parsedXMLDictionary()
+            let plistPathWithFileName = plistPath + fileName
+            let plistXMLDictionary: [String : AnyObject]? = plistPathWithFileName.parsedXMLDictionary()
             
             if let plistXMLDictionary = plistXMLDictionary,
                 let appTransportValue = plistXMLDictionary[appTransportSecurityString],

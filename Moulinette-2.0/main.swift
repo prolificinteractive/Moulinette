@@ -8,7 +8,6 @@
 
 import Foundation
 
-// Dev Branch: git checkout chore/remove_selfs
 print("############### MOULINETTE_2.0 OUTPUT ###############")
 print("Moulinette 2.0")
 
