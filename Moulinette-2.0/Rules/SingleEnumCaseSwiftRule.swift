@@ -29,7 +29,7 @@ final class SingleEnumCaseSwiftRule: SwiftRule {
             fileComponents.forEach {
                 contextCheck.check(fileLine: $0)
                 
-                if contextCheck.currentContext == .enumContext, $0.contains("case ") && $0.contains(",") {
+                if contextCheck.insideContext(type: .enumContext), $0.contains("case ") && $0.contains(",") {
                     auditGrader.violationFound(fileName: fileName, description: $0)
                 }
             }
