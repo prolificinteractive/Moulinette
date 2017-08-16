@@ -23,7 +23,8 @@ struct PIOSAudit: Audit {
         var auditScore: Double = 0
         for collection in ruleCollection {
             collection.rules(projectData: projectData).forEach {
-                let score = $0.run().score()
+                let result = $0.run()
+                let score = result.score()
                 auditScore += score
                 output.record(rule: $0.name, score: score, weight: $0.priority.weight())
             }

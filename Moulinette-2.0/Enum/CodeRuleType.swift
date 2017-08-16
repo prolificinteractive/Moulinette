@@ -35,7 +35,8 @@ struct CodeConventionRuleCollection: RuleCollection {
                 LocalizedStringSwiftRule(projectData: projectData),
                 PodVersionsPinnedSwiftRule(projectData: projectData),
                 DefaultPodsSwiftRule(projectData: projectData),
-                SwiftLintSwiftRule(projectData: projectData)
+                SwiftLintSwiftRule(projectData: projectData),
+                ProjectOrganizationSwiftRule(projectData: projectData)
         ]
     }
 }

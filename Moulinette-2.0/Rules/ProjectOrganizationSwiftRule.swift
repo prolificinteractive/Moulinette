@@ -10,7 +10,7 @@ import Foundation
 
 final class ProjectOrganizationSwiftRule: SwiftRule {
     
-    let name: String = "Default project folders used."
+    let name: String = "Default project folders used"
     let priority: RulePriority = .low
     
     private var projectData: ProjectData
@@ -24,21 +24,32 @@ final class ProjectOrganizationSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
-        guard let fileComponents = projectData.applicationComponents.file(by: Constants.FileNameConstants.xcodeProject) else {
-            auditGrader.failed(fileName: Constants.FileNameConstants.xcodeProject,
-                               description: "Xcode project could not be found!")
-            return auditGrader.generateGrade()
-        }
+        var defaultFolders = Constants.defaultfolders
         
-        for component in fileComponents {
-            if component.contains("${PODS_ROOT}/SwiftLint/swiftlint") {
-                return auditGrader.generateGrade()
+        projectData.applicationComponents.filePaths.forEach {
+            let filepathInfo = filepathContainsDefaultFolder(filepath: $0, defaultFolders: defaultFolders)
+            if filepathInfo.found {
+                defaultFolders.remove(at: filepathInfo.index)
             }
         }
         
-        auditGrader.failed(fileName: Constants.FileNameConstants.xcodeProject,
-                           description: "SwiftLint not found in build phase.")
+        defaultFolders.forEach {
+            auditGrader.violationFound(fileName: $0, description: "Not found in project folder structure")
+        }
         
         return auditGrader.generateGrade()
+    }
+}
+
+private extension ProjectOrganizationSwiftRule {
+    
+    func filepathContainsDefaultFolder(filepath: String, defaultFolders: [String]) -> (found: Bool, index: Int) {
+        for i in 0..<defaultFolders.count {
+            if filepath.contains(defaultFolders[i]) {
+                print(filepath)
+                return (true, i)
+            }
+        }
+        return (false, -1)
     }
 }
