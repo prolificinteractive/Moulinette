@@ -21,6 +21,7 @@ struct Constants {
         static let plistSuffix = "plist"
         static let readme = "README.md"
         static let xcodeProject = "project.pbxproj"
+        static let moulinetteName = "Moulinette"
     }
 
     struct Regex {
