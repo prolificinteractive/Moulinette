@@ -36,7 +36,8 @@ private extension ATSExceptionSwiftRuleTests {
         let rule = ATSExceptionSwiftRule(projectData: projectData(fileName: fileName))
         
         // The location of the two test plists on your machine.
-        if let firstBundle = Bundle.allBundles.first, let resourcePath = firstBundle.resourcePath {
+        let moulinetteBundles = Bundle.allBundles.filter { $0.bundlePath.contains(Constants.FileNameConstants.moulinetteName) }
+        if let firstBundle = moulinetteBundles.first, let resourcePath = firstBundle.resourcePath {
             rule.plistPath = resourcePath + "/"
         }
         
