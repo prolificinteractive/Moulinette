@@ -12,7 +12,7 @@ struct Constants {
 
     static let fileExtensions = ["swift", "strings", "plist", "md", "pbxproj", "storyboard"]
     static let validNonSwiftFiles = ["Podfile", "Localizable.strings", "project.pbxproj"]
-    static let defaultfolders = ["Features", "Model", "Utility", "Resources", "Supporting Files"]
+    static let defaultFolders = ["Features", "Model", "Utility", "Resources", "Supporting Files"]
 
     struct FileNameConstants {
         static let swiftSuffix = "swift"

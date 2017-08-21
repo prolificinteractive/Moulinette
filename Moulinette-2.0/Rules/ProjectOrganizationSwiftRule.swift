@@ -25,7 +25,7 @@ final class ProjectOrganizationSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
-        var defaultFolders = Constants.defaultfolders
+        var defaultFolders = projectData.defaultFolders
         
         projectData.applicationComponents.filePaths.forEach {
             let filepathInfo = filepathContainsDefaultFolder(filepath: $0, defaultFolders: defaultFolders)
@@ -47,7 +47,6 @@ private extension ProjectOrganizationSwiftRule {
     func filepathContainsDefaultFolder(filepath: String, defaultFolders: [String]) -> (found: Bool, index: Int) {
         for i in 0..<defaultFolders.count {
             if filepath.contains(defaultFolders[i]) {
-                print(filepath)
                 return (true, i)
             }
         }

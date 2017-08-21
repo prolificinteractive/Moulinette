@@ -14,8 +14,8 @@ typealias ClassInfo = (className: String, subClassName: String?)
 final class ProjectData: SwiftData {
     
     var applicationComponents: ApplicationComponents
-    
     var classInfo = [ClassInfo]()
+    var defaultFolders = Constants.defaultFolders
 
     init(applicationComponents: ApplicationComponents) {
         self.applicationComponents = applicationComponents
