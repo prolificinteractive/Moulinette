@@ -53,6 +53,8 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         XCTAssertEqual(grade.violations, 0)
     }
     
+// MARK: - Default Tests
+    
     func testRun_EmptyProject() {
         sut = SinglePublicInternalSwiftRule(projectData: emptyProjectData())
         

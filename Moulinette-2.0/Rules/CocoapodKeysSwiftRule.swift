@@ -25,6 +25,10 @@ final class CocoapodsKeysSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
+        guard !projectData.applicationComponents.components.isEmpty else {
+            return auditGrader.generateGrade()
+        }
+        
         for (_, fileComponents) in projectData.applicationComponents.components {
             for component in fileComponents {
                 if component.contains("import Keys") {

@@ -11,6 +11,7 @@
 		200FC72E1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72D1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift */; };
 		200FC72F1F4C892E004335D8 /* CocoapodKeysSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */; };
 		200FC7311F4C894F004335D8 /* XCTestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7301F4C894F004335D8 /* XCTestExtension.swift */; };
+		200FC7331F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7321F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift */; };
 		20161CFB1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161CFA1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift */; };
 		20161CFD1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161CFC1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift */; };
 		20161D061EE09C8F00997AF6 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D051EE09C8F00997AF6 /* FileType.swift */; };
@@ -159,6 +160,7 @@
 		200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoapodKeysSwiftRule.swift; sourceTree = "<group>"; };
 		200FC72D1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePublicInternalSwiftRuleTests.swift; sourceTree = "<group>"; };
 		200FC7301F4C894F004335D8 /* XCTestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtension.swift; sourceTree = "<group>"; };
+		200FC7321F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoapodsKeysSwiftRuleTests.swift; sourceTree = "<group>"; };
 		20161CFA1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakIBOutletSwiftRule.swift; sourceTree = "<group>"; };
 		20161CFC1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePublicInternalSwiftRule.swift; sourceTree = "<group>"; };
 		20161D051EE09C8F00997AF6 /* FileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				2037904E1F437B2600B74151 /* SwiftLintSwiftRuleTests.swift */,
 				2037905D1F44E41D00B74151 /* ProjectOrganizationSwiftRuleTests.swift */,
 				200FC72D1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift */,
+				200FC7321F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				2037905A1F44E3F600B74151 /* CompletionWeakSwiftRuleTests.swift in Sources */,
 				201D74241EFAC77900361ECD /* Regex.swift in Sources */,
 				201D74251EFAC77900361ECD /* RuleCollection.swift in Sources */,
+				200FC7331F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift in Sources */,
 				201D74261EFAC77900361ECD /* CommentParser.swift in Sources */,
 				201D741F1EFAC75700361ECD /* AuditGrader.swift in Sources */,
 				201D741E1EFAC73F00361ECD /* PIOSAuditGrader.swift in Sources */,
