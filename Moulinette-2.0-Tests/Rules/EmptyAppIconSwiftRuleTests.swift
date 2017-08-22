@@ -27,7 +27,9 @@ class EmptyAppIconSwiftRuleTests: XCTestCase {
     func testRun_SizeFoundFileNameFound() {
         let projectData = emptyProjectData()
         projectData.applicationComponents.assets = ["AppIcons-Dev/Contents.json": ["\"size\" : \"60x60\",",
-                                                                                   "\"filename\" : \"Icon-App-29x29@3x.png\","]]
+                                                                                   "\"filename\" : \"Icon-App-60x60@3x.png\",",
+                                                                                   "\"size\" : \"60x60\",",
+                                                                                   "\"filename\" : \"Icon-App-60x60@3x.png\","]]
         sut = EmptyAppIconSwiftRule(projectData: projectData)
         
         let grade = sut.run()
