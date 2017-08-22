@@ -32,7 +32,6 @@ final class CocoapodsKeysSwiftRule: SwiftRule {
                 }
             }
         }
-        // Check pod file
         
         auditGrader.failed(description: "Cocoapods Keys Import Not Found!")
         return auditGrader.generateGrade()
