@@ -30,3 +30,13 @@ protocol AuditGrader {
     ///   - description: Reason why the rule failed.
     func failed(fileName: String, description: String)
 }
+
+extension AuditGrader {
+    
+    /// Called when a project has failed the rule with a default file name error.
+    ///
+    /// - Parameter description: Reason why the rule failed.
+    func failed(description: String) {
+        failed(fileName: "Project Failed", description: description)
+    }
+}
