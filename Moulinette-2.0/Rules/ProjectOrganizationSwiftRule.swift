@@ -11,6 +11,9 @@ import Foundation
 /// Checks if the project's organization includes the given default folders.
 final class ProjectOrganizationSwiftRule: SwiftRule {
     
+    /// Default project folders.
+    static let defaultFolders = ["Features", "Model", "Utility", "Resources", "Supporting Files"]
+
     let name: String = "Default project folders used"
     let priority: RulePriority = .low
     
@@ -25,16 +28,16 @@ final class ProjectOrganizationSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
-        var defaultFolders = projectData.defaultFolders
+        var projectFolders = ProjectOrganizationSwiftRule.defaultFolders
         
         projectData.applicationComponents.filePaths.forEach {
-            let filepathInfo = filepathContainsDefaultFolder(filepath: $0, defaultFolders: defaultFolders)
+            let filepathInfo = filepathContainsDefaultFolder(filepath: $0, defaultFolders: projectFolders)
             if filepathInfo.found {
-                defaultFolders.remove(at: filepathInfo.index)
+                projectFolders.remove(at: filepathInfo.index)
             }
         }
         
-        defaultFolders.forEach {
+        projectFolders.forEach {
             auditGrader.violationFound(fileName: $0, description: "Not found in project folder structure")
         }
         

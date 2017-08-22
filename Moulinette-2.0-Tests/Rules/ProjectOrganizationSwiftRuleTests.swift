@@ -13,7 +13,7 @@ class ProjectOrganizationSwiftRuleTests: XCTestCase {
     var sut: ProjectOrganizationSwiftRule!
     
     func testRun_AllDefaultFoldersIncluded() {
-        sut = ProjectOrganizationSwiftRule(projectData: projectData(folders: Constants.defaultfolders))
+        sut = ProjectOrganizationSwiftRule(projectData: projectData(folders: ProjectOrganizationSwiftRule.defaultFolders))
         
         let grade = sut.run()
         
@@ -70,6 +70,6 @@ private extension ProjectOrganizationSwiftRuleTests {
     }
     
     func folders(removedFolder: String) -> [String] {
-        return Constants.defaultfolders.filter { !($0 == removedFolder)}
+        return ProjectOrganizationSwiftRule.defaultFolders.filter { !($0 == removedFolder)}
     }
 }
