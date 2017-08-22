@@ -42,15 +42,17 @@ private extension EmptyAppIconSwiftRule {
         var size: String?
         for component in components {
             if component.contains("size") {
-                if size != nil {
-                    auditGrader.violationFound(fileName: filePath, description: component)
-                }
+                check(size: size, filePath: filePath, description: component)
                 size = component
             }
-            
-            if component.contains("filename") {
-                size = nil
-            }
+            size = component.contains("filename") ? nil : size
+        }
+        check(size: size, filePath: filePath, description: "Missing filename for last icon asset.")
+    }
+    
+    private func check(size: String?, filePath: String, description: String) {
+        if size != nil {
+            auditGrader.violationFound(fileName: filePath, description: description)
         }
     }
 }
