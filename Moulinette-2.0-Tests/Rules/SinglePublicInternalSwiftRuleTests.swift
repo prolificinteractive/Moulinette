@@ -52,4 +52,12 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         XCTAssertEqual(grade.violations, 0)
     }
+    
+    func testRun_EmptyProjectFile() {
+        sut = SinglePublicInternalSwiftRule(projectData: emptyProjectData())
+        
+        let grade = sut.run()
+        
+        XCTAssertEqual(grade.violations, 0)
+    }
 }

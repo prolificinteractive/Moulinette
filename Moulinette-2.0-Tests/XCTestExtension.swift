@@ -28,4 +28,12 @@ extension XCTest {
         let applicationComponents = ApplicationComponents(with: [fileName: [line]])
         return ProjectData(applicationComponents: applicationComponents)
     }
+    
+    /// Empty project data.
+    ///
+    /// - Returns: Empty project data.
+    func emptyProjectData() -> ProjectData {
+        let components = ApplicationComponents(with: [:])
+        return ProjectData(applicationComponents: components)
+    }
 }
