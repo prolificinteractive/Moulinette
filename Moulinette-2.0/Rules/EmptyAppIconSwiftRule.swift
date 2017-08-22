@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Checks the project for empty app icons assets.
 final class EmptyAppIconSwiftRule: SwiftRule {
     
     let name: String = "Empty Icon in Assets"
