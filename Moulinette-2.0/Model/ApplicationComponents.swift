@@ -17,13 +17,16 @@ struct ApplicationComponents {
     // [Filename: [Lines]]
     var components: ProjectComponents = [:]
 
+    /// File paths to all of the files in the application.
+    var filePaths: [String] = []
+    
+    /// Project assets with full file path used to determine with icon is associated to which contents file.
+    var assets: ProjectComponents = [:]
+    
     /// Swift files.
     var swiftFiles: [(String, [String])] {
         return files(for: Constants.FileNameConstants.swiftSuffix)
     }
-    
-    /// File paths to all of the files in the application.
-    var filePaths: [String] = []
     
     // String files.
     var stringFiles: [(String, [String])] {
@@ -51,6 +54,7 @@ struct ApplicationComponents {
                     throw ParseError.error("Failed to parse Swift file name")
                 }
                 components[strippedFileName] = fileComponents
+                setupProjectAssets(filePath: file, fileComponents: fileComponents)
             } catch {
                 print("Error caught with message: \(error.localizedDescription)")
             }
@@ -84,5 +88,13 @@ struct ApplicationComponents {
         
         return files
     }
+}
+
+private extension ApplicationComponents {
     
+    mutating func setupProjectAssets(filePath: String, fileComponents: [String]) {
+        if filePath.contains(Constants.FileNameConstants.AssetContents) {
+            assets[filePath] = fileComponents
+        }
+    }
 }
