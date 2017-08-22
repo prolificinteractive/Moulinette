@@ -18,4 +18,14 @@ extension XCTest {
         let applicationComponents = ApplicationComponents(with: ["Sample": [line]])
         return ProjectData(applicationComponents: applicationComponents)
     }
+    
+    /// Returns project data for the given parameters.
+    ///
+    /// - Parameter line: Single line of the project file.
+    /// - Parameter fileName: Name of the file
+    /// - Returns: Project data with a single file with a single line.
+    func projectData(fileName: String, line: String) -> ProjectData {
+        let applicationComponents = ApplicationComponents(with: [fileName: [line]])
+        return ProjectData(applicationComponents: applicationComponents)
+    }
 }

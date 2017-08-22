@@ -44,4 +44,12 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         XCTAssertEqual(grade.violations, 0)
     }
+    
+    func testRun_ConstantsFile() {
+        sut = SinglePublicInternalSwiftRule(projectData: projectData(fileName: "Constants", line: "struct Constants"))
+        
+        let grade = sut.run()
+        
+        XCTAssertEqual(grade.violations, 0)
+    }
 }
