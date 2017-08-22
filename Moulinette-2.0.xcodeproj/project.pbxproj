@@ -12,6 +12,7 @@
 		200FC72F1F4C892E004335D8 /* CocoapodKeysSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */; };
 		200FC7311F4C894F004335D8 /* XCTestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7301F4C894F004335D8 /* XCTestExtension.swift */; };
 		200FC7331F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7321F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift */; };
+		200FC7351F4CBB92004335D8 /* AppIconSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7341F4CBB92004335D8 /* AppIconSwiftRule.swift */; };
 		20161CFB1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161CFA1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift */; };
 		20161CFD1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161CFC1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift */; };
 		20161D061EE09C8F00997AF6 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D051EE09C8F00997AF6 /* FileType.swift */; };
@@ -161,6 +162,7 @@
 		200FC72D1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePublicInternalSwiftRuleTests.swift; sourceTree = "<group>"; };
 		200FC7301F4C894F004335D8 /* XCTestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtension.swift; sourceTree = "<group>"; };
 		200FC7321F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoapodsKeysSwiftRuleTests.swift; sourceTree = "<group>"; };
+		200FC7341F4CBB92004335D8 /* AppIconSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconSwiftRule.swift; sourceTree = "<group>"; };
 		20161CFA1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakIBOutletSwiftRule.swift; sourceTree = "<group>"; };
 		20161CFC1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePublicInternalSwiftRule.swift; sourceTree = "<group>"; };
 		20161D051EE09C8F00997AF6 /* FileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				2037904C1F4378B700B74151 /* SwiftLintSwiftRule.swift */,
 				203790561F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift */,
 				200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */,
+				200FC7341F4CBB92004335D8 /* AppIconSwiftRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -714,6 +717,7 @@
 				207FB3071F3B4C2E009B0B26 /* ApplicationComponents.swift in Sources */,
 				20161D0A1EE0A04700997AF6 /* ForceUnwrapSwiftRule.swift in Sources */,
 				20161D081EE09EAE00997AF6 /* ProjectSettings.swift in Sources */,
+				200FC7351F4CBB92004335D8 /* AppIconSwiftRule.swift in Sources */,
 				2081734D1EEB25510077106A /* NetworkRequester.swift in Sources */,
 				20161CFD1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift in Sources */,
 				203790571F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift in Sources */,
