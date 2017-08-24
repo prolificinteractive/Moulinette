@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200FC72C1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */; };
+		200FC72E1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72D1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift */; };
+		200FC72F1F4C892E004335D8 /* CocoapodKeysSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */; };
+		200FC7311F4C894F004335D8 /* XCTestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7301F4C894F004335D8 /* XCTestExtension.swift */; };
+		200FC7331F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7321F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift */; };
 		20161CFB1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161CFA1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift */; };
 		20161CFD1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161CFC1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift */; };
 		20161D061EE09C8F00997AF6 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D051EE09C8F00997AF6 /* FileType.swift */; };
@@ -41,6 +46,10 @@
 		203790531F437D9F00B74151 /* PodfileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E7D1C1F22579C00041CAC /* PodfileParser.swift */; };
 		203790541F4497EF00B74151 /* ApplicationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FB3061F3B4C2E009B0B26 /* ApplicationComponents.swift */; };
 		203790551F4497FC00B74151 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FB3041F3B4C22009B0B26 /* String+Substring.swift */; };
+		203790571F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203790561F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift */; };
+		203790581F44D3EA00B74151 /* ProjectOrganizationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203790561F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift */; };
+		2037905A1F44E3F600B74151 /* CompletionWeakSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203790591F44E3F600B74151 /* CompletionWeakSwiftRuleTests.swift */; };
+		2037905E1F44E41D00B74151 /* ProjectOrganizationSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037905D1F44E41D00B74151 /* ProjectOrganizationSwiftRuleTests.swift */; };
 		2053EE921EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */; };
 		2053EEB91EF4921B00AAE36D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C40C571ED8D47C00695CA7 /* main.swift */; };
 		2053EEBA1EF4921B00AAE36D /* ProjectSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D071EE09EAE00997AF6 /* ProjectSettings.swift */; };
@@ -150,6 +159,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoapodKeysSwiftRule.swift; sourceTree = "<group>"; };
+		200FC72D1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePublicInternalSwiftRuleTests.swift; sourceTree = "<group>"; };
+		200FC7301F4C894F004335D8 /* XCTestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtension.swift; sourceTree = "<group>"; };
+		200FC7321F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoapodsKeysSwiftRuleTests.swift; sourceTree = "<group>"; };
 		20161CFA1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakIBOutletSwiftRule.swift; sourceTree = "<group>"; };
 		20161CFC1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePublicInternalSwiftRule.swift; sourceTree = "<group>"; };
 		20161D051EE09C8F00997AF6 /* FileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
@@ -168,6 +181,9 @@
 		2023AD131EFB122800B66438 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		2037904C1F4378B700B74151 /* SwiftLintSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLintSwiftRule.swift; sourceTree = "<group>"; };
 		2037904E1F437B2600B74151 /* SwiftLintSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLintSwiftRuleTests.swift; sourceTree = "<group>"; };
+		203790561F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectOrganizationSwiftRule.swift; sourceTree = "<group>"; };
+		203790591F44E3F600B74151 /* CompletionWeakSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionWeakSwiftRuleTests.swift; sourceTree = "<group>"; };
+		2037905D1F44E41D00B74151 /* ProjectOrganizationSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectOrganizationSwiftRuleTests.swift; sourceTree = "<group>"; };
 		2053EE881EF4862B00AAE36D /* Moulinette-2.0-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moulinette-2.0-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2053EE8C1EF4862B00AAE36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRuleTests.swift; sourceTree = "<group>"; };
@@ -263,6 +279,7 @@
 				2053EE8C1EF4862B00AAE36D /* Info.plist */,
 				59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */,
 				59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */,
+				200FC7301F4C894F004335D8 /* XCTestExtension.swift */,
 			);
 			path = "Moulinette-2.0-Tests";
 			sourceTree = "<group>";
@@ -270,10 +287,14 @@
 		2053EE901EF486F500AAE36D /* Rules */ = {
 			isa = PBXGroup;
 			children = (
+				203790591F44E3F600B74151 /* CompletionWeakSwiftRuleTests.swift */,
 				2053EE911EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift */,
 				201D741C1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift */,
 				5932B4D81F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift */,
 				2037904E1F437B2600B74151 /* SwiftLintSwiftRuleTests.swift */,
+				2037905D1F44E41D00B74151 /* ProjectOrganizationSwiftRuleTests.swift */,
+				200FC72D1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift */,
+				200FC7321F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -305,6 +326,8 @@
 				666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */,
 				664E7D1E1F225FBA00041CAC /* DefaultPodsSwiftRule.swift */,
 				2037904C1F4378B700B74151 /* SwiftLintSwiftRule.swift */,
+				203790561F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift */,
+				200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -587,15 +610,20 @@
 				201D74291EFAC80500361ECD /* AuditGrade.swift in Sources */,
 				203790511F437D8F00B74151 /* DefaultPodsSwiftRule.swift in Sources */,
 				201D74201EFAC77900361ECD /* PIOSAudit.swift in Sources */,
+				200FC72F1F4C892E004335D8 /* CocoapodKeysSwiftRule.swift in Sources */,
+				200FC7311F4C894F004335D8 /* XCTestExtension.swift in Sources */,
 				201D74211EFAC77900361ECD /* ToDoStorySwiftRule.swift in Sources */,
 				4CA5E0141F1FAB0800EBE48B /* LocalizedStringSwiftRule.swift in Sources */,
 				201D74221EFAC77900361ECD /* ToDoCountSwiftRule.swift in Sources */,
 				201D74231EFAC77900361ECD /* SwiftData.swift in Sources */,
+				2037905A1F44E3F600B74151 /* CompletionWeakSwiftRuleTests.swift in Sources */,
 				201D74241EFAC77900361ECD /* Regex.swift in Sources */,
 				201D74251EFAC77900361ECD /* RuleCollection.swift in Sources */,
+				200FC7331F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift in Sources */,
 				201D74261EFAC77900361ECD /* CommentParser.swift in Sources */,
 				201D741F1EFAC75700361ECD /* AuditGrader.swift in Sources */,
 				201D741E1EFAC73F00361ECD /* PIOSAuditGrader.swift in Sources */,
+				203790581F44D3EA00B74151 /* ProjectOrganizationSwiftRule.swift in Sources */,
 				203790531F437D9F00B74151 /* PodfileParser.swift in Sources */,
 				4C8BA7711F264B4900F617E7 /* Output.swift in Sources */,
 				2053EEB91EF4921B00AAE36D /* main.swift in Sources */,
@@ -635,9 +663,11 @@
 				2053EED41EF4921B00AAE36D /* GradeType.swift in Sources */,
 				2037904F1F437B2600B74151 /* SwiftLintSwiftRuleTests.swift in Sources */,
 				2053EED51EF4921B00AAE36D /* CodeRuleType.swift in Sources */,
+				2037905E1F44E41D00B74151 /* ProjectOrganizationSwiftRuleTests.swift in Sources */,
 				2053EED61EF4921B00AAE36D /* LineContext.swift in Sources */,
 				2053EED71EF4921B00AAE36D /* FileType.swift in Sources */,
 				2053EED81EF4921B00AAE36D /* RulePriority.swift in Sources */,
+				200FC72E1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift in Sources */,
 				2053EED91EF4921B00AAE36D /* String+SwiftCode.swift in Sources */,
 				2053EEDA1EF4921B00AAE36D /* NetworkRequester.swift in Sources */,
 				2053EEDB1EF4921B00AAE36D /* APIEnvironment.swift in Sources */,
@@ -691,6 +721,7 @@
 				209696C01EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift in Sources */,
 				201D741B1EFAC48300361ECD /* PIOSAuditGrader.swift in Sources */,
 				6608445A1EF45E0E002340C9 /* Regex.swift in Sources */,
+				200FC72C1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift in Sources */,
 				20E4140B1EDF7F8B0000E447 /* String+SwiftCode.swift in Sources */,
 				207FB3051F3B4C22009B0B26 /* String+Substring.swift in Sources */,
 				4CA5E0171F2122E000EBE48B /* Output.swift in Sources */,
@@ -701,6 +732,7 @@
 				6688CFE01F43823200A00756 /* Script.swift in Sources */,
 				2081734D1EEB25510077106A /* NetworkRequester.swift in Sources */,
 				20161CFD1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift in Sources */,
+				203790571F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift in Sources */,
 				2081734F1EEB27ED0077106A /* APIEnvironment.swift in Sources */,
 				206837A81EDE20E5008CB7F3 /* Constants.swift in Sources */,
 				207F1DE31EE06BC200284498 /* FinalClassesSwiftRule.swift in Sources */,

@@ -22,7 +22,6 @@ final class ProjectParser {
         guard let fileName = file as? String else {
             return false
         }
-
         return try !ProjectParser.isExcluded(with: fileName)
     }
     

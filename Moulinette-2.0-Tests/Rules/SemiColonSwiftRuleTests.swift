@@ -45,11 +45,3 @@ class SemiColonSwiftRuleTests: XCTestCase {
         XCTAssertEqual(grade.violations, 1)
     }
 }
-
-private extension SemiColonSwiftRuleTests {
-    
-    func projectData(line: String) -> ProjectData {
-        let applicationComponents = ApplicationComponents(with: ["Sample": [line]])
-        return ProjectData(applicationComponents: applicationComponents)
-    }
-}

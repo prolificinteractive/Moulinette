@@ -8,16 +8,22 @@
 
 import Foundation
 
+/// File components array type.
+typealias ProjectComponents = [String : [String]]
+
 /// Application components.
 struct ApplicationComponents {
     
     // [Filename: [Lines]]
-    var components: [String : [String]] = [:]
+    var components: ProjectComponents = [:]
 
     /// Swift files.
     var swiftFiles: [(String, [String])] {
         return files(for: Constants.FileNameConstants.swiftSuffix)
     }
+    
+    /// File paths to all of the files in the application.
+    var filePaths: [String] = []
     
     // String files.
     var stringFiles: [(String, [String])] {
@@ -35,6 +41,7 @@ struct ApplicationComponents {
     init(with fileNames: [String]) {
         for file in fileNames {
             let fileToParse = settings.projectDirectory + file
+            filePaths.append(file)
             
             do {
                 let content = try String(contentsOfFile: fileToParse, encoding: String.Encoding.utf8)
@@ -53,7 +60,7 @@ struct ApplicationComponents {
     /// Init with custom components.
     ///
     /// - Parameter components: Components.
-    init(with components: [String: [String]]) {
+    init(with components: ProjectComponents) {
         self.components = components
     }
     
