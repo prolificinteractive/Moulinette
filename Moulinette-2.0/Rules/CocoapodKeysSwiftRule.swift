@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Checks if the project's organization includes the given default folders.
+/// Checks if cocoapods keys are imported in the project.
 final class CocoapodsKeysSwiftRule: SwiftRule {
     
     let name: String = "Cocoapods Keys Used"

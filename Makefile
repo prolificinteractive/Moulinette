@@ -10,8 +10,22 @@ documentation:
 	make documentation-moulinette
 	make documentation-test
 
-documentation-moulinette: 
+documentation-moulinette:
 	jazzy --min-acl private  --module Moulinette --skip-undocumented
 
 documentation-test:
 	jazzy --min-acl private  --module Moulinette_Tests --xcodebuild-arguments test,-scheme,Moulinette-Tests --skip-undocumented -o docs-test
+
+audit:
+	xcodebuild \
+	-project Moulinette-2.0.xcodeproj \
+	-target Moulinette-2.0 \
+	-configuration Release
+	./build/Release/Moulinette-2.0 -projectName ${projectName} -bundleIdentifier ${bundleID} -silent true
+
+tests:
+	xcodebuild \
+  -project Moulinette-2.0.xcodeproj \
+  -scheme Moulinette-2.0-Tests \
+  -destination 'platform=macOS,arch=x86_64' \
+  test | xcpretty --test --color

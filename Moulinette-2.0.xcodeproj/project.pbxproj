@@ -12,7 +12,6 @@
 		200FC72F1F4C892E004335D8 /* CocoapodKeysSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */; };
 		200FC7311F4C894F004335D8 /* XCTestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7301F4C894F004335D8 /* XCTestExtension.swift */; };
 		200FC7331F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7321F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift */; };
-		200FC7351F4CBB92004335D8 /* AppIconSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7341F4CBB92004335D8 /* AppIconSwiftRule.swift */; };
 		20161CFB1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161CFA1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift */; };
 		20161CFD1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161CFC1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift */; };
 		20161D061EE09C8F00997AF6 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D051EE09C8F00997AF6 /* FileType.swift */; };
@@ -91,6 +90,7 @@
 		206837AC1EDE22C3008CB7F3 /* SwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837AB1EDE22C3008CB7F3 /* SwiftRule.swift */; };
 		206837AF1EDE22E8008CB7F3 /* GradeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837AE1EDE22E8008CB7F3 /* GradeType.swift */; };
 		206837B11EDE2305008CB7F3 /* AppDelegateSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837B01EDE2305008CB7F3 /* AppDelegateSwiftRule.swift */; };
+		2071E2A91F4F799900DA52DB /* AppIconSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7341F4CBB92004335D8 /* AppIconSwiftRule.swift */; };
 		207F1DE31EE06BC200284498 /* FinalClassesSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207F1DE21EE06BC200284498 /* FinalClassesSwiftRule.swift */; };
 		207FB3051F3B4C22009B0B26 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FB3041F3B4C22009B0B26 /* String+Substring.swift */; };
 		207FB3071F3B4C2E009B0B26 /* ApplicationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FB3061F3B4C2E009B0B26 /* ApplicationComponents.swift */; };
@@ -138,6 +138,8 @@
 		664E7D1F1F225FBA00041CAC /* DefaultPodsSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E7D1E1F225FBA00041CAC /* DefaultPodsSwiftRule.swift */; };
 		6655C66F1EF317F000878A71 /* ToDoStorySwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */; };
 		666386E91F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */; };
+		6688CFE01F43823200A00756 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6688CFDF1F43823200A00756 /* Script.swift */; };
+		66A7BCAD1F463D0700E9EE15 /* ScriptError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A7BCAC1F463D0700E9EE15 /* ScriptError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +241,8 @@
 		664E7D1E1F225FBA00041CAC /* DefaultPodsSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPodsSwiftRule.swift; sourceTree = "<group>"; };
 		6655C66E1EF317F000878A71 /* ToDoStorySwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoStorySwiftRule.swift; sourceTree = "<group>"; };
 		666386E81F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodVersionsPinnedSwiftRule.swift; sourceTree = "<group>"; };
+		6688CFDF1F43823200A00756 /* Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
+		66A7BCAC1F463D0700E9EE15 /* ScriptError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,6 +482,7 @@
 		6608445E1EF47057002340C9 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				6688CFDE1F43821E00A00756 /* Command Line */,
 				6608445F1EF47096002340C9 /* Parsers */,
 				20E414071EDF7F6C0000E447 /* Extensions */,
 				20E414021EDF7F2C0000E447 /* Context Checks */,
@@ -509,6 +514,15 @@
 				6608446B1EF8053F002340C9 /* SwiftData.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		6688CFDE1F43821E00A00756 /* Command Line */ = {
+			isa = PBXGroup;
+			children = (
+				6688CFDF1F43823200A00756 /* Script.swift */,
+				66A7BCAC1F463D0700E9EE15 /* ScriptError.swift */,
+			);
+			name = "Command Line";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -693,9 +707,11 @@
 				207FB30B1F3B4CA9009B0B26 /* ReadMeSwiftRule.swift in Sources */,
 				206837AC1EDE22C3008CB7F3 /* SwiftRule.swift in Sources */,
 				20E414111EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift in Sources */,
+				2071E2A91F4F799900DA52DB /* AppIconSwiftRule.swift in Sources */,
 				20E414041EDF7F370000E447 /* ContextCheck.swift in Sources */,
 				664E7D1F1F225FBA00041CAC /* DefaultPodsSwiftRule.swift in Sources */,
 				206837B11EDE2305008CB7F3 /* AppDelegateSwiftRule.swift in Sources */,
+				66A7BCAD1F463D0700E9EE15 /* ScriptError.swift in Sources */,
 				20161D121EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift in Sources */,
 				201D74191EFAC45700361ECD /* PIOSAudit.swift in Sources */,
 				20161D061EE09C8F00997AF6 /* FileType.swift in Sources */,
@@ -733,7 +749,7 @@
 				207FB3071F3B4C2E009B0B26 /* ApplicationComponents.swift in Sources */,
 				20161D0A1EE0A04700997AF6 /* ForceUnwrapSwiftRule.swift in Sources */,
 				20161D081EE09EAE00997AF6 /* ProjectSettings.swift in Sources */,
-				200FC7351F4CBB92004335D8 /* AppIconSwiftRule.swift in Sources */,
+				6688CFE01F43823200A00756 /* Script.swift in Sources */,
 				2081734D1EEB25510077106A /* NetworkRequester.swift in Sources */,
 				20161CFD1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift in Sources */,
 				203790571F44D3C100B74151 /* ProjectOrganizationSwiftRule.swift in Sources */,
