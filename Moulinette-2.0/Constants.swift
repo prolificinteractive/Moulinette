@@ -10,9 +10,9 @@ import Foundation
 
 struct Constants {
 
-    static let fileExtensions = ["swift", "strings", "plist", "md", "pbxproj"]
+    static let fileExtensions = ["swift", "strings", "plist", "md", "pbxproj", "storyboard"]
     static let validNonSwiftFiles = ["Podfile", "Localizable.strings", "project.pbxproj"]
-
+    
     struct FileNameConstants {
         static let swiftSuffix = "swift"
         static let stringSuffix = "strings"
@@ -31,5 +31,4 @@ struct Constants {
     struct URL {
         static let pivotal = "https://www.pivotaltracker.com/"
     }
-
 }

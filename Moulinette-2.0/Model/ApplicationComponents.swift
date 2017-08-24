@@ -19,6 +19,9 @@ struct ApplicationComponents {
         return files(for: Constants.FileNameConstants.swiftSuffix)
     }
     
+    /// File paths to all of the files in the application.
+    var filePaths: [String] = []
+    
     // String files.
     var stringFiles: [(String, [String])] {
         return files(for: Constants.FileNameConstants.stringSuffix)
@@ -35,6 +38,7 @@ struct ApplicationComponents {
     init(with fileNames: [String]) {
         for file in fileNames {
             let fileToParse = settings.projectDirectory + file
+            filePaths.append(file)
             
             do {
                 let content = try String(contentsOfFile: fileToParse, encoding: String.Encoding.utf8)
