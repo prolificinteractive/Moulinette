@@ -145,7 +145,7 @@ class StringExtensionTests: XCTestCase {
     func testIsTodoComment_CapitalizedTODOComment() {
         sut = "// TODO"
         
-        let isComment = sut.isComment()
+        let isComment = sut.isTodoComment()
         
         XCTAssertEqual(isComment, true)
     }
@@ -153,7 +153,7 @@ class StringExtensionTests: XCTestCase {
     func testIsTodoComment_CapitalizedTODONoComment() {
         sut = "TODO"
         
-        let isComment = sut.isComment()
+        let isComment = sut.isTodoComment()
         
         XCTAssertEqual(isComment, false)
     }
@@ -161,7 +161,7 @@ class StringExtensionTests: XCTestCase {
     func testIsTodoComment_LowercaseTODOComment() {
         sut = "// todo"
         
-        let isComment = sut.isComment()
+        let isComment = sut.isTodoComment()
         
         XCTAssertEqual(isComment, true)
     }
@@ -169,7 +169,7 @@ class StringExtensionTests: XCTestCase {
     func testIsTodoComment_LowercaseTODONoComment() {
         sut = "todo"
         
-        let isComment = sut.isComment()
+        let isComment = sut.isTodoComment()
         
         XCTAssertEqual(isComment, false)
     }
