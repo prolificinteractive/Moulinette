@@ -11,8 +11,7 @@ import Foundation
 /// Defines a parser for comments
 struct CommentParser {
 
-    static func parse(fileComponents: [String],
-                      onLineCompletion:((_ comment: String, _ line: String) -> ())) {
+    static func parse(fileComponents: [String], onLineCompletion:((_ comment: String, _ line: String) -> ())) {
         var comment = ""
 
         for index in 0..<fileComponents.count {
