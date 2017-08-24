@@ -13,6 +13,7 @@ final class ToDoCountSwiftRule: SwiftRule {
 
     let name: String = "There should be less than 10 TODOs"
     let priority: RulePriority = .medium
+    let maxTodoCount = 10
 
     private let projectData: ProjectData
     private lazy var auditGrader: AuditGrader = {
@@ -28,7 +29,7 @@ final class ToDoCountSwiftRule: SwiftRule {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             CommentParser.parse(fileComponents: fileComponents) { (comment, line) in
                 todoCount = comment.isTodoComment() ? todoCount + 1 : todoCount
-                if todoCount > 10 {
+                if todoCount > maxTodoCount {
                     auditGrader.violationFound(fileName: fileName, description: line)
                 }
             }

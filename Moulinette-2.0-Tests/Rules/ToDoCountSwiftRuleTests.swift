@@ -13,7 +13,23 @@ class ToDoCountSwiftRuleTests: XCTestCase {
 
     var sut: ToDoCountSwiftRule!
     
+    func testRun_OneTodoOneFile() {
+        let data = projectData(fileName: "Sample", line: "// TODO: Do something cool")
+        sut = ToDoCountSwiftRule(projectData: data)
+        
+        let grade = sut.run()
+        
+        XCTAssertEqual(grade.violations, 0)
+    }
     
+    func testRun_ElevenTodoOneFile() {
+        let data = projectData(components: ["Sample": todoLines(count: 11)])
+        sut = ToDoCountSwiftRule(projectData: data)
+        
+        let grade = sut.run()
+        
+        XCTAssertEqual(grade.violations, 1)
+    }
     
 // MARK: - Default Tests
     
@@ -31,5 +47,16 @@ class ToDoCountSwiftRuleTests: XCTestCase {
         let grade = sut.run()
         
         XCTAssertEqual(grade.violations, 0)
+    }
+}
+
+private extension ToDoCountSwiftRuleTests {
+    
+    func todoLines(count: Int) -> [String] {
+        var todos = [String]()
+        for _ in 0..<count {
+            todos.append("// TODO: Do something cool")
+        }
+        return todos
     }
 }
