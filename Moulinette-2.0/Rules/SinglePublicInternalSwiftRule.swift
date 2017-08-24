@@ -30,7 +30,7 @@ final class SinglePublicInternalSwiftRule: SwiftRule {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 if let fileType = FileType.type(fileLine: $0) {
-                    if type != nil {
+                    if type != nil && !fileName.contains("Constants") {
                         auditGrader.violationFound(fileName: fileName, description: $0)
                     }
                     type = fileType

@@ -36,7 +36,8 @@ struct CodeConventionRuleCollection: RuleCollection {
                 PodVersionsPinnedSwiftRule(projectData: projectData),
                 DefaultPodsSwiftRule(projectData: projectData),
                 SwiftLintSwiftRule(projectData: projectData),
-                ProjectOrganizationSwiftRule(projectData: projectData)
+                ProjectOrganizationSwiftRule(projectData: projectData),
+                CocoapodsKeysSwiftRule(projectData: projectData)
         ]
     }
 }

@@ -8,11 +8,14 @@
 
 import Foundation
 
+/// File components array type.
+typealias ProjectComponents = [String : [String]]
+
 /// Application components.
 struct ApplicationComponents {
     
     // [Filename: [Lines]]
-    var components: [String : [String]] = [:]
+    var components: ProjectComponents = [:]
 
     /// Swift files.
     var swiftFiles: [(String, [String])] {
@@ -57,7 +60,7 @@ struct ApplicationComponents {
     /// Init with custom components.
     ///
     /// - Parameter components: Components.
-    init(with components: [String: [String]]) {
+    init(with components: ProjectComponents) {
         self.components = components
     }
     
