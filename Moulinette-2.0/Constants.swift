@@ -22,6 +22,7 @@ struct Constants {
         static let readme = "README.md"
         static let xcodeProject = "project.pbxproj"
         static let AssetContents = "Contents.json"
+        static let moulinetteName = "Moulinette"
     }
 
     struct Regex {

@@ -24,7 +24,7 @@ final class SemiColonSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
-        for (fileName, fileComponents) in projectData.applicationComponents.components {
+        for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
             fileComponents.forEach {
                 if $0.characters.last == ";" {
                     auditGrader.violationFound(fileName: fileName, description: $0)
