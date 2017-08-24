@@ -14,7 +14,7 @@ class SemiColonSwiftRuleTests: XCTestCase {
     var sut: SemiColonSwiftRule!
     
     func testRun_SemiColonFound() {
-        sut = SemiColonSwiftRule(projectData: projectData(line: "let hello = 0;"))
+        sut = SemiColonSwiftRule(projectData: projectData(fileName: "Sample.swift", line: "let hello = 0;"))
         
         let grade = sut.run()
         
@@ -22,7 +22,7 @@ class SemiColonSwiftRuleTests: XCTestCase {
     }
     
     func testRun_NoSemiColonFound() {
-        sut = SemiColonSwiftRule(projectData: projectData(line: "let hello = 0"))
+        sut = SemiColonSwiftRule(projectData: projectData(fileName: "Sample.swift", line: "let hello = 0"))
         
         let grade = sut.run()
         
@@ -30,7 +30,7 @@ class SemiColonSwiftRuleTests: XCTestCase {
     }
 
     func testRun_MiddleSemiColon() {
-        sut = SemiColonSwiftRule(projectData: projectData(line: "let hello; = 0"))
+        sut = SemiColonSwiftRule(projectData: projectData(fileName: "Sample.swift", line: "let hello; = 0"))
         
         let grade = sut.run()
         
@@ -38,7 +38,7 @@ class SemiColonSwiftRuleTests: XCTestCase {
     }
     
     func testRun_DoubleEndSemiColon() {
-        sut = SemiColonSwiftRule(projectData: projectData(line: "let hello = 0;;"))
+        sut = SemiColonSwiftRule(projectData: projectData(fileName: "Sample.swift", line: "let hello = 0;;"))
         
         let grade = sut.run()
         

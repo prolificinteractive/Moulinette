@@ -11,12 +11,10 @@ import Foundation
 final class FontEncapsulationSwiftRule: SwiftRule {
     
     let name: String = "Font Encapsulation"
-    
     let priority: RulePriority = .medium
     
     private var projectData: ProjectData
     private var failedString = ""
-    
     private var fontCount = 0
     
     private lazy var auditGrader: AuditGrader = {

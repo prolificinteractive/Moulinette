@@ -37,7 +37,8 @@ struct CodeConventionRuleCollection: RuleCollection {
                 DefaultPodsSwiftRule(projectData: projectData),
                 SwiftLintSwiftRule(projectData: projectData),
                 ProjectOrganizationSwiftRule(projectData: projectData),
-                CocoapodsKeysSwiftRule(projectData: projectData)
+                CocoapodsKeysSwiftRule(projectData: projectData),
+                AppIconSwiftRule(projectData: projectData)
         ]
     }
 }

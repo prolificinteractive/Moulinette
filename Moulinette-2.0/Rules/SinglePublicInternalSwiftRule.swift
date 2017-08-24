@@ -11,11 +11,9 @@ import Foundation
 final class SinglePublicInternalSwiftRule: SwiftRule {
     
     let name: String = "One public/internal type per file (class, enum, protocol, struct)"
-    
     let priority: RulePriority = .low
     
     private var projectData: ProjectData
-    private var failedString = ""
     private var type: FileType?
     
     private lazy var auditGrader: AuditGrader = {
