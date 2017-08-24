@@ -72,7 +72,7 @@ extension String {
     ///
     /// - Returns: True if the string containing Swift code has a TODO comment
     func isTodoComment() -> Bool {
-        return self.isComment() && self.contains("TODO")
+        return self.isComment() && self.lowercased().contains("todo")
     }
 
     /// Returns true if the string containing Swift code is a comment.

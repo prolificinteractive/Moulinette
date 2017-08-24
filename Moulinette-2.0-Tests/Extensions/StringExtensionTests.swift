@@ -105,4 +105,72 @@ class StringExtensionTests: XCTestCase {
         
         XCTAssertEqual(className, "Subclass")
     }
+    
+// MARK: - isComment
+    
+    func testIsComment_EmptyCommentString() {
+        sut = "//"
+        
+        let isComment = sut.isComment()
+        
+        XCTAssertEqual(isComment, true)
+    }
+    
+    func testIsComment_CommentString() {
+        sut = "// Hello World //"
+        
+        let isComment = sut.isComment()
+        
+        XCTAssertEqual(isComment, true)
+    }
+    
+    func testIsComment_InCompleteCommentString() {
+        sut = "/ Hello World"
+        
+        let isComment = sut.isComment()
+        
+        XCTAssertEqual(isComment, false)
+    }
+    
+    func testIsComment_NotCommentString() {
+        sut = "/"
+        
+        let isComment = sut.isComment()
+        
+        XCTAssertEqual(isComment, false)
+    }
+
+// MARK: - isTodoComment
+    
+    func testIsTodoComment_CapitalizedTODOComment() {
+        sut = "// TODO"
+        
+        let isComment = sut.isTodoComment()
+        
+        XCTAssertEqual(isComment, true)
+    }
+    
+    func testIsTodoComment_CapitalizedTODONoComment() {
+        sut = "TODO"
+        
+        let isComment = sut.isTodoComment()
+        
+        XCTAssertEqual(isComment, false)
+    }
+    
+    func testIsTodoComment_LowercaseTODOComment() {
+        sut = "// todo"
+        
+        let isComment = sut.isTodoComment()
+        
+        XCTAssertEqual(isComment, true)
+    }
+    
+    func testIsTodoComment_LowercaseTODONoComment() {
+        sut = "todo"
+        
+        let isComment = sut.isTodoComment()
+        
+        XCTAssertEqual(isComment, false)
+    }
 }
