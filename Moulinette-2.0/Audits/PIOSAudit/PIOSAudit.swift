@@ -39,8 +39,13 @@ struct PIOSAudit: Audit {
             collection.rules(projectData: projectData).forEach {
                 let result = $0.run()
                 let score = result.score()
+                let report = result.violationDescription
                 auditScore += score
-                output.record(collection: collection.description, rule: $0.name, score: score, weight: $0.priority.weight())
+                output.record(collection: collection.description,
+                              rule: $0.name,
+                              score: score,
+                              weight: $0.priority.weight(),
+                              report: report)
             }
         }
         

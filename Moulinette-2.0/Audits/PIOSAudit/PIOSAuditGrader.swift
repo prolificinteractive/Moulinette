@@ -27,7 +27,7 @@ final class PIOSAuditGrader: AuditGrader {
     
     func generateGrade() -> AuditGrade {
         let grade: GradeType = (failedString.isEmpty) ? .pass : .fail(failedString)
-        return AuditGrade(gradeType: grade, priority: priority, violations: violations)
+        return AuditGrade(gradeType: grade, priority: priority, violations: violations, violationDescription: failedString)
     }
     
     func failed(fileName: String, description: String) {
@@ -39,6 +39,6 @@ final class PIOSAuditGrader: AuditGrader {
 private extension PIOSAuditGrader {
     
     func formattedFailedString(fileName: String, description: String) -> String {
-        return fileName + "\n" + description + "\n"
+        return fileName + ": " + description + "\n"
     }
 }

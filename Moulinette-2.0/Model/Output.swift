@@ -18,6 +18,7 @@ final class Output {
     static var identifierKey = "bundleIdentifier"
     static var collectionKey = "collections"
     static var weightKey = "weight"
+    static var reportKey = "report"
     static var versionKey = "version"
     
     // MARK: - Private properties
@@ -36,13 +37,20 @@ final class Output {
     
     // MARK: - Public functions
 
-    func record(collection: String, rule: String, score: Double, weight: Double) {
+    func record(collection: String,
+                rule: String,
+                score: Double,
+                weight: Double,
+                report: String) {
         var rules = rulesDictionary()
         if rules[collection] == nil {
-            rules[collection] = [String: [String: Double]]()
+            rules[collection] = [String: [String: Any]]()
         }
-        rules[collection]?[rule] = [Output.scoreKey: score,
-                       Output.weightKey: weight]
+        rules[collection]?[rule] = [
+            Output.scoreKey: score,
+            Output.weightKey: weight,
+            Output.reportKey: report
+        ]
         values[Output.collectionKey] = rules
     }
     
@@ -57,7 +65,7 @@ final class Output {
     func description() -> String {
         var output = "Running PiOS Rules for " + (values[Output.projectNameKey] as! String) + ":" + "\n"
         
-        guard let collections = values[Output.collectionKey] as? [String: [String: [String: Double]]] else {
+        guard let collections = values[Output.collectionKey] as? [String: [String: [String: Any]]] else {
             return "Error building the Moulinette's description."
         }
         
@@ -81,9 +89,9 @@ final class Output {
     
     // MARK: - Private functions
     
-    private func rulesDictionary() -> [String: [String: [String: Double]]] {
-        guard let rules = values[Output.collectionKey] as? [String: [String: [String: Double]]] else {
-            return [String: [String: [String: Double]]]()
+    private func rulesDictionary() -> [String: [String: [String: Any]]] {
+        guard let rules = values[Output.collectionKey] as? [String: [String: [String: Any]]] else {
+            return [String: [String: [String: Any]]]()
         }
         
         return rules
