@@ -8,7 +8,16 @@
 
 import Foundation
 
+/// Rule collection.
 protocol RuleCollection {
 
+    /// Description.
+    var description: String { get }
+
+    /// List of rules linked to the rule collection.
+    ///
+    /// - Parameter projectData: Project data.
+    /// - Returns: List of rules.
     func rules(projectData: ProjectData) -> [SwiftRule]
+
 }
