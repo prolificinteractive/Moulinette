@@ -45,7 +45,8 @@ struct PIOSAudit: Audit {
                               rule: $0.name,
                               score: score,
                               weight: $0.priority.weight(),
-                              report: report)
+                              report: report,
+                              violationCount: result.violations)
             }
         }
         

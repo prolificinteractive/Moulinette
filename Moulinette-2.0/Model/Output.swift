@@ -19,6 +19,7 @@ final class Output {
     static var collectionKey = "collections"
     static var weightKey = "weight"
     static var reportKey = "report"
+    static var violationCountKey = "violationCount"
     static var versionKey = "version"
     
     // MARK: - Private properties
@@ -41,15 +42,18 @@ final class Output {
                 rule: String,
                 score: Double,
                 weight: Double,
-                report: String) {
+                report: String,
+                violationCount: Int) {
         var rules = rulesDictionary()
         if rules[collection] == nil {
             rules[collection] = [String: [String: Any]]()
         }
+    
         rules[collection]?[rule] = [
             Output.scoreKey: score,
             Output.weightKey: weight,
-            Output.reportKey: report
+            Output.reportKey: report,
+            Output.violationCountKey: violationCount
         ]
         values[Output.collectionKey] = rules
     }
