@@ -8,12 +8,23 @@
 
 import Foundation
 
+/// Audit grade.
 struct AuditGrade {
+   
+    /// Grade type.
     var gradeType: GradeType
+    
+    /// Priority,
     var priority: RulePriority
+    
+    /// Number of violations.
     var violations: Int
+    
+    /// Violation description text.
+    var violationDescription: String
     
     func score() -> Double {
         return priority.score(violations: violations)
     }
+    
 }
