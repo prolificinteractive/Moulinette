@@ -33,7 +33,7 @@ struct ProjectSettings {
             projectName = ProjectSettings.getEnvironmentVar("PROJECT_NAME")!
             projectDirectory = ProjectSettings.getEnvironmentVar("PROJECT_DIR")! + "/"
             projectIdentifier = ProjectSettings.getEnvironmentVar("PROJECT_IDENTIFIER")!
-            silentMode = ProjectSettings.getEnvironmentVar("SILENT_MODE") == "TRUE"
+            silentMode = ProjectSettings.getEnvironmentVar("SILENT_MODE")?.uppercased() != "FALSE"
         #else
             let userDefaults = UserDefaults.standard.dictionaryRepresentation()
             guard let projectName = userDefaults["projectName"] as? String,
