@@ -12,7 +12,21 @@ import Foundation
 struct PIOSAudit: Audit {
     
     private var projectData: ProjectData
-    private var ruleCollection: [RuleCollection] = [CodeConventionRuleCollection()]
+    private var ruleCollection: [RuleCollection] = [
+        ProjectConventionRuleCollection(),
+        CodeConventionRuleCollection(),
+        LocalizationRuleCollection(),
+        APIIntegrationRuleCollection(),
+        DocumentationRuleCollection(),
+        CompilerRuleCollection(),
+        TestsCoverageRuleCollection(),
+        ToolsRuleCollection(),
+        DependenciesRuleCollection(),
+        CIRuleCollection(),
+        GitRuleCollection(),
+        AppstoreRuleCollection(),
+        SecurityRuleCollection()
+    ]
     
     init(projectData: ProjectData) {
         self.projectData = projectData
@@ -26,7 +40,7 @@ struct PIOSAudit: Audit {
                 let result = $0.run()
                 let score = result.score()
                 auditScore += score
-                output.record(rule: $0.name, score: score, weight: $0.priority.weight())
+                output.record(collection: collection.description, rule: $0.name, score: score, weight: $0.priority.weight())
             }
         }
         
