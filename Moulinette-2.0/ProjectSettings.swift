@@ -27,6 +27,9 @@ struct ProjectSettings {
 
     /// Silent mode. (No output call to API)
     let silentMode: Bool
+
+    /// Debug mode.
+    let debugMode: Bool
     
     init() {
         #if INTERNAL
@@ -34,6 +37,7 @@ struct ProjectSettings {
             projectDirectory = ProjectSettings.getEnvironmentVar("PROJECT_DIR")! + "/"
             projectIdentifier = ProjectSettings.getEnvironmentVar("PROJECT_IDENTIFIER")!
             silentMode = ProjectSettings.getEnvironmentVar("SILENT_MODE")?.uppercased() != "FALSE"
+            debugMode = true
         #else
             let userDefaults = UserDefaults.standard.dictionaryRepresentation()
             guard let projectName = userDefaults["projectName"] as? String,
@@ -46,6 +50,7 @@ struct ProjectSettings {
             projectDirectory = FileManager.default.currentDirectoryPath + "/"
             self.projectIdentifier = bundleIdentifier
             self.silentMode = silentMode.lowercased() == "true"
+            self.debugMode = false
         #endif
     }
     
