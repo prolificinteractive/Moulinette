@@ -14,8 +14,9 @@ final class NetworkRequester {
     
     private var environment = APIEnvironment()
     
-    func submitAuditScore(score: JSON) {
+    func submitAuditScore(score: JSON, completion: @escaping ([String: Any]?, NSError?) -> Void) {
         guard let url = environment.url(endpoint: "report") else {
+            completion(nil, NSError())
             return
         }
 
@@ -41,9 +42,10 @@ final class NetworkRequester {
                     print("Data or json response missing.")
                     return
                 }
-                print(json)
+                completion(json, nil)
+                return
             } catch let error as NSError {
-                print(error)
+                completion(nil, error)
             }
             
             sema.signal()
