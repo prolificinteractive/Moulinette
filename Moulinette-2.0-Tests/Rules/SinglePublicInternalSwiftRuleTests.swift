@@ -74,7 +74,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
 // MARK: - Class Type
     
     func testRun_ClassAndClassFile() {
-        let data = projectData(components: ["Sample" : ["class Sample1 {}", "final class Sample2 {}"]])
+        let data = projectData(components: ["Sample.swift" : ["class Sample1 {}", "final class Sample2 {}"]])
         sut = SinglePublicInternalSwiftRule(projectData: data)
         
         let grade = sut.run()
@@ -83,7 +83,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
     }
     
     func testRun_ClassAndEnumFile() {
-        let data = projectData(components: ["Sample" : ["class Sample1 {}", "enum Test {}"]])
+        let data = projectData(components: ["Sample.swift" : ["class Sample1 {}", "enum Test {}"]])
         sut = SinglePublicInternalSwiftRule(projectData: data)
         
         let grade = sut.run()
@@ -92,7 +92,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
     }
     
     func testRun_ClassAndProtocolFile() {
-        let data = projectData(components: ["Sample" : ["class Sample1 {}", "protocol Test {}"]])
+        let data = projectData(components: ["Sample.swift" : ["class Sample1 {}", "protocol Test {}"]])
         sut = SinglePublicInternalSwiftRule(projectData: data)
         
         let grade = sut.run()
@@ -101,7 +101,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
     }
     
     func testRun_ClassAndStructFile() {
-        let data = projectData(components: ["Sample" : ["class Sample1 {}", "struct Test {}"]])
+        let data = projectData(components: ["Sample.swift" : ["class Sample1 {}", "struct Test {}"]])
         sut = SinglePublicInternalSwiftRule(projectData: data)
         
         let grade = sut.run()
@@ -112,7 +112,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
 // MARK: - Enum Type
     
     func testRun_EnumAndEnum() {
-        let data = projectData(components: ["Sample" : ["enum Sample1 {}", "enum Test {}"]])
+        let data = projectData(components: ["Sample.swift" : ["enum Sample1 {}", "enum Test {}"]])
         sut = SinglePublicInternalSwiftRule(projectData: data)
         
         let grade = sut.run()
@@ -121,7 +121,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
     }
     
     func testRun_EnumAndProtocol() {
-        let data = projectData(components: ["Sample" : ["protocol Sample1 {}", "enum Test {}"]])
+        let data = projectData(components: ["Sample.swift" : ["protocol Sample1 {}", "enum Test {}"]])
         sut = SinglePublicInternalSwiftRule(projectData: data)
         
         let grade = sut.run()
@@ -130,7 +130,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
     }
     
     func testRun_EnumAndStruct() {
-        let data = projectData(components: ["Sample" : ["struct Sample1 {}", "enum Test {}"]])
+        let data = projectData(components: ["Sample.swift" : ["struct Sample1 {}", "enum Test {}"]])
         sut = SinglePublicInternalSwiftRule(projectData: data)
         
         let grade = sut.run()
@@ -141,7 +141,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
 // MARK: - Protocol Type
     
     func testRun_ProtocolAndProtocol() {
-        let data = projectData(components: ["Sample" : ["protocol Sample1 {}", "protocol Test {}"]])
+        let data = projectData(components: ["Sample.swift" : ["protocol Sample1 {}", "protocol Test {}"]])
         sut = SinglePublicInternalSwiftRule(projectData: data)
         
         let grade = sut.run()
@@ -150,7 +150,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
     }
     
     func testRun_ProtocolAndStruct() {
-        let data = projectData(components: ["Sample" : ["protocol Sample1 {}", "struct Test {}"]])
+        let data = projectData(components: ["Sample.swift" : ["protocol Sample1 {}", "struct Test {}"]])
         sut = SinglePublicInternalSwiftRule(projectData: data)
         
         let grade = sut.run()
@@ -161,7 +161,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
 // MARK: - Struct Type
     
     func testRun_StructAndStruct() {
-        let data = projectData(components: ["Sample" : ["struct Sample1 {}", "struct Test {}"]])
+        let data = projectData(components: ["Sample.swift" : ["struct Sample1 {}", "struct Test {}"]])
         sut = SinglePublicInternalSwiftRule(projectData: data)
         
         let grade = sut.run()

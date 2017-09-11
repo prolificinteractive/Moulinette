@@ -36,4 +36,17 @@ enum FileType {
         }
         return nil
     }
+    
+    static func value(fileType: FileType) -> String {
+        switch fileType {
+        case .swiftClass:
+            return "class"
+        case .swiftEnum:
+            return "enum"
+        case .swiftProtocol:
+            return "protocol"
+        case .swiftStruct:
+            return "struct"
+        }
+    }
 }

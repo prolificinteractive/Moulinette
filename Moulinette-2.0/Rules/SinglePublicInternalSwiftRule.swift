@@ -25,11 +25,16 @@ final class SinglePublicInternalSwiftRule: SwiftRule {
     }
     
     func run() -> AuditGrade {
-        for (fileName, fileComponents) in projectData.applicationComponents.components {
+        for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
             fileComponents.forEach {
                 if let fileType = FileType.type(fileLine: $0) {
-                    if type != nil && !fileName.contains("Constants") {
-                        auditGrader.violationFound(fileName: fileName, description: $0)
+                    if let type = type,
+                        !fileName.contains("Constants") {
+                        let firstValue = FileType.value(fileType: type)
+                        let secondValue = FileType.value(fileType: fileType)
+                        
+                        
+                        auditGrader.violationFound(fileName: fileName, description: "\(firstValue.capitalized) and a \(secondValue) present in the same file.")
                     }
                     type = fileType
                 }
