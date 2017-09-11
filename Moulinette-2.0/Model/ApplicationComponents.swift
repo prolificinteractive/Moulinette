@@ -50,10 +50,7 @@ struct ApplicationComponents {
                 let content = try String(contentsOfFile: fileToParse, encoding: String.Encoding.utf8)
                 let fileComponents = content.components(separatedBy: "\n")
 
-                guard let strippedFileName = file.fileName() else {
-                    throw ParseError.error("Failed to parse Swift file name")
-                }
-                components[strippedFileName] = fileComponents
+                components[file] = fileComponents
                 setupProjectAssets(filePath: file, fileComponents: fileComponents)
             } catch {
                 print("Error caught with message: \(error.localizedDescription)")
