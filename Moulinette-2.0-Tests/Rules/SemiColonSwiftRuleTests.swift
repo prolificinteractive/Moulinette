@@ -44,4 +44,13 @@ class SemiColonSwiftRuleTests: XCTestCase {
         
         XCTAssertEqual(grade.violations, 1)
     }
+    
+    func testRun_SemiColonInComment() {
+        sut = SemiColonSwiftRule(projectData: projectData(fileName: "Sample.swift", line: "// Hello; this is a comment;"))
+        
+        let grade = sut.run()
+        
+        XCTAssertEqual(grade.violations, 0)
+    }
+    
 }
