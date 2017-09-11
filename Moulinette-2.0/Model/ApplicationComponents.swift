@@ -70,9 +70,21 @@ struct ApplicationComponents {
     /// - Parameter name: File name,
     /// - Returns: Content of file with the filename given.
     func file(by name: String) -> [String]? {
-        return components[name]
+        return file(filterBy: name).first?.1
     }
- 
+    
+    /// Filtering function to get component for given file name.
+    ///
+    /// - Parameter name: File name,
+    /// - Returns: List of file containing the file name given.
+    func file(filterBy name: String) -> [(String, [String])] {
+        let files = components.filter { (fileName, content) -> Bool in
+            return fileName.contains(name)
+        }
+        
+        return files
+    }
+    
     /// Filtering function to get components for given path extension (swift, strings).
     ///
     /// - Parameter pathExtension: Path extension.
