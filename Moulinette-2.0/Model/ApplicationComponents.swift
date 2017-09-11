@@ -97,6 +97,17 @@ struct ApplicationComponents {
         
         return files
     }
+    
+    /// Merge contents of multiples files.
+    ///
+    /// - Parameter files: Given files.
+    /// - Returns: Content of those files concatenated.
+    func mergeContents(files: [(String, [String])]) -> String {
+        return files.flatMap { (fileName, fileContents) -> String? in
+            return fileContents.joined()
+            }.joined()
+    }
+    
 }
 
 private extension ApplicationComponents {
