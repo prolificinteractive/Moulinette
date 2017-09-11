@@ -50,10 +50,7 @@ struct ApplicationComponents {
                 let content = try String(contentsOfFile: fileToParse, encoding: String.Encoding.utf8)
                 let fileComponents = content.components(separatedBy: "\n")
 
-                guard let strippedFileName = file.fileName() else {
-                    throw ParseError.error("Failed to parse Swift file name")
-                }
-                components[strippedFileName] = fileComponents
+                components[file] = fileComponents
                 setupProjectAssets(filePath: file, fileComponents: fileComponents)
             } catch {
                 print("Error caught with message: \(error.localizedDescription)")
@@ -73,9 +70,21 @@ struct ApplicationComponents {
     /// - Parameter name: File name,
     /// - Returns: Content of file with the filename given.
     func file(by name: String) -> [String]? {
-        return components[name]
+        return file(filterBy: name).first?.1
     }
- 
+    
+    /// Filtering function to get component for given file name.
+    ///
+    /// - Parameter name: File name,
+    /// - Returns: List of file containing the file name given.
+    func file(filterBy name: String) -> [(String, [String])] {
+        let files = components.filter { (fileName, content) -> Bool in
+            return fileName.contains(name)
+        }
+        
+        return files
+    }
+    
     /// Filtering function to get components for given path extension (swift, strings).
     ///
     /// - Parameter pathExtension: Path extension.
