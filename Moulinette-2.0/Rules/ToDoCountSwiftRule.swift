@@ -27,16 +27,14 @@ final class ToDoCountSwiftRule: SwiftRule {
     }
 
     func run() -> AuditGrade {
-        var todoCount = 0
-        for (fileName, fileComponents) in projectData.applicationComponents.components {
-            fileComponents.forEach {
-                todoCount = $0.isTodoComment() ? todoCount + 1 : todoCount
-                if todoCount > ToDoCountSwiftRule.maxTodoCount {
-                    auditGrader.violationFound(fileName: fileName, description: $0)
-                }
-            }
+        let swiftFiles = projectData.applicationComponents.swiftFiles
+        let allContents = projectData.applicationComponents.mergeContents(files: swiftFiles).uppercased()
+        
+        let count = allContents.components(separatedBy: "TODO").count - 1
+        if count > ToDoCountSwiftRule.maxTodoCount {
+            auditGrader.failed(description: "More than \(ToDoCountSwiftRule.maxTodoCount) found. (\(count) found.)")
         }
-
+        
         return auditGrader.generateGrade()
     }
 
