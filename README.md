@@ -63,7 +63,7 @@ How to build and run Coffee on multiple Prolific Interactive projects.
 ### From the command line
 
 1. Open the project in Xcode by double clicking on the `.xcodeproj` file or running `open Coffee.xcodeproj`.
-2. Build the project using `CMD B`.
+2. Set your target to release mode & Build the project using `CMD B`.
 3. Copy the executable file titled `Coffee` from `/Build/Products/Debug/` to your `your_project_repo/subdirectory`.
 4. Run from the command line: `./Coffee -moulinettePath </$path/to/moulinette/binary/Moulinette-2.0> -projectDirectory </$path/to/projects/directory/>")`
 
