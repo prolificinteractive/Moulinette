@@ -40,17 +40,32 @@ struct ProjectSettings {
             debugMode = true
         #else
             let userDefaults = UserDefaults.standard.dictionaryRepresentation()
+            
             guard let projectName = userDefaults["projectName"] as? String,
-                let bundleIdentifier = userDefaults["bundleIdentifier"] as? String,
-                let silentMode = userDefaults["silent"] as? String else {
-                    print("Error: projectName or bundle identifier not specified!")
+                let bundleIdentifier = userDefaults["projectIdentifier"] as? String,
+                let projectDirectory = userDefaults["projectDirectory"] as? String else {
+                    print("Error: Missing parameter.")
+                    print("Eg: moulinette -projectName <projectName> -projectIdentifier <projectIdentifier> -projectDirectory <projectDirectory> [-silentMode <'true'/'false'> -verbose <'true'/'false>]")
                     exit(1)
             }
+            
             self.projectName = projectName
-            projectDirectory = FileManager.default.currentDirectoryPath + "/"
+            self.projectDirectory = projectDirectory + "/"
             self.projectIdentifier = bundleIdentifier
-            self.silentMode = silentMode.lowercased() == "true"
-            self.debugMode = false
+            
+            if let silentMode = userDefaults["silent"] as? String,
+                silentMode == "true" {
+                self.silentMode = true
+            } else {
+                self.silentMode = false
+            }
+            
+            if let debugMode = userDefaults["verbose"] as? String, debugMode == "true" {
+                self.debugMode = true
+            } else {
+                self.debugMode = false
+            }
+            
         #endif
     }
     

@@ -40,5 +40,8 @@ if settings.silentMode == false {
         }
         print("Score:\(score)")
         print("Url:\(url)")
+        exit(1)
     }))
+} else {
+    exit(1)
 }
