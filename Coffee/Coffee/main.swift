@@ -30,13 +30,18 @@ let projects = [
 
 let moulinette = Moulinette(path: moulinettePath)
 
-projects.forEach { (project) in
-    print("####### COFFEE FOR \(project.name.uppercased()) #######")
+let group = DispatchGroup()
 
-    moulinette.run(project: project)
-    
-    print("####### COFFEE FOR \(project.name.uppercased()) DONE #######")
+projects.forEach { (project) in
+    group.enter()
+    print("####### PREPARING COFFEE FOR \(project.name.uppercased()) #######")
+    DispatchQueue.global().async {
+        moulinette.run(project: project)
+        group.leave()
+        print("####### COFFEE FOR \(project.name.uppercased()) DONE #######")
+    }
 }
 
+
+group.wait()
 print("####### COFFEE DONE #######")
-exit(1)
