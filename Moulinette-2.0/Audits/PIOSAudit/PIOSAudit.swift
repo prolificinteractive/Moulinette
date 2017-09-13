@@ -35,21 +35,32 @@ struct PIOSAudit: Audit {
     func runRules() -> Output {
         let output = Output(with: settings.projectIdentifier, projectName: settings.projectName) 
         var auditScore: Double = 0
+        
+        /// Dispatch group - Flag rules running concurrently and wait until all of them are done.
+        let group = DispatchGroup()
+        
         for collection in ruleCollection {
-            collection.rules(projectData: projectData).forEach {
-                let result = $0.run()
-                let score = result.score()
-                let report = result.violationDescription
-                auditScore += score
-                output.record(collection: collection.description,
-                              rule: $0.name,
-                              score: score,
-                              weight: $0.priority.weight(),
-                              report: report,
-                              violationCount: result.violations)
-            }
+            collection.rules(projectData: projectData).forEach({ rule in
+                group.enter()
+                
+                /// Dispatch the block in a concurrent queue (global).
+                DispatchQueue.global().async {
+                    let result = rule.run()
+                    let score = result.score()
+                    let report = result.violationDescription
+                    auditScore += score
+                    output.record(collection: collection.description,
+                                  rule: rule.name,
+                                  score: score,
+                                  weight: rule.priority.weight(),
+                                  report: report,
+                                  violationCount: result.violations)
+                    group.leave()
+                }
+            })
         }
         
+        group.wait()
         let score = Int((auditScore / maxPoints()) * 100)
         output.record(overallScore: score)
         return output
