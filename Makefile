@@ -16,12 +16,19 @@ documentation-moulinette:
 documentation-test:
 	jazzy --min-acl private  --module Moulinette_Tests --xcodebuild-arguments test,-scheme,Moulinette-Tests --skip-undocumented -o docs-test
 
-audit:
+ci-audit:
 	xcodebuild \
 	-project Moulinette-2.0.xcodeproj \
 	-target Moulinette-2.0 \
 	-configuration Release
-	./build/Release/Moulinette-2.0 -projectName ${projectName} -bundleIdentifier ${bundleID} -silent true
+	./build/Release/Moulinette-2.0 -projectName ${projectName} -projectIdentifier ${projectIdentifier} -projectDirectory ../../ -silentMode false
+
+local-audit:
+	xcodebuild \
+	-project Moulinette-2.0.xcodeproj \
+	-target Moulinette-2.0 \
+	-configuration Release
+	./build/Release/Moulinette-2.0 -projectName ${projectName} -projectIdentifier ${projectIdentifier} -projectDirectory ${projectDirectory} -silentMode true
 
 tests:
 	xcodebuild \
