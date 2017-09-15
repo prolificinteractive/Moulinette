@@ -46,7 +46,7 @@ struct ProjectSettings {
                 let projectDirectory = userDefaults["projectDirectory"] as? String else {
                     print("Error: Missing parameter.")
                     print("Eg: moulinette -projectName <projectName> -projectIdentifier <projectIdentifier> -projectDirectory <projectDirectory> [-silentMode <'true'/'false'> -verbose <'true'/'false>]")
-                    exit(1)
+                    exit(0)
             }
             
             self.projectName = projectName
