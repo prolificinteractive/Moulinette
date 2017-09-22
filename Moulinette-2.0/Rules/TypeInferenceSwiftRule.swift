@@ -39,10 +39,32 @@ private extension TypeInferenceSwiftRule {
     
     func unnecessaryTypeInference(fileLine: String) -> Bool {
         let noSpacefileLine = fileLine.stringWithoutWhitespaces()
-        if (fileLine.contains("let") || fileLine.contains("var")),
-            let type = noSpacefileLine.stringBetween(startString: ":", endString: "="),
-            let classInit = noSpacefileLine.stringBetween(startString: "=", endString: "("),
+        
+        guard (fileLine.contains("let") || fileLine.contains("var")),
+            let type = noSpacefileLine.stringBetween(startString: ":", endString: "=") else {
+                return false
+        }
+        
+        return primitiveTypeInference(noSpacefileLine: noSpacefileLine, type: type) ||
+            customTypeInference(noSpacefileLine: noSpacefileLine, type: type)
+    }
+    
+    private func customTypeInference(noSpacefileLine: String, type: String) -> Bool {
+        if let classInit = noSpacefileLine.stringBetween(startString: "=", endString: "("),
             type == classInit {
+            return true
+        }
+        return false
+    }
+    
+    private func primitiveTypeInference(noSpacefileLine: String, type: String) -> Bool {
+        guard let startRange = noSpacefileLine.range(of: "=") else {
+            return false
+        }
+        
+        let range = Range(uncheckedBounds: (lower: startRange.upperBound, upper: noSpacefileLine.endIndex))
+        let classInit = noSpacefileLine.substring(with: range)
+        if (type == "String" && classInit == "\"\"") {
             return true
         }
         return false
