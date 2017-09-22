@@ -12,6 +12,7 @@
 		200FC72F1F4C892E004335D8 /* CocoapodKeysSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */; };
 		200FC7311F4C894F004335D8 /* XCTestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7301F4C894F004335D8 /* XCTestExtension.swift */; };
 		200FC7331F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7321F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift */; };
+		201307081F759CA900CE37D4 /* TypeInferenceSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201307071F759CA900CE37D4 /* TypeInferenceSwiftRuleTests.swift */; };
 		20161CFB1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161CFA1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift */; };
 		20161CFD1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161CFC1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift */; };
 		20161D061EE09C8F00997AF6 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20161D051EE09C8F00997AF6 /* FileType.swift */; };
@@ -171,6 +172,7 @@
 		200FC7301F4C894F004335D8 /* XCTestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtension.swift; sourceTree = "<group>"; };
 		200FC7321F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoapodsKeysSwiftRuleTests.swift; sourceTree = "<group>"; };
 		200FC7341F4CBB92004335D8 /* AppIconSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconSwiftRule.swift; sourceTree = "<group>"; };
+		201307071F759CA900CE37D4 /* TypeInferenceSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeInferenceSwiftRuleTests.swift; sourceTree = "<group>"; };
 		20161CFA1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakIBOutletSwiftRule.swift; sourceTree = "<group>"; };
 		20161CFC1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePublicInternalSwiftRule.swift; sourceTree = "<group>"; };
 		20161D051EE09C8F00997AF6 /* FileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				20CE93F21F4CC202000A5CF5 /* AppIconSwiftRuleTests.swift */,
 				20CE93F71F4CCC31000A5CF5 /* EmptyAppIconSwiftRuleTests.swift */,
 				206EE0A81F4F41B800AC7EE4 /* ToDoCountSwiftRuleTests.swift */,
+				201307071F759CA900CE37D4 /* TypeInferenceSwiftRuleTests.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				2053EED51EF4921B00AAE36D /* CodeRuleType.swift in Sources */,
 				2037905E1F44E41D00B74151 /* ProjectOrganizationSwiftRuleTests.swift in Sources */,
 				2053EED61EF4921B00AAE36D /* LineContext.swift in Sources */,
+				201307081F759CA900CE37D4 /* TypeInferenceSwiftRuleTests.swift in Sources */,
 				2053EED71EF4921B00AAE36D /* FileType.swift in Sources */,
 				2053EED81EF4921B00AAE36D /* RulePriority.swift in Sources */,
 				200FC72E1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift in Sources */,
