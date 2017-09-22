@@ -32,7 +32,8 @@ final class SwiftLintSwiftRule: SwiftRule {
         }
         
         for component in fileComponents {
-            if component.contains("${PODS_ROOT}/SwiftLint/swiftlint") {
+            if component.contains("${PODS_ROOT}/SwiftLint/swiftlint") ||
+                component.contains("if which swiftlint >/dev/null; then") {
                 return auditGrader.generateGrade()
             }
         }
