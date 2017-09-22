@@ -21,6 +21,14 @@ class SwiftLintSwiftRuleTests: XCTestCase {
         XCTAssertEqual(grade.score(), sut.priority.weight())
     }
     
+    func testRun_InstalledSwiftLintBuildPhase() {
+        sut = SwiftLintSwiftRule(projectData: installedSwiftLintBuildPhase())
+        
+        let grade = sut.run()
+        
+        XCTAssertEqual(grade.score(), sut.priority.weight())
+    }
+    
     func testRun_SwiftLintAbsentBuildPhase() {
         sut = SwiftLintSwiftRule(projectData: swiftLintAbsentBuildPhase())
         
@@ -34,6 +42,12 @@ private extension SwiftLintSwiftRuleTests {
     
     func swiftLintBuildPhase() -> ProjectData {
         let fileComponents = ["${PODS_ROOT}/SwiftLint/swiftlint"]
+        
+        return ProjectData(applicationComponents: ApplicationComponents(with: [Constants.FileNameConstants.xcodeProject : fileComponents]))
+    }
+    
+    func installedSwiftLintBuildPhase() -> ProjectData {
+        let fileComponents = ["if which swiftlint >/dev/null; then"]
         
         return ProjectData(applicationComponents: ApplicationComponents(with: [Constants.FileNameConstants.xcodeProject : fileComponents]))
     }
