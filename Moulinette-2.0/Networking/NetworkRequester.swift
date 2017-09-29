@@ -12,9 +12,13 @@ typealias JSON = [String : Any]
 
 final class NetworkRequester {
     
-    private var environment = APIEnvironment()
+    private var environment: APIEnvironment
     
-    func submitAuditScore(score: JSON, completion: @escaping ([String: Any]?, NSError?) -> Void) {
+    init(debugMode: Bool) {
+        environment = APIEnvironment(debugMode: debugMode)
+    }
+    
+    func submitAuditScore(score: JSON, authToken: String, completion: @escaping ([String: Any]?, NSError?) -> Void) {
         guard let url = environment.url(endpoint: "report") else {
             completion(nil, NSError())
             return
@@ -24,7 +28,7 @@ final class NetworkRequester {
         request.httpMethod = "POST"
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         request.setValue("application/json;", forHTTPHeaderField: "Content-Type")
-
+        request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
         // Parameters
         let parameters = score
         do {

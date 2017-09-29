@@ -26,8 +26,11 @@ if settings.debugMode {
     print(output.description())
 }
 
-if settings.silentMode == false {
-    NetworkRequester().submitAuditScore(score: output.representation(), completion: ({ (json, error) in
+if settings.silentMode == false,
+    let authToken = settings.authToken {
+    NetworkRequester(debugMode: settings.debugMode).submitAuditScore(score: output.representation(),
+                                        authToken: authToken,
+                                        completion: ({ (json, error) in
         if let error = error {
             // Display error?
             return
@@ -35,7 +38,7 @@ if settings.silentMode == false {
         
         guard let url = json?["url"],
             let score = output.representation()[Output.scoreKey] else {
-                print("No url return from the JSO or score doesn't exist in the output representation.")
+                print("No url return from the JSON or score doesn't exist in the output representation.")
                 return
         }
         print("Score:\(score)")
