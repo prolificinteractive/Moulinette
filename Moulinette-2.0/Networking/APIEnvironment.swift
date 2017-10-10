@@ -13,7 +13,7 @@ struct APIEnvironment {
     let debugMode: Bool
     
     var baseURL = URL(string: "http://moulinette.prolific.io/api/")
-    var devBaseURL = URL(string: "http://34.230.27.50/api/")
+    var devBaseURL = URL(string: "http://moulinette-dev.prolific.io/api/")
     
     init(debugMode: Bool) {
         self.debugMode = debugMode
