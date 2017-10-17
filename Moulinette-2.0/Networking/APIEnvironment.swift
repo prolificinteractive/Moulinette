@@ -10,13 +10,22 @@ import Foundation
 
 struct APIEnvironment {
     
+    let debugMode: Bool
+    
     var baseURL = URL(string: "http://moulinette.prolific.io/api/")
+    var devBaseURL = URL(string: "http://moulinette-dev.prolific.io/api/")
+    
+    init(debugMode: Bool) {
+        self.debugMode = debugMode
+    }
     
     /// Generates the url from the base url.
     ///
     /// - Parameter endpoint: Endpoint to access.
     /// - Returns: Complete url.
     func url(endpoint: String) -> URL? {
+        let baseURL = debugMode ? self.devBaseURL : self.baseURL
+        
         guard let endpoint = endpoint.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed),
             let url = URL(string: endpoint, relativeTo: baseURL) else {
                 return nil
