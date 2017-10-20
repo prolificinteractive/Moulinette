@@ -127,6 +127,7 @@
 		4CA5E0141F1FAB0800EBE48B /* LocalizedStringSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */; };
 		4CA5E0171F2122E000EBE48B /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E0161F2122E000EBE48B /* Output.swift */; };
 		4CE81FA91F96A3C300367F7A /* GitCheckMergedBranchSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE81FA81F96A3C300367F7A /* GitCheckMergedBranchSwiftRule.swift */; };
+		4CE81FAB1F97D9F300367F7A /* GitCheckCommitQualitySwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE81FAA1F97D9F300367F7A /* GitCheckCommitQualitySwiftRule.swift */; };
 		59178A681F3BC3C4009E5484 /* ExceptionDomains.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */; };
 		59178A691F3BC3C4009E5484 /* NoExceptionDomains.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */; };
 		5932B4D91F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5932B4D81F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift */; };
@@ -233,6 +234,7 @@
 		4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFilteringTests.swift; sourceTree = "<group>"; };
 		4CA5E0161F2122E000EBE48B /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		4CE81FA81F96A3C300367F7A /* GitCheckMergedBranchSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckMergedBranchSwiftRule.swift; sourceTree = "<group>"; };
+		4CE81FAA1F97D9F300367F7A /* GitCheckCommitQualitySwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckCommitQualitySwiftRule.swift; sourceTree = "<group>"; };
 		59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ExceptionDomains.plist; path = "Moulinette-2.0-Tests/ExceptionDomains.plist"; sourceTree = SOURCE_ROOT; };
 		59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NoExceptionDomains.plist; path = "Moulinette-2.0-Tests/NoExceptionDomains.plist"; sourceTree = SOURCE_ROOT; };
 		5932B4D81F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATSExceptionSwiftRuleTests.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				200FC7341F4CBB92004335D8 /* AppIconSwiftRule.swift */,
 				20CE93F51F4CC3D1000A5CF5 /* EmptyAppIconSwiftRule.swift */,
 				4CE81FA81F96A3C300367F7A /* GitCheckMergedBranchSwiftRule.swift */,
+				4CE81FAA1F97D9F300367F7A /* GitCheckCommitQualitySwiftRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				20CE93F61F4CC3D1000A5CF5 /* EmptyAppIconSwiftRule.swift in Sources */,
 				20E4140D1EDF7F9B0000E447 /* LineContext.swift in Sources */,
 				206837AF1EDE22E8008CB7F3 /* GradeType.swift in Sources */,
+				4CE81FAB1F97D9F300367F7A /* GitCheckCommitQualitySwiftRule.swift in Sources */,
 				207FB3091F3B4C6F009B0B26 /* ATSExceptionSwiftRule.swift in Sources */,
 				206837A41EDE1D5D008CB7F3 /* ProjectData.swift in Sources */,
 				664E7D1D1F22579C00041CAC /* PodfileParser.swift in Sources */,
