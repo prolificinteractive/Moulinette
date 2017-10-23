@@ -20,7 +20,7 @@ struct Commit {
 final class GitCheckCommitQualitySwiftRule: SwiftRule {
     
     fileprivate let minimumWordNumber = 3
-    fileprivate let numberOfDaysBack: TimeInterval = 30 // 1 month
+    fileprivate let numberOfDaysBack: TimeInterval = 30
 
     let name: String = "Git - Check commits message quality. Minimum 3 words for commit message."
     let priority: RulePriority = .medium
@@ -64,7 +64,6 @@ private extension GitCheckCommitQualitySwiftRule {
             if words.count < minimumWordNumber {
                 auditGrader.violationFound(fileName: "Git", description: "Bad commit format. Hash: \(commit.hash), comment:\(commit.message), \(commit.date).")
             }
-
         }
     }
     
@@ -87,7 +86,13 @@ private extension GitCheckCommitQualitySwiftRule {
     /// - Returns: Date string: Format: MM/dd/yyyy.
     func getLastMonthDate() -> String {
         let date = Date()
-        let interval: TimeInterval = -numberOfDaysBack*24*60*60
+        
+        let hoursInDay: TimeInterval = 24
+        let minutesInHour: TimeInterval = 60
+        let secondsInMinute: TimeInterval = 60
+        
+        // Get number of seconds since numberOfDaysBack days
+        let interval: TimeInterval = -numberOfDaysBack*hoursInDay*minutesInHour*secondsInMinute
         let lastMonthDate = date.addingTimeInterval(interval)
         
         let dateFormatter = DateFormatter()
