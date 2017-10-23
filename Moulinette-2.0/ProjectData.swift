@@ -15,8 +15,10 @@ final class ProjectData: SwiftData {
     
     var applicationComponents: ApplicationComponents
     var classInfo = [ClassInfo]()
-
-    init(applicationComponents: ApplicationComponents) {
+    let path: String
+    
+    init(path: String, applicationComponents: ApplicationComponents) {
+        self.path = path
         self.applicationComponents = applicationComponents
         parseAllClasses()
     }

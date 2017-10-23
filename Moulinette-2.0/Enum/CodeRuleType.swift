@@ -156,7 +156,9 @@ struct GitRuleCollection: RuleCollection {
     let description: String = "Git rules"
 
     func rules(projectData: ProjectData) -> [SwiftRule] {
-        return []
+        return [
+            GitCheckMergedBranchSwiftRule(projectData: projectData)
+        ]
     }
     
 }

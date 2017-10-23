@@ -15,7 +15,7 @@ let projectParser = ProjectParser()
 let applicationFileComponents = projectParser.applicationComponents()
 
 // Generate data store
-var projectData = ProjectData(applicationComponents: applicationFileComponents)
+var projectData = ProjectData(path: settings.projectDirectory, applicationComponents: applicationFileComponents)
 
 // Run PiOS Rules
 let output = PIOSAudit(projectData: projectData).runRules()

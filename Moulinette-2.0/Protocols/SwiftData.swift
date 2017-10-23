@@ -14,5 +14,7 @@ protocol SwiftData {
     
     var classInfo: [ClassInfo] { get set }
     
+    var path: String { get }
+    
     func subClassFound(className: String) -> Bool
 }
