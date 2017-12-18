@@ -12,7 +12,7 @@ struct ProjectSettings {
     
     static let excludedFiles: [String] = []
     static let excludedDirectories = ["Pods", "Scripts", "Tools", "fastlane", "Build"]
-    static let excludedDirectoryRegex = ["^[#].*", "]*Test]*", "]*.framework", "]*.xcworkspace", "^[\\.].*"]
+    static let excludedDirectoryRegex = ["^[#].*", "]*Test]*", "]*.framework", "]*.xcworkspace"]
     
     static var injectableDependencies = [""]
     
@@ -40,7 +40,6 @@ struct ProjectSettings {
             projectDirectory = ProjectSettings.getEnvironmentVar("PROJECT_DIR")! + "/"
             projectIdentifier = ProjectSettings.getEnvironmentVar("PROJECT_IDENTIFIER")!
             silentMode = ProjectSettings.getEnvironmentVar("SILENT_MODE")?.uppercased() != "FALSE"
-            authToken = ProjectSettings.getEnvironmentVar("AUTH_TOKEN")
             debugMode = true
         #else
             let userDefaults = UserDefaults.standard.dictionaryRepresentation()
