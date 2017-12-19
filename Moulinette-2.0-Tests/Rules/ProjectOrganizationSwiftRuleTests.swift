@@ -66,7 +66,7 @@ private extension ProjectOrganizationSwiftRuleTests {
     func projectData(folders: [String]) -> ProjectData {
         var components = ApplicationComponents(with: ["Empty Project": []])
         components.filePaths = folders
-        return ProjectData(applicationComponents: components)
+        return ProjectData(path: "", applicationComponents: components)
     }
     
     func folders(removedFolder: String) -> [String] {

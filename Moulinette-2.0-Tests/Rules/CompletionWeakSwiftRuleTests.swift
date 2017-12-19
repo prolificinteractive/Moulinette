@@ -69,7 +69,7 @@ private extension CompletionWeakSwiftRuleTests {
                               "self.something = something",
                               "}"]
         
-        return ProjectData(applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
+        return ProjectData(path: "", applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
     }
     
     func nonCompletionNoSelfSample() -> ProjectData {
@@ -77,7 +77,7 @@ private extension CompletionWeakSwiftRuleTests {
                               "somthing.somethingCool()",
                               "}"]
         
-        return ProjectData(applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
+        return ProjectData(path: "", applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
     }
     
     func completionNonWeakSelfSample() -> ProjectData {
@@ -85,7 +85,7 @@ private extension CompletionWeakSwiftRuleTests {
                               "self.something = something",
                               "}?"]
         
-        return ProjectData(applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
+        return ProjectData(path: "", applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
     }
     
     func completionWeakSelfSample() -> ProjectData {
@@ -93,7 +93,7 @@ private extension CompletionWeakSwiftRuleTests {
                               "self?.something = something",
                               "}?"]
         
-        return ProjectData(applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
+        return ProjectData(path: "", applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
     }
     
     func completionNoSelfSample() -> ProjectData {
@@ -101,7 +101,7 @@ private extension CompletionWeakSwiftRuleTests {
                               "something.somethingCool()",
                               "}?"]
         
-        return ProjectData(applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
+        return ProjectData(path: "", applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
     }
     
     func structCompletionNonWeakSelfSample() -> ProjectData {
@@ -111,6 +111,6 @@ private extension CompletionWeakSwiftRuleTests {
                               "}?",
                               "}"]
         
-        return ProjectData(applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
+        return ProjectData(path: "", applicationComponents: ApplicationComponents(with: ["SampleFile" : fileComponents]))
     }
 }
