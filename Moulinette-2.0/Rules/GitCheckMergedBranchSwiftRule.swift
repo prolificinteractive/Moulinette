@@ -9,7 +9,7 @@
 import Foundation
 
 /// Git check merged branch swift rule.
-final class GitCheckMergedBranchSwiftRule: SwiftRule {
+class GitCheckMergedBranchSwiftRule: SwiftRule {
     
     let name: String = "Git - Check merged branches upstream."
     let priority: RulePriority = .high
@@ -20,7 +20,7 @@ final class GitCheckMergedBranchSwiftRule: SwiftRule {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
+    required init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
@@ -28,26 +28,35 @@ final class GitCheckMergedBranchSwiftRule: SwiftRule {
         evaluateMergedBranches()
         return auditGrader.generateGrade()
     }
-
-}
-
-private extension GitCheckMergedBranchSwiftRule {
     
+    /// Filter branches and excluding certain names.
+    ///
+    /// - Parameter branch: Branch name.
+    /// - Returns: True if the branch shouldnt be filtered out, False else.
+    func filterBranches(branch: String) -> Bool {
+        // Avoid branches like Beta/Release/Master/Develop/Empty strings
+        if branch.contains("beta") || branch.contains("master")
+            || branch.contains("release") || branch.contains("develop")
+            || branch.isEmpty {
+            return false
+        }
+        return true
+    }
+    
+    /// Remove white spaces.
+    ///
+    /// - Parameter string: String to remove whitespaces from.
+    /// - Returns: Cleared out string.
+    func removeWhiteSpaces(string: String) -> String {
+        return string.trimmingCharacters(in: .whitespaces)
+    }
+
     /// Evaluate merged branches.
     func evaluateMergedBranches() {
         do {
-            guard let results = try getMergedBranches()?.filter({ (branch) -> Bool in
-                // Avoid branches like Beta/Release/Master/Develop/Empty strings
-                if branch.contains("beta") || branch.contains("master")
-                    || branch.contains("release") || branch.contains("develop")
-                    || branch.isEmpty {
-                    return false
-                }
-                return true
-            }).map({ (branch) -> String in
-                // Remove whitespaces
-                return branch.trimmingCharacters(in: .whitespaces)
-            }) else {
+            guard let results = try getMergedBranches()?
+                .filter(filterBranches)
+                .map(removeWhiteSpaces) else {
                 return
             }
             

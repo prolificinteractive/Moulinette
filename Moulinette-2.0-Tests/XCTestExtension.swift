@@ -16,7 +16,7 @@ extension XCTest {
     /// - Returns: Initialized project data.
     func projectData(components: ProjectComponents) -> ProjectData {
         let components = ApplicationComponents(with: components)
-        return ProjectData(applicationComponents: components)
+        return ProjectData(path: "", applicationComponents: components)
     }
     
     /// Returns project data for the given parameters.

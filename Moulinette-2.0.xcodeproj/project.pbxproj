@@ -123,6 +123,16 @@
 		4C14008A1F19173C007506FE /* LocalizedStringSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */; };
 		4C382C771FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382C761FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift */; };
 		4C382C791FE822EC00C0154E /* GitCheckBranchNameSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382C781FE822EC00C0154E /* GitCheckBranchNameSwiftRule.swift */; };
+		4C382C7A1FE9388D00C0154E /* GitCheckMergedBranchSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE81FA81F96A3C300367F7A /* GitCheckMergedBranchSwiftRule.swift */; };
+		4C382C7B1FE9389200C0154E /* GitCheckCommitQualitySwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE81FAA1F97D9F300367F7A /* GitCheckCommitQualitySwiftRule.swift */; };
+		4C382C7C1FE9389600C0154E /* GitCheckConfigurationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382C761FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift */; };
+		4C382C7D1FE9389900C0154E /* GitCheckBranchNameSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382C781FE822EC00C0154E /* GitCheckBranchNameSwiftRule.swift */; };
+		4C382C7E1FE939F000C0154E /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6688CFDF1F43823200A00756 /* Script.swift */; };
+		4C382C7F1FE939FC00C0154E /* ScriptError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A7BCAC1F463D0700E9EE15 /* ScriptError.swift */; };
+		4C382C811FE96F9000C0154E /* GitCheckMergedBranchSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382C801FE96F9000C0154E /* GitCheckMergedBranchSwiftRuleTests.swift */; };
+		4C382C831FE978EC00C0154E /* GitCheckBranchNameSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382C821FE978EC00C0154E /* GitCheckBranchNameSwiftRuleTests.swift */; };
+		4C382C851FE9807B00C0154E /* GitCheckCommitQualitySwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382C841FE9807B00C0154E /* GitCheckCommitQualitySwiftRuleTests.swift */; };
+		4C382C871FE98E9E00C0154E /* GitCheckConfigurationSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382C861FE98E9E00C0154E /* GitCheckConfigurationSwiftRuleTests.swift */; };
 		4C8BA7711F264B4900F617E7 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E0161F2122E000EBE48B /* Output.swift */; };
 		4CA5E0111F1FA46500EBE48B /* FileFilteringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */; };
 		4CA5E0131F1FAB0100EBE48B /* UsesLocalizationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CB9FE1EFC34D7006743DF /* UsesLocalizationSwiftRule.swift */; };
@@ -235,6 +245,10 @@
 		4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringSwiftRule.swift; sourceTree = "<group>"; };
 		4C382C761FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckConfigurationSwiftRule.swift; sourceTree = "<group>"; };
 		4C382C781FE822EC00C0154E /* GitCheckBranchNameSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckBranchNameSwiftRule.swift; sourceTree = "<group>"; };
+		4C382C801FE96F9000C0154E /* GitCheckMergedBranchSwiftRuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckMergedBranchSwiftRuleTests.swift; sourceTree = "<group>"; };
+		4C382C821FE978EC00C0154E /* GitCheckBranchNameSwiftRuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckBranchNameSwiftRuleTests.swift; sourceTree = "<group>"; };
+		4C382C841FE9807B00C0154E /* GitCheckCommitQualitySwiftRuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckCommitQualitySwiftRuleTests.swift; sourceTree = "<group>"; };
+		4C382C861FE98E9E00C0154E /* GitCheckConfigurationSwiftRuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckConfigurationSwiftRuleTests.swift; sourceTree = "<group>"; };
 		4CA5E0101F1FA46500EBE48B /* FileFilteringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFilteringTests.swift; sourceTree = "<group>"; };
 		4CA5E0161F2122E000EBE48B /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		4CE81FA81F96A3C300367F7A /* GitCheckMergedBranchSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckMergedBranchSwiftRule.swift; sourceTree = "<group>"; };
@@ -321,6 +335,10 @@
 				20CE93F71F4CCC31000A5CF5 /* EmptyAppIconSwiftRuleTests.swift */,
 				206EE0A81F4F41B800AC7EE4 /* ToDoCountSwiftRuleTests.swift */,
 				201307071F759CA900CE37D4 /* TypeInferenceSwiftRuleTests.swift */,
+				4C382C801FE96F9000C0154E /* GitCheckMergedBranchSwiftRuleTests.swift */,
+				4C382C821FE978EC00C0154E /* GitCheckBranchNameSwiftRuleTests.swift */,
+				4C382C841FE9807B00C0154E /* GitCheckCommitQualitySwiftRuleTests.swift */,
+				4C382C861FE98E9E00C0154E /* GitCheckConfigurationSwiftRuleTests.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -641,8 +659,10 @@
 			files = (
 				201D74291EFAC80500361ECD /* AuditGrade.swift in Sources */,
 				203790511F437D8F00B74151 /* DefaultPodsSwiftRule.swift in Sources */,
+				4C382C7F1FE939FC00C0154E /* ScriptError.swift in Sources */,
 				201D74201EFAC77900361ECD /* PIOSAudit.swift in Sources */,
 				200FC72F1F4C892E004335D8 /* CocoapodKeysSwiftRule.swift in Sources */,
+				4C382C871FE98E9E00C0154E /* GitCheckConfigurationSwiftRuleTests.swift in Sources */,
 				200FC7311F4C894F004335D8 /* XCTestExtension.swift in Sources */,
 				201D74211EFAC77900361ECD /* ToDoStorySwiftRule.swift in Sources */,
 				20CE93F81F4CCC31000A5CF5 /* EmptyAppIconSwiftRuleTests.swift in Sources */,
@@ -650,8 +670,10 @@
 				201D74221EFAC77900361ECD /* ToDoCountSwiftRule.swift in Sources */,
 				201D74231EFAC77900361ECD /* SwiftData.swift in Sources */,
 				2037905A1F44E3F600B74151 /* CompletionWeakSwiftRuleTests.swift in Sources */,
+				4C382C7A1FE9388D00C0154E /* GitCheckMergedBranchSwiftRule.swift in Sources */,
 				201D74241EFAC77900361ECD /* Regex.swift in Sources */,
 				201D74251EFAC77900361ECD /* RuleCollection.swift in Sources */,
+				4C382C831FE978EC00C0154E /* GitCheckBranchNameSwiftRuleTests.swift in Sources */,
 				200FC7331F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift in Sources */,
 				201D74261EFAC77900361ECD /* CommentParser.swift in Sources */,
 				201D741F1EFAC75700361ECD /* AuditGrader.swift in Sources */,
@@ -660,6 +682,7 @@
 				203790531F437D9F00B74151 /* PodfileParser.swift in Sources */,
 				4C8BA7711F264B4900F617E7 /* Output.swift in Sources */,
 				2053EEB91EF4921B00AAE36D /* main.swift in Sources */,
+				4C382C7C1FE9389600C0154E /* GitCheckConfigurationSwiftRule.swift in Sources */,
 				203790541F4497EF00B74151 /* ApplicationComponents.swift in Sources */,
 				2053EEBA1EF4921B00AAE36D /* ProjectSettings.swift in Sources */,
 				20CE93FA1F4CCC7A000A5CF5 /* EmptyAppIconSwiftRule.swift in Sources */,
@@ -677,11 +700,13 @@
 				20CE93F31F4CC202000A5CF5 /* AppIconSwiftRuleTests.swift in Sources */,
 				2053EEC21EF4921B00AAE36D /* FinalClassesSwiftRule.swift in Sources */,
 				203790551F4497FC00B74151 /* String+Substring.swift in Sources */,
+				4C382C7E1FE939F000C0154E /* Script.swift in Sources */,
 				2053EEC31EF4921B00AAE36D /* WeakIBOutletSwiftRule.swift in Sources */,
 				2053EEC41EF4921B00AAE36D /* SinglePublicInternalSwiftRule.swift in Sources */,
 				201D741D1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift in Sources */,
 				2053EEC51EF4921B00AAE36D /* ForceUnwrapSwiftRule.swift in Sources */,
 				2053EEC61EF4921B00AAE36D /* MarkUsageSwiftRule.swift in Sources */,
+				4C382C811FE96F9000C0154E /* GitCheckMergedBranchSwiftRuleTests.swift in Sources */,
 				2053EEC71EF4921B00AAE36D /* SingleEnumCaseSwiftRule.swift in Sources */,
 				4CA5E0111F1FA46500EBE48B /* FileFilteringTests.swift in Sources */,
 				4CA5E0131F1FAB0100EBE48B /* UsesLocalizationSwiftRule.swift in Sources */,
@@ -695,12 +720,15 @@
 				2053EECF1EF4921B00AAE36D /* SwiftRule.swift in Sources */,
 				207FB30D1F3B4CC1009B0B26 /* ATSExceptionSwiftRule.swift in Sources */,
 				2053EED01EF4921B00AAE36D /* Audit.swift in Sources */,
+				4C382C7B1FE9389200C0154E /* GitCheckCommitQualitySwiftRule.swift in Sources */,
 				2053EED11EF4921B00AAE36D /* Check.swift in Sources */,
 				2053EED41EF4921B00AAE36D /* GradeType.swift in Sources */,
 				2037904F1F437B2600B74151 /* SwiftLintSwiftRuleTests.swift in Sources */,
 				2053EED51EF4921B00AAE36D /* CodeRuleType.swift in Sources */,
 				2037905E1F44E41D00B74151 /* ProjectOrganizationSwiftRuleTests.swift in Sources */,
+				4C382C7D1FE9389900C0154E /* GitCheckBranchNameSwiftRule.swift in Sources */,
 				2053EED61EF4921B00AAE36D /* LineContext.swift in Sources */,
+				4C382C851FE9807B00C0154E /* GitCheckCommitQualitySwiftRuleTests.swift in Sources */,
 				201307081F759CA900CE37D4 /* TypeInferenceSwiftRuleTests.swift in Sources */,
 				2053EED71EF4921B00AAE36D /* FileType.swift in Sources */,
 				2053EED81EF4921B00AAE36D /* RulePriority.swift in Sources */,

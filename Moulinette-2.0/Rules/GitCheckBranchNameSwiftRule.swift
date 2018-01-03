@@ -9,7 +9,7 @@
 import Foundation
 
 /// Git check branch naming swift rule.
-final class GitCheckBranchNameSwiftRule: SwiftRule {
+class GitCheckBranchNameSwiftRule: SwiftRule {
     
     let name: String = "Git - Check branch naming upstream."
     let priority: RulePriority = .low
@@ -20,7 +20,7 @@ final class GitCheckBranchNameSwiftRule: SwiftRule {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
+    required init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
@@ -28,27 +28,36 @@ final class GitCheckBranchNameSwiftRule: SwiftRule {
         evaluateOpenedBranches()
         return auditGrader.generateGrade()
     }
+ 
+    /// Filter branches and excluding certain names.
+    ///
+    /// - Parameter branch: Branch name.
+    /// - Returns: True if the branch shouldnt be filtered out, False else.
+    func filterBranches(branch: String) -> Bool {
+        // Avoid branches containing Beta/Release/Master/Develop/Empty strings
+        if branch.contains("beta") || branch.contains("master")
+            || branch.contains("release/") || branch.contains("develop")
+            || branch.contains("chore/") || branch.contains("feature/")
+            || branch.contains("bugfix/") ||  branch.contains("rc/") || branch.isEmpty {
+            return false
+        }
+        return true
+    }
     
-}
-
-private extension GitCheckBranchNameSwiftRule {
+    /// Remove white spaces.
+    ///
+    /// - Parameter string: String to remove whitespaces from.
+    /// - Returns: Cleared out string.
+    func removeWhiteSpaces(string: String) -> String {
+        return string.trimmingCharacters(in: .whitespaces)
+    }
     
-    /// Evaluate merged branches.
+    /// Evaluate opened branches.
     func evaluateOpenedBranches() {
         do {
-            guard let results = try getOpenedBranches()?.filter({ (branch) -> Bool in
-                // Avoid branches containing Beta/Release/Master/Develop/Empty strings
-                if branch.contains("beta") || branch.contains("master")
-                    || branch.contains("release/") || branch.contains("develop")
-                    || branch.contains("chore/") || branch.contains("feature/")
-                    || branch.contains("bugfix/") ||  branch.contains("rc/") || branch.isEmpty {
-                    return false
-                }
-                return true
-            }).map({ (branch) -> String in
-                // Remove whitespaces
-                return branch.trimmingCharacters(in: .whitespaces)
-            }) else {
+            guard let results = try getOpenedBranches()?
+                .filter(filterBranches)
+                .map(removeWhiteSpaces) else {
                 return
             }
             

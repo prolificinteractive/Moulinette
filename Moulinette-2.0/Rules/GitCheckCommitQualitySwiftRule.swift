@@ -17,7 +17,7 @@ struct Commit {
 }
 
 /// Git check merged branch swift rule.
-final class GitCheckCommitQualitySwiftRule: SwiftRule {
+class GitCheckCommitQualitySwiftRule: SwiftRule {
     
     fileprivate let minimumWordNumber = 3
     fileprivate let numberOfDaysBack: TimeInterval = 30
@@ -31,40 +31,13 @@ final class GitCheckCommitQualitySwiftRule: SwiftRule {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
+    required init(projectData: ProjectData) {
         self.projectData = projectData
     }
     
     func run() -> AuditGrade {
         evaluateCommitQuality()
         return auditGrader.generateGrade()
-    }
-    
-}
-
-private extension GitCheckCommitQualitySwiftRule {
-    
-    /// Evaluate commit quality.
-    func evaluateCommitQuality() {
-        do {
-            let commits = try getCommits()
-            checkCommits(commits: commits)
-        } catch {
-            // void
-        }
-    }
-    
-    /// Check commits message.
-    ///
-    /// - Parameter commits: List of commits.
-    func checkCommits(commits: [Commit]) {
-        commits.forEach { (commit) in
-            let components = commit.message.components(separatedBy: .whitespacesAndNewlines)
-            let words = components.filter { !$0.isEmpty }
-            if words.count < minimumWordNumber {
-                auditGrader.violationFound(fileName: "Git", description: "Bad commit format. Hash: \(commit.hash), comment:\(commit.message), \(commit.date).")
-            }
-        }
     }
     
     /// Get list of commits.
@@ -79,25 +52,6 @@ private extension GitCheckCommitQualitySwiftRule {
         
         let res = try script.execute(args: ["--git-dir=\(projectData.path).git", "--no-pager", "log", "--since=\(dateString)", "--no-merges"])
         return parseCommits(from: res)
-    }
-    
-    /// Get last month date string.
-    ///
-    /// - Returns: Date string: Format: MM/dd/yyyy.
-    func getLastMonthDate() -> String {
-        let date = Date()
-        
-        let hoursInDay: TimeInterval = 24
-        let minutesInHour: TimeInterval = 60
-        let secondsInMinute: TimeInterval = 60
-        
-        // Get number of seconds since numberOfDaysBack days
-        let interval: TimeInterval = -numberOfDaysBack*hoursInDay*minutesInHour*secondsInMinute
-        let lastMonthDate = date.addingTimeInterval(interval)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        return dateFormatter.string(from: lastMonthDate)
     }
     
     /// Parse commits from string.
@@ -131,6 +85,58 @@ private extension GitCheckCommitQualitySwiftRule {
                 text = text.trimmingCharacters(in: .whitespaces)
             }
         }
+        
+        // Get last commit.
+        let commit = Commit(hash: commitHash, author: author, date: date, message: text)
+        commits.append(commit)
         return commits
     }
+    
+}
+
+private extension GitCheckCommitQualitySwiftRule {
+    
+    /// Evaluate commit quality.
+    func evaluateCommitQuality() {
+        do {
+            let commits = try getCommits()
+            checkCommits(commits: commits)
+        } catch {
+            // void
+        }
+    }
+    
+    /// Get last month date string.
+    ///
+    /// - Returns: Date string: Format: MM/dd/yyyy.
+    func getLastMonthDate() -> String {
+        let date = Date()
+        
+        let hoursInDay: TimeInterval = 24
+        let minutesInHour: TimeInterval = 60
+        let secondsInMinute: TimeInterval = 60
+        
+        // Get number of seconds since numberOfDaysBack days
+        let interval: TimeInterval = -numberOfDaysBack*hoursInDay*minutesInHour*secondsInMinute
+        let lastMonthDate = date.addingTimeInterval(interval)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        return dateFormatter.string(from: lastMonthDate)
+    }
+    
+    /// Check commits message.
+    ///
+    /// - Parameter commits: List of commits.
+    func checkCommits(commits: [Commit]) {
+        commits.forEach { (commit) in
+            let components = commit.message.components(separatedBy: .whitespacesAndNewlines)
+            let words = components.filter { !$0.isEmpty }
+            if words.count < minimumWordNumber {
+                auditGrader.violationFound(fileName: "Git", description: "Bad commit format. Hash: \(commit.hash), comment:\(commit.message), \(commit.date).")
+            }
+        }
+    }
+    
+    
 }
