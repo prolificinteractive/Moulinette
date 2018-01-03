@@ -66,7 +66,8 @@ struct ProjectSettings {
                 self.silentMode = false
             }
             
-            if let debugMode = userDefaults["verbose"] as? String, debugMode == "true" {
+            if let debugMode = userDefaults["verbose"] as? String,
+                debugMode == "true" {
                 self.debugMode = true
             } else {
                 self.debugMode = false

@@ -21,14 +21,14 @@ ci-audit:
 	-project Moulinette-2.0.xcodeproj \
 	-target Moulinette-2.0 \
 	-configuration Release
-	./build/Release/Moulinette-2.0 -projectName ${projectName} -projectIdentifier ${projectIdentifier} -projectDirectory ../../ -silentMode false
+	./build/Release/Moulinette-2.0 -projectName ${projectName} -projectIdentifier ${projectIdentifier} -projectDirectory ../../ -authToken $(authToken) -silent false
 
 local-audit:
 	xcodebuild \
 	-project Moulinette-2.0.xcodeproj \
 	-target Moulinette-2.0 \
 	-configuration Release
-	./build/Release/Moulinette-2.0 -projectName ${projectName} -projectIdentifier ${projectIdentifier} -projectDirectory ${projectDirectory} -silentMode true
+	./build/Release/Moulinette-2.0 -projectName ${projectName} -projectIdentifier ${projectIdentifier} -projectDirectory ${projectDirectory} -authToken $(authToken) -silent true
 
 tests:
 	xcodebuild \
