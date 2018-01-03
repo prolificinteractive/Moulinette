@@ -50,7 +50,7 @@ struct ProjectSettings {
                 let projectDirectory = userDefaults["projectDirectory"] as? String,
                 let authToken = userDefaults["authToken"] as? String else {
                     print("Error: Missing parameter.")
-                    print("Eg: moulinette -projectName <projectName> -projectIdentifier <projectIdentifier> -projectDirectory <projectDirectory> -authToken <authToken> [-silentMode <'true'/'false'> -verbose <'true'/'false>]")
+                    print("Eg: moulinette -projectName <projectName> -projectIdentifier <projectIdentifier> -projectDirectory <projectDirectory> -authToken <authToken> [-silent <'true'/'false'> -verbose <'true'/'false>]")
                     exit(0)
             }
             
