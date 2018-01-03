@@ -158,7 +158,9 @@ struct GitRuleCollection: RuleCollection {
     func rules(projectData: ProjectData) -> [SwiftRule] {
         return [
             GitCheckMergedBranchSwiftRule(projectData: projectData),
-            GitCheckCommitQualitySwiftRule(projectData: projectData)
+            GitCheckCommitQualitySwiftRule(projectData: projectData),
+            GitCheckConfigurationSwiftRule(projectData: projectData),
+            GitCheckBranchNameSwiftRule(projectData: projectData)
         ]
     }
     
