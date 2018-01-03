@@ -43,18 +43,18 @@ private extension SwiftLintSwiftRuleTests {
     func swiftLintBuildPhase() -> ProjectData {
         let fileComponents = ["${PODS_ROOT}/SwiftLint/swiftlint"]
         
-        return ProjectData(applicationComponents: ApplicationComponents(with: [Constants.FileNameConstants.xcodeProject : fileComponents]))
+        return ProjectData(path: "", applicationComponents: ApplicationComponents(with: [Constants.FileNameConstants.xcodeProject : fileComponents]))
     }
     
     func installedSwiftLintBuildPhase() -> ProjectData {
         let fileComponents = ["if which swiftlint >/dev/null; then"]
         
-        return ProjectData(applicationComponents: ApplicationComponents(with: [Constants.FileNameConstants.xcodeProject : fileComponents]))
+        return ProjectData(path: "", applicationComponents: ApplicationComponents(with: [Constants.FileNameConstants.xcodeProject : fileComponents]))
     }
     
     func swiftLintAbsentBuildPhase() -> ProjectData {
         let fileComponents = ["Empty project"]
         
-        return ProjectData(applicationComponents: ApplicationComponents(with: [Constants.FileNameConstants.xcodeProject : fileComponents]))
+        return ProjectData(path: "", applicationComponents: ApplicationComponents(with: [Constants.FileNameConstants.xcodeProject : fileComponents]))
     }
 }

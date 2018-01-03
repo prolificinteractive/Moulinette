@@ -46,6 +46,6 @@ private extension ATSExceptionSwiftRuleTests {
     
     func projectData(fileName: String) -> ProjectData {
         let applicationComponents = ApplicationComponents(with: [fileName: []])
-        return ProjectData(applicationComponents: applicationComponents)
+        return ProjectData(path: "", applicationComponents: applicationComponents)
     }
 }

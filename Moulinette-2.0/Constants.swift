@@ -10,8 +10,8 @@ import Foundation
 
 struct Constants {
 
-    static let fileExtensions = ["swift", "strings", "plist", "md", "pbxproj", "storyboard", "json"]
-    static let validNonSwiftFiles = ["Podfile", "Localizable.strings", "project.pbxproj"]
+    static let fileExtensions = ["swift", "strings", "plist", "md", "pbxproj", "storyboard", "json", "gitignore"]
+    static let validNonSwiftFiles = ["Podfile", "Localizable.strings", "project.pbxproj", ".gitignore"]
     
     struct FileNameConstants {
         static let swiftSuffix = "swift"
@@ -23,6 +23,7 @@ struct Constants {
         static let xcodeProject = "project.pbxproj"
         static let AssetContents = "Contents.json"
         static let moulinetteName = "Moulinette"
+        static let gitIgnore = ".gitignore"
     }
 
     struct Regex {
