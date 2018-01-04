@@ -33,12 +33,14 @@ if settings.silentMode == false,
                                         completion: ({ (json, error) in
         if let error = error {
             // Display error?
+            exit(0)
             return
         }
         
         guard let url = json?["url"],
             let score = output.representation()[Output.scoreKey] else {
                 print("No url return from the JSON or score doesn't exist in the output representation.")
+                exit(0)
                 return
         }
         print("Score:\(score)")
