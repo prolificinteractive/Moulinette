@@ -39,7 +39,7 @@ if settings.silentMode == false,
         
         guard let url = json?["url"],
             let score = output.representation()[Output.scoreKey] else {
-                print("No url return from the JSON or score doesn't exist in the output representation.")
+                print("No url returned from the JSON or score doesn't exist in the output representation.")
                 exit(0)
                 return
         }
