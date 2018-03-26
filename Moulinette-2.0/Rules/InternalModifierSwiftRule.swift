@@ -26,7 +26,7 @@ final class InternalModifierSwiftRule: SwiftRule {
     func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
             fileComponents.forEach {
-                if $0.contains("internal ") {
+                if $0.contains("internal ") && !$0.isComment() {
                     auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: name)
                 }
             }
