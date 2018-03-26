@@ -29,10 +29,9 @@ final class SinglePublicInternalSwiftRule: SwiftRule {
             fileComponents.forEach {
                 if let fileType = FileType.type(fileLine: $0) {
                     if let type = type,
-                        !fileName.contains("Constants") {
+                        !fileName.contains("Constants") && !$0.contains("CodingKey") {
                         let firstValue = FileType.value(fileType: type)
                         let secondValue = FileType.value(fileType: fileType)
-                        
                         
                         auditGrader.violationFound(fileName: fileName,
                                                    lineNumber: fileComponents.lineNumberFor($0),
