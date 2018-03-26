@@ -34,6 +34,7 @@ final class NetworkRequester {
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         } catch let error {
+            print(error)
         }
         
         // Thread lock

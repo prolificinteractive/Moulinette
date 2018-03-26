@@ -27,7 +27,7 @@ final class MarkUsageSwiftRule: SwiftRule {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 if consistentMark(fileLine: $0) || consistentTodo(fileLine: $0) {
-                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.index(of: $0), description: $0)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.index(of: $0), description: name)
                 }
             }
         }

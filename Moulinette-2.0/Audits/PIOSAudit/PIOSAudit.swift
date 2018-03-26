@@ -54,7 +54,8 @@ struct PIOSAudit: Audit {
                                   score: score,
                                   weight: rule.priority.weight(),
                                   report: report,
-                                  violationCount: result.violations)
+                                  violationCount: result.violationCount,
+                                  violations: result.violations)
                     group.leave()
                 }
             })

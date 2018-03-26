@@ -38,7 +38,7 @@ final class ProjectOrganizationSwiftRule: SwiftRule {
         }
         
         projectFolders.forEach {
-            auditGrader.violationFound(fileName: $0, lineNumber: nil, description: "Not found in project folder structure")
+            auditGrader.violationFound(fileName: $0, lineNumber: nil, description: "\($0) Not found in project folder structure")
         }
         
         return auditGrader.generateGrade()

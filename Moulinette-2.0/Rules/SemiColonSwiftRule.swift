@@ -27,7 +27,7 @@ final class SemiColonSwiftRule: SwiftRule {
         for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
             fileComponents.forEach {
                 if !$0.isComment() && $0.characters.last == ";" {
-                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.index(of: $0), description: $0)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.index(of: $0), description: name)
                 }
             }
         }

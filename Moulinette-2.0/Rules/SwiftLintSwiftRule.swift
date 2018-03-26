@@ -39,7 +39,7 @@ final class SwiftLintSwiftRule: SwiftRule {
         }
 
         auditGrader.failed(fileName: Constants.FileNameConstants.xcodeProject,
-                               description: "SwiftLint not found in build phase.")
+                           description: "SwiftLint not found in build phase.")
         
         return auditGrader.generateGrade()
     }

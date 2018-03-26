@@ -21,6 +21,7 @@ final class Output {
     static var reportKey = "report"
     static var violationCountKey = "violationCount"
     static var versionKey = "version"
+    static var violationsKey = "violations"
     
     // MARK: - Private properties
 
@@ -43,7 +44,9 @@ final class Output {
                 score: Double,
                 weight: Double,
                 report: String,
-                violationCount: Int) {
+                violationCount: Int,
+                violations: [Violation]) {
+
         var rules = rulesDictionary()
         if rules[collection] == nil {
             rules[collection] = [String: [String: Any]]()
@@ -53,7 +56,8 @@ final class Output {
             Output.scoreKey: score,
             Output.weightKey: weight,
             Output.reportKey: report,
-            Output.violationCountKey: violationCount
+            Output.violationCountKey: violationCount,
+            Output.violationsKey : violations
         ]
         values[Output.collectionKey] = rules
     }
@@ -88,6 +92,32 @@ final class Output {
         
 
         output += "Score: " + String(values[Output.scoreKey] as! Int) + "\n"
+        return output
+    }
+
+    func xcodeDescription() -> String {
+        var output = ""
+
+        guard let collections = values[Output.collectionKey] as? [String: [String: [String: Any]]] else {
+            return "Error building the Moulinette's description."
+        }
+
+        for collection in collections {
+            var iterator = collection.value.makeIterator()
+            while let item = iterator.next() {
+                guard let violations = item.value[Output.violationsKey] as? [Violation] else {
+                    continue
+                }
+
+                for violation in violations {
+                    if let lineNumber = violation.lineNumber {
+                        output += settings.projectDirectory + violation.fileName + ":" + String(lineNumber) + ": warning: " + violation.description + "\n"
+                    } else {
+                        output += "warning: " + violation.description + "\n"
+                    }
+                }
+            }
+        }
         return output
     }
     

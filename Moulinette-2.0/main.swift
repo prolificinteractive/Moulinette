@@ -23,31 +23,33 @@ let output = PIOSAudit(projectData: projectData).runRules()
 if settings.debugMode {
     print("############### MOULINETTE_2.0 OUTPUT ###############")
     print("Moulinette 2.0")
-    print(output.description())
+    if settings.xcodePlugin {
+        print(output.xcodeDescription())
+    } else {
+        print(output.description())
+    }
 }
 
-//if settings.silentMode == false,
-//    let authToken = settings.authToken {
-//    NetworkRequester(debugMode: settings.debugMode).submitAuditScore(score: output.representation(),
-//                                        authToken: authToken,
-//                                        completion: ({ (json, error) in
-//        if let error = error {
-//            // Display error?
-//            exit(0)
-//            return
-//        }
-//
-//        guard let url = json?["url"],
-//            let score = output.representation()[Output.scoreKey] else {
-//                print("No url returned from the JSON or score doesn't exist in the output representation.")
-//                exit(0)
-//                return
-//        }
-//        print("Score:\(score)")
-//        print("Url:\(url)")
-//        exit(0)
-//    }))
-//} else {
-//    exit(0)
-//}
+if settings.silentMode == false,
+    let authToken = settings.authToken {
+    NetworkRequester(debugMode: settings.debugMode).submitAuditScore(score: output.representation(),
+                                        authToken: authToken,
+                                        completion: ({ (json, error) in
+        if let error = error {
+            print(error)
+            exit(0)
+        }
+
+        guard let url = json?["url"],
+            let score = output.representation()[Output.scoreKey] else {
+                print("No url returned from the JSON or score doesn't exist in the output representation.")
+                exit(0)
+        }
+        print("Score:\(score)")
+        print("Url:\(url)")
+        exit(0)
+    }))
+} else {
+    exit(0)
+}
 

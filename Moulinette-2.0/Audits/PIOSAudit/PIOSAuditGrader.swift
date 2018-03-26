@@ -8,12 +8,19 @@
 
 import Foundation
 
+struct Violation {
+    let fileName: String
+    let lineNumber: Int?
+    let description: String
+}
+
 /// Grader for the PiOS Audit.
 final class PIOSAuditGrader: AuditGrader {
     
     let priority: RulePriority
-    
-    private var violations = 0
+
+    private var violationCount = 0
+    private var violations = [Violation]()
     private var failedString = ""
     
     init(priority: RulePriority) {
@@ -21,17 +28,23 @@ final class PIOSAuditGrader: AuditGrader {
     }
     
     func violationFound(fileName: String, lineNumber: Int?, description: String) {
-        violations += 1
+        violations.append(Violation(fileName: fileName, lineNumber: lineNumber, description: description))
+        violationCount = violations.count
         failedString += formattedFailedString(fileName: fileName, description: description)
     }
     
     func generateGrade() -> AuditGrade {
         let grade: GradeType = (failedString.isEmpty) ? .pass : .fail(failedString)
-        return AuditGrade(gradeType: grade, priority: priority, violations: violations, violationDescription: failedString)
+        return AuditGrade(gradeType: grade,
+                          priority: priority,
+                          violationCount: violationCount,
+                          violationDescription: failedString,
+                          violations: violations)
     }
     
     func failed(fileName: String, description: String) {
-        violations = Int.max
+        violations.append(Violation(fileName: fileName, lineNumber: nil, description: description))
+        violationCount = Int.max
         failedString += formattedFailedString(fileName: fileName, description: description)
     }
 }

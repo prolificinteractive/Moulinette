@@ -18,13 +18,16 @@ struct AuditGrade {
     var priority: RulePriority
     
     /// Number of violations.
-    var violations: Int
+    var violationCount: Int
     
     /// Violation description text.
     var violationDescription: String
+
+    /// Array of violations
+    var violations: [Violation]
     
     func score() -> Double {
-        return priority.score(violations: violations)
+        return priority.score(violations: violationCount)
     }
     
 }

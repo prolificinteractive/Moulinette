@@ -31,7 +31,7 @@ final class FinalClassesSwiftRule: SwiftRule {
                     let className = $0.className(),
                     !projectData.subClassFound(className: className) {
 
-                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.index(of: $0), description: $0)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.index(of: $0), description: name)
                 }
             }
         }

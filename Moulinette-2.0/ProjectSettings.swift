@@ -33,6 +33,9 @@ struct ProjectSettings {
 
     /// Debug mode.
     let debugMode: Bool
+
+    /// Option for xcode build phase.
+    let xcodePlugin: Bool
     
     init() {
         #if INTERNAL
@@ -42,6 +45,7 @@ struct ProjectSettings {
             silentMode = ProjectSettings.getEnvironmentVar("SILENT_MODE")?.uppercased() != "FALSE"
             authToken = ProjectSettings.getEnvironmentVar("AUTH_TOKEN")
             debugMode = true
+            xcodePlugin = true
         #else
             let userDefaults = UserDefaults.standard.dictionaryRepresentation()
             
@@ -71,6 +75,13 @@ struct ProjectSettings {
                 self.debugMode = true
             } else {
                 self.debugMode = false
+            }
+
+            if let xcodePlugin = userDefaults["xcodePlugin"] as? String,
+                xcodePlugin == "true" {
+                self.xcodePlugin = true
+            } else {
+                self.xcodePlugin = false
             }
             
         #endif
