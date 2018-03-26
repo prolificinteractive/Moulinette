@@ -27,7 +27,7 @@ final class InternalModifierSwiftRule: SwiftRule {
         for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
             fileComponents.forEach {
                 if $0.contains("internal ") {
-                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.index(of: $0), description: name)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: name)
                 }
             }
         }

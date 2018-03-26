@@ -18,7 +18,7 @@ class GitCheckConfigurationSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func test_WithoutGitIgnore() {
@@ -26,7 +26,7 @@ class GitCheckConfigurationSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, Int.max)
+        XCTAssertEqual(grade.violationCount, Int.max)
     }
     
 }

@@ -17,7 +17,7 @@ class ProjectOrganizationSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_FeaturesFolderMissing() {
@@ -25,7 +25,7 @@ class ProjectOrganizationSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
 
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_ModelMissing() {
@@ -33,7 +33,7 @@ class ProjectOrganizationSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_UtilityMissing() {
@@ -41,7 +41,7 @@ class ProjectOrganizationSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_ResourcesMissing() {
@@ -49,7 +49,7 @@ class ProjectOrganizationSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_SupportingFilesMissing() {
@@ -57,7 +57,7 @@ class ProjectOrganizationSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
 }
 

@@ -18,7 +18,7 @@ class CocoapodsKeysSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_CocoapodsKeysNotFound() {
@@ -26,7 +26,7 @@ class CocoapodsKeysSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, Int.max)
+        XCTAssertEqual(grade.violationCount, Int.max)
     }
     
 // MARK: - Default Tests
@@ -36,7 +36,7 @@ class CocoapodsKeysSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_EmptySingleFile() {
@@ -44,6 +44,6 @@ class CocoapodsKeysSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, Int.max)
+        XCTAssertEqual(grade.violationCount, Int.max)
     }
 }

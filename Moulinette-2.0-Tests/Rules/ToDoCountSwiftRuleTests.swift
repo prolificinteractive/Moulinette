@@ -19,7 +19,7 @@ class ToDoCountSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_ElevenTodoOneFile() {
@@ -28,7 +28,7 @@ class ToDoCountSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, Int.max)
+        XCTAssertEqual(grade.violationCount, Int.max)
     }
     
     func testRun_OneTodoElevenFiles() {
@@ -37,7 +37,7 @@ class ToDoCountSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, Int.max)
+        XCTAssertEqual(grade.violationCount, Int.max)
     }
     
 // MARK: - Default Tests
@@ -47,7 +47,7 @@ class ToDoCountSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_EmptySingleFile() {
@@ -55,7 +55,7 @@ class ToDoCountSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
 }
 

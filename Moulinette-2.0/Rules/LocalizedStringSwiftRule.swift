@@ -75,7 +75,9 @@ final class LocalizedStringSwiftRule: SwiftRule {
     private func checkKeysUsage(with keys: [String], fileContent: String) {
         for key in keys {
             if !fileContent.contains(key) {
-                auditGrader.violationFound(fileName: "*", lineNumber: nil, description: "Missing usage of localized key: \(key)")
+                auditGrader.violationFound(fileName: "*",
+                                           lineNumber: nil,
+                                           description: "Missing usage of localized key: \(key)")
             }
         }
     }

@@ -21,7 +21,7 @@ class GitCheckCommitQualitySwiftRuleTests: XCTestCase {
         sut.fakeCommits = commits
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func test_BadCommits() {
@@ -33,7 +33,7 @@ class GitCheckCommitQualitySwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 2)
+        XCTAssertEqual(grade.violationCount, 2)
     }
     
 }

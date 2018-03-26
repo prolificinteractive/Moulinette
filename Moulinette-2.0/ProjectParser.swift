@@ -39,7 +39,7 @@ final class ProjectParser {
         do {
             guard let filteredFileEnumerator = try fileEnumerator?.filter(filterClosure) as? [String] else {
                 print("Error filtering files.")
-                exit(3)
+                exit(2)
             }
  
             return filteredFileEnumerator

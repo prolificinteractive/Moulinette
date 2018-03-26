@@ -18,7 +18,7 @@ class CompletionWeakSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testNonCompletionBlock_NoSelf() {
@@ -26,7 +26,7 @@ class CompletionWeakSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testCompletionBlock_NonWeakSelf() {
@@ -34,7 +34,7 @@ class CompletionWeakSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testCompletionBlock_WeakSelf() {
@@ -42,7 +42,7 @@ class CompletionWeakSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testCompletionBlock_NoSelf() {
@@ -50,7 +50,7 @@ class CompletionWeakSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testCompletionBlock_Struct() {
@@ -58,7 +58,7 @@ class CompletionWeakSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
 }
 

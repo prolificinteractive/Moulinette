@@ -33,7 +33,7 @@ final class RequiredSelfSwiftRule: SwiftRule {
                 
                 if variableSetCheck(fileLine: $0, fileName: fileName)
                     || functionSelfCheck(fileLine: $0, fileName: fileName) {
-                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.index(of: $0), description: name)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: name)
                 }
             }
         }

@@ -18,7 +18,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_SingleTypeEnum() {
@@ -26,7 +26,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_SingleTypeProtocol() {
@@ -34,7 +34,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_SingleTypeStruct() {
@@ -42,7 +42,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_ConstantsFile() {
@@ -50,7 +50,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
 // MARK: - Default Tests
@@ -60,7 +60,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_EmptySingleFile() {
@@ -68,7 +68,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
 // MARK: - Class Type
@@ -79,7 +79,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_ClassAndEnumFile() {
@@ -88,7 +88,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_ClassAndProtocolFile() {
@@ -97,7 +97,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_ClassAndStructFile() {
@@ -106,7 +106,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
 // MARK: - Enum Type
@@ -117,7 +117,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_EnumAndProtocol() {
@@ -126,7 +126,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_EnumAndStruct() {
@@ -135,7 +135,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
 // MARK: - Protocol Type
@@ -146,7 +146,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_ProtocolAndStruct() {
@@ -155,7 +155,7 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
 // MARK: - Struct Type
@@ -166,6 +166,6 @@ class SinglePublicInternalSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
 }

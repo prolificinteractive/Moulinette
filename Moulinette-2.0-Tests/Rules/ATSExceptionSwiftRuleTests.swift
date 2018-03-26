@@ -18,7 +18,7 @@ class ATSExceptionSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testATSExceptionSwiftRuleTests_NoExceptionFound() {
@@ -26,7 +26,7 @@ class ATSExceptionSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
 }
 

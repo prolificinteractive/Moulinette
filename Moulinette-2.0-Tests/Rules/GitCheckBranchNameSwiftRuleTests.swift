@@ -21,7 +21,7 @@ class GitCheckBranchNameSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func test_NonUsualGitBranches() {
@@ -30,7 +30,7 @@ class GitCheckBranchNameSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 3)
+        XCTAssertEqual(grade.violationCount, 3)
     }
     
 }

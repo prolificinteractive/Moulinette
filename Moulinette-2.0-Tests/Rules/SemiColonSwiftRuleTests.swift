@@ -18,7 +18,7 @@ class SemiColonSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_NoSemiColonFound() {
@@ -26,7 +26,7 @@ class SemiColonSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
 
     func testRun_MiddleSemiColon() {
@@ -34,7 +34,7 @@ class SemiColonSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_DoubleEndSemiColon() {
@@ -42,7 +42,7 @@ class SemiColonSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_SemiColonInComment() {
@@ -50,7 +50,7 @@ class SemiColonSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
 }

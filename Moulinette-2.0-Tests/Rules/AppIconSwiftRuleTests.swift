@@ -20,7 +20,7 @@ class AppIconSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_AppIconConfigurationNotSet() {
@@ -30,7 +30,7 @@ class AppIconSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
 // MARK: - Default Tests
@@ -40,7 +40,7 @@ class AppIconSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, Int.max)
+        XCTAssertEqual(grade.violationCount, Int.max)
     }
     
     func testRun_EmptySingleFile() {
@@ -48,6 +48,6 @@ class AppIconSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, Int.max)
+        XCTAssertEqual(grade.violationCount, Int.max)
     }
 }

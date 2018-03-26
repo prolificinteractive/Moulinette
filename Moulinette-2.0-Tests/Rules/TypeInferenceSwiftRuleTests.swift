@@ -18,7 +18,7 @@ class TypeInferenceSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func test_RunUnnecessaryTypeInitialize() {
@@ -26,7 +26,7 @@ class TypeInferenceSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func test_RunCorrectTypeStringInitialize() {
@@ -34,7 +34,7 @@ class TypeInferenceSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func test_RunUnnecessaryTypeStringInitialize() {
@@ -42,7 +42,7 @@ class TypeInferenceSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
 // MARK: - Default Tests
@@ -52,7 +52,7 @@ class TypeInferenceSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_EmptySingleFile() {
@@ -60,6 +60,6 @@ class TypeInferenceSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
 }

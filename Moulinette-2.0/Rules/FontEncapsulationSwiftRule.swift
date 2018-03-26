@@ -31,7 +31,9 @@ final class FontEncapsulationSwiftRule: SwiftRule {
             fileComponents.forEach {
                 if $0.contains("UIFont.") && fontCount >= 1  {
                     fileContainsFont = true
-                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.index(of: $0), description: name)
+                    auditGrader.violationFound(fileName: fileName,
+                                               lineNumber: fileComponents.lineNumberFor($0),
+                                               description: name)
                 }
             }
             

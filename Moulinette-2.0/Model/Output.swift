@@ -29,7 +29,7 @@ final class Output {
     
     // MARK: - Init/Deinit functions
 
-    init(with identifier: String, projectName: String) {
+    init(with identifier: String?, projectName: String) {
         values[Output.identifierKey] = identifier
         values[Output.projectNameKey] = projectName
         

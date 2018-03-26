@@ -35,7 +35,7 @@ final class SinglePublicInternalSwiftRule: SwiftRule {
                         
                         
                         auditGrader.violationFound(fileName: fileName,
-                                                   lineNumber: fileComponents.index(of: $0),
+                                                   lineNumber: fileComponents.lineNumberFor($0),
                                                    description: "\(firstValue.capitalized) and a \(secondValue) present in the same file.")
                     }
                     type = fileType

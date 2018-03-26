@@ -20,7 +20,7 @@ struct PodfileParser {
             let trimmed = line.trimmingCharacters(in: .whitespacesAndNewlines)
             let tokens = trimmed.components(separatedBy: " ")
             if let firstToken = tokens.first, firstToken == "pod" {
-                onPodFound(tokens, line, podfile.index(of: line))
+                onPodFound(tokens, line, podfile.lineNumberFor(line))
             }
         }
     }

@@ -21,7 +21,7 @@ class EmptyAppIconSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 2)
+        XCTAssertEqual(grade.violationCount, 2)
     }
     
     func testRun_SizeFoundFileNameFound() {
@@ -34,7 +34,7 @@ class EmptyAppIconSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_MultipleSizeFoundSingleFileNameFound() {
@@ -46,7 +46,7 @@ class EmptyAppIconSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_NoAppIcons() {
@@ -54,7 +54,7 @@ class EmptyAppIconSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
 // MARK: - Default Tests
@@ -64,7 +64,7 @@ class EmptyAppIconSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_EmptySingleFile() {
@@ -72,6 +72,6 @@ class EmptyAppIconSwiftRuleTests: XCTestCase {
         
         let grade = sut.run()
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
 }
