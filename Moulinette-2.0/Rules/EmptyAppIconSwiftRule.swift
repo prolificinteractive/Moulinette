@@ -53,7 +53,7 @@ private extension EmptyAppIconSwiftRule {
     
     private func check(size: String?, filePath: String, description: String) {
         if size != nil {
-            auditGrader.violationFound(fileName: filePath, description: description)
+            auditGrader.violationFound(fileName: filePath, lineNumber: nil, description: description)
         }
     }
 }

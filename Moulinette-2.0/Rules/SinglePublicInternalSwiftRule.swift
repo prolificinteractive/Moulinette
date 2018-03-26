@@ -34,7 +34,9 @@ final class SinglePublicInternalSwiftRule: SwiftRule {
                         let secondValue = FileType.value(fileType: fileType)
                         
                         
-                        auditGrader.violationFound(fileName: fileName, description: "\(firstValue.capitalized) and a \(secondValue) present in the same file.")
+                        auditGrader.violationFound(fileName: fileName,
+                                                   lineNumber: fileComponents.index(of: $0),
+                                                   description: "\(firstValue.capitalized) and a \(secondValue) present in the same file.")
                     }
                     type = fileType
                 }

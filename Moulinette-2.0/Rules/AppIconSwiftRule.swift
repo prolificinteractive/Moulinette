@@ -33,10 +33,11 @@ final class AppIconSwiftRule: SwiftRule {
         
         for component in fileComponents {
             if component.contains("ASSETCATALOG_COMPILER_APPICON_NAME") && component.contains(" = \"\"") {
-                auditGrader.violationFound(fileName: Constants.FileNameConstants.xcodeProject, description: component)
+                auditGrader.violationFound(fileName: Constants.FileNameConstants.xcodeProject, lineNumber: nil, description: component)
             }
         }
 
         return auditGrader.generateGrade()
     }
 }
+

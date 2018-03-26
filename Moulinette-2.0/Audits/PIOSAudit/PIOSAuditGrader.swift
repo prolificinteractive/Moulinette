@@ -20,7 +20,7 @@ final class PIOSAuditGrader: AuditGrader {
         self.priority = priority
     }
     
-    func violationFound(fileName: String, description: String) {
+    func violationFound(fileName: String, lineNumber: Int?, description: String) {
         violations += 1
         failedString += formattedFailedString(fileName: fileName, description: description)
     }

@@ -133,7 +133,7 @@ private extension GitCheckCommitQualitySwiftRule {
             let components = commit.message.components(separatedBy: .whitespacesAndNewlines)
             let words = components.filter { !$0.isEmpty }
             if words.count < minimumWordNumber {
-                auditGrader.violationFound(fileName: "Git", description: "Bad commit format. Hash: \(commit.hash), comment:\(commit.message), \(commit.date).")
+                auditGrader.violationFound(fileName: "Git", lineNumber: nil, description: "Bad commit format. Hash: \(commit.hash), comment:\(commit.message), \(commit.date).")
             }
         }
     }

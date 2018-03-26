@@ -35,7 +35,7 @@ final class ReadMeSwiftRule: SwiftRule {
         let readMe = readmeComponents.joined(separator: " ")
         
         if hasToDoItems(in: readMe) {
-            auditGrader.violationFound(fileName: fileName, description: "README contains TO DO items!!!")
+            auditGrader.violationFound(fileName: fileName, lineNumber: nil, description: "README contains TO DO items!!!")
         }
         
         return auditGrader.generateGrade()

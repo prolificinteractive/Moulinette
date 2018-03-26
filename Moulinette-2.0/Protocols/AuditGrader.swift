@@ -16,7 +16,7 @@ protocol AuditGrader {
     /// - Parameters:
     ///   - fileName: File name of the violation.
     ///   - description: Desciption of the violation.
-    func violationFound(fileName: String, description: String)
+    func violationFound(fileName: String, lineNumber: Int?, description: String)
     
     /// Generates the audit grade for the rule.
     ///

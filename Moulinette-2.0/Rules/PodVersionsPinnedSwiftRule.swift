@@ -31,17 +31,17 @@ final class PodVersionsPinnedSwiftRule: SwiftRule {
             return auditGrader.generateGrade()
         }
 
-        PodfileParser.parse(podfile) { [unowned self] tokens, line in
+        PodfileParser.parse(podfile) { [unowned self] tokens, line, lineNumber in
             let noVersionSpecified = tokens.count <= 2
             let usesComparisonOperators = !noVersionSpecified && (tokens[2].contains("<") || tokens[2].contains(">"))
             let specifiesGitRepo = !noVersionSpecified && tokens[2].contains(":git")
             let specifiesGitTag = !noVersionSpecified && tokens.contains { $0.contains(":tag") }
             if noVersionSpecified {
-                self.auditGrader.violationFound(fileName: self.fileName, description: line)
+                self.auditGrader.violationFound(fileName: self.fileName, lineNumber: lineNumber, description: line)
             } else if usesComparisonOperators {
-                self.auditGrader.violationFound(fileName: self.fileName, description: line)
+                self.auditGrader.violationFound(fileName: self.fileName, lineNumber: lineNumber, description: line)
             } else if specifiesGitRepo && !specifiesGitTag {
-                self.auditGrader.violationFound(fileName: self.fileName, description: line)
+                self.auditGrader.violationFound(fileName: self.fileName, lineNumber: lineNumber, description: line)
             }
         }
 

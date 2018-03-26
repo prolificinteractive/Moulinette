@@ -35,7 +35,7 @@ final class DefaultPodsSwiftRule: SwiftRule {
         }
 
         var pods: [String] = []
-        PodfileParser.parse(podfile) { [unowned self] tokens, line in
+        PodfileParser.parse(podfile) { [unowned self] tokens, line, _ in
             let podName = self.extractCocoaPodName(from: tokens)
             if DefaultPodsSwiftRule.requiredPods.contains(podName) {
                 pods.append(podName)
@@ -46,7 +46,7 @@ final class DefaultPodsSwiftRule: SwiftRule {
         let foundPods = Set(pods)
         let unfoundPods = defaultPods.subtracting(foundPods)
         for pod in unfoundPods {
-            auditGrader.violationFound(fileName: fileName, description: "Missing pod: \(pod)")
+            auditGrader.violationFound(fileName: fileName, lineNumber: nil, description: "Missing pod: \(pod)")
         }
 
         return auditGrader.generateGrade()

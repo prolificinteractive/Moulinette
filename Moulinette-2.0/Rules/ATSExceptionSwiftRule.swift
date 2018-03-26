@@ -45,7 +45,7 @@ final class ATSExceptionSwiftRule: SwiftRule {
                 let appTransportValue = plistXMLDictionary[appTransportSecurityString],
                 let exceptionDomains = appTransportValue[exceptionDomainsString] as? [String : Any],
                 exceptionDomains.count > 0  {
-                auditGrader.violationFound(fileName: fileName, description: "Exception Domains found")
+                auditGrader.violationFound(fileName: fileName, lineNumber: nil, description: "Exception Domains found")
             }
         }
         

@@ -27,7 +27,7 @@ final class WeakIBOutletSwiftRule: SwiftRule {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 if $0.contains("IBOutlet") && !$0.contains("weak") && !$0.contains("IBOutletCollection") {
-                    auditGrader.violationFound(fileName: fileName, description: $0)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.index(of: $0), description: $0)
                 }
             }
         }

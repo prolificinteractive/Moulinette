@@ -62,7 +62,7 @@ class GitCheckMergedBranchSwiftRule: SwiftRule {
             
             // Add violation for each branch found.
             results.forEach { (branch) in
-                auditGrader.violationFound(fileName: branch, description: "Branch: \(branch) has been merged but not deleted.")
+                auditGrader.violationFound(fileName: branch, lineNumber: nil, description: "Branch: \(branch) has been merged but not deleted.")
             }
         } catch {
             // void

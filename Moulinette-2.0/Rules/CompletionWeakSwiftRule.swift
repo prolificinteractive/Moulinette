@@ -31,7 +31,7 @@ final class CompletionWeakSwiftRule: SwiftRule {
                 if contextCheck.insideContext(type: .completion) &&
                     $0.contains("self.") &&
                     !contextCheck.insideContext(type: .structContext) {
-                    auditGrader.violationFound(fileName: fileName, description: $0)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.index(of: $0), description: $0)
                 }
                 
                 contextCheck.check(fileLine: $0)

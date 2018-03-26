@@ -25,9 +25,11 @@ final class ToDoStorySwiftRule: SwiftRule {
 
     func run() -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
-            CommentParser.parse(fileComponents: fileComponents) { (comment, line) in
+            CommentParser.parse(fileComponents: fileComponents) { (comment, line, lineNumber) in
                 if comment.isTodoComment() && !comment.hasPivotalStory() {
-                    auditGrader.violationFound(fileName: fileName, description: "Missing story for comment: '\(comment)'.")
+                    auditGrader.violationFound(fileName: fileName,
+                                               lineNumber: lineNumber,
+                                               description: "Missing story for comment: '\(comment)'.")
                 }
             }
         }

@@ -63,7 +63,7 @@ class GitCheckBranchNameSwiftRule: SwiftRule {
             
             // Add violation for each branch found.
             results.forEach { (branch) in
-                auditGrader.violationFound(fileName: branch, description: "Open branch: '\(branch)' has been badly named.")
+                auditGrader.violationFound(fileName: branch, lineNumber: nil, description: "Open branch: '\(branch)' has been badly named.")
             }
         } catch {
             // void
@@ -80,6 +80,5 @@ class GitCheckBranchNameSwiftRule: SwiftRule {
         let results = res.components(separatedBy: "\n")
         return results
     }
-    
 }
 

@@ -30,7 +30,7 @@ final class SingleEnumCaseSwiftRule: SwiftRule {
                 contextCheck.check(fileLine: $0)
                 
                 if contextCheck.insideContext(type: .enumContext), $0.contains("case ") && $0.contains(",") {
-                    auditGrader.violationFound(fileName: fileName, description: $0)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.index(of: $0), description: $0)
                 }
             }
         }
