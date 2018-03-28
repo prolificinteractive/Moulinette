@@ -11,21 +11,17 @@ import Foundation
 class ContextCheck: Check {
     
     /// Current context of the line.
-    var currentContext: LineContext = .none
-    
-    fileprivate var lineContextDict: [LineContext : BracketContextCheck] = [:]
-    
+    var currentContext: LineContext {
+        return lineContextArray.last?.lineContext ?? .none
+    }
+
+    var lineContextArray = [BracketContextCheck]()
+
     func check(fileLine: String) {
-        let contextType = LineContext.type(fileLine: fileLine)
-        
-        if contextType != .none {
-            currentContext = contextType
-            
-            if lineContextDict[currentContext] == nil {
-                lineContextDict[currentContext] = BracketContextCheck()
-            }
+        if let contextType = LineContext.type(fileLine: fileLine) {
+            lineContextArray.append(BracketContextCheck(lineContext: contextType))
         }
-        
+
         checkLineContext(contextType: currentContext, fileLine: fileLine)
     }
     
@@ -34,23 +30,27 @@ class ContextCheck: Check {
     /// - Parameter type: Type to check for.
     /// - Returns: Flag to determine if the rule is within a current context.
     func insideContext(type: LineContext) -> Bool {
-        return lineContextDict[type] != nil
+        for context in lineContextArray {
+            if context.lineContext == type {
+                return true
+            }
+        }
+        return false
     }
-    
+
     /// Resets the current context.
     func resetContext() {
-        lineContextDict = [:]
-        currentContext = .none
+        lineContextArray = []
     }
 }
 
 private extension ContextCheck {
     
     func checkLineContext(contextType: LineContext, fileLine: String) {
-        lineContextDict[contextType]?.check(fileLine: fileLine)
-        
-        if let lineContext = lineContextDict[contextType], lineContext.bracketsArray.isEmpty {
-            lineContextDict[contextType] = nil
+        lineContextArray.last?.check(fileLine: fileLine)
+
+        if lineContextArray.last?.bracketsArray.isEmpty ?? false {
+            _ = lineContextArray.popLast()
         }
     }
 }

@@ -8,12 +8,6 @@
 
 import Foundation
 
-struct Violation {
-    let fileName: String
-    let lineNumber: Int?
-    let description: String
-}
-
 /// Grader for the PiOS Audit.
 final class PIOSAuditGrader: AuditGrader {
     

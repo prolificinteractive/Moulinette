@@ -9,15 +9,18 @@
 import Foundation
 
 enum LineContext {
-    case structContext
     case none
+    case structContext
     case dispatchMain
     case lazy
     case function
     case enumContext
     case completion
+    case classContext
+    case extensionContext
+    case protocolContext
     
-    static func type(fileLine: String) -> LineContext {
+    static func type(fileLine: String) -> LineContext? {
         
         if fileLine.contains("struct") {
             return .structContext
@@ -42,7 +45,19 @@ enum LineContext {
         if fileLine.stringWithoutWhitespaces().contains("{(") && fileLine.contains("in") {
             return .completion
         }
-        
-        return .none
+
+        if fileLine.contains("class ") {
+            return .classContext
+        }
+
+        if fileLine.contains("extension ") {
+            return extensionContext
+        }
+
+        if fileLine.contains("protocol ") {
+            return protocolContext
+        }
+
+        return nil
     }
 }
