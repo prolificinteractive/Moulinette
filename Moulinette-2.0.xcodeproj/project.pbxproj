@@ -40,6 +40,8 @@
 		201D74291EFAC80500361ECD /* AuditGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D74271EFAC7F200361ECD /* AuditGrade.swift */; };
 		201EEA82206D727B00BC466F /* FileCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201EEA81206D727B00BC466F /* FileCorrection.swift */; };
 		201EEA84206D728500BC466F /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201EEA83206D728500BC466F /* Line.swift */; };
+		201EEA85206D733200BC466F /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201EEA83206D728500BC466F /* Line.swift */; };
+		201EEA86206D733600BC466F /* FileCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201EEA81206D727B00BC466F /* FileCorrection.swift */; };
 		2023AD141EFB122800B66438 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023AD131EFB122800B66438 /* StringExtensionTests.swift */; };
 		2037904D1F4378B700B74151 /* SwiftLintSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037904C1F4378B700B74151 /* SwiftLintSwiftRule.swift */; };
 		2037904F1F437B2600B74151 /* SwiftLintSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037904E1F437B2600B74151 /* SwiftLintSwiftRuleTests.swift */; };
@@ -716,6 +718,7 @@
 				20CE93F41F4CC276000A5CF5 /* AppIconSwiftRule.swift in Sources */,
 				203790521F437D9200B74151 /* PodVersionsPinnedSwiftRule.swift in Sources */,
 				2053EEBF1EF4921B00AAE36D /* AppDelegateSwiftRule.swift in Sources */,
+				201EEA85206D733200BC466F /* Line.swift in Sources */,
 				207FB30C1F3B4CBF009B0B26 /* ReadMeSwiftRule.swift in Sources */,
 				2053EEC01EF4921B00AAE36D /* RequiredSelfSwiftRule.swift in Sources */,
 				2053EEC11EF4921B00AAE36D /* SemiColonSwiftRule.swift in Sources */,
@@ -741,6 +744,7 @@
 				2053EECD1EF4921B00AAE36D /* ContextCheck.swift in Sources */,
 				2053EECE1EF4921B00AAE36D /* BracketContextCheck.swift in Sources */,
 				2053EECF1EF4921B00AAE36D /* SwiftRule.swift in Sources */,
+				201EEA86206D733600BC466F /* FileCorrection.swift in Sources */,
 				207FB30D1F3B4CC1009B0B26 /* ATSExceptionSwiftRule.swift in Sources */,
 				2053EED01EF4921B00AAE36D /* Audit.swift in Sources */,
 				4C382C7B1FE9389200C0154E /* GitCheckCommitQualitySwiftRule.swift in Sources */,

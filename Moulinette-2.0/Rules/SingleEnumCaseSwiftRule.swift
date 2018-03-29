@@ -35,20 +35,38 @@ final class SingleEnumCaseSwiftRule: CorrectableSwiftRule {
     }
 
     func correct(projectData: ProjectData) -> [FileCorrection] {
-        var fileCorrections = [FileCorrection]()
+        return auditGrader.violations.flatMap({ (violation) -> FileCorrection? in
+            if let lineNumber = violation.lineNumber,
+                let fileComponents  = projectData.applicationComponents.components[violation.fileName] {
 
-        for violation in auditGrader.violations {
-            if let index = violation.lineNumber {
-                let customLine = Line(lineNumber: index-1, codeString: "// Sample Correction")
+                let index = lineNumber - 1
+                let currentLine = fileComponents[index]
+                let cases = enumCases(enumLine: currentLine)
+                let lines = enumLines(startIndex: index, cases: cases)
 
-                let correction = FileCorrection(fileName: violation.fileName,
-                                                lineNumber: index,
-                                                customString: nil,
-                                                lineInsertions: [customLine],
-                                                lineDeletions: nil)
-                fileCorrections.append(correction)
+                return FileCorrection(fileName: violation.fileName,
+                                      lineNumber: index,
+                                      customString: nil,
+                                      lineInsertions: lines,
+                                      lineDeletions: [index])
             }
+            return nil
+        })
+    }
+}
+
+private extension SingleEnumCaseSwiftRule {
+
+    func enumLines(startIndex: Int, cases: [String]) -> [Line] {
+        var lines = [Line]()
+        for index in 0..<cases.count {
+            lines.append(Line(lineNumber: startIndex + index, codeString: "\tcase " + cases[index]))
         }
-        return fileCorrections
+        return lines
+    }
+
+    func enumCases(enumLine: String) -> [String] {
+        let casesString = enumLine.replacingOccurrences(of: "case", with: "")
+        return casesString.stringWithoutWhitespaces().components(separatedBy: ",")
     }
 }

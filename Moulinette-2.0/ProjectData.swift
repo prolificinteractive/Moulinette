@@ -34,9 +34,12 @@ final class ProjectData: SwiftData {
 
     func applyCorrections(fileCorrections: [FileCorrection]) {
         for correction in fileCorrections {
+            for index in correction.lineDeletions ?? [] {
+                applicationComponents.components[correction.fileName]?.remove(at: index)
+            }
+
             for line in correction.lineInsertions ?? [] {
                 applicationComponents.components[correction.fileName]?.insert(line.codeString, at: line.lineNumber)
-                // Write to file
             }
         }
     }
