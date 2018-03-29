@@ -13,8 +13,9 @@ final class PIOSAuditGrader: AuditGrader {
     
     let priority: RulePriority
 
+    private(set) var violations = [Violation]()
+
     private var violationCount = 0
-    private var violations = [Violation]()
     private var failedString = ""
     
     init(priority: RulePriority) {

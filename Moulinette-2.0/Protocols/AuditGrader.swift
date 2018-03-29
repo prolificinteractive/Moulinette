@@ -10,6 +10,8 @@ import Foundation
 
 /// Audit grader protocol used to grade a rule.
 protocol AuditGrader {
+
+    var violations: [Violation] { get }
     
     /// Increments the number of violations with the given parameters.
     ///

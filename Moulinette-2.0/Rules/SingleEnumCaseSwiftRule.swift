@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class SingleEnumCaseSwiftRule: SwiftRule {
+final class SingleEnumCaseSwiftRule: CorrectableSwiftRule {
     
     let name: String = "Enums (one case statement per line)"
     let priority: RulePriority = .medium
@@ -37,5 +37,18 @@ final class SingleEnumCaseSwiftRule: SwiftRule {
             }
         }
         return auditGrader.generateGrade()
+    }
+
+    func correct() -> ProjectComponents {
+        var correctedComponents = ProjectComponents()
+
+        for violation in auditGrader.violations {
+            if let index = violation.lineNumber {
+                let updatedElement = "// Sample Correction"
+                correctedComponents[violation.fileName] = projectData.applicationComponents.components[violation.fileName]
+                correctedComponents[violation.fileName]?.insert(updatedElement, at: index)
+            }
+        }
+        return correctedComponents
     }
 }   

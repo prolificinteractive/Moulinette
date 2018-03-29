@@ -118,6 +118,7 @@ final class Output {
                 }
             }
         }
+        output += "Score: " + String(values[Output.scoreKey] as! Int) + "\n"
         return output
     }
     

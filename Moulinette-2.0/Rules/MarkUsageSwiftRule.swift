@@ -39,7 +39,10 @@ private extension MarkUsageSwiftRule {
     
     func consistentMark(fileLine: String) -> Bool {
         let fileLineUppercase = fileLine.uppercased()
-        return fileLineUppercase.contains("//") && fileLineUppercase.contains("MARK ") && !fileLine.contains("// MARK - ") && !fileLineUppercase.contains("///")
+        return fileLineUppercase.contains("//")
+            && fileLineUppercase.contains("MARK ")
+            && !fileLine.contains("// MARK - ")
+            && !fileLineUppercase.contains("///")
     }
     
     func consistentTodo(fileLine: String) -> Bool {
