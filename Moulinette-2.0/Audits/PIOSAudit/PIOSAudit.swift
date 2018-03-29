@@ -48,14 +48,24 @@ struct PIOSAudit: Audit {
                     let result = rule.run(projectData: self.projectData)
                     let score = result.score()
                     let report = result.violationDescription
+                    var violations = result.violations
+
                     auditScore += score
+
+                    if let rule = rule as? CorrectableSwiftRule {
+                        let fileCorrections = rule.correct(projectData: self.projectData)
+                        self.projectData.applyCorrections(fileCorrections: fileCorrections)
+                        violations = []
+                    }
+
                     output.record(collection: collection.description,
                                   rule: rule.name,
                                   score: score,
                                   weight: rule.priority.weight(),
                                   report: report,
                                   violationCount: result.violationCount,
-                                  violations: result.violations)
+                                  violations: violations)
+
                     group.leave()
                 }
             })
@@ -65,6 +75,14 @@ struct PIOSAudit: Audit {
         let score = Int((auditScore / maxPoints()) * 100)
         output.record(overallScore: score)
         return output
+    }
+
+    func autoCorrect() {
+        for (fileName, fileContents) in projectData.applicationComponents.swiftFiles {
+            let fileDirectory = "file://" + settings.projectDirectory + fileName
+            let fileString = fileContents.joined(separator: "\n")
+            fileString.writeToFile(directory: fileDirectory.replacingOccurrences(of: " ", with: "%20"))
+        }
     }
     
     private func maxPoints() -> Double {

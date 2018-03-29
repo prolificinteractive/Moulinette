@@ -31,6 +31,15 @@ final class ProjectData: SwiftData {
         }
         return false
     }
+
+    func applyCorrections(fileCorrections: [FileCorrection]) {
+        for correction in fileCorrections {
+            for line in correction.lineInsertions ?? [] {
+                applicationComponents.components[correction.fileName]?.insert(line.codeString, at: line.lineNumber)
+                // Write to file
+            }
+        }
+    }
     
     private func parseAllClasses() {
         for (_, fileComponents) in applicationComponents.components {

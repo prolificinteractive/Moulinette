@@ -38,6 +38,8 @@
 		201D74261EFAC77900361ECD /* CommentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844601EF47153002340C9 /* CommentParser.swift */; };
 		201D74281EFAC7F200361ECD /* AuditGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D74271EFAC7F200361ECD /* AuditGrade.swift */; };
 		201D74291EFAC80500361ECD /* AuditGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D74271EFAC7F200361ECD /* AuditGrade.swift */; };
+		201EEA82206D727B00BC466F /* FileCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201EEA81206D727B00BC466F /* FileCorrection.swift */; };
+		201EEA84206D728500BC466F /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201EEA83206D728500BC466F /* Line.swift */; };
 		2023AD141EFB122800B66438 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023AD131EFB122800B66438 /* StringExtensionTests.swift */; };
 		2037904D1F4378B700B74151 /* SwiftLintSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037904C1F4378B700B74151 /* SwiftLintSwiftRule.swift */; };
 		2037904F1F437B2600B74151 /* SwiftLintSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037904E1F437B2600B74151 /* SwiftLintSwiftRuleTests.swift */; };
@@ -206,6 +208,8 @@
 		201D741A1EFAC48300361ECD /* PIOSAuditGrader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIOSAuditGrader.swift; sourceTree = "<group>"; };
 		201D741C1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiColonSwiftRuleTests.swift; sourceTree = "<group>"; };
 		201D74271EFAC7F200361ECD /* AuditGrade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditGrade.swift; sourceTree = "<group>"; };
+		201EEA81206D727B00BC466F /* FileCorrection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCorrection.swift; sourceTree = "<group>"; };
+		201EEA83206D728500BC466F /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		2023AD131EFB122800B66438 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		2037904C1F4378B700B74151 /* SwiftLintSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLintSwiftRule.swift; sourceTree = "<group>"; };
 		2037904E1F437B2600B74151 /* SwiftLintSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLintSwiftRuleTests.swift; sourceTree = "<group>"; };
@@ -302,6 +306,15 @@
 				201D741A1EFAC48300361ECD /* PIOSAuditGrader.swift */,
 			);
 			path = PIOSAudit;
+			sourceTree = "<group>";
+		};
+		201EEA80206D725500BC466F /* Corrections */ = {
+			isa = PBXGroup;
+			children = (
+				201EEA81206D727B00BC466F /* FileCorrection.swift */,
+				201EEA83206D728500BC466F /* Line.swift */,
+			);
+			path = Corrections;
 			sourceTree = "<group>";
 		};
 		2023AD121EFB120900B66438 /* Extensions */ = {
@@ -424,8 +437,9 @@
 		208173521EEB28DA0077106A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				207FB3061F3B4C2E009B0B26 /* ApplicationComponents.swift */,
 				6608446D1EF80554002340C9 /* Protocols */,
+				201EEA80206D725500BC466F /* Corrections */,
+				207FB3061F3B4C2E009B0B26 /* ApplicationComponents.swift */,
 				20161D071EE09EAE00997AF6 /* ProjectSettings.swift */,
 				206837A31EDE1D5D008CB7F3 /* ProjectData.swift */,
 				206837A71EDE20E5008CB7F3 /* Constants.swift */,
@@ -768,6 +782,7 @@
 				20E414111EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift in Sources */,
 				20E414041EDF7F370000E447 /* ContextCheck.swift in Sources */,
 				664E7D1F1F225FBA00041CAC /* DefaultPodsSwiftRule.swift in Sources */,
+				201EEA82206D727B00BC466F /* FileCorrection.swift in Sources */,
 				206837B11EDE2305008CB7F3 /* AppDelegateSwiftRule.swift in Sources */,
 				66A7BCAD1F463D0700E9EE15 /* ScriptError.swift in Sources */,
 				4C382C771FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift in Sources */,
@@ -809,6 +824,7 @@
 				20E4140B1EDF7F8B0000E447 /* String+SwiftCode.swift in Sources */,
 				207FB3051F3B4C22009B0B26 /* String+Substring.swift in Sources */,
 				4CA5E0171F2122E000EBE48B /* Output.swift in Sources */,
+				201EEA84206D728500BC466F /* Line.swift in Sources */,
 				20161D141EE0C31000997AF6 /* FontEncapsulationSwiftRule.swift in Sources */,
 				207FB3071F3B4C2E009B0B26 /* ApplicationComponents.swift in Sources */,
 				20161D0A1EE0A04700997AF6 /* ForceUnwrapSwiftRule.swift in Sources */,

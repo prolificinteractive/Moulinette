@@ -38,5 +38,5 @@ extension SwiftRule {
 
 protocol CorrectableSwiftRule: SwiftRule {
 
-    func correct() -> ProjectComponents
+    func correct(projectData: ProjectData) -> [FileCorrection]
 }

@@ -34,16 +34,21 @@ final class SingleEnumCaseSwiftRule: CorrectableSwiftRule {
         return auditGrader.generateGrade()
     }
 
-    func correct() -> ProjectComponents {
-        var correctedComponents = ProjectComponents()
+    func correct(projectData: ProjectData) -> [FileCorrection] {
+        var fileCorrections = [FileCorrection]()
 
         for violation in auditGrader.violations {
             if let index = violation.lineNumber {
-                let updatedElement = "// Sample Correction"
-                correctedComponents[violation.fileName] = projectData.applicationComponents.components[violation.fileName]
-                correctedComponents[violation.fileName]?.insert(updatedElement, at: index)
+                let customLine = Line(lineNumber: index-1, codeString: "// Sample Correction")
+
+                let correction = FileCorrection(fileName: violation.fileName,
+                                                lineNumber: index,
+                                                customString: nil,
+                                                lineInsertions: [customLine],
+                                                lineDeletions: nil)
+                fileCorrections.append(correction)
             }
         }
-        return correctedComponents
+        return fileCorrections
     }
-}   
+}

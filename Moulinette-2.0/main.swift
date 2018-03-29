@@ -18,11 +18,14 @@ let applicationFileComponents = projectParser.applicationComponents()
 var projectData = ProjectData(path: settings.projectDirectory, applicationComponents: applicationFileComponents)
 
 // Run PiOS Rules
-let output = PIOSAudit(projectData: projectData).runRules()
+let audit = PIOSAudit(projectData: projectData)
+let output = audit.runRules()
+audit.autoCorrect()
+
 
 if settings.debugMode {
-    print("############### MOULINETTE_2.0 OUTPUT ###############")
-    print("Moulinette 2.0")
+    print("############### MOULINETTE OUTPUT ###############")
+    print("Moulinette Auditor")
     if settings.xcodePlugin {
         print(output.xcodeDescription())
     } else {
