@@ -20,7 +20,6 @@ final class ATSExceptionSwiftRule: SwiftRule {
     }()
     
     fileprivate var contextCheck = ContextCheck()
-    private var projectData: ProjectData
     
     private let appTransportSecurityString = "NSAppTransportSecurity"
     private let exceptionDomainsString = "NSExceptionDomains"
@@ -30,11 +29,7 @@ final class ATSExceptionSwiftRule: SwiftRule {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         let plistFiles = projectData.applicationComponents.files(for: Constants.FileNameConstants.plistSuffix)
         
         plistFiles.forEach { (fileName, _) in

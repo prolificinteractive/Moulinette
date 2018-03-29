@@ -13,18 +13,13 @@ final class SingleEnumCaseSwiftRule: CorrectableSwiftRule {
     let name: String = "Enums (one case statement per line)"
     let priority: RulePriority = .medium
     
-    private var projectData: ProjectData
     private var contextCheck = ContextCheck()
     
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 contextCheck.check(fileLine: $0)

@@ -21,19 +21,14 @@ final class LocalizedStringSwiftRule: SwiftRule {
     private let separator = "="
     private let space = " "
     private let empty = ""
-    private var projectData: ProjectData
     
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
     // MARK: - Public functions
     
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         let stringFiles = projectData.applicationComponents.stringFiles
         let swiftFiles = projectData.applicationComponents.swiftFiles
         

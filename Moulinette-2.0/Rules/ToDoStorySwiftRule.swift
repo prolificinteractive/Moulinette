@@ -14,16 +14,11 @@ final class ToDoStorySwiftRule: SwiftRule {
     let name: String = "Every TODO comment should have a link to a story in Pivotal"
     let priority: RulePriority = .medium
 
-    private let projectData: ProjectData
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
 
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             CommentParser.parse(fileComponents: fileComponents) { (comment, line, lineNumber) in
                 if comment.isTodoComment() && !comment.hasPivotalStory() {

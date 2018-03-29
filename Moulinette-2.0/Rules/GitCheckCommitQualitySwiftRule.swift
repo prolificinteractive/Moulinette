@@ -24,18 +24,12 @@ class GitCheckCommitQualitySwiftRule: SwiftRule {
 
     let name: String = "Git - Check commits message quality. Minimum 3 words for commit message."
     let priority: RulePriority = .medium
-    
-    private var projectData: ProjectData
-    
+        
     fileprivate lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    required init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         evaluateCommitQuality()
         return auditGrader.generateGrade()
     }

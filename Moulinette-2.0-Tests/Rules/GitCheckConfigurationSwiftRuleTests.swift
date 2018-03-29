@@ -14,17 +14,17 @@ class GitCheckConfigurationSwiftRuleTests: XCTestCase {
     var sut: GitCheckConfigurationSwiftRule!
     
     func test_WithGitIgnore() {
-        sut = GitCheckConfigurationSwiftRule(projectData: projectData(fileName: ".gitignore", line: ""))
+        sut = GitCheckConfigurationSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(fileName: ".gitignore", line: ""))
         
         XCTAssertEqual(grade.violationCount, 0)
     }
     
     func test_WithoutGitIgnore() {
-        sut = GitCheckConfigurationSwiftRule(projectData: emptyProjectData())
+        sut = GitCheckConfigurationSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectData())
         
         XCTAssertEqual(grade.violationCount, Int.max)
     }

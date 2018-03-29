@@ -11,11 +11,6 @@ import Foundation
 /// Swift rule protocol used as a template for all rules of the audit.
 protocol SwiftRule {
     
-    /// Default initialization of a swift rule.
-    ///
-    /// - Parameter projectData: Current project data to parse.
-    init(projectData: ProjectData)
-    
     /// Name of the rule.
     var name: String { get }
     
@@ -25,7 +20,7 @@ protocol SwiftRule {
     /// Run the swift rule.
     ///
     /// - Returns: An audit grade to parse.
-    func run() -> AuditGrade
+    func run(projectData: ProjectData) -> AuditGrade
 }
 
 extension SwiftRule {

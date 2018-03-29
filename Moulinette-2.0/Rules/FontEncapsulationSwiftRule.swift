@@ -13,7 +13,6 @@ final class FontEncapsulationSwiftRule: SwiftRule {
     let name: String = "Font Encapsulation"
     let priority: RulePriority = .medium
     
-    private var projectData: ProjectData
     private var failedString = ""
     private var fontCount = 0
     
@@ -21,11 +20,7 @@ final class FontEncapsulationSwiftRule: SwiftRule {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             var fileContainsFont = false
             fileComponents.forEach {

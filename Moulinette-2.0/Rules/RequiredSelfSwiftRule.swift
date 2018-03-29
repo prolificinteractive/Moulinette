@@ -16,17 +16,12 @@ final class RequiredSelfSwiftRule: SwiftRule {
     let priority: RulePriority = .medium
     
     fileprivate var contextCheck = ContextCheck()
-    private var projectData: ProjectData
     
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 contextCheck.check(fileLine: $0)

@@ -40,12 +40,12 @@ struct PIOSAudit: Audit {
         let group = DispatchGroup()
         
         for collection in ruleCollection {
-            collection.rules(projectData: projectData).forEach({ rule in
+            collection.rules().forEach({ rule in
                 group.enter()
                 
                 /// Dispatch the block in a concurrent queue (global).
                 DispatchQueue.global().async {
-                    let result = rule.run()
+                    let result = rule.run(projectData: self.projectData)
                     let score = result.score()
                     let report = result.violationDescription
                     auditScore += score
@@ -70,7 +70,7 @@ struct PIOSAudit: Audit {
     private func maxPoints() -> Double {
         var points: Double = 0
         ruleCollection.forEach {
-            $0.rules(projectData: projectData).forEach {
+            $0.rules().forEach {
                 points += $0.priority.weight()
             }
         }

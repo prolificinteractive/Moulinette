@@ -18,18 +18,13 @@ final class DefaultPodsSwiftRule: SwiftRule {
 
     // MARK: - Private
 
-    private var projectData: ProjectData
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     private let fileName = "Podfile"
     private static let requiredPods = ["Bellerophon", "Crashlytics", "Instabug", "HockeySDK", "Yoshi"]
 
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         guard let podfile = projectData.applicationComponents.file(by: fileName) else {
             return auditGrader.generateGrade()
         }

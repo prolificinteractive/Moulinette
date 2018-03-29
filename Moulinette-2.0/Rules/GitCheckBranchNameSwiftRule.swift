@@ -13,18 +13,12 @@ class GitCheckBranchNameSwiftRule: SwiftRule {
     
     let name: String = "Git - Check branch naming upstream."
     let priority: RulePriority = .low
-    
-    private var projectData: ProjectData
-    
+        
     fileprivate lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    required init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         evaluateOpenedBranches()
         return auditGrader.generateGrade()
     }

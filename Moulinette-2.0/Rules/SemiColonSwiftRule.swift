@@ -12,18 +12,12 @@ final class SemiColonSwiftRule: SwiftRule {
     
     let name: String = "No use of ; (semi colon)"
     let priority: RulePriority = .low
-    
-    private var projectData: ProjectData
-    
+        
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
             fileComponents.forEach {
                 if !$0.isComment() && $0.characters.last == ";" {

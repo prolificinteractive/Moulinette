@@ -14,17 +14,17 @@ class ATSExceptionSwiftRuleTests: XCTestCase {
     var sut: ATSExceptionSwiftRule!
     
     func testATSExceptionSwiftRuleTests_ExceptionFound() {
-        sut = atsExceptionSwiftRule(fileName: "ExceptionDomains.plist")
+        sut = atsExceptionSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(fileName: "ExceptionDomains.plist"))
         
         XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testATSExceptionSwiftRuleTests_NoExceptionFound() {
-        sut = atsExceptionSwiftRule(fileName: "NoExceptionDomains.plist")
+        sut = atsExceptionSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(fileName: "NoExceptionDomains.plist"))
         
         XCTAssertEqual(grade.violationCount, 0)
     }
@@ -32,8 +32,8 @@ class ATSExceptionSwiftRuleTests: XCTestCase {
 
 private extension ATSExceptionSwiftRuleTests {
     
-    func atsExceptionSwiftRule(fileName: String) -> ATSExceptionSwiftRule {
-        let rule = ATSExceptionSwiftRule(projectData: projectData(fileName: fileName))
+    func atsExceptionSwiftRule() -> ATSExceptionSwiftRule {
+        let rule = ATSExceptionSwiftRule()
         
         // The location of the two test plists on your machine.
         let moulinetteBundles = Bundle.allBundles.filter { $0.bundlePath.contains(Constants.FileNameConstants.moulinetteName) }

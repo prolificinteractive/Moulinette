@@ -13,18 +13,12 @@ final class CocoapodsKeysSwiftRule: SwiftRule {
     
     let name: String = "Cocoapods Keys Used"
     let priority: RulePriority = .high
-    
-    private var projectData: ProjectData
-    
+        
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         guard !projectData.applicationComponents.components.isEmpty else {
             return auditGrader.generateGrade()
         }

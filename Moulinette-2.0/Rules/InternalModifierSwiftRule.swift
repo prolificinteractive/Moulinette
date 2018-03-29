@@ -12,18 +12,12 @@ final class InternalModifierSwiftRule: SwiftRule {
     
     let name: String = "Access modifiers used for all top level declarations EXCEPT Internal"
     let priority: RulePriority = .low
-    
-    private var projectData: ProjectData
-    
+        
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
             fileComponents.forEach {
                 if $0.contains("internal ") && !$0.isComment() {

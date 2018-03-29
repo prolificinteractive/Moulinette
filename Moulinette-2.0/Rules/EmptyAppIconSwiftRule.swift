@@ -13,18 +13,12 @@ final class EmptyAppIconSwiftRule: SwiftRule {
     
     let name: String = "Empty Icon in Assets"
     let priority: RulePriority = .high
-    
-    private var projectData: ProjectData
-    
+        
     fileprivate lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         let assetContents = projectData.applicationComponents.assets
         
         for (filePath, components) in assetContents {

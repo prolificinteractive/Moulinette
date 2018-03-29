@@ -13,18 +13,12 @@ final class SwiftLintSwiftRule: SwiftRule {
     
     let name: String = "Uses SwiftLint in Project"
     let priority: RulePriority = .medium
-    
-    private var projectData: ProjectData
-    
+        
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         guard let fileComponents = projectData.applicationComponents.file(by: Constants.FileNameConstants.xcodeProject) else {
             auditGrader.failed(fileName: Constants.FileNameConstants.xcodeProject,
                                description: "Xcode project could not be found!")

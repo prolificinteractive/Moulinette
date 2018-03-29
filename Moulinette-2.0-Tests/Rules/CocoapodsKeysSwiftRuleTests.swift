@@ -14,17 +14,17 @@ class CocoapodsKeysSwiftRuleTests: XCTestCase {
     var sut: CocoapodsKeysSwiftRule!
     
     func testRun_CocoapodsKeysFound() {
-        sut = CocoapodsKeysSwiftRule(projectData: projectData(fileName: "Sample", line: "import Keys"))
+        sut = CocoapodsKeysSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(fileName: "Sample", line: "import Keys"))
         
         XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_CocoapodsKeysNotFound() {
-        sut = CocoapodsKeysSwiftRule(projectData: projectData(fileName: "Sample", line: "import Keychain"))
+        sut = CocoapodsKeysSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(fileName: "Sample", line: "import Keychain"))
         
         XCTAssertEqual(grade.violationCount, Int.max)
     }
@@ -32,17 +32,17 @@ class CocoapodsKeysSwiftRuleTests: XCTestCase {
 // MARK: - Default Tests
     
     func testRun_EmptyProject() {
-        sut = CocoapodsKeysSwiftRule(projectData: emptyProjectData())
+        sut = CocoapodsKeysSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectData())
         
         XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_EmptySingleFile() {
-        sut = CocoapodsKeysSwiftRule(projectData: emptyProjectFile())
+        sut = CocoapodsKeysSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectFile())
         
         XCTAssertEqual(grade.violationCount, Int.max)
     }

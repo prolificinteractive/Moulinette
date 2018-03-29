@@ -13,49 +13,49 @@ class ProjectOrganizationSwiftRuleTests: XCTestCase {
     var sut: ProjectOrganizationSwiftRule!
     
     func testRun_AllDefaultFoldersIncluded() {
-        sut = ProjectOrganizationSwiftRule(projectData: projectData(folders: ProjectOrganizationSwiftRule.defaultFolders))
+        sut = ProjectOrganizationSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(folders: ProjectOrganizationSwiftRule.defaultFolders))
         
         XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_FeaturesFolderMissing() {
-        sut = ProjectOrganizationSwiftRule(projectData: projectData(folders: folders(removedFolder: "Features")))
+        sut = ProjectOrganizationSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(folders: folders(removedFolder: "Features")))
 
         XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_ModelMissing() {
-        sut = ProjectOrganizationSwiftRule(projectData: projectData(folders: folders(removedFolder: "Model")))
+        sut = ProjectOrganizationSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(folders: folders(removedFolder: "Model")))
         
         XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_UtilityMissing() {
-        sut = ProjectOrganizationSwiftRule(projectData: projectData(folders: folders(removedFolder: "Utility")))
+        sut = ProjectOrganizationSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(folders: folders(removedFolder: "Utility")))
         
         XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_ResourcesMissing() {
-        sut = ProjectOrganizationSwiftRule(projectData: projectData(folders: folders(removedFolder: "Resources")))
+        sut = ProjectOrganizationSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(folders: folders(removedFolder: "Resources")))
         
         XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_SupportingFilesMissing() {
-        sut = ProjectOrganizationSwiftRule(projectData: projectData(folders: folders(removedFolder: "Supporting Files")))
+        sut = ProjectOrganizationSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(folders: folders(removedFolder: "Supporting Files")))
         
         XCTAssertEqual(grade.violationCount, 1)
     }

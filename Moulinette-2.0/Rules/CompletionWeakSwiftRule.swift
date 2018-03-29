@@ -13,18 +13,13 @@ final class CompletionWeakSwiftRule: SwiftRule {
     let name: String = "Weak Self Completion Closure"
     let priority: RulePriority = .high
     
-    private var projectData: ProjectData
     private var contextCheck = ContextCheck()
     
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             contextCheck.resetContext()
             fileComponents.forEach {

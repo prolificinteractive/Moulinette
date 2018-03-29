@@ -18,6 +18,6 @@ protocol RuleCollection {
     ///
     /// - Parameter projectData: Project data.
     /// - Returns: List of rules.
-    func rules(projectData: ProjectData) -> [SwiftRule]
+    func rules() -> [SwiftRule]
 
 }

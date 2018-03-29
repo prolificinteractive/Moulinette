@@ -14,19 +14,19 @@ class GitCheckMergedBranchSwiftRuleTests: XCTestCase {
     var sut: FakeGitCheckMergedBranchSwiftRule!
     
     func test_NormalGitBranches() {
-        sut = FakeGitCheckMergedBranchSwiftRule(projectData: emptyProjectData())
+        sut = FakeGitCheckMergedBranchSwiftRule()
         sut.mergedBranches = ["origin/develop", "origin/master", "origin/beta"]
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectData())
         
         XCTAssertEqual(grade.violationCount, 0)
     }
     
     func test_NonUsualGitBranches() {
-        sut = FakeGitCheckMergedBranchSwiftRule(projectData: emptyProjectData())
+        sut = FakeGitCheckMergedBranchSwiftRule()
         sut.mergedBranches = ["origin/develop", "origin/master", "origin/beta", "origin/chore/test", "origin/feature/moulinette", "origin/bugfix/test"]
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectData())
         
         XCTAssertEqual(grade.violationCount, 3)
     }

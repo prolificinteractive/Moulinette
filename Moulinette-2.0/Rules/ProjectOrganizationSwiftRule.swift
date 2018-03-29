@@ -16,18 +16,12 @@ final class ProjectOrganizationSwiftRule: SwiftRule {
 
     let name: String = "Default project folders used"
     let priority: RulePriority = .low
-    
-    private var projectData: ProjectData
-    
+        
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         var projectFolders = ProjectOrganizationSwiftRule.defaultFolders
         
         projectData.applicationComponents.filePaths.forEach {

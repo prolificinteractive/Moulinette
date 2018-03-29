@@ -15,27 +15,27 @@ class ToDoCountSwiftRuleTests: XCTestCase {
     
     func testRun_OneTodoOneFile() {
         let data = projectData(fileName: "Sample.swift", line: "// TODO: Do something cool")
-        sut = ToDoCountSwiftRule(projectData: data)
+        sut = ToDoCountSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
         
         XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_ElevenTodoOneFile() {
         let data = projectData(components: ["Sample.swift": todoLines(count: ToDoCountSwiftRule.maxTodoCount + 10)])
-        sut = ToDoCountSwiftRule(projectData: data)
+        sut = ToDoCountSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
         
         XCTAssertEqual(grade.violationCount, Int.max)
     }
     
     func testRun_OneTodoElevenFiles() {
         let data = projectData(components: todoFiles(count: 20))
-        sut = ToDoCountSwiftRule(projectData: data)
+        sut = ToDoCountSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
         
         XCTAssertEqual(grade.violationCount, Int.max)
     }
@@ -43,17 +43,17 @@ class ToDoCountSwiftRuleTests: XCTestCase {
 // MARK: - Default Tests
     
     func testRun_EmptyProject() {
-        sut = ToDoCountSwiftRule(projectData: emptyProjectData())
+        sut = ToDoCountSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectData())
         
         XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_EmptySingleFile() {
-        sut = ToDoCountSwiftRule(projectData: emptyProjectFile())
+        sut = ToDoCountSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectFile())
         
         XCTAssertEqual(grade.violationCount, 0)
     }

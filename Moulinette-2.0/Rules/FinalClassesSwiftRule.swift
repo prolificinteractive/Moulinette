@@ -12,18 +12,12 @@ final class FinalClassesSwiftRule: SwiftRule {
     
     let name: String = "All classes should be final except when subclassed"
     let priority: RulePriority = .high
-    
-    private var projectData: ProjectData
-    
+        
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 if $0.isProjectClass(),

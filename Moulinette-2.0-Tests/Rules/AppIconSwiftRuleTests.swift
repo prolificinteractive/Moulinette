@@ -16,9 +16,9 @@ class AppIconSwiftRuleTests: XCTestCase {
     func testRun_AppIconConfigurationUsed() {
         let data = projectData(fileName: Constants.FileNameConstants.xcodeProject,
                                line: "ASSETCATALOG_COMPILER_APPICON_NAME = \"AppIcon\"")
-        sut = AppIconSwiftRule(projectData: data)
+        sut = AppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
         
         XCTAssertEqual(grade.violationCount, 0)
     }
@@ -26,9 +26,9 @@ class AppIconSwiftRuleTests: XCTestCase {
     func testRun_AppIconConfigurationNotSet() {
         let data = projectData(fileName: Constants.FileNameConstants.xcodeProject,
                                line: "ASSETCATALOG_COMPILER_APPICON_NAME = \"\"")
-        sut = AppIconSwiftRule(projectData: data)
+        sut = AppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
         
         XCTAssertEqual(grade.violationCount, 1)
     }
@@ -36,17 +36,17 @@ class AppIconSwiftRuleTests: XCTestCase {
 // MARK: - Default Tests
     
     func testRun_EmptyProject() {
-        sut = AppIconSwiftRule(projectData: emptyProjectData())
+        sut = AppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectData())
         
         XCTAssertEqual(grade.violationCount, Int.max)
     }
     
     func testRun_EmptySingleFile() {
-        sut = AppIconSwiftRule(projectData: emptyProjectFile())
+        sut = AppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectFile())
         
         XCTAssertEqual(grade.violationCount, Int.max)
     }

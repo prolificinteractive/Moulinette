@@ -14,18 +14,13 @@ final class PodVersionsPinnedSwiftRule: SwiftRule {
     let name: String = "All pods should be pinned to a version"
     let priority: RulePriority = .high
 
-    private var projectData: ProjectData
     private let fileName = "Podfile"
 
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
 
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         guard let podfile = projectData.applicationComponents.file(by: fileName) else {
             auditGrader.failed(fileName: fileName, description: "Couldn't find Podfile")
             return auditGrader.generateGrade()

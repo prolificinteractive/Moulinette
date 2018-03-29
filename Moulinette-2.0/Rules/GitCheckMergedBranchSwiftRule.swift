@@ -13,18 +13,12 @@ class GitCheckMergedBranchSwiftRule: SwiftRule {
     
     let name: String = "Git - Check merged branches upstream."
     let priority: RulePriority = .high
-    
-    private var projectData: ProjectData
-    
+        
     fileprivate lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    required init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         evaluateMergedBranches()
         return auditGrader.generateGrade()
     }

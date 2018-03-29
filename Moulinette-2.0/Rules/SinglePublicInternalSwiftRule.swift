@@ -13,18 +13,13 @@ final class SinglePublicInternalSwiftRule: SwiftRule {
     let name: String = "One public/internal type per file (class, enum, protocol, struct)"
     let priority: RulePriority = .low
     
-    private var projectData: ProjectData
     private var type: FileType?
     
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
-    
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
             fileComponents.forEach {
                 if let fileType = FileType.type(fileLine: $0) {

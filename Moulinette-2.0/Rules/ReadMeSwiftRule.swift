@@ -15,18 +15,12 @@ final class ReadMeSwiftRule: SwiftRule {
     let priority: RulePriority = .low
     
     private let fileName = Constants.FileNameConstants.readme
-    
-    private var projectData: ProjectData
-    
+        
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         guard let readmeComponents = projectData.applicationComponents.readmeComponents else {
             auditGrader.failed(fileName: fileName, description: "No README found!!!")
             return auditGrader.generateGrade()

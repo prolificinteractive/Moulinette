@@ -12,18 +12,12 @@ final class WeakIBOutletSwiftRule: SwiftRule {
     
     let name: String = "IBOutlet marked as weak and private (except IBOutletCollection)"
     let priority: RulePriority = .high
-    
-    private var projectData: ProjectData
-    
+        
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 if $0.contains("IBOutlet") && !$0.contains("weak") && !$0.contains("IBOutletCollection") {

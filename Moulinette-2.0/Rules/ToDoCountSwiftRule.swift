@@ -17,16 +17,11 @@ final class ToDoCountSwiftRule: SwiftRule {
     let name: String = "There should be less than 10 TODOs"
     let priority: RulePriority = .medium
 
-    private let projectData: ProjectData
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
 
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         let swiftFiles = projectData.applicationComponents.swiftFiles
         let allContents = projectData.applicationComponents.mergeContents(files: swiftFiles).uppercased()
         
