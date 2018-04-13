@@ -54,7 +54,7 @@ struct PIOSAudit: Audit {
 
                     if let rule = rule as? CorrectableSwiftRule {
                         let fileCorrections = rule.correct(projectData: self.projectData)
-                        self.projectData.applyCorrections(fileCorrections: fileCorrections)
+                        self.projectData.add(corrections: fileCorrections)
                         violations = []
                     }
 
@@ -70,8 +70,9 @@ struct PIOSAudit: Audit {
                 }
             })
         }
-        
+
         group.wait()
+        projectData.applyCorrections()
         let score = Int((auditScore / maxPoints()) * 100)
         output.record(overallScore: score)
         return output

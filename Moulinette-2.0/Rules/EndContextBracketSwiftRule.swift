@@ -42,7 +42,6 @@ final class EndContextBracketSwiftRule: CorrectableSwiftRule {
                                   customString: nil,
                                   lineInsertions: [Line(lineNumber: lineNumber, codeString: "")],
                                   lineDeletions: [])
-
         })
     }
 }

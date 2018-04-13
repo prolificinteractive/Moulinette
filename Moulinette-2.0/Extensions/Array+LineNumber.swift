@@ -16,4 +16,14 @@ extension Array where Element == String {
         }
         return nil
     }
+
+    func aboveCommentLineNumber(violationLineNumber: Int) -> Int {
+        let startLineNumber = violationLineNumber-1
+        for index in stride(from: startLineNumber-1, through: 0, by: -1) {
+            if !self[index].isComment() {
+                return (self[index] == "") ? index+1 : index+2
+            }
+        }
+        return 0
+    }
 }

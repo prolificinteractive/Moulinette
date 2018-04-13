@@ -1,5 +1,5 @@
 //
-//  PublicPropertyMarkSectionSwiftRule.swift
+//  InitializationMarkSectionSwiftRule.swift
 //  Moulinette-2.0
 //
 //  Created by Jonathan Samudio on 4/13/18.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-final class PublicPropertyMarkSectionSwiftRule: CorrectableSwiftRule {
+final class InitializationyMarkSectionSwiftRule: CorrectableSwiftRule {
 
-    let name: String = "MARK needed for public properties."
+    let name: String = "MARK needed for initialization."
     let priority: RulePriority = .low
 
     private var contextCheck = ContextCheck()
@@ -20,11 +20,11 @@ final class PublicPropertyMarkSectionSwiftRule: CorrectableSwiftRule {
     }()
 
     private var tabbedMarkDescription: String {
-        return "\t" + Constants.markFormat + "Public Properties"
+        return "\t" + Constants.markFormat + "Initialization"
     }
 
     private var spacedMarkDescription: String {
-        return "    " + Constants.markFormat + "Public Properties"
+        return "    " + Constants.markFormat + "Initialization"
     }
 
     func run(projectData: ProjectData) -> AuditGrade {
@@ -34,8 +34,8 @@ final class PublicPropertyMarkSectionSwiftRule: CorrectableSwiftRule {
             for index in 0..<fileComponents.count {
                 let line = fileComponents[index]
 
-                if line.contains("var") || line.contains("let"),
-                    !line.contains("private"), !line.isComment(),
+                if line.contains("init"),
+                    !line.isComment(),
                     !fileComponents.contains(tabbedMarkDescription),
                     !fileComponents.contains(spacedMarkDescription),
                     (contextCheck.currentContext == .classContext) {
@@ -55,7 +55,7 @@ final class PublicPropertyMarkSectionSwiftRule: CorrectableSwiftRule {
         return auditGrader.violations.flatMap({ (violation) -> FileCorrection? in
             guard let lineNumber = violation.lineNumber,
                 let fileComponents = projectData.applicationComponents.components[violation.fileName] else {
-                return nil
+                    return nil
             }
             let insertLineNumber = fileComponents.aboveCommentLineNumber(violationLineNumber: lineNumber)
             let lineInsertions = [Line(lineNumber: insertLineNumber, codeString: "\n\(spacedMarkDescription)")]

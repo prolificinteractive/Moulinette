@@ -45,11 +45,10 @@ extension String {
     /// - Parameter token: The token
     /// - Returns: The substring that contains the characters after first occurrence of the provided token.
     func removeLeading(startWith token: String) -> String {
-        var string = self
-        while let range = range(of: token) {
-            string = substring(with: Range(uncheckedBounds: (lower: range.upperBound, upper: string.endIndex)))
+        if let range = range(of: token) {
+            return String(self[range.upperBound...])
         }
-        return string
+        return self
     }
 
     ///

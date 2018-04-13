@@ -1,5 +1,5 @@
 //
-//  PublicPropertyMarkSectionSwiftRule.swift
+//  ProtocolExtensionMarkSectionSwiftRule.swift
 //  Moulinette-2.0
 //
 //  Created by Jonathan Samudio on 4/13/18.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-final class PublicPropertyMarkSectionSwiftRule: CorrectableSwiftRule {
+final class ProtocolExtensionMarkSectionSwiftRule: CorrectableSwiftRule {
 
-    let name: String = "MARK needed for public properties."
+    let name: String = "MARK needed for protocol extensions."
     let priority: RulePriority = .low
 
     private var contextCheck = ContextCheck()
@@ -19,33 +19,25 @@ final class PublicPropertyMarkSectionSwiftRule: CorrectableSwiftRule {
         return PIOSAuditGrader(priority: self.priority)
     }()
 
-    private var tabbedMarkDescription: String {
-        return "\t" + Constants.markFormat + "Public Properties"
-    }
-
-    private var spacedMarkDescription: String {
-        return "    " + Constants.markFormat + "Public Properties"
-    }
-
     func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
             contextCheck.resetContext()
 
             for index in 0..<fileComponents.count {
                 let line = fileComponents[index]
+                contextCheck.check(fileLine: line)
 
-                if line.contains("var") || line.contains("let"),
-                    !line.contains("private"), !line.isComment(),
-                    !fileComponents.contains(tabbedMarkDescription),
-                    !fileComponents.contains(spacedMarkDescription),
-                    (contextCheck.currentContext == .classContext) {
+                let protocolString = line.removeLeading(startWith: ":").replacingOccurrences(of: "{", with: "").stringWithoutWhitespaces()
+
+                if line.contains("extension"),
+                    line.contains(":"),
+                    !fileComponents.contains(Constants.markFormat + protocolString),
+                    contextCheck.currentContext == .extensionContext {
 
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: index + 1,
                                                description: name)
-                    break
                 }
-                contextCheck.check(fileLine: line)
             }
         }
         return auditGrader.generateGrade()
@@ -55,10 +47,11 @@ final class PublicPropertyMarkSectionSwiftRule: CorrectableSwiftRule {
         return auditGrader.violations.flatMap({ (violation) -> FileCorrection? in
             guard let lineNumber = violation.lineNumber,
                 let fileComponents = projectData.applicationComponents.components[violation.fileName] else {
-                return nil
+                    return nil
             }
-            let insertLineNumber = fileComponents.aboveCommentLineNumber(violationLineNumber: lineNumber)
-            let lineInsertions = [Line(lineNumber: insertLineNumber, codeString: "\n\(spacedMarkDescription)")]
+            let line = fileComponents[lineNumber - 1]
+            let protocolString = line.removeLeading(startWith: ":").replacingOccurrences(of: "{", with: "").stringWithoutWhitespaces()
+            let lineInsertions = [Line(lineNumber: lineNumber, codeString: Constants.markFormat + protocolString)]
             return FileCorrection(fileName: violation.fileName,
                                   lineNumber: lineNumber,
                                   customString: nil,

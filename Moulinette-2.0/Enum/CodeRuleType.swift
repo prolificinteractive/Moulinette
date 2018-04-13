@@ -47,7 +47,12 @@ struct CodeConventionRuleCollection: RuleCollection {
             ToDoCountSwiftRule(),
             RequiredSelfSwiftRule(),
             EndContextBracketSwiftRule(),
-            PublicPropertyMarkSectionSwiftRule()
+            PublicPropertyMarkSectionSwiftRule(),
+            PrivatePropertyMarkSectionSwiftRule(),
+            InitializationyMarkSectionSwiftRule(),
+            PublicFunctionMarkSectionSwiftRule(),
+            PrivateFunctionsMarkSectionSwiftRule(),
+            ProtocolExtensionMarkSectionSwiftRule()
         ]
     }
     
