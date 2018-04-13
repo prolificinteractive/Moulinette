@@ -47,7 +47,7 @@ enum LineContext {
             return .completion
         }
 
-        if fileLine.contains("class ") {
+        if fileLine.contains("class ") && !fileLine.contains(": class ") {
             return .classContext
         }
 

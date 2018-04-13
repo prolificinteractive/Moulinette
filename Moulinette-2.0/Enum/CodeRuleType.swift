@@ -35,17 +35,17 @@ struct CodeConventionRuleCollection: RuleCollection {
             FinalClassesSwiftRule(),
             WeakIBOutletSwiftRule(),
             SinglePublicInternalSwiftRule(),
-            ForceUnwrapSwiftRule(),
+//            ForceUnwrapSwiftRule(),
             MarkUsageSwiftRule(),
             SingleEnumCaseSwiftRule(),
             InternalModifierSwiftRule(),
             TypeInferenceSwiftRule(),
             FontEncapsulationSwiftRule(),
             ColorEncapsulationSwiftRule(),
-            CompletionWeakSwiftRule(),
+//            CompletionWeakSwiftRule(),
             ToDoStorySwiftRule(),
             ToDoCountSwiftRule(),
-            RequiredSelfSwiftRule(),
+//            RequiredSelfSwiftRule(),
             EndContextBracketSwiftRule(),
             PublicPropertyMarkSectionSwiftRule(),
             PrivatePropertyMarkSectionSwiftRule(),
@@ -167,7 +167,7 @@ struct GitRuleCollection: RuleCollection {
             GitCheckMergedBranchSwiftRule(),
             GitCheckCommitQualitySwiftRule(),
             GitCheckConfigurationSwiftRule(),
-            GitCheckBranchNameSwiftRule()
+//            GitCheckBranchNameSwiftRule()
         ]
     }
     
