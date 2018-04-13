@@ -34,8 +34,8 @@ final class PublicFunctionMarkSectionSwiftRule: CorrectableSwiftRule {
             for index in 0..<fileComponents.count {
                 let line = fileComponents[index]
 
-                if line.contains("func"),
-                    !line.contains("private"),
+                if line.contains("func "),
+                    !line.contains("private "),
                     !line.isComment(),
                     !fileComponents.contains(tabbedMarkDescription),
                     !fileComponents.contains(spacedMarkDescription),

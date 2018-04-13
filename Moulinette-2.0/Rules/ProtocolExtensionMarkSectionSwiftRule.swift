@@ -29,8 +29,9 @@ final class ProtocolExtensionMarkSectionSwiftRule: CorrectableSwiftRule {
 
                 let protocolString = line.removeLeading(startWith: ":").replacingOccurrences(of: "{", with: "").stringWithoutWhitespaces()
 
-                if line.contains("extension"),
+                if line.contains("extension "),
                     line.contains(":"),
+                    !line.isComment(),
                     !fileComponents.contains(Constants.markFormat + protocolString),
                     contextCheck.currentContext == .extensionContext {
 

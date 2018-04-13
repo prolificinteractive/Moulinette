@@ -31,7 +31,7 @@ final class PrivateFunctionsMarkSectionSwiftRule: CorrectableSwiftRule {
                 let line = fileComponents[index]
                 contextCheck.check(fileLine: line)
 
-                if line.contains("private extension"),
+                if line.contains("private extension "),
                     !line.isComment(),
                     !fileComponents.contains(markDescription),
                     (contextCheck.currentContext == .extensionContext) {

@@ -34,8 +34,8 @@ final class PrivatePropertyMarkSectionSwiftRule: CorrectableSwiftRule {
             for index in 0..<fileComponents.count {
                 let line = fileComponents[index]
 
-                if line.contains("var") || line.contains("let"),
-                    line.contains("private"), !line.isComment(),
+                if line.contains("var ") || line.contains("let "),
+                    line.contains("private "), !line.isComment(),
                     !fileComponents.contains(tabbedMarkDescription),
                     !fileComponents.contains(spacedMarkDescription),
                     (contextCheck.currentContext == .classContext) {
