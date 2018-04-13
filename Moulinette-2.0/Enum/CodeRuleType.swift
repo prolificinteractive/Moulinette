@@ -46,6 +46,8 @@ struct CodeConventionRuleCollection: RuleCollection {
             ToDoStorySwiftRule(),
             ToDoCountSwiftRule(),
             RequiredSelfSwiftRule(),
+            EndContextBracketSwiftRule(),
+            PublicPropertyMarkSectionSwiftRule()
         ]
     }
     

@@ -32,15 +32,27 @@ final class ProjectData: SwiftData {
         return false
     }
 
+    /// Applies the file correction with the correct line index.
+    ///
+    /// - Parameter fileCorrections: File corrections to apply.
     func applyCorrections(fileCorrections: [FileCorrection]) {
+        var fileLineOffset = [String: Int]()
+
         for correction in fileCorrections {
+            let lineOffset = fileLineOffset[correction.fileName] ?? 0
+
             for index in correction.lineDeletions ?? [] {
-                applicationComponents.components[correction.fileName]?.remove(at: index)
+                let deletionIndex = index + lineOffset
+                applicationComponents.components[correction.fileName]?.remove(at: deletionIndex)
+                fileLineOffset[correction.fileName] = lineOffset - 1
             }
 
             for line in correction.lineInsertions ?? [] {
-                applicationComponents.components[correction.fileName]?.insert(line.codeString, at: line.lineNumber)
+                let insertionIndex = line.lineNumber - 1 + lineOffset
+                applicationComponents.components[correction.fileName]?.insert(line.codeString, at: insertionIndex)
+                fileLineOffset[correction.fileName] = lineOffset + 1
             }
+
         }
     }
     

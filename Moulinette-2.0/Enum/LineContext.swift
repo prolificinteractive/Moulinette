@@ -19,6 +19,7 @@ enum LineContext {
     case classContext
     case extensionContext
     case protocolContext
+    case privateExtensionContext
     
     static func type(fileLine: String) -> LineContext? {
         
@@ -56,6 +57,10 @@ enum LineContext {
 
         if fileLine.contains("protocol ") {
             return protocolContext
+        }
+
+        if fileLine.contains("private extension ") {
+            return privateExtensionContext
         }
 
         return nil

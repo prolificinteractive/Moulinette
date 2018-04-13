@@ -12,6 +12,8 @@ struct Constants {
 
     static let fileExtensions = ["swift", "strings", "plist", "md", "pbxproj", "storyboard", "json", "gitignore"]
     static let validNonSwiftFiles = ["Podfile", "Localizable.strings", "project.pbxproj", ".gitignore"]
+
+    static var markFormat = "// MARK: - "
     
     struct FileNameConstants {
         static let swiftSuffix = "swift"

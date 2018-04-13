@@ -111,7 +111,7 @@
 				TargetAttributes = {
 					4CE5FFEC1F682AF80002CED7 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5ZZ7W4SB26;
+						DevelopmentTeam = FT4NWQ256Y;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -242,7 +242,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
+				DEVELOPMENT_TEAM = FT4NWQ256Y;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -253,7 +253,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
+				DEVELOPMENT_TEAM = FT4NWQ256Y;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -279,6 +279,7 @@
 				4CE5FFF61F682AF80002CED7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

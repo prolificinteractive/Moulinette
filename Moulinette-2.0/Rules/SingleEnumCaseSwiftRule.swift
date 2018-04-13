@@ -21,6 +21,7 @@ final class SingleEnumCaseSwiftRule: CorrectableSwiftRule {
     
     func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
+            contextCheck.resetContext()
             fileComponents.forEach {
                 contextCheck.check(fileLine: $0)
                 

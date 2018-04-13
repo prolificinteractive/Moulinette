@@ -35,8 +35,3 @@ extension SwiftRule {
         return fileName + "\n" + fileLine + "\n"
     }
 }
-
-protocol CorrectableSwiftRule: SwiftRule {
-
-    func correct(projectData: ProjectData) -> [FileCorrection]
-}
