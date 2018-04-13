@@ -49,7 +49,7 @@ struct CodeConventionRuleCollection: RuleCollection {
             EndContextBracketSwiftRule(),
             PublicPropertyMarkSectionSwiftRule(),
             PrivatePropertyMarkSectionSwiftRule(),
-            InitializationyMarkSectionSwiftRule(),
+            InitializationMarkSectionSwiftRule(),
             PublicFunctionMarkSectionSwiftRule(),
             PrivateFunctionsMarkSectionSwiftRule(),
             ProtocolExtensionMarkSectionSwiftRule()

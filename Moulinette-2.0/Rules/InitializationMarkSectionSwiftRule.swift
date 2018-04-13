@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class InitializationyMarkSectionSwiftRule: CorrectableSwiftRule {
+final class InitializationMarkSectionSwiftRule: CorrectableSwiftRule {
 
     let name: String = "MARK needed for initialization."
     let priority: RulePriority = .low

@@ -17,6 +17,10 @@ extension Array where Element == String {
         return nil
     }
 
+    /// Returns the line number above comments.
+    ///
+    /// - Parameter violationLineNumber: Line number violation.
+    /// - Returns: Updated line number where there is no comment.
     func aboveCommentLineNumber(violationLineNumber: Int) -> Int {
         let startLineNumber = violationLineNumber-1
         for index in stride(from: startLineNumber-1, through: 0, by: -1) {

@@ -60,7 +60,6 @@ final class ProjectData: SwiftData {
                 fileLineOffset[correction.fileName]?.append(index+1)
             }
 
-            // What if there are no []
             for line in correction.lineInsertions ?? [] {
                 let offset = lineOffset(lineNumber: line.lineNumber,
                                         lineInsertions: fileLineOffset[correction.fileName],
