@@ -17,8 +17,9 @@ final class ProjectData: SwiftData {
     var classInfo = [ClassInfo]()
     let path: String
 
+    private(set) var correctedProjectComponents = ProjectComponents()
     private var fileCorrections = [FileCorrection]()
-    
+
     init(path: String, applicationComponents: ApplicationComponents) {
         self.path = path
         self.applicationComponents = applicationComponents
@@ -42,6 +43,7 @@ final class ProjectData: SwiftData {
     ///
     /// - Parameter fileCorrections: File corrections to apply.
     func applyCorrections() {
+        correctedProjectComponents = applicationComponents.components
         var fileLineOffset = [String: [Int]]()
 
         for correction in fileCorrections {
@@ -56,7 +58,7 @@ final class ProjectData: SwiftData {
                                         isInsertion: false)
 
                 let deletionIndex = index + offset
-                applicationComponents.components[correction.fileName]?.remove(at: deletionIndex)
+                correctedProjectComponents[correction.fileName]?.remove(at: deletionIndex)
                 fileLineOffset[correction.fileName]?.append(index+1)
             }
 
@@ -66,7 +68,7 @@ final class ProjectData: SwiftData {
                                         isInsertion: true)
 
                 let insertionIndex = line.lineNumber - 1 + offset
-                applicationComponents.components[correction.fileName]?.insert(line.codeString, at: insertionIndex)
+                correctedProjectComponents[correction.fileName]?.insert(line.codeString, at: insertionIndex)
                 fileLineOffset[correction.fileName]?.append(line.lineNumber)
             }
         }

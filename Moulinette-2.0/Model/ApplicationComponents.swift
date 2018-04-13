@@ -10,6 +10,7 @@ import Foundation
 
 /// File components array type.
 typealias ProjectComponents = [String : [String]]
+typealias SwiftFileCollection = [(String, [String])]
 
 /// Application components.
 struct ApplicationComponents {
@@ -24,7 +25,7 @@ struct ApplicationComponents {
     var assets: ProjectComponents = [:]
     
     /// Swift files.
-    var swiftFiles: [(String, [String])] {
+    var swiftFiles: SwiftFileCollection {
         return files(for: Constants.FileNameConstants.swiftSuffix)
     }
     

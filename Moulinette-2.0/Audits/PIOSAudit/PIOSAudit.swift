@@ -79,7 +79,10 @@ struct PIOSAudit: Audit {
     }
 
     func autoCorrect() {
-        for (fileName, fileContents) in projectData.applicationComponents.swiftFiles {
+        for (fileName, fileContents) in projectData.correctedProjectComponents {
+            guard fileContents != projectData.applicationComponents.components[fileName] else {
+                continue
+            }
             let fileDirectory = "file://" + settings.projectDirectory + fileName
             let fileString = fileContents.joined(separator: "\n")
             fileString.writeToFile(directory: fileDirectory.replacingOccurrences(of: " ", with: "%20"))
