@@ -137,7 +137,7 @@ struct DependenciesRuleCollection: RuleCollection {
     func rules() -> [SwiftRule] {
         return [
             CocoapodsKeysSwiftRule(),
-            DefaultPodsSwiftRule(),
+//            DefaultPodsSwiftRule(),
             PodVersionsPinnedSwiftRule()
         ]
     }
