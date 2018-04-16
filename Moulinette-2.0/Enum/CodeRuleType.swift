@@ -52,7 +52,8 @@ struct CodeConventionRuleCollection: RuleCollection {
             InitializationMarkSectionSwiftRule(),
             PublicFunctionMarkSectionSwiftRule(),
             PrivateFunctionsMarkSectionSwiftRule(),
-            ProtocolExtensionMarkSectionSwiftRule()
+            ProtocolExtensionMarkSectionSwiftRule(),
+            ConstantsMarkSectionSwiftRule()
         ]
     }
     
