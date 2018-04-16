@@ -17,9 +17,20 @@ class ContextCheck: Check {
 
     var lineContextArray = [BracketContextCheck]()
 
+    private var pendingContextType: LineContext?
+
     func check(fileLine: String) {
+        if let pendingContextType = pendingContextType, fileLine.contains("{") {
+            lineContextArray.append(BracketContextCheck(lineContext: pendingContextType))
+            self.pendingContextType = nil
+        }
+
         if let contextType = LineContext.type(fileLine: fileLine) {
-            lineContextArray.append(BracketContextCheck(lineContext: contextType))
+            if (contextType.isBracketType() && fileLine.contains("{")) || !contextType.isBracketType() {
+                lineContextArray.append(BracketContextCheck(lineContext: contextType))
+            } else {
+                pendingContextType = contextType
+            }
         }
 
         checkLineContext(contextType: currentContext, fileLine: fileLine)

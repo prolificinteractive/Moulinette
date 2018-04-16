@@ -65,4 +65,13 @@ enum LineContext {
 
         return nil
     }
+
+    func isBracketType() -> Bool {
+        switch self {
+        case .structContext, .function, .classContext:
+            return true
+        default:
+            return false
+        }
+    }
 }

@@ -27,12 +27,10 @@ final class ProtocolExtensionMarkSectionSwiftRule: CorrectableSwiftRule {
                 let line = fileComponents[index]
                 contextCheck.check(fileLine: line)
 
-                let protocolString = line.removeLeading(startWith: ":").replacingOccurrences(of: "{", with: "").stringWithoutWhitespaces()
-
                 if line.contains("extension "),
                     line.contains(":"),
                     !line.isComment(),
-                    !fileComponents.contains(Constants.markFormat + protocolString),
+                    !fileComponents.contains(protocolString(line: line)),
                     contextCheck.currentContext == .extensionContext {
 
                     auditGrader.violationFound(fileName: fileName,
@@ -51,8 +49,7 @@ final class ProtocolExtensionMarkSectionSwiftRule: CorrectableSwiftRule {
                     return nil
             }
             let line = fileComponents[lineNumber - 1]
-            let protocolString = line.removeLeading(startWith: ":").replacingOccurrences(of: "{", with: "").stringWithoutWhitespaces()
-            let lineInsertions = [Line(lineNumber: lineNumber, codeString: Constants.markFormat + protocolString)]
+            let lineInsertions = [Line(lineNumber: lineNumber, codeString: protocolString(line: line))]
             return FileCorrection(fileName: violation.fileName,
                                   lineNumber: lineNumber,
                                   customString: nil,
@@ -61,4 +58,13 @@ final class ProtocolExtensionMarkSectionSwiftRule: CorrectableSwiftRule {
         })
     }
     
+}
+
+private extension ProtocolExtensionMarkSectionSwiftRule {
+
+    func protocolString(line: String) -> String {
+        let protocols = line.removeLeading(startWith: ":").replacingOccurrences(of: "{", with: "").stringWithoutWhitespaces().components(separatedBy: ",")
+        return Constants.markFormat + protocols.joined(separator: ", ")
+    }
+
 }

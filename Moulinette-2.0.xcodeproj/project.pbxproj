@@ -97,6 +97,14 @@
 		205F988A2080EF4B0042128E /* PublicFunctionMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F98892080EF4B0042128E /* PublicFunctionMarkSectionSwiftRule.swift */; };
 		205F988C2080EFFB0042128E /* PrivateFunctionMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F988B2080EFFB0042128E /* PrivateFunctionMarkSectionSwiftRule.swift */; };
 		205F988E2080FC930042128E /* ProtocolExtensionMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F988D2080FC930042128E /* ProtocolExtensionMarkSectionSwiftRule.swift */; };
+		205F98902081294A0042128E /* InitializationMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F98872080EEBB0042128E /* InitializationMarkSectionSwiftRule.swift */; };
+		205F98912081294A0042128E /* PublicFunctionMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F98892080EF4B0042128E /* PublicFunctionMarkSectionSwiftRule.swift */; };
+		205F98922081294A0042128E /* PrivateFunctionMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F988B2080EFFB0042128E /* PrivateFunctionMarkSectionSwiftRule.swift */; };
+		205F98932081294A0042128E /* ProtocolExtensionMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F988D2080FC930042128E /* ProtocolExtensionMarkSectionSwiftRule.swift */; };
+		205F98942081294D0042128E /* PrivatePropertyMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F98852080EBFF0042128E /* PrivatePropertyMarkSectionSwiftRule.swift */; };
+		205F9895208129500042128E /* PublicPropertyMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F98832080E3D40042128E /* PublicPropertyMarkSectionSwiftRule.swift */; };
+		205F9896208129530042128E /* EndContextBracketSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F9881208005080042128E /* EndContextBracketSwiftRule.swift */; };
+		205F9897208129C00042128E /* CorrectableSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F987F207FFEF70042128E /* CorrectableSwiftRule.swift */; };
 		206837A41EDE1D5D008CB7F3 /* ProjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837A31EDE1D5D008CB7F3 /* ProjectData.swift */; };
 		206837A61EDE1E35008CB7F3 /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837A51EDE1E35008CB7F3 /* ProjectParser.swift */; };
 		206837A81EDE20E5008CB7F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837A71EDE20E5008CB7F3 /* Constants.swift */; };
@@ -721,6 +729,7 @@
 				4C382C7A1FE9388D00C0154E /* GitCheckMergedBranchSwiftRule.swift in Sources */,
 				201D74241EFAC77900361ECD /* Regex.swift in Sources */,
 				201D74251EFAC77900361ECD /* RuleCollection.swift in Sources */,
+				205F98902081294A0042128E /* InitializationMarkSectionSwiftRule.swift in Sources */,
 				207E90192069996100F88D9E /* Array+LineNumber.swift in Sources */,
 				4C382C831FE978EC00C0154E /* GitCheckBranchNameSwiftRuleTests.swift in Sources */,
 				200FC7331F4CB6EB004335D8 /* CocoapodsKeysSwiftRuleTests.swift in Sources */,
@@ -744,6 +753,7 @@
 				2053EEBF1EF4921B00AAE36D /* AppDelegateSwiftRule.swift in Sources */,
 				201EEA85206D733200BC466F /* Line.swift in Sources */,
 				207FB30C1F3B4CBF009B0B26 /* ReadMeSwiftRule.swift in Sources */,
+				205F9896208129530042128E /* EndContextBracketSwiftRule.swift in Sources */,
 				2053EEC01EF4921B00AAE36D /* RequiredSelfSwiftRule.swift in Sources */,
 				2053EEC11EF4921B00AAE36D /* SemiColonSwiftRule.swift in Sources */,
 				2023AD141EFB122800B66438 /* StringExtensionTests.swift in Sources */,
@@ -754,15 +764,19 @@
 				2053EEC31EF4921B00AAE36D /* WeakIBOutletSwiftRule.swift in Sources */,
 				2053EEC41EF4921B00AAE36D /* SinglePublicInternalSwiftRule.swift in Sources */,
 				201D741D1EFAC4DC00361ECD /* SemiColonSwiftRuleTests.swift in Sources */,
+				205F98922081294A0042128E /* PrivateFunctionMarkSectionSwiftRule.swift in Sources */,
 				2053EEC51EF4921B00AAE36D /* ForceUnwrapSwiftRule.swift in Sources */,
 				2053EEC61EF4921B00AAE36D /* MarkUsageSwiftRule.swift in Sources */,
 				4C382C811FE96F9000C0154E /* GitCheckMergedBranchSwiftRuleTests.swift in Sources */,
+				205F98912081294A0042128E /* PublicFunctionMarkSectionSwiftRule.swift in Sources */,
 				2053EEC71EF4921B00AAE36D /* SingleEnumCaseSwiftRule.swift in Sources */,
 				4CA5E0111F1FA46500EBE48B /* FileFilteringTests.swift in Sources */,
 				4CA5E0131F1FAB0100EBE48B /* UsesLocalizationSwiftRule.swift in Sources */,
 				2053EEC81EF4921B00AAE36D /* InternalModifierSwiftRule.swift in Sources */,
 				2053EEC91EF4921B00AAE36D /* TypeInferenceSwiftRule.swift in Sources */,
+				205F9897208129C00042128E /* CorrectableSwiftRule.swift in Sources */,
 				2053EECA1EF4921B00AAE36D /* FontEncapsulationSwiftRule.swift in Sources */,
+				205F98942081294D0042128E /* PrivatePropertyMarkSectionSwiftRule.swift in Sources */,
 				2053EECB1EF4921B00AAE36D /* ColorEncapsulationSwiftRule.swift in Sources */,
 				2053EECC1EF4921B00AAE36D /* CompletionWeakSwiftRule.swift in Sources */,
 				2053EECD1EF4921B00AAE36D /* ContextCheck.swift in Sources */,
@@ -780,10 +794,12 @@
 				4C382C7D1FE9389900C0154E /* GitCheckBranchNameSwiftRule.swift in Sources */,
 				2053EED61EF4921B00AAE36D /* LineContext.swift in Sources */,
 				4C382C851FE9807B00C0154E /* GitCheckCommitQualitySwiftRuleTests.swift in Sources */,
+				205F9895208129500042128E /* PublicPropertyMarkSectionSwiftRule.swift in Sources */,
 				201307081F759CA900CE37D4 /* TypeInferenceSwiftRuleTests.swift in Sources */,
 				2053EED71EF4921B00AAE36D /* FileType.swift in Sources */,
 				2053EED81EF4921B00AAE36D /* RulePriority.swift in Sources */,
 				200FC72E1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift in Sources */,
+				205F98932081294A0042128E /* ProtocolExtensionMarkSectionSwiftRule.swift in Sources */,
 				207E9025206BE04C00F88D9E /* Violation.swift in Sources */,
 				2053EED91EF4921B00AAE36D /* String+SwiftCode.swift in Sources */,
 				2053EEDA1EF4921B00AAE36D /* NetworkRequester.swift in Sources */,
