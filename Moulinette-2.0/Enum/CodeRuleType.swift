@@ -67,7 +67,8 @@ struct LocalizationRuleCollection: RuleCollection {
     func rules() -> [SwiftRule] {
         return [
             UsesLocalizationSwiftRule(),
-            LocalizedStringSwiftRule()
+            LocalizedStringSwiftRule(),
+//            LocalizationSwiftRule()
         ]
     }
     

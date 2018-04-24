@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2005BCC0208522050069769D /* ConstantsMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2005BCBF208522050069769D /* ConstantsMarkSectionSwiftRule.swift */; };
+		2005BCC2208524FC0069769D /* LocalizationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2005BCC1208524FC0069769D /* LocalizationSwiftRule.swift */; };
 		200FC72C1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */; };
 		200FC72E1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72D1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift */; };
 		200FC72F1F4C892E004335D8 /* CocoapodKeysSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */; };
@@ -207,6 +208,7 @@
 
 /* Begin PBXFileReference section */
 		2005BCBF208522050069769D /* ConstantsMarkSectionSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsMarkSectionSwiftRule.swift; sourceTree = "<group>"; };
+		2005BCC1208524FC0069769D /* LocalizationSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationSwiftRule.swift; sourceTree = "<group>"; };
 		200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoapodKeysSwiftRule.swift; sourceTree = "<group>"; };
 		200FC72D1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePublicInternalSwiftRuleTests.swift; sourceTree = "<group>"; };
 		200FC7301F4C894F004335D8 /* XCTestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtension.swift; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 				205F988B2080EFFB0042128E /* PrivateFunctionMarkSectionSwiftRule.swift */,
 				205F988D2080FC930042128E /* ProtocolExtensionMarkSectionSwiftRule.swift */,
 				2005BCBF208522050069769D /* ConstantsMarkSectionSwiftRule.swift */,
+				2005BCC1208524FC0069769D /* LocalizationSwiftRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -836,6 +839,7 @@
 				205F98882080EEBB0042128E /* InitializationMarkSectionSwiftRule.swift in Sources */,
 				66A7BCAD1F463D0700E9EE15 /* ScriptError.swift in Sources */,
 				4C382C771FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift in Sources */,
+				2005BCC2208524FC0069769D /* LocalizationSwiftRule.swift in Sources */,
 				20161D121EE0BE0400997AF6 /* TypeInferenceSwiftRule.swift in Sources */,
 				201D74191EFAC45700361ECD /* PIOSAudit.swift in Sources */,
 				20161D061EE09C8F00997AF6 /* FileType.swift in Sources */,
