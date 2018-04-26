@@ -17,6 +17,9 @@ struct Violation {
 
 extension Violation {
 
+    /// Formatted Description of for the violation.
+    ///
+    /// - Returns: Formatted description.
     func formattedDescription() -> String {
         return "\(description) [\(nameId)]"
     }

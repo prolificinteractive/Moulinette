@@ -10,8 +10,10 @@ import Foundation
 
 final class ConfigurationParser {
 
+    /// Configuration File.
     var configFile: ConfigurationFile?
 
+    /// Current Project Directory.
     static var projectDirectory: String = ""
 
     init(projectDirectory: String) {
