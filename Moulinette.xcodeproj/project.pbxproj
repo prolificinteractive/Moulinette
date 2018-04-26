@@ -243,6 +243,7 @@
 		201604DA209260B800B7F191 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		201604DB209260B800B7F191 /* RuleCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleCollection.swift; sourceTree = "<group>"; };
 		201605172092620600B7F191 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		20160518209263A100B7F191 /* Moulinette.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Moulinette.podspec; sourceTree = SOURCE_ROOT; };
 		20161CFA1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakIBOutletSwiftRule.swift; sourceTree = "<group>"; };
 		20161CFC1EE097AF00997AF6 /* SinglePublicInternalSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePublicInternalSwiftRule.swift; sourceTree = "<group>"; };
 		20161D051EE09C8F00997AF6 /* FileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
@@ -594,6 +595,7 @@
 		20C40C561ED8D47C00695CA7 /* Moulinette */ = {
 			isa = PBXGroup;
 			children = (
+				20160518209263A100B7F191 /* Moulinette.podspec */,
 				201605172092620600B7F191 /* README.md */,
 				20C40C571ED8D47C00695CA7 /* main.swift */,
 				206837B21EDF0244008CB7F3 /* Audits */,
