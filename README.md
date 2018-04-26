@@ -1,17 +1,17 @@
-# Moulinette-2.0
+# Moulinette
 An internal audit tool for Prolific Interactive brought to you by the PiOS team.
 
 ## Requirements
 * Xcode 8.3.3 or up
 
 ## Instructions
-How to build and run Moulinette on a Prolific Interactive project.
+How to build and run Moulinette on an Xcode project.
 
 ### From the command line
-1. Open the project in Xcode by double clicking on the `.xcodeproj` file or running `open Moulinette-2.0.xcodeproj`.
+1. Open the project in Xcode by double clicking on the `.xcodeproj` file or running `open Moulinette.xcodeproj`.
 2. Build the project using `CMD B`.
-3. Copy the executable file titled `Moulinette-2.0` from `/Build/Products/Debug/` to your `your_project_repo/subdirectory`.
-4. Run from the command line: `./Moulinette-2.0 -projectName <project-name> -auditSubDirectory <subdirectory>`.
+3. Copy the executable file titled `Moulinette` from `/Build/Products/Debug/` to your `your_project_repo/subdirectory`.
+4. Run from the command line: `./Moulinette -projectName <project-name> -auditSubDirectory <subdirectory>`.
 
 ### From Xcode
 1. Open the project in Xcode as in step 1 from above.
@@ -58,5 +58,5 @@ How to build and run Coffee on multiple Prolific Interactive projects.
 1. Open the project in Xcode by double clicking on the `.xcodeproj` file or running `open Coffee.xcodeproj`.
 2. Set your target to release mode & Build the project using `CMD B`.
 3. Copy the executable file titled `Coffee` from `/Build/Products/Debug/` to your `your_project_repo/subdirectory`.
-4. Run from the command line: `./Coffee -moulinettePath </$path/to/moulinette/binary/Moulinette-2.0> -projectDirectory </$path/to/projects/directory/>")`
+4. Run from the command line: `./Coffee -moulinettePath </$path/to/moulinette/binary/Moulinette> -projectDirectory </$path/to/projects/directory/>")`
 
