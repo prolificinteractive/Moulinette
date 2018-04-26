@@ -31,17 +31,15 @@ if settings.silentMode == false,
     NetworkRequester(debugMode: settings.debugMode).submitAuditScore(score: output.representation(),
                                         authToken: authToken,
                                         completion: ({ (json, error) in
-        if let error = error {
+        if let _ = error {
             // Display error?
             exit(0)
-            return
         }
         
         guard let url = json?["url"],
             let score = output.representation()[Output.scoreKey] else {
                 print("No url returned from the JSON or score doesn't exist in the output representation.")
                 exit(0)
-                return
         }
         print("Score:\(score)")
         print("Url:\(url)")

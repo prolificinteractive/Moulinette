@@ -8,7 +8,7 @@
 
 import XCTest
 
-@testable import Moulinette_2_0
+@testable import Moulinette
 class SemiColonSwiftRuleTests: XCTestCase {
 
     var sut: SemiColonSwiftRule!

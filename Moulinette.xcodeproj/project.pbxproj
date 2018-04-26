@@ -93,6 +93,8 @@
 		206837B11EDE2305008CB7F3 /* AppDelegateSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837B01EDE2305008CB7F3 /* AppDelegateSwiftRule.swift */; };
 		2071E2A81F4F6E9B00DA52DB /* AppIconSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7341F4CBB92004335D8 /* AppIconSwiftRule.swift */; };
 		2071E2AC1F4F7DB800DA52DB /* ToDoCountSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EE0A81F4F41B800AC7EE4 /* ToDoCountSwiftRuleTests.swift */; };
+		207CE2B620925DFD0032B3B5 /* NoExceptionDomains.plist in Resources */ = {isa = PBXBuildFile; fileRef = 207CE2B420925DFD0032B3B5 /* NoExceptionDomains.plist */; };
+		207CE2B720925DFD0032B3B5 /* ExceptionDomains.plist in Resources */ = {isa = PBXBuildFile; fileRef = 207CE2B520925DFD0032B3B5 /* ExceptionDomains.plist */; };
 		207F1DE31EE06BC200284498 /* FinalClassesSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207F1DE21EE06BC200284498 /* FinalClassesSwiftRule.swift */; };
 		207FB3051F3B4C22009B0B26 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FB3041F3B4C22009B0B26 /* String+Substring.swift */; };
 		207FB3071F3B4C2E009B0B26 /* ApplicationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FB3061F3B4C2E009B0B26 /* ApplicationComponents.swift */; };
@@ -140,8 +142,6 @@
 		4CA5E0171F2122E000EBE48B /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E0161F2122E000EBE48B /* Output.swift */; };
 		4CE81FA91F96A3C300367F7A /* GitCheckMergedBranchSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE81FA81F96A3C300367F7A /* GitCheckMergedBranchSwiftRule.swift */; };
 		4CE81FAB1F97D9F300367F7A /* GitCheckCommitQualitySwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE81FAA1F97D9F300367F7A /* GitCheckCommitQualitySwiftRule.swift */; };
-		59178A681F3BC3C4009E5484 /* ExceptionDomains.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */; };
-		59178A691F3BC3C4009E5484 /* NoExceptionDomains.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */; };
 		5932B4D91F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5932B4D81F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift */; };
 		660844581EF41B42002340C9 /* ToDoCountSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844571EF41B42002340C9 /* ToDoCountSwiftRule.swift */; };
 		6608445A1EF45E0E002340C9 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660844591EF45E0E002340C9 /* Regex.swift */; };
@@ -218,6 +218,8 @@
 		206837AE1EDE22E8008CB7F3 /* GradeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeType.swift; sourceTree = "<group>"; };
 		206837B01EDE2305008CB7F3 /* AppDelegateSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRule.swift; sourceTree = "<group>"; };
 		206EE0A81F4F41B800AC7EE4 /* ToDoCountSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCountSwiftRuleTests.swift; sourceTree = "<group>"; };
+		207CE2B420925DFD0032B3B5 /* NoExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NoExceptionDomains.plist; sourceTree = "<group>"; };
+		207CE2B520925DFD0032B3B5 /* ExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExceptionDomains.plist; sourceTree = "<group>"; };
 		207F1DE21EE06BC200284498 /* FinalClassesSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalClassesSwiftRule.swift; sourceTree = "<group>"; };
 		207FB3041F3B4C22009B0B26 /* String+Substring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		207FB3061F3B4C2E009B0B26 /* ApplicationComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationComponents.swift; sourceTree = "<group>"; };
@@ -253,8 +255,6 @@
 		4CA5E0161F2122E000EBE48B /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		4CE81FA81F96A3C300367F7A /* GitCheckMergedBranchSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckMergedBranchSwiftRule.swift; sourceTree = "<group>"; };
 		4CE81FAA1F97D9F300367F7A /* GitCheckCommitQualitySwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckCommitQualitySwiftRule.swift; sourceTree = "<group>"; };
-		59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ExceptionDomains.plist; path = "Moulinette-2.0-Tests/ExceptionDomains.plist"; sourceTree = SOURCE_ROOT; };
-		59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NoExceptionDomains.plist; path = "Moulinette-2.0-Tests/NoExceptionDomains.plist"; sourceTree = SOURCE_ROOT; };
 		5932B4D81F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATSExceptionSwiftRuleTests.swift; sourceTree = "<group>"; };
 		660844571EF41B42002340C9 /* ToDoCountSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCountSwiftRule.swift; sourceTree = "<group>"; };
 		660844591EF45E0E002340C9 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
@@ -301,6 +301,7 @@
 		2023AD121EFB120900B66438 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				200FC7301F4C894F004335D8 /* XCTestExtension.swift */,
 				2023AD131EFB122800B66438 /* StringExtensionTests.swift */,
 			);
 			path = Extensions;
@@ -309,13 +310,12 @@
 		2053EE891EF4862B00AAE36D /* Moulinette-Tests */ = {
 			isa = PBXGroup;
 			children = (
+				207CE2B520925DFD0032B3B5 /* ExceptionDomains.plist */,
+				207CE2B420925DFD0032B3B5 /* NoExceptionDomains.plist */,
 				4CA5E00F1F1FA44B00EBE48B /* Core */,
 				2053EE901EF486F500AAE36D /* Rules */,
 				2023AD121EFB120900B66438 /* Extensions */,
 				2053EE8C1EF4862B00AAE36D /* Info.plist */,
-				59178A661F3BC3C4009E5484 /* ExceptionDomains.plist */,
-				59178A671F3BC3C4009E5484 /* NoExceptionDomains.plist */,
-				200FC7301F4C894F004335D8 /* XCTestExtension.swift */,
 			);
 			path = "Moulinette-Tests";
 			sourceTree = "<group>";
@@ -612,12 +612,13 @@
 					2053EE871EF4862B00AAE36D = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5ZZ7W4SB26;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 					20C40C531ED8D47C00695CA7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5ZZ7W4SB26;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -645,8 +646,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59178A681F3BC3C4009E5484 /* ExceptionDomains.plist in Resources */,
-				59178A691F3BC3C4009E5484 /* NoExceptionDomains.plist in Resources */,
+				207CE2B720925DFD0032B3B5 /* ExceptionDomains.plist in Resources */,
+				207CE2B620925DFD0032B3B5 /* NoExceptionDomains.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,13 +832,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
-				INFOPLIST_FILE = "Moulinette-2.0-Tests/Info.plist";
+				INFOPLIST_FILE = "Moulinette-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.Moulinette-2-0-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -847,12 +849,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5ZZ7W4SB26;
-				INFOPLIST_FILE = "Moulinette-2.0-Tests/Info.plist";
+				INFOPLIST_FILE = "Moulinette-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prolificinteractive.Moulinette-2-0-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -952,7 +955,8 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				OTHER_SWIFT_FLAGS = "-D INTERNAL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -963,7 +967,8 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
