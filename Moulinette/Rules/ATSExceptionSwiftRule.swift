@@ -1,6 +1,6 @@
 //
 //  ATSExceptionSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Lee Pollard  on 8/7/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -11,7 +11,9 @@ import Foundation
 /// Check to see if there are any exception domains in the NSAppTransportSecurity key in the Info.plists.
 final class ATSExceptionSwiftRule: SwiftRule {
     
-    let name: String = "Check if there are any ATS exception domain in the targets' Info.plists."
+    let description = "Check if there are any ATS exception domain in the targets' Info.plists."
+    let nameId = "ats_exception"
+
     let priority: RulePriority = .medium
     
     /// The path of the plist files. Made public for testing.
@@ -20,7 +22,6 @@ final class ATSExceptionSwiftRule: SwiftRule {
     }()
     
     fileprivate var contextCheck = ContextCheck()
-    private var projectData: ProjectData
     
     private let appTransportSecurityString = "NSAppTransportSecurity"
     private let exceptionDomainsString = "NSExceptionDomains"
@@ -30,11 +31,7 @@ final class ATSExceptionSwiftRule: SwiftRule {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         let plistFiles = projectData.applicationComponents.files(for: Constants.FileNameConstants.plistSuffix)
         
         plistFiles.forEach { (fileName, _) in
@@ -45,7 +42,7 @@ final class ATSExceptionSwiftRule: SwiftRule {
                 let appTransportValue = plistXMLDictionary[appTransportSecurityString],
                 let exceptionDomains = appTransportValue[exceptionDomainsString] as? [String : Any],
                 exceptionDomains.count > 0  {
-                auditGrader.violationFound(fileName: fileName, description: "Exception Domains found")
+                auditGrader.violationFound(fileName: fileName, lineNumber: nil, description: "Exception Domains found", nameId: nameId)
             }
         }
         

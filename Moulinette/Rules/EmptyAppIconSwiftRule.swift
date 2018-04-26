@@ -1,6 +1,6 @@
 //
 //  EmptyAppIconSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 8/22/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -11,20 +11,16 @@ import Foundation
 /// Checks the project for empty app icons assets.
 final class EmptyAppIconSwiftRule: SwiftRule {
     
-    let name: String = "Empty Icon in Assets"
+    let description = "Empty Icon in Assets"
+    let nameId = "empty_icons"
+    
     let priority: RulePriority = .high
-    
-    private var projectData: ProjectData
-    
+        
     fileprivate lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         let assetContents = projectData.applicationComponents.assets
         
         for (filePath, components) in assetContents {
@@ -53,7 +49,7 @@ private extension EmptyAppIconSwiftRule {
     
     private func check(size: String?, filePath: String, description: String) {
         if size != nil {
-            auditGrader.violationFound(fileName: filePath, description: description)
+            auditGrader.violationFound(fileName: filePath, lineNumber: nil, description: description, nameId: nameId)
         }
     }
 }

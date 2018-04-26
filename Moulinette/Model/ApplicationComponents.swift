@@ -1,6 +1,6 @@
 //
 //  ApplicationComponents.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Morgan Collino on 7/18/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -10,6 +10,7 @@ import Foundation
 
 /// File components array type.
 typealias ProjectComponents = [String : [String]]
+typealias SwiftFileCollection = [(String, [String])]
 
 /// Application components.
 struct ApplicationComponents {
@@ -24,12 +25,12 @@ struct ApplicationComponents {
     var assets: ProjectComponents = [:]
     
     /// Swift files.
-    var swiftFiles: [(String, [String])] {
+    var swiftFiles: SwiftFileCollection {
         return files(for: Constants.FileNameConstants.swiftSuffix)
     }
     
     // String files.
-    var stringFiles: [(String, [String])] {
+    var stringFiles: SwiftFileCollection {
         return files(for: Constants.FileNameConstants.stringSuffix)
     }
     
@@ -77,10 +78,10 @@ struct ApplicationComponents {
     ///
     /// - Parameter name: File name,
     /// - Returns: List of file containing the file name given.
-    func file(filterBy name: String) -> [(String, [String])] {
+    func file(filterBy name: String) -> SwiftFileCollection {
         let files = components.filter { (fileName, content) -> Bool in
             return fileName.contains(name)
-        }
+            }.map { ($0.key, $0.value)}
         
         return files
     }
@@ -89,11 +90,11 @@ struct ApplicationComponents {
     ///
     /// - Parameter pathExtension: Path extension.
     /// - Returns: Array of potential components with the path extension given.
-    func files(for pathExtension: String) -> [(String, [String])] {
+    func files(for pathExtension: String) -> SwiftFileCollection {
         let files = components.filter { (fileName, content) -> Bool in
             let nsstring = fileName as NSString
             return nsstring.pathExtension == pathExtension
-        }
+        }.map { ($0.key, $0.value) }
         
         return files
     }
@@ -103,7 +104,7 @@ struct ApplicationComponents {
     /// - Parameter files: Given files.
     /// - Returns: Content of those files concatenated.
     func mergeContents(files: [(String, [String])]) -> String {
-        return files.flatMap { (fileName, fileContents) -> String? in
+        return files.compactMap { (fileName, fileContents) -> String? in
             return fileContents.joined()
             }.joined()
     }

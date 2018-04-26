@@ -1,6 +1,6 @@
 //
 //  ToDoCountSwiftRuleTests.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 8/24/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -15,47 +15,47 @@ class ToDoCountSwiftRuleTests: XCTestCase {
     
     func testRun_OneTodoOneFile() {
         let data = projectData(fileName: "Sample.swift", line: "// TODO: Do something cool")
-        sut = ToDoCountSwiftRule(projectData: data)
+        sut = ToDoCountSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_ElevenTodoOneFile() {
         let data = projectData(components: ["Sample.swift": todoLines(count: ToDoCountSwiftRule.maxTodoCount + 10)])
-        sut = ToDoCountSwiftRule(projectData: data)
+        sut = ToDoCountSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
         
-        XCTAssertEqual(grade.violations, Int.max)
+        XCTAssertEqual(grade.violationCount, Int.max)
     }
     
     func testRun_OneTodoElevenFiles() {
         let data = projectData(components: todoFiles(count: 20))
-        sut = ToDoCountSwiftRule(projectData: data)
+        sut = ToDoCountSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
         
-        XCTAssertEqual(grade.violations, Int.max)
+        XCTAssertEqual(grade.violationCount, Int.max)
     }
     
 // MARK: - Default Tests
     
     func testRun_EmptyProject() {
-        sut = ToDoCountSwiftRule(projectData: emptyProjectData())
+        sut = ToDoCountSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectData())
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_EmptySingleFile() {
-        sut = ToDoCountSwiftRule(projectData: emptyProjectFile())
+        sut = ToDoCountSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectFile())
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
 }
 

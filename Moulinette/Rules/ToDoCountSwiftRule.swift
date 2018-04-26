@@ -1,6 +1,6 @@
 //
 //  ToDoCountSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Adam Tecle on 6/16/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -14,25 +14,22 @@ final class ToDoCountSwiftRule: SwiftRule {
     /// Max TODO count acceptable.
     static let maxTodoCount = 10
 
-    let name: String = "There should be less than 10 TODOs"
+    let description = "There should be less than 10 TODOs"
+    let nameId = "todo_count"
+
     let priority: RulePriority = .medium
 
-    private let projectData: ProjectData
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
 
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         let swiftFiles = projectData.applicationComponents.swiftFiles
         let allContents = projectData.applicationComponents.mergeContents(files: swiftFiles).uppercased()
         
         let count = allContents.components(separatedBy: "TODO").count - 1
         if count > ToDoCountSwiftRule.maxTodoCount {
-            auditGrader.failed(description: "More than \(ToDoCountSwiftRule.maxTodoCount) found. (\(count) found.)")
+            auditGrader.failed(description: "More than \(ToDoCountSwiftRule.maxTodoCount) found. (\(count) found.)", nameId: nameId)
         }
         
         return auditGrader.generateGrade()

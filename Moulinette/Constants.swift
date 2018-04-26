@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 5/30/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -12,6 +12,8 @@ struct Constants {
 
     static let fileExtensions = ["swift", "strings", "plist", "md", "pbxproj", "storyboard", "json", "gitignore"]
     static let validNonSwiftFiles = ["Podfile", "Localizable.strings", "project.pbxproj", ".gitignore"]
+
+    static var markFormat = "// MARK: - "
     
     struct FileNameConstants {
         static let swiftSuffix = "swift"

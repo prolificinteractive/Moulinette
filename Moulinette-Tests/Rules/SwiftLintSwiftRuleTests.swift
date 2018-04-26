@@ -1,6 +1,6 @@
 //
 //  SwiftLintSwiftRuleTests.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 8/15/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -14,25 +14,25 @@ class SwiftLintSwiftRuleTests: XCTestCase {
     var sut: SwiftLintSwiftRule!
 
     func testRun_SwiftLintBuildPhase() {
-        sut = SwiftLintSwiftRule(projectData: swiftLintBuildPhase())
+        sut = SwiftLintSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: swiftLintBuildPhase())
         
         XCTAssertEqual(grade.score(), sut.priority.weight())
     }
     
     func testRun_InstalledSwiftLintBuildPhase() {
-        sut = SwiftLintSwiftRule(projectData: installedSwiftLintBuildPhase())
+        sut = SwiftLintSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: installedSwiftLintBuildPhase())
         
         XCTAssertEqual(grade.score(), sut.priority.weight())
     }
     
     func testRun_SwiftLintAbsentBuildPhase() {
-        sut = SwiftLintSwiftRule(projectData: swiftLintAbsentBuildPhase())
+        sut = SwiftLintSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: swiftLintAbsentBuildPhase())
         
         XCTAssertEqual(grade.score(), 0.0)
     }

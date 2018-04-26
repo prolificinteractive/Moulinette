@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 5/26/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -8,7 +8,9 @@
 
 import Foundation
 
+// Project Settings and Config File
 let settings = ProjectSettings()
+let config = ConfigurationParser(projectDirectory: settings.projectDirectory).configFile
 
 // Parse Project
 let projectParser = ProjectParser()
@@ -18,12 +20,18 @@ let applicationFileComponents = projectParser.applicationComponents()
 var projectData = ProjectData(path: settings.projectDirectory, applicationComponents: applicationFileComponents)
 
 // Run PiOS Rules
-let output = PIOSAudit(projectData: projectData).runRules()
+let audit = PIOSAudit(projectData: projectData, configurationFile: config)
+let output = audit.runRules()
+audit.autoCorrect()
 
 if settings.debugMode {
-    print("############### MOULINETTE_2.0 OUTPUT ###############")
-    print("Moulinette 2.0")
-    print(output.description())
+    print("############### MOULINETTE OUTPUT ###############")
+    print("Moulinette Auditor")
+    if settings.xcodePlugin {
+        print(output.xcodeDescription())
+    } else {
+        print(output.description())
+    }
 }
 
 if settings.silentMode == false,
@@ -31,11 +39,11 @@ if settings.silentMode == false,
     NetworkRequester(debugMode: settings.debugMode).submitAuditScore(score: output.representation(),
                                         authToken: authToken,
                                         completion: ({ (json, error) in
-        if let _ = error {
-            // Display error?
+        if let error = error {
+            print(error)
             exit(0)
         }
-        
+
         guard let url = json?["url"],
             let score = output.representation()[Output.scoreKey] else {
                 print("No url returned from the JSON or score doesn't exist in the output representation.")
@@ -48,3 +56,4 @@ if settings.silentMode == false,
 } else {
     exit(0)
 }
+

@@ -1,6 +1,6 @@
 //
 //  AppDelegateSwiftRuleTests.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 6/16/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -20,27 +20,27 @@ class AppDelegateSwiftRuleTests: XCTestCase {
     func testRun_NoAppDelegate() {
         let applicationComponents = ApplicationComponents(with: [""])
         let data = ProjectData(path: "", applicationComponents: applicationComponents)
-        sut = AppDelegateSwiftRule(projectData: data)
+        sut = AppDelegateSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
         
         XCTAssertTrue(grade.gradeType.gradeText().contains("No App Delegate Found!!!"))
     }
     
     func testRun_ShortAppDelegate() {
         let data = ProjectData(path: "", applicationComponents: emptyFile(length: 30))
-        sut = AppDelegateSwiftRule(projectData: data)
+        sut = AppDelegateSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
 
         XCTAssertEqual(grade.gradeType.gradeText(), GradeType.pass.gradeText())
     }
     
     func testRun_LongAppDelegate() {
         let data = ProjectData(path: "", applicationComponents: emptyFile(length: 300))
-        sut = AppDelegateSwiftRule(projectData: data)
+        sut = AppDelegateSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
         
         XCTAssertTrue(grade.gradeType.gradeText().contains("Line Count Above 80, Actual: "))
     }

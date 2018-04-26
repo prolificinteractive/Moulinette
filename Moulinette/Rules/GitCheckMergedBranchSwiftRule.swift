@@ -1,6 +1,6 @@
 //
 //  GitCheckMergedBranchSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Morgan Collino on 10/17/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -11,20 +11,16 @@ import Foundation
 /// Git check merged branch swift rule.
 class GitCheckMergedBranchSwiftRule: SwiftRule {
     
-    let name: String = "Git - Check merged branches upstream."
+    let description = "Git - Check merged branches upstream."
+    let nameId = "git_branches"
+
     let priority: RulePriority = .high
-    
-    private var projectData: ProjectData
-    
+        
     fileprivate lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    required init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         evaluateMergedBranches()
         return auditGrader.generateGrade()
     }
@@ -62,7 +58,7 @@ class GitCheckMergedBranchSwiftRule: SwiftRule {
             
             // Add violation for each branch found.
             results.forEach { (branch) in
-                auditGrader.violationFound(fileName: branch, description: "Branch: \(branch) has been merged but not deleted.")
+                auditGrader.violationFound(fileName: branch, lineNumber: nil, description: "Branch: \(branch) has been merged but not deleted.", nameId: nameId)
             }
         } catch {
             // void

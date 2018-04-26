@@ -1,6 +1,6 @@
 //
 //  FileFilteringTests.swift
-//  Moulinette-2.0-Tests
+//  Moulinette-Tests
 //
 //  Created by Morgan Collino on 7/19/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.

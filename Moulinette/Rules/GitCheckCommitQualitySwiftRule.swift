@@ -1,6 +1,6 @@
 //
 //  GitCheckCommitQualitySwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Morgan Collino on 10/18/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -22,20 +22,16 @@ class GitCheckCommitQualitySwiftRule: SwiftRule {
     fileprivate let minimumWordNumber = 3
     fileprivate let numberOfDaysBack: TimeInterval = 30
 
-    let name: String = "Git - Check commits message quality. Minimum 3 words for commit message."
+    let description = "Git - Check commits message quality. Minimum 3 words for commit message."
+    let nameId = "git_commit_message"
+
     let priority: RulePriority = .medium
-    
-    private var projectData: ProjectData
-    
+        
     fileprivate lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    required init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         evaluateCommitQuality()
         return auditGrader.generateGrade()
     }
@@ -133,7 +129,7 @@ private extension GitCheckCommitQualitySwiftRule {
             let components = commit.message.components(separatedBy: .whitespacesAndNewlines)
             let words = components.filter { !$0.isEmpty }
             if words.count < minimumWordNumber {
-                auditGrader.violationFound(fileName: "Git", description: "Bad commit format. Hash: \(commit.hash), comment:\(commit.message), \(commit.date).")
+                auditGrader.violationFound(fileName: "Git", lineNumber: nil, description: "Bad commit format. Hash: \(commit.hash), comment:\(commit.message), \(commit.date).", nameId: nameId)
             }
         }
     }

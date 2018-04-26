@@ -1,6 +1,6 @@
 //
 //  CompletionWeakSwiftRuleTests.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 7/19/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -14,51 +14,51 @@ class CompletionWeakSwiftRuleTests: XCTestCase {
     var sut: CompletionWeakSwiftRule!
     
     func testNonCompletionBlock_Self() {
-        sut = CompletionWeakSwiftRule(projectData: nonCompletionSelfSample())
+        sut = CompletionWeakSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: nonCompletionSelfSample())
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testNonCompletionBlock_NoSelf() {
-        sut = CompletionWeakSwiftRule(projectData: nonCompletionNoSelfSample())
+        sut = CompletionWeakSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: nonCompletionNoSelfSample())
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testCompletionBlock_NonWeakSelf() {
-        sut = CompletionWeakSwiftRule(projectData: completionNonWeakSelfSample())
+        sut = CompletionWeakSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: completionNonWeakSelfSample())
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testCompletionBlock_WeakSelf() {
-        sut = CompletionWeakSwiftRule(projectData: completionWeakSelfSample())
+        sut = CompletionWeakSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: completionWeakSelfSample())
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testCompletionBlock_NoSelf() {
-        sut = CompletionWeakSwiftRule(projectData: completionNoSelfSample())
+        sut = CompletionWeakSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: completionNoSelfSample())
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testCompletionBlock_Struct() {
-        sut = CompletionWeakSwiftRule(projectData: completionNoSelfSample())
+        sut = CompletionWeakSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: completionNoSelfSample())
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
 }
 

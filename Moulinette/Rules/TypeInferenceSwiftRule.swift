@@ -1,6 +1,6 @@
 //
 //  TypeInferenceSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 6/1/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -10,24 +10,23 @@ import Foundation
 
 final class TypeInferenceSwiftRule: SwiftRule {
     
-    let name: String = "Unnecessary Type inference"
+    let description: String = "Unnecessary Type inference"
+    let nameId = "type_inference"
+
     let priority: RulePriority = .medium
-    
-    private var projectData: ProjectData
-    
+        
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 if unnecessaryTypeInference(fileLine: $0) {
-                    auditGrader.violationFound(fileName: fileName, description: $0)
+                    auditGrader.violationFound(fileName: fileName,
+                                               lineNumber: fileComponents.lineNumberFor($0),
+                                               description: description,
+                                               nameId: nameId)
                 }
             }
         }

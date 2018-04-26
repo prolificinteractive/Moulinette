@@ -1,6 +1,6 @@
 //
 //  EmptyAppIconSwiftRuleTests.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 8/22/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -17,11 +17,11 @@ class EmptyAppIconSwiftRuleTests: XCTestCase {
         let projectData = emptyProjectData()
         projectData.applicationComponents.assets = ["AppIcons-Dev/Contents.json": ["\"size\" : \"60x60\",",
                                                                                    "\"size\" : \"60x60\","]]
-        sut = EmptyAppIconSwiftRule(projectData: projectData)
+        sut = EmptyAppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData)
         
-        XCTAssertEqual(grade.violations, 2)
+        XCTAssertEqual(grade.violationCount, 2)
     }
     
     func testRun_SizeFoundFileNameFound() {
@@ -30,11 +30,11 @@ class EmptyAppIconSwiftRuleTests: XCTestCase {
                                                                                    "\"filename\" : \"Icon-App-60x60@3x.png\",",
                                                                                    "\"size\" : \"60x60\",",
                                                                                    "\"filename\" : \"Icon-App-60x60@3x.png\","]]
-        sut = EmptyAppIconSwiftRule(projectData: projectData)
+        sut = EmptyAppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData)
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_MultipleSizeFoundSingleFileNameFound() {
@@ -42,36 +42,36 @@ class EmptyAppIconSwiftRuleTests: XCTestCase {
         projectData.applicationComponents.assets = ["AppIcons-Dev/Contents.json": ["\"size\" : \"60x60\",",
                                                                                    "\"filename\" : \"Icon-App-60x60@3x.png\",",
                                                                                    "\"size\" : \"60x60\","]]
-        sut = EmptyAppIconSwiftRule(projectData: projectData)
+        sut = EmptyAppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData)
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_NoAppIcons() {
-        sut = EmptyAppIconSwiftRule(projectData: projectData(fileName: "Sample", line: "class Hello {}"))
+        sut = EmptyAppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(fileName: "Sample", line: "class Hello {}"))
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
 // MARK: - Default Tests
     
     func testRun_EmptyProject() {
-        sut = EmptyAppIconSwiftRule(projectData: emptyProjectData())
+        sut = EmptyAppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectData())
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_EmptySingleFile() {
-        sut = EmptyAppIconSwiftRule(projectData: emptyProjectFile())
+        sut = EmptyAppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectFile())
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
 }

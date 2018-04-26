@@ -1,6 +1,6 @@
 //
 //  String+Substring.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Adam Tecle on 6/22/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -45,11 +45,10 @@ extension String {
     /// - Parameter token: The token
     /// - Returns: The substring that contains the characters after first occurrence of the provided token.
     func removeLeading(startWith token: String) -> String {
-        var string = self
-        while let range = range(of: token) {
-            string = substring(with: Range(uncheckedBounds: (lower: range.upperBound, upper: string.endIndex)))
+        if let range = range(of: token) {
+            return String(self[range.upperBound...])
         }
-        return string
+        return self
     }
 
     ///
@@ -105,6 +104,20 @@ extension String {
         }
 
         return valid
+    }
+
+    func writeToFile(directory: String) {
+        guard let fileURL = URL(string: directory) else {
+            print("Error: Not a valid url: " + directory)
+            return
+        }
+
+        do {
+            try write(to: fileURL, atomically: false, encoding: .utf8)
+        }
+        catch let error {
+            print("Error: " + error.localizedDescription)
+        }
     }
     
 }

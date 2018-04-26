@@ -1,6 +1,6 @@
 //
 //  FontEncapsulationSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 6/1/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -10,10 +10,11 @@ import Foundation
 
 final class FontEncapsulationSwiftRule: SwiftRule {
     
-    let name: String = "Font Encapsulation"
+    let description: String = "Font Encapsulation"
+    let nameId = "font_encapsulation"
+
     let priority: RulePriority = .medium
     
-    private var projectData: ProjectData
     private var failedString = ""
     private var fontCount = 0
     
@@ -21,17 +22,16 @@ final class FontEncapsulationSwiftRule: SwiftRule {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             var fileContainsFont = false
             fileComponents.forEach {
                 if $0.contains("UIFont.") && fontCount >= 1  {
                     fileContainsFont = true
-                    auditGrader.violationFound(fileName: fileName, description: $0)
+                    auditGrader.violationFound(fileName: fileName,
+                                               lineNumber: fileComponents.lineNumberFor($0),
+                                               description: description,
+                                               nameId: nameId)
                 }
             }
             

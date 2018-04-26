@@ -1,6 +1,6 @@
 //
 //  NetworkRequester.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 6/9/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -34,6 +34,7 @@ final class NetworkRequester {
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         } catch let error {
+            print(error)
         }
         
         // Thread lock

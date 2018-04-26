@@ -1,6 +1,6 @@
 //
 //  ProjectOrganizationSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 8/16/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -14,20 +14,16 @@ final class ProjectOrganizationSwiftRule: SwiftRule {
     /// Default project folders.
     static let defaultFolders = ["Features", "Model", "Utility", "Resources", "Supporting Files"]
 
-    let name: String = "Default project folders used"
+    let description = "Default project folders used"
+    let nameId = "default_folders"
+
     let priority: RulePriority = .low
-    
-    private var projectData: ProjectData
-    
+        
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         var projectFolders = ProjectOrganizationSwiftRule.defaultFolders
         
         projectData.applicationComponents.filePaths.forEach {
@@ -38,7 +34,7 @@ final class ProjectOrganizationSwiftRule: SwiftRule {
         }
         
         projectFolders.forEach {
-            auditGrader.violationFound(fileName: $0, description: "Not found in project folder structure")
+            auditGrader.violationFound(fileName: $0, lineNumber: nil, description: "\($0) Not found in project folder structure", nameId: nameId)
         }
         
         return auditGrader.generateGrade()

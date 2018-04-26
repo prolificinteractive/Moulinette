@@ -1,6 +1,6 @@
 //
 //  CocoapodKeysSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 8/22/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -11,20 +11,16 @@ import Foundation
 /// Checks if cocoapods keys are imported in the project.
 final class CocoapodsKeysSwiftRule: SwiftRule {
     
-    let name: String = "Cocoapods Keys Used"
+    let description = "Cocoapods Keys Used"
+    let nameId = "cocoapods_keys"
+
     let priority: RulePriority = .high
-    
-    private var projectData: ProjectData
-    
+        
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         guard !projectData.applicationComponents.components.isEmpty else {
             return auditGrader.generateGrade()
         }
@@ -37,7 +33,7 @@ final class CocoapodsKeysSwiftRule: SwiftRule {
             }
         }
         
-        auditGrader.failed(description: "Cocoapods Keys Import Not Found!")
+        auditGrader.failed(description: "Cocoapods Keys Import Not Found!", nameId: nameId)
         return auditGrader.generateGrade()
     }
 }

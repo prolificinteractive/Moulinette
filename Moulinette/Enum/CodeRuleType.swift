@@ -1,6 +1,6 @@
 //
 //  CodeRuleType.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 5/31/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -13,11 +13,11 @@ struct ProjectConventionRuleCollection: RuleCollection {
     
     let description: String = "Project convention rules"
     
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return [
-            ProjectOrganizationSwiftRule(projectData: projectData),
-            AppIconSwiftRule(projectData: projectData),
-            EmptyAppIconSwiftRule(projectData: projectData)
+            ProjectOrganizationSwiftRule(),
+            AppIconSwiftRule(),
+            EmptyAppIconSwiftRule()
         ]
     }
     
@@ -28,24 +28,32 @@ struct CodeConventionRuleCollection: RuleCollection {
     
     let description: String = "Code convention rules"
 
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return [
-            AppDelegateSwiftRule(projectData: projectData),
-            SemiColonSwiftRule(projectData: projectData),
-            FinalClassesSwiftRule(projectData: projectData),
-            WeakIBOutletSwiftRule(projectData: projectData),
-            SinglePublicInternalSwiftRule(projectData: projectData),
-            ForceUnwrapSwiftRule(projectData: projectData),
-            MarkUsageSwiftRule(projectData: projectData),
-            SingleEnumCaseSwiftRule(projectData: projectData),
-            InternalModifierSwiftRule(projectData: projectData),
-            TypeInferenceSwiftRule(projectData: projectData),
-            FontEncapsulationSwiftRule(projectData: projectData),
-            ColorEncapsulationSwiftRule(projectData: projectData),
-            CompletionWeakSwiftRule(projectData: projectData),
-            ToDoStorySwiftRule(projectData: projectData),
-            ToDoCountSwiftRule(projectData: projectData),
-            RequiredSelfSwiftRule(projectData: projectData),
+            AppDelegateSwiftRule(),
+            SemiColonSwiftRule(),
+            FinalClassesSwiftRule(),
+            WeakIBOutletSwiftRule(),
+            SinglePublicInternalSwiftRule(),
+//            ForceUnwrapSwiftRule(),
+            MarkUsageSwiftRule(),
+            SingleEnumCaseSwiftRule(),
+            InternalModifierSwiftRule(),
+            TypeInferenceSwiftRule(),
+            FontEncapsulationSwiftRule(),
+            ColorEncapsulationSwiftRule(),
+//            CompletionWeakSwiftRule(),
+            ToDoStorySwiftRule(),
+            ToDoCountSwiftRule(),
+//            RequiredSelfSwiftRule(),
+            EndContextBracketSwiftRule(),
+            PublicPropertyMarkSectionSwiftRule(),
+            PrivatePropertyMarkSectionSwiftRule(),
+            InitializationMarkSectionSwiftRule(),
+            PublicFunctionMarkSectionSwiftRule(),
+            PrivateFunctionsMarkSectionSwiftRule(),
+            ProtocolExtensionMarkSectionSwiftRule(),
+            ConstantsMarkSectionSwiftRule()
         ]
     }
     
@@ -56,10 +64,11 @@ struct LocalizationRuleCollection: RuleCollection {
     
     let description: String = "Localization rules"
 
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return [
-            UsesLocalizationSwiftRule(projectData: projectData),
-            LocalizedStringSwiftRule(projectData: projectData)
+            UsesLocalizationSwiftRule(),
+            LocalizedStringSwiftRule(),
+//            LocalizationSwiftRule()
         ]
     }
     
@@ -70,7 +79,7 @@ struct APIIntegrationRuleCollection: RuleCollection {
     
     let description: String = "API Integration rules"
 
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return []
     }
     
@@ -81,9 +90,9 @@ struct DocumentationRuleCollection: RuleCollection {
     
     let description: String = "Documentation rules"
 
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return [
-            ReadMeSwiftRule(projectData: projectData)
+            ReadMeSwiftRule()
         ]
     }
     
@@ -94,7 +103,7 @@ struct CompilerRuleCollection: RuleCollection {
     
     let description: String = "Compiler rules"
 
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return []
     }
     
@@ -105,7 +114,7 @@ struct TestsCoverageRuleCollection: RuleCollection {
     
     let description: String = "Tests coverage rules"
 
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return []
     }
     
@@ -116,7 +125,7 @@ struct ToolsRuleCollection: RuleCollection {
     
     let description: String = "Tools rules"
 
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return []
     }
     
@@ -127,11 +136,11 @@ struct DependenciesRuleCollection: RuleCollection {
     
     let description: String = "Dependencies rules"
 
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return [
-            CocoapodsKeysSwiftRule(projectData: projectData),
-            DefaultPodsSwiftRule(projectData: projectData),
-            PodVersionsPinnedSwiftRule(projectData: projectData)
+            CocoapodsKeysSwiftRule(),
+//            DefaultPodsSwiftRule(),
+            PodVersionsPinnedSwiftRule()
         ]
     }
     
@@ -142,9 +151,9 @@ struct CIRuleCollection: RuleCollection {
     
     let description: String = "CI rules"
 
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return [
-            SwiftLintSwiftRule(projectData: projectData)
+            SwiftLintSwiftRule()
         ]
     }
     
@@ -155,12 +164,12 @@ struct GitRuleCollection: RuleCollection {
     
     let description: String = "Git rules"
 
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return [
-            GitCheckMergedBranchSwiftRule(projectData: projectData),
-            GitCheckCommitQualitySwiftRule(projectData: projectData),
-            GitCheckConfigurationSwiftRule(projectData: projectData),
-            GitCheckBranchNameSwiftRule(projectData: projectData)
+            GitCheckMergedBranchSwiftRule(),
+            GitCheckCommitQualitySwiftRule(),
+            GitCheckConfigurationSwiftRule(),
+//            GitCheckBranchNameSwiftRule()
         ]
     }
     
@@ -171,7 +180,7 @@ struct AppstoreRuleCollection: RuleCollection {
     
     let description: String = "Appstore rules"
 
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return []
     }
     
@@ -182,9 +191,9 @@ struct SecurityRuleCollection: RuleCollection {
     
     let description: String = "Security rules"
 
-    func rules(projectData: ProjectData) -> [SwiftRule] {
+    func rules() -> [SwiftRule] {
         return [
-            ATSExceptionSwiftRule(projectData: projectData)
+            ATSExceptionSwiftRule()
         ]
     }
     

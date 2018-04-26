@@ -1,6 +1,6 @@
 //
 //  RequiredSelfSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 5/31/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -12,28 +12,25 @@ final class RequiredSelfSwiftRule: SwiftRule {
     
     static fileprivate let selfString = "self."
     
-    let name: String = "Use of self only when required"
+    let description = "Use of self only when required"
+    let nameId = "required_self"
+
     let priority: RulePriority = .medium
     
     fileprivate var contextCheck = ContextCheck()
-    private var projectData: ProjectData
     
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 contextCheck.check(fileLine: $0)
                 
                 if variableSetCheck(fileLine: $0, fileName: fileName)
                     || functionSelfCheck(fileLine: $0, fileName: fileName) {
-                    auditGrader.violationFound(fileName: fileName, description: $0)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: description, nameId: nameId)
                 }
             }
         }

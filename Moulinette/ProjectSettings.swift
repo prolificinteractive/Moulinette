@@ -1,6 +1,6 @@
 //
 //  ProjectSettings.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 6/1/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -23,7 +23,7 @@ struct ProjectSettings {
     let projectDirectory: String
     
     /// Project identifier.
-    let projectIdentifier: String
+    let projectIdentifier: String?
 
     /// Authentication token.
     let authToken: String?
@@ -33,6 +33,9 @@ struct ProjectSettings {
 
     /// Debug mode.
     let debugMode: Bool
+
+    /// Option for xcode build phase.
+    let xcodePlugin: Bool
     
     init() {
         #if INTERNAL
@@ -40,24 +43,29 @@ struct ProjectSettings {
             projectDirectory = ProjectSettings.getEnvironmentVar("PROJECT_DIR")! + "/"
             projectIdentifier = ProjectSettings.getEnvironmentVar("PROJECT_IDENTIFIER")!
             silentMode = ProjectSettings.getEnvironmentVar("SILENT_MODE")?.uppercased() != "FALSE"
-            authToken = ProjectSettings.getEnvironmentVar("AUTH_TOKEN")
             debugMode = true
+            xcodePlugin = true
+            authToken = nil
         #else
             let userDefaults = UserDefaults.standard.dictionaryRepresentation()
             
             guard let projectName = userDefaults["projectName"] as? String,
-                let bundleIdentifier = userDefaults["projectIdentifier"] as? String,
-                let projectDirectory = userDefaults["projectDirectory"] as? String,
-                let authToken = userDefaults["authToken"] as? String else {
+                let projectDirectory = userDefaults["projectDirectory"] as? String else {
                     print("Error: Missing parameter.")
-                    print("Eg: moulinette -projectName <projectName> -projectIdentifier <projectIdentifier> -projectDirectory <projectDirectory> -authToken <authToken> [-silent <'true'/'false'> -verbose <'true'/'false>]")
-                    exit(0)
+                    let errorString =
+                    """
+                    Eg: moulinette -projectName <projectName> -projectDirectory <projectDirectory>
+                    [-silent <'true'/'false'> -verbose <'true'/'false'> -xcodePlugin <'true'/'false'>]
+                    """
+                    print(errorString)
+                    exit(1)
             }
             
             self.projectName = projectName
             self.projectDirectory = projectDirectory + "/"
-            self.projectIdentifier = bundleIdentifier
-            self.authToken = authToken
+
+            projectIdentifier = userDefaults["projectIdentifier"] as? String
+            authToken = userDefaults["authToken"] as? String
             
             if let silentMode = userDefaults["silent"] as? String,
                 silentMode == "true" {
@@ -71,6 +79,13 @@ struct ProjectSettings {
                 self.debugMode = true
             } else {
                 self.debugMode = false
+            }
+
+            if let xcodePlugin = userDefaults["xcodePlugin"] as? String,
+                xcodePlugin == "true" {
+                self.xcodePlugin = true
+            } else {
+                self.xcodePlugin = false
             }
             
         #endif

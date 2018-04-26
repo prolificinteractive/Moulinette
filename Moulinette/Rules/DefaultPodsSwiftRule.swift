@@ -1,6 +1,6 @@
 //
 //  DefaultPodsSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Adam Tecle on 7/21/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -13,29 +13,26 @@ final class DefaultPodsSwiftRule: SwiftRule {
 
     // MARK: - Public 
 
-    let name: String = "Project should include default pods - \(requiredPods.joined(separator: ", "))"
+    let description = "Project should include default pods - \(requiredPods.joined(separator: ", "))"
+    let nameId = "default_pods"
+
     let priority: RulePriority = .high
 
     // MARK: - Private
 
-    private var projectData: ProjectData
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     private let fileName = "Podfile"
     private static let requiredPods = ["Bellerophon", "Crashlytics", "Instabug", "HockeySDK", "Yoshi"]
 
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         guard let podfile = projectData.applicationComponents.file(by: fileName) else {
             return auditGrader.generateGrade()
         }
 
         var pods: [String] = []
-        PodfileParser.parse(podfile) { [unowned self] tokens, line in
+        PodfileParser.parse(podfile) { [unowned self] tokens, line, _ in
             let podName = self.extractCocoaPodName(from: tokens)
             if DefaultPodsSwiftRule.requiredPods.contains(podName) {
                 pods.append(podName)
@@ -46,7 +43,7 @@ final class DefaultPodsSwiftRule: SwiftRule {
         let foundPods = Set(pods)
         let unfoundPods = defaultPods.subtracting(foundPods)
         for pod in unfoundPods {
-            auditGrader.violationFound(fileName: fileName, description: "Missing pod: \(pod)")
+            auditGrader.violationFound(fileName: fileName, lineNumber: nil, description: "Missing pod: \(pod)", nameId: nameId)
         }
 
         return auditGrader.generateGrade()

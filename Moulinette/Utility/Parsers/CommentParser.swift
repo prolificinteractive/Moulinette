@@ -1,6 +1,6 @@
 //
 //  CommentParser.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Adam Tecle on 6/16/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -11,7 +11,7 @@ import Foundation
 /// Defines a parser for comments
 struct CommentParser {
 
-    static func parse(fileComponents: [String], onLineCompletion:((_ comment: String, _ line: String) -> ())) {
+    static func parse(fileComponents: [String], onLineCompletion:((_ comment: String, _ line: String, _ lineNumber: Int) -> ())) {
         var comment = ""
 
         for index in 0..<fileComponents.count {
@@ -22,7 +22,7 @@ struct CommentParser {
             }
 
             if !comment.isEmpty {
-                onLineCompletion(comment, line)
+                onLineCompletion(comment, line, index)
             }
 
             comment = ""

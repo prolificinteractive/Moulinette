@@ -1,6 +1,6 @@
 //
 //  GitCheckBranchNameSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Morgan Collino on 12/18/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -11,20 +11,16 @@ import Foundation
 /// Git check branch naming swift rule.
 class GitCheckBranchNameSwiftRule: SwiftRule {
     
-    let name: String = "Git - Check branch naming upstream."
+    let description = "Git - Check branch naming upstream."
+    let nameId = "git_naming"
+
     let priority: RulePriority = .low
-    
-    private var projectData: ProjectData
-    
+        
     fileprivate lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    required init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         evaluateOpenedBranches()
         return auditGrader.generateGrade()
     }
@@ -63,7 +59,7 @@ class GitCheckBranchNameSwiftRule: SwiftRule {
             
             // Add violation for each branch found.
             results.forEach { (branch) in
-                auditGrader.violationFound(fileName: branch, description: "Open branch: '\(branch)' has been badly named.")
+                auditGrader.violationFound(fileName: branch, lineNumber: nil, description: "Open branch: '\(branch)' has been badly named.", nameId: nameId)
             }
         } catch {
             // void
@@ -80,6 +76,5 @@ class GitCheckBranchNameSwiftRule: SwiftRule {
         let results = res.components(separatedBy: "\n")
         return results
     }
-    
 }
 

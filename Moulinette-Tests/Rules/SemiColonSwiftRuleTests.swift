@@ -1,6 +1,6 @@
 //
 //  SemiColonSwiftRuleTests.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 6/21/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -14,43 +14,43 @@ class SemiColonSwiftRuleTests: XCTestCase {
     var sut: SemiColonSwiftRule!
     
     func testRun_SemiColonFound() {
-        sut = SemiColonSwiftRule(projectData: projectData(fileName: "Sample.swift", line: "let hello = 0;"))
+        sut = SemiColonSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(fileName: "Sample.swift", line: "let hello = 0;"))
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_NoSemiColonFound() {
-        sut = SemiColonSwiftRule(projectData: projectData(fileName: "Sample.swift", line: "let hello = 0"))
+        sut = SemiColonSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(fileName: "Sample.swift", line: "let hello = 0"))
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
 
     func testRun_MiddleSemiColon() {
-        sut = SemiColonSwiftRule(projectData: projectData(fileName: "Sample.swift", line: "let hello; = 0"))
+        sut = SemiColonSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(fileName: "Sample.swift", line: "let hello; = 0"))
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_DoubleEndSemiColon() {
-        sut = SemiColonSwiftRule(projectData: projectData(fileName: "Sample.swift", line: "let hello = 0;;"))
+        sut = SemiColonSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(fileName: "Sample.swift", line: "let hello = 0;;"))
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
     func testRun_SemiColonInComment() {
-        sut = SemiColonSwiftRule(projectData: projectData(fileName: "Sample.swift", line: "// Hello; this is a comment;"))
+        sut = SemiColonSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: projectData(fileName: "Sample.swift", line: "// Hello; this is a comment;"))
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
 }

@@ -1,6 +1,6 @@
 //
 //  ProjectParser.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 5/30/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -39,7 +39,7 @@ final class ProjectParser {
         do {
             guard let filteredFileEnumerator = try fileEnumerator?.filter(filterClosure) as? [String] else {
                 print("Error filtering files.")
-                return []
+                exit(2)
             }
  
             return filteredFileEnumerator

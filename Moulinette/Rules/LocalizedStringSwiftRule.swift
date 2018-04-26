@@ -1,6 +1,6 @@
 //
 //  LocalizedStringSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Morgan Collino on 7/14/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -13,7 +13,9 @@ final class LocalizedStringSwiftRule: SwiftRule {
     
     // MARK: - Public properties
     
-    let name: String = "Check if the localized string keys are used."
+    let description = "Check if the localized string keys are used."
+    let nameId = "localized_keys"
+
     let priority: RulePriority = .high
     
     // MARK: - Private properties
@@ -21,19 +23,14 @@ final class LocalizedStringSwiftRule: SwiftRule {
     private let separator = "="
     private let space = " "
     private let empty = ""
-    private var projectData: ProjectData
     
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    init(projectData: ProjectData) {
-        self.projectData = projectData
-    }
-    
     // MARK: - Public functions
     
-    func run() -> AuditGrade {
+    func run(projectData: ProjectData) -> AuditGrade {
         let stringFiles = projectData.applicationComponents.stringFiles
         let swiftFiles = projectData.applicationComponents.swiftFiles
         
@@ -48,7 +45,7 @@ final class LocalizedStringSwiftRule: SwiftRule {
     // MARK: - Private functions
     
     private func allFilesContent(with files: [(String, [String])]) -> String {
-        return files.flatMap { (fileName, fileContents) -> String? in
+        return files.compactMap { (fileName, fileContents) -> String? in
             return fileContents.joined()
             }.joined()
     }
@@ -75,7 +72,10 @@ final class LocalizedStringSwiftRule: SwiftRule {
     private func checkKeysUsage(with keys: [String], fileContent: String) {
         for key in keys {
             if !fileContent.contains(key) {
-                auditGrader.violationFound(fileName: "*", description: "Missing usage of localized key: \(key)")
+                auditGrader.violationFound(fileName: "*",
+                                           lineNumber: nil,
+                                           description: "Missing usage of localized key: \(key)",
+                                           nameId: nameId)
             }
         }
     }

@@ -1,6 +1,6 @@
 //
 //  AppIconSwiftRuleTests.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 8/22/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -16,38 +16,38 @@ class AppIconSwiftRuleTests: XCTestCase {
     func testRun_AppIconConfigurationUsed() {
         let data = projectData(fileName: Constants.FileNameConstants.xcodeProject,
                                line: "ASSETCATALOG_COMPILER_APPICON_NAME = \"AppIcon\"")
-        sut = AppIconSwiftRule(projectData: data)
+        sut = AppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
         
-        XCTAssertEqual(grade.violations, 0)
+        XCTAssertEqual(grade.violationCount, 0)
     }
     
     func testRun_AppIconConfigurationNotSet() {
         let data = projectData(fileName: Constants.FileNameConstants.xcodeProject,
                                line: "ASSETCATALOG_COMPILER_APPICON_NAME = \"\"")
-        sut = AppIconSwiftRule(projectData: data)
+        sut = AppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: data)
         
-        XCTAssertEqual(grade.violations, 1)
+        XCTAssertEqual(grade.violationCount, 1)
     }
     
 // MARK: - Default Tests
     
     func testRun_EmptyProject() {
-        sut = AppIconSwiftRule(projectData: emptyProjectData())
+        sut = AppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectData())
         
-        XCTAssertEqual(grade.violations, Int.max)
+        XCTAssertEqual(grade.violationCount, Int.max)
     }
     
     func testRun_EmptySingleFile() {
-        sut = AppIconSwiftRule(projectData: emptyProjectFile())
+        sut = AppIconSwiftRule()
         
-        let grade = sut.run()
+        let grade = sut.run(projectData: emptyProjectFile())
         
-        XCTAssertEqual(grade.violations, Int.max)
+        XCTAssertEqual(grade.violationCount, Int.max)
     }
 }

@@ -1,6 +1,6 @@
 //
 //  StringExtensionTests.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 6/21/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.

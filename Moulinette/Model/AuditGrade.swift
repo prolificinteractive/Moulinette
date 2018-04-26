@@ -1,6 +1,6 @@
 //
 //  AuditGrade.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 6/21/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
@@ -18,13 +18,16 @@ struct AuditGrade {
     var priority: RulePriority
     
     /// Number of violations.
-    var violations: Int
+    var violationCount: Int
     
     /// Violation description text.
     var violationDescription: String
+
+    /// Array of violations
+    var violations: [Violation]
     
     func score() -> Double {
-        return priority.score(violations: violations)
+        return priority.score(violations: violationCount)
     }
     
 }
