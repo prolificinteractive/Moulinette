@@ -10,7 +10,9 @@ import Foundation
 
 final class SingleEnumCaseSwiftRule: CorrectableSwiftRule {
     
-    let name: String = "Enums (one case statement per line)"
+    let description: String = "Enums (one case statement per line)"
+    let nameId = "enum_single_case"
+
     let priority: RulePriority = .medium
     
     private var contextCheck = ContextCheck()
@@ -28,7 +30,8 @@ final class SingleEnumCaseSwiftRule: CorrectableSwiftRule {
                 if contextCheck.insideContext(type: .enumContext), $0.contains("case ") && $0.contains(",") {
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: fileComponents.lineNumberFor($0),
-                                               description: name)
+                                               description: description,
+                                               nameId: nameId)
                 }
             }
         }

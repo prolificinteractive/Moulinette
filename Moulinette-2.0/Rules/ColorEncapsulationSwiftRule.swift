@@ -10,7 +10,9 @@ import Foundation
 
 final class ColorEncapsulationSwiftRule: SwiftRule {
     
-    let name: String = "Color Encapsulation"
+    let description: String = "Color Encapsulation"
+    let nameId = "color_encapsulation"
+
     let priority: RulePriority = .medium
     
     private var colorCount = 0
@@ -25,7 +27,7 @@ final class ColorEncapsulationSwiftRule: SwiftRule {
             fileComponents.forEach {
                 if $0.contains("UIColor.") && colorCount >= 1 {
                     fileContainsColor = true
-                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: name)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: description, nameId: nameId)
                 }
             }
             

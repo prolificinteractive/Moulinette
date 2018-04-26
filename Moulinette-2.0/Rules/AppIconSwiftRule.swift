@@ -11,7 +11,9 @@ import Foundation
 /// Checks if there is an app icon associated with each build configuration.
 final class AppIconSwiftRule: SwiftRule {
     
-    let name: String = "App Icon for Build Configurations"
+    let description = "App Icon for Build Configurations"
+    let nameId = "app_icon"
+    
     let priority: RulePriority = .high
         
     private lazy var auditGrader: AuditGrader = {
@@ -21,13 +23,13 @@ final class AppIconSwiftRule: SwiftRule {
     func run(projectData: ProjectData) -> AuditGrade {
         guard let fileComponents = projectData.applicationComponents.file(by: Constants.FileNameConstants.xcodeProject) else {
             auditGrader.failed(fileName: Constants.FileNameConstants.xcodeProject,
-                               description: "Xcode project could not be found!")
+                               description: "Xcode project could not be found!", nameId: nameId)
             return auditGrader.generateGrade()
         }
         
         for component in fileComponents {
             if component.contains("ASSETCATALOG_COMPILER_APPICON_NAME") && component.contains(" = \"\"") {
-                auditGrader.violationFound(fileName: Constants.FileNameConstants.xcodeProject, lineNumber: nil, description: component)
+                auditGrader.violationFound(fileName: Constants.FileNameConstants.xcodeProject, lineNumber: nil, description: component, nameId: nameId)
             }
         }
 

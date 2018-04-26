@@ -11,7 +11,9 @@ import Foundation
 /// Checks that every CocoaPod is pinned to a version.
 final class PodVersionsPinnedSwiftRule: SwiftRule {
 
-    let name: String = "All pods should be pinned to a version"
+    let description = "All pods should be pinned to a version"
+    let nameId = "pods_version_pinned"
+
     let priority: RulePriority = .high
 
     private let fileName = "Podfile"
@@ -22,7 +24,7 @@ final class PodVersionsPinnedSwiftRule: SwiftRule {
 
     func run(projectData: ProjectData) -> AuditGrade {
         guard let podfile = projectData.applicationComponents.file(by: fileName) else {
-            auditGrader.failed(fileName: fileName, description: "Couldn't find Podfile")
+            auditGrader.failed(fileName: fileName, description: "Couldn't find Podfile", nameId: nameId)
             return auditGrader.generateGrade()
         }
 
@@ -32,11 +34,11 @@ final class PodVersionsPinnedSwiftRule: SwiftRule {
             let specifiesGitRepo = !noVersionSpecified && tokens[2].contains(":git")
             let specifiesGitTag = !noVersionSpecified && tokens.contains { $0.contains(":tag") }
             if noVersionSpecified {
-                self.auditGrader.violationFound(fileName: self.fileName, lineNumber: lineNumber, description: line)
+                self.auditGrader.violationFound(fileName: self.fileName, lineNumber: lineNumber, description: line, nameId: self.nameId)
             } else if usesComparisonOperators {
-                self.auditGrader.violationFound(fileName: self.fileName, lineNumber: lineNumber, description: line)
+                self.auditGrader.violationFound(fileName: self.fileName, lineNumber: lineNumber, description: line, nameId: self.nameId)
             } else if specifiesGitRepo && !specifiesGitTag {
-                self.auditGrader.violationFound(fileName: self.fileName, lineNumber: lineNumber, description: line)
+                self.auditGrader.violationFound(fileName: self.fileName, lineNumber: lineNumber, description: line, nameId: self.nameId)
             }
         }
 

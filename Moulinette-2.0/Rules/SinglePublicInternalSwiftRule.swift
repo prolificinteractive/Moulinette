@@ -10,7 +10,9 @@ import Foundation
 
 final class SinglePublicInternalSwiftRule: SwiftRule {
     
-    let name: String = "One public/internal type per file (class, enum, protocol, struct)"
+    let description = "One public/internal type per file (class, enum, protocol, struct)"
+    let nameId = "one_type_per_file"
+
     let priority: RulePriority = .low
     
     private var type: FileType?
@@ -30,7 +32,8 @@ final class SinglePublicInternalSwiftRule: SwiftRule {
                         
                         auditGrader.violationFound(fileName: fileName,
                                                    lineNumber: fileComponents.lineNumberFor($0),
-                                                   description: "\(firstValue.capitalized) and a \(secondValue) present in the same file.")
+                                                   description: "\(firstValue.capitalized) and a \(secondValue) present in the same file.",
+                                                   nameId: nameId)
                     }
                     type = fileType
                 }

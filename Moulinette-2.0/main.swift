@@ -8,7 +8,9 @@
 
 import Foundation
 
+// Project Settings and Config File
 let settings = ProjectSettings()
+let config = ConfigurationParser(projectDirectory: settings.projectDirectory).configFile
 
 // Parse Project
 let projectParser = ProjectParser()
@@ -18,10 +20,9 @@ let applicationFileComponents = projectParser.applicationComponents()
 var projectData = ProjectData(path: settings.projectDirectory, applicationComponents: applicationFileComponents)
 
 // Run PiOS Rules
-let audit = PIOSAudit(projectData: projectData)
+let audit = PIOSAudit(projectData: projectData, configurationFile: config)
 let output = audit.runRules()
 audit.autoCorrect()
-
 
 if settings.debugMode {
     print("############### MOULINETTE OUTPUT ###############")

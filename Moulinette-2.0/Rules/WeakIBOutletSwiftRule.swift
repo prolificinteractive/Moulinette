@@ -10,7 +10,9 @@ import Foundation
 
 final class WeakIBOutletSwiftRule: SwiftRule {
     
-    let name: String = "IBOutlet marked as weak and private (except IBOutletCollection)"
+    let description = "IBOutlet marked as weak and private (except IBOutletCollection)"
+    let nameId = "weak_iboutlet"
+
     let priority: RulePriority = .high
         
     private lazy var auditGrader: AuditGrader = {
@@ -23,7 +25,8 @@ final class WeakIBOutletSwiftRule: SwiftRule {
                 if $0.contains("IBOutlet") && !$0.contains("weak") && !$0.contains("IBOutletCollection") {
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: fileComponents.lineNumberFor($0),
-                                               description: name)
+                                               description: description,
+                                               nameId: nameId)
                 }
             }
         }

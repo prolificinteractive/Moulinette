@@ -10,7 +10,9 @@ import Foundation
 
 final class MarkUsageSwiftRule: SwiftRule {
     
-    let name: String = "Consistent usage of MARK / TODO"
+    let description: String = "Consistent usage of MARK / TODO"
+    let nameId = "mark_usage"
+
     let priority: RulePriority = .low
     
     private lazy var auditGrader: AuditGrader = {
@@ -21,7 +23,7 @@ final class MarkUsageSwiftRule: SwiftRule {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
                 if consistentMark(fileLine: $0) || consistentTodo(fileLine: $0) {
-                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: name)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: description, nameId: nameId)
                 }
             }
         }

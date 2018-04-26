@@ -115,6 +115,10 @@
 		206837B11EDE2305008CB7F3 /* AppDelegateSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837B01EDE2305008CB7F3 /* AppDelegateSwiftRule.swift */; };
 		2071E2A81F4F6E9B00DA52DB /* AppIconSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7341F4CBB92004335D8 /* AppIconSwiftRule.swift */; };
 		2071E2AC1F4F7DB800DA52DB /* ToDoCountSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EE0A81F4F41B800AC7EE4 /* ToDoCountSwiftRuleTests.swift */; };
+		207CE2A8209231630032B3B5 /* ConfigurationFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2A7209231630032B3B5 /* ConfigurationFile.swift */; };
+		207CE2AA209231FB0032B3B5 /* ConfigurationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2A9209231FB0032B3B5 /* ConfigurationParser.swift */; };
+		207CE2AC209232500032B3B5 /* Data+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2AB209232500032B3B5 /* Data+Codable.swift */; };
+		207CE2AE209232700032B3B5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2AD209232700032B3B5 /* NetworkError.swift */; };
 		207E90182069972500F88D9E /* Array+LineNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E90172069972500F88D9E /* Array+LineNumber.swift */; };
 		207E90192069996100F88D9E /* Array+LineNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E90172069972500F88D9E /* Array+LineNumber.swift */; };
 		207E9024206BE03800F88D9E /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E9023206BE03800F88D9E /* Violation.swift */; };
@@ -256,6 +260,10 @@
 		206837AE1EDE22E8008CB7F3 /* GradeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeType.swift; sourceTree = "<group>"; };
 		206837B01EDE2305008CB7F3 /* AppDelegateSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRule.swift; sourceTree = "<group>"; };
 		206EE0A81F4F41B800AC7EE4 /* ToDoCountSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCountSwiftRuleTests.swift; sourceTree = "<group>"; };
+		207CE2A7209231630032B3B5 /* ConfigurationFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationFile.swift; sourceTree = "<group>"; };
+		207CE2A9209231FB0032B3B5 /* ConfigurationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationParser.swift; sourceTree = "<group>"; };
+		207CE2AB209232500032B3B5 /* Data+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Codable.swift"; sourceTree = "<group>"; };
+		207CE2AD209232700032B3B5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		207E90172069972500F88D9E /* Array+LineNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+LineNumber.swift"; sourceTree = "<group>"; };
 		207E9023206BE03800F88D9E /* Violation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Violation.swift; sourceTree = "<group>"; };
 		207F1DE21EE06BC200284498 /* FinalClassesSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalClassesSwiftRule.swift; sourceTree = "<group>"; };
@@ -449,6 +457,7 @@
 				20E4140C1EDF7F9B0000E447 /* LineContext.swift */,
 				20161D051EE09C8F00997AF6 /* FileType.swift */,
 				209696C11EE9F4270035C7AE /* RulePriority.swift */,
+				207CE2AD209232700032B3B5 /* NetworkError.swift */,
 			);
 			name = Enum;
 			path = ../Enum;
@@ -478,15 +487,16 @@
 			children = (
 				6608446D1EF80554002340C9 /* Protocols */,
 				201EEA80206D725500BC466F /* Corrections */,
+				206837AD1EDE22DE008CB7F3 /* Enum */,
 				207FB3061F3B4C2E009B0B26 /* ApplicationComponents.swift */,
 				20161D071EE09EAE00997AF6 /* ProjectSettings.swift */,
 				206837A31EDE1D5D008CB7F3 /* ProjectData.swift */,
 				206837A71EDE20E5008CB7F3 /* Constants.swift */,
 				660844591EF45E0E002340C9 /* Regex.swift */,
 				201D74271EFAC7F200361ECD /* AuditGrade.swift */,
-				206837AD1EDE22DE008CB7F3 /* Enum */,
 				4CA5E0161F2122E000EBE48B /* Output.swift */,
 				207E9023206BE03800F88D9E /* Violation.swift */,
+				207CE2A7209231630032B3B5 /* ConfigurationFile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -539,6 +549,7 @@
 				207FB3041F3B4C22009B0B26 /* String+Substring.swift */,
 				20E4140A1EDF7F8B0000E447 /* String+SwiftCode.swift */,
 				207E90172069972500F88D9E /* Array+LineNumber.swift */,
+				207CE2AB209232500032B3B5 /* Data+Codable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -594,6 +605,7 @@
 				206837A51EDE1E35008CB7F3 /* ProjectParser.swift */,
 				660844601EF47153002340C9 /* CommentParser.swift */,
 				664E7D1C1F22579C00041CAC /* PodfileParser.swift */,
+				207CE2A9209231FB0032B3B5 /* ConfigurationParser.swift */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -837,6 +849,8 @@
 				201EEA82206D727B00BC466F /* FileCorrection.swift in Sources */,
 				206837B11EDE2305008CB7F3 /* AppDelegateSwiftRule.swift in Sources */,
 				205F98882080EEBB0042128E /* InitializationMarkSectionSwiftRule.swift in Sources */,
+				207CE2AC209232500032B3B5 /* Data+Codable.swift in Sources */,
+				207CE2AE209232700032B3B5 /* NetworkError.swift in Sources */,
 				66A7BCAD1F463D0700E9EE15 /* ScriptError.swift in Sources */,
 				4C382C771FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift in Sources */,
 				2005BCC2208524FC0069769D /* LocalizationSwiftRule.swift in Sources */,
@@ -847,6 +861,7 @@
 				20161D0C1EE0B28A00997AF6 /* MarkUsageSwiftRule.swift in Sources */,
 				6655C66F1EF317F000878A71 /* ToDoStorySwiftRule.swift in Sources */,
 				209696C21EE9F4270035C7AE /* RulePriority.swift in Sources */,
+				207CE2A8209231630032B3B5 /* ConfigurationFile.swift in Sources */,
 				205F98842080E3D40042128E /* PublicPropertyMarkSectionSwiftRule.swift in Sources */,
 				20E413FF1EDF41660000E447 /* Audit.swift in Sources */,
 				20161CFB1EE095D500997AF6 /* WeakIBOutletSwiftRule.swift in Sources */,
@@ -861,6 +876,7 @@
 				20161D101EE0B99B00997AF6 /* InternalModifierSwiftRule.swift in Sources */,
 				20E414011EDF41900000E447 /* CodeRuleType.swift in Sources */,
 				660844611EF47153002340C9 /* CommentParser.swift in Sources */,
+				207CE2AA209231FB0032B3B5 /* ConfigurationParser.swift in Sources */,
 				666386E91F01A7C4006BEC3B /* PodVersionsPinnedSwiftRule.swift in Sources */,
 				207E9024206BE03800F88D9E /* Violation.swift in Sources */,
 				20161D0E1EE0B53A00997AF6 /* SingleEnumCaseSwiftRule.swift in Sources */,

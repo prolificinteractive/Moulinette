@@ -12,6 +12,8 @@ import Foundation
 struct PIOSAudit: Audit {
     
     private var projectData: ProjectData
+    private var configurationFile: ConfigurationFile?
+
     private var ruleCollection: [RuleCollection] = [
         ProjectConventionRuleCollection(),
         CodeConventionRuleCollection(),
@@ -28,8 +30,9 @@ struct PIOSAudit: Audit {
         SecurityRuleCollection()
     ]
     
-    init(projectData: ProjectData) {
+    init(projectData: ProjectData, configurationFile: ConfigurationFile?) {
         self.projectData = projectData
+        self.configurationFile = configurationFile
     }
     
     func runRules() -> Output {
@@ -40,7 +43,11 @@ struct PIOSAudit: Audit {
         let group = DispatchGroup()
         
         for collection in ruleCollection {
-            collection.rules().forEach({ rule in
+            for rule in collection.rules() {
+                guard !(configurationFile?.excludedRules.contains(rule.nameId) ?? false) else {
+                    continue
+                }
+
                 group.enter()
                 
                 /// Dispatch the block in a concurrent queue (global).
@@ -59,7 +66,7 @@ struct PIOSAudit: Audit {
                     }
 
                     output.record(collection: collection.description,
-                                  rule: rule.name,
+                                  rule: rule.description,
                                   score: score,
                                   weight: rule.priority.weight(),
                                   report: report,
@@ -68,7 +75,7 @@ struct PIOSAudit: Audit {
 
                     group.leave()
                 }
-            })
+            }
         }
 
         group.wait()

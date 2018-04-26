@@ -10,7 +10,9 @@ import Foundation
 
 final class EndContextBracketSwiftRule: CorrectableSwiftRule {
 
-    let name: String = "Extra space between brackets."
+    let description = "Extra space between brackets."
+    let nameId = "bracket_space"
+
     let priority: RulePriority = .low
 
     private lazy var auditGrader: AuditGrader = {
@@ -24,7 +26,7 @@ final class EndContextBracketSwiftRule: CorrectableSwiftRule {
             for index in 0..<fileComponents.count {
                 let line = fileComponents[index]
                 if line == "}" && previousLine == "    }" {
-                    auditGrader.violationFound(fileName: fileName, lineNumber: index + 1, description: name)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: index + 1, description: description, nameId: nameId)
                 }
                 previousLine = line
             }

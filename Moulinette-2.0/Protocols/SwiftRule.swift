@@ -11,8 +11,11 @@ import Foundation
 /// Swift rule protocol used as a template for all rules of the audit.
 protocol SwiftRule {
     
-    /// Name of the rule.
-    var name: String { get }
+    /// Description of the rule.
+    var description: String { get }
+
+    /// Name id of the rule.
+    var nameId: String { get }
     
     /// Priority of the current rule.
     var priority: RulePriority { get }
@@ -34,4 +37,5 @@ extension SwiftRule {
     func formattedFailedString(fileName: String, fileLine: String) -> String {
         return fileName + "\n" + fileLine + "\n"
     }
+
 }

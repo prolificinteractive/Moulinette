@@ -111,9 +111,9 @@ final class Output {
 
                 for violation in violations {
                     if let lineNumber = violation.lineNumber {
-                        output += settings.projectDirectory + violation.fileName + ":" + String(lineNumber) + ": warning: " + violation.description + "\n"
+                        output += settings.projectDirectory + violation.fileName + ":" + String(lineNumber) + ": warning: " + violation.formattedDescription() + "\n"
                     } else {
-                        output += "warning: " + violation.description + "\n"
+                        output += "warning: " + violation.formattedDescription() + "\n"
                     }
                 }
             }

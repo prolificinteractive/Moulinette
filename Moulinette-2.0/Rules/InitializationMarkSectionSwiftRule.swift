@@ -10,7 +10,9 @@ import Foundation
 
 final class InitializationMarkSectionSwiftRule: CorrectableSwiftRule {
 
-    let name: String = "MARK needed for initialization."
+    let description = "MARK needed for initialization."
+    let nameId = "mark_initialization"
+
     let priority: RulePriority = .low
 
     private var contextCheck = ContextCheck()
@@ -42,7 +44,8 @@ final class InitializationMarkSectionSwiftRule: CorrectableSwiftRule {
 
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: index + 1,
-                                               description: name)
+                                               description: description,
+                                               nameId: nameId)
                     break
                 }
                 contextCheck.check(fileLine: line)

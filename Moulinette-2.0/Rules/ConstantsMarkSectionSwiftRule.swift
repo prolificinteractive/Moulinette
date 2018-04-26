@@ -10,7 +10,9 @@ import Foundation
 
 final class ConstantsMarkSectionSwiftRule: CorrectableSwiftRule {
 
-    let name: String = "MARK needed for Constants."
+    let description: String = "MARK needed for Constants."
+    let nameId = "mark_constants"
+
     let priority: RulePriority = .low
 
     private var contextCheck = ContextCheck()
@@ -43,7 +45,8 @@ final class ConstantsMarkSectionSwiftRule: CorrectableSwiftRule {
 
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: index + 1,
-                                               description: name)
+                                               description: description,
+                                               nameId: nameId)
                     break
                 }
                 contextCheck.check(fileLine: line)

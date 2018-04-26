@@ -11,7 +11,9 @@ import Foundation
 /// Git check merged branch swift rule.
 class GitCheckMergedBranchSwiftRule: SwiftRule {
     
-    let name: String = "Git - Check merged branches upstream."
+    let description = "Git - Check merged branches upstream."
+    let nameId = "git_branches"
+
     let priority: RulePriority = .high
         
     fileprivate lazy var auditGrader: AuditGrader = {
@@ -56,7 +58,7 @@ class GitCheckMergedBranchSwiftRule: SwiftRule {
             
             // Add violation for each branch found.
             results.forEach { (branch) in
-                auditGrader.violationFound(fileName: branch, lineNumber: nil, description: "Branch: \(branch) has been merged but not deleted.")
+                auditGrader.violationFound(fileName: branch, lineNumber: nil, description: "Branch: \(branch) has been merged but not deleted.", nameId: nameId)
             }
         } catch {
             // void

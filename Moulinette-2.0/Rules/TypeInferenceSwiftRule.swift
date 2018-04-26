@@ -10,7 +10,9 @@ import Foundation
 
 final class TypeInferenceSwiftRule: SwiftRule {
     
-    let name: String = "Unnecessary Type inference"
+    let description: String = "Unnecessary Type inference"
+    let nameId = "type_inference"
+
     let priority: RulePriority = .medium
         
     private lazy var auditGrader: AuditGrader = {
@@ -23,7 +25,8 @@ final class TypeInferenceSwiftRule: SwiftRule {
                 if unnecessaryTypeInference(fileLine: $0) {
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: fileComponents.lineNumberFor($0),
-                                               description: name)
+                                               description: description,
+                                               nameId: nameId)
                 }
             }
         }

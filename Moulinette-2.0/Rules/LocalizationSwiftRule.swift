@@ -10,9 +10,10 @@ import Foundation
 
 final class LocalizationSwiftRule: SwiftRule {
 
-    let name: String = "MARK needed for initialization."
-    let priority: RulePriority = .high
+    let description: String = "MARK needed for initialization."
+    let nameId = "mark_localization"
 
+    let priority: RulePriority = .high
 
     private static let localizationFunction = "localize"
 
@@ -21,7 +22,7 @@ final class LocalizationSwiftRule: SwiftRule {
     }()
 
     func run(projectData: ProjectData) -> AuditGrade {
-        for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
+        for (_, fileComponents) in projectData.applicationComponents.swiftFiles {
 
             for index in 0..<fileComponents.count {
                 let line = fileComponents[index]

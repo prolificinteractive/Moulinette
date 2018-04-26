@@ -10,7 +10,9 @@ import Foundation
 
 final class SemiColonSwiftRule: SwiftRule {
     
-    let name: String = "No use of ; (semi colon)"
+    let description = "No use of ; (semi colon)"
+    let nameId = "semi_colon"
+
     let priority: RulePriority = .low
         
     private lazy var auditGrader: AuditGrader = {
@@ -21,7 +23,7 @@ final class SemiColonSwiftRule: SwiftRule {
         for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
             fileComponents.forEach {
                 if !$0.isComment() && $0.last == ";" {
-                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: name)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: description, nameId: nameId)
                 }
             }
         }

@@ -11,7 +11,9 @@ import Foundation
 /// Check to see if there are any exception domains in the NSAppTransportSecurity key in the Info.plists.
 final class ATSExceptionSwiftRule: SwiftRule {
     
-    let name: String = "Check if there are any ATS exception domain in the targets' Info.plists."
+    let description = "Check if there are any ATS exception domain in the targets' Info.plists."
+    let nameId = "ats_exception"
+
     let priority: RulePriority = .medium
     
     /// The path of the plist files. Made public for testing.
@@ -40,7 +42,7 @@ final class ATSExceptionSwiftRule: SwiftRule {
                 let appTransportValue = plistXMLDictionary[appTransportSecurityString],
                 let exceptionDomains = appTransportValue[exceptionDomainsString] as? [String : Any],
                 exceptionDomains.count > 0  {
-                auditGrader.violationFound(fileName: fileName, lineNumber: nil, description: "Exception Domains found")
+                auditGrader.violationFound(fileName: fileName, lineNumber: nil, description: "Exception Domains found", nameId: nameId)
             }
         }
         

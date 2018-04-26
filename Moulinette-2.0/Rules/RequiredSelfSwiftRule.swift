@@ -12,7 +12,9 @@ final class RequiredSelfSwiftRule: SwiftRule {
     
     static fileprivate let selfString = "self."
     
-    let name: String = "Use of self only when required"
+    let description = "Use of self only when required"
+    let nameId = "required_self"
+
     let priority: RulePriority = .medium
     
     fileprivate var contextCheck = ContextCheck()
@@ -28,7 +30,7 @@ final class RequiredSelfSwiftRule: SwiftRule {
                 
                 if variableSetCheck(fileLine: $0, fileName: fileName)
                     || functionSelfCheck(fileLine: $0, fileName: fileName) {
-                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: name)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: description, nameId: nameId)
                 }
             }
         }

@@ -10,7 +10,9 @@ import Foundation
 
 final class UsesLocalizationSwiftRule: SwiftRule {
 
-    let name: String = "Uses Localization"
+    let description = "Uses Localization"
+    let nameId = "localization_found"
+
     let priority: RulePriority = .medium
 
     private lazy var auditGrader: AuditGrader = {
@@ -20,7 +22,8 @@ final class UsesLocalizationSwiftRule: SwiftRule {
     func run(projectData: ProjectData) -> AuditGrade {
         guard let _ = projectData.applicationComponents.file(by: Constants.FileNameConstants.localizable) else {
             auditGrader.failed(fileName: Constants.FileNameConstants.localizable,
-                               description: "No Localizable.strings file found.")
+                               description: "No Localizable.strings file found.",
+                               nameId: nameId)
             return auditGrader.generateGrade()
         }
 

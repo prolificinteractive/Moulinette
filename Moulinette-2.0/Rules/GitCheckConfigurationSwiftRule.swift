@@ -11,7 +11,9 @@ import Foundation
 /// Git project contains a gitignore file.
 final class GitCheckConfigurationSwiftRule: SwiftRule {
     
-    let name: String = "Git - Check project contains a .gitignore file."
+    let description = "Git - Check project contains a .gitignore file."
+    let nameId = ".gitignore_needed"
+
     let priority: RulePriority = .low
         
     fileprivate lazy var auditGrader: AuditGrader = {
@@ -22,7 +24,8 @@ final class GitCheckConfigurationSwiftRule: SwiftRule {
         // check project has .gitignore file
         guard let _ = projectData.applicationComponents.file(by: Constants.FileNameConstants.gitIgnore) else {
             auditGrader.failed(fileName: Constants.FileNameConstants.gitIgnore,
-                               description: "Gitignore could not be found!")
+                               description: "Gitignore could not be found!",
+                               nameId: nameId)
             return auditGrader.generateGrade()
         }
         

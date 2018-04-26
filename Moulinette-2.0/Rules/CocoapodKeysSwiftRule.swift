@@ -11,7 +11,9 @@ import Foundation
 /// Checks if cocoapods keys are imported in the project.
 final class CocoapodsKeysSwiftRule: SwiftRule {
     
-    let name: String = "Cocoapods Keys Used"
+    let description = "Cocoapods Keys Used"
+    let nameId = "cocoapods_keys"
+
     let priority: RulePriority = .high
         
     private lazy var auditGrader: AuditGrader = {
@@ -31,7 +33,7 @@ final class CocoapodsKeysSwiftRule: SwiftRule {
             }
         }
         
-        auditGrader.failed(description: "Cocoapods Keys Import Not Found!")
+        auditGrader.failed(description: "Cocoapods Keys Import Not Found!", nameId: nameId)
         return auditGrader.generateGrade()
     }
 }

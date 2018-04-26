@@ -10,7 +10,9 @@ import Foundation
 
 final class PublicFunctionMarkSectionSwiftRule: CorrectableSwiftRule {
 
-    let name: String = "MARK needed for public functions."
+    let description: String = "MARK needed for public functions."
+    let nameId = "mark_public_functions"
+
     let priority: RulePriority = .low
 
     private var contextCheck = ContextCheck()
@@ -43,7 +45,8 @@ final class PublicFunctionMarkSectionSwiftRule: CorrectableSwiftRule {
 
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: index + 1,
-                                               description: name)
+                                               description: description,
+                                               nameId: nameId)
                     break
                 }
                 contextCheck.check(fileLine: line)

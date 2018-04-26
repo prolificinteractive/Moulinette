@@ -22,8 +22,8 @@ final class PIOSAuditGrader: AuditGrader {
         self.priority = priority
     }
     
-    func violationFound(fileName: String, lineNumber: Int?, description: String) {
-        violations.append(Violation(fileName: fileName, lineNumber: lineNumber, description: description))
+    func violationFound(fileName: String, lineNumber: Int?, description: String, nameId: String) {
+        violations.append(Violation(fileName: fileName, lineNumber: lineNumber, description: description, nameId: nameId))
         violationCount = violations.count
         failedString += formattedFailedString(fileName: fileName, description: description)
     }
@@ -37,8 +37,8 @@ final class PIOSAuditGrader: AuditGrader {
                           violations: violations)
     }
     
-    func failed(fileName: String, description: String) {
-        violations.append(Violation(fileName: fileName, lineNumber: nil, description: description))
+    func failed(fileName: String, description: String, nameId: String) {
+        violations.append(Violation(fileName: fileName, lineNumber: nil, description: description, nameId: nameId))
         violationCount = Int.max
         failedString += formattedFailedString(fileName: fileName, description: description)
     }

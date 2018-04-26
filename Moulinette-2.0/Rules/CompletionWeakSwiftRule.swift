@@ -10,7 +10,9 @@ import Foundation
 
 final class CompletionWeakSwiftRule: SwiftRule {
     
-    let name: String = "Weak Self Completion Closure"
+    let description: String = "Weak Self Completion Closure"
+    let nameId = "weal_self_completion"
+
     let priority: RulePriority = .high
     
     private var contextCheck = ContextCheck()
@@ -26,7 +28,7 @@ final class CompletionWeakSwiftRule: SwiftRule {
                 if contextCheck.insideContext(type: .completion) &&
                     $0.contains("self.") &&
                     !contextCheck.insideContext(type: .structContext) {
-                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: name)
+                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: description, nameId: nameId)
                 }
                 
                 contextCheck.check(fileLine: $0)

@@ -13,7 +13,9 @@ final class LocalizedStringSwiftRule: SwiftRule {
     
     // MARK: - Public properties
     
-    let name: String = "Check if the localized string keys are used."
+    let description = "Check if the localized string keys are used."
+    let nameId = "localized_keys"
+
     let priority: RulePriority = .high
     
     // MARK: - Private properties
@@ -72,7 +74,8 @@ final class LocalizedStringSwiftRule: SwiftRule {
             if !fileContent.contains(key) {
                 auditGrader.violationFound(fileName: "*",
                                            lineNumber: nil,
-                                           description: "Missing usage of localized key: \(key)")
+                                           description: "Missing usage of localized key: \(key)",
+                                           nameId: nameId)
             }
         }
     }

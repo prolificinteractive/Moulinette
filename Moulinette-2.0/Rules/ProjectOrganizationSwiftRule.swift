@@ -14,7 +14,9 @@ final class ProjectOrganizationSwiftRule: SwiftRule {
     /// Default project folders.
     static let defaultFolders = ["Features", "Model", "Utility", "Resources", "Supporting Files"]
 
-    let name: String = "Default project folders used"
+    let description = "Default project folders used"
+    let nameId = "default_folders"
+
     let priority: RulePriority = .low
         
     private lazy var auditGrader: AuditGrader = {
@@ -32,7 +34,7 @@ final class ProjectOrganizationSwiftRule: SwiftRule {
         }
         
         projectFolders.forEach {
-            auditGrader.violationFound(fileName: $0, lineNumber: nil, description: "\($0) Not found in project folder structure")
+            auditGrader.violationFound(fileName: $0, lineNumber: nil, description: "\($0) Not found in project folder structure", nameId: nameId)
         }
         
         return auditGrader.generateGrade()

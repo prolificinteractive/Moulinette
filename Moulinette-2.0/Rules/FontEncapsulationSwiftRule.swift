@@ -10,7 +10,9 @@ import Foundation
 
 final class FontEncapsulationSwiftRule: SwiftRule {
     
-    let name: String = "Font Encapsulation"
+    let description: String = "Font Encapsulation"
+    let nameId = "font_encapsulation"
+
     let priority: RulePriority = .medium
     
     private var failedString = ""
@@ -28,7 +30,8 @@ final class FontEncapsulationSwiftRule: SwiftRule {
                     fileContainsFont = true
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: fileComponents.lineNumberFor($0),
-                                               description: name)
+                                               description: description,
+                                               nameId: nameId)
                 }
             }
             

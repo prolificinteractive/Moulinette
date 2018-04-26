@@ -11,7 +11,9 @@ import Foundation
 /// Defines rule for README.md file
 final class ReadMeSwiftRule: SwiftRule {
     
-    let name: String = "README.md should not contain any TODO items"
+    let description = "README.md should not contain any TODO items"
+    let nameId = "readme_todos"
+
     let priority: RulePriority = .low
     
     private let fileName = Constants.FileNameConstants.readme
@@ -22,14 +24,14 @@ final class ReadMeSwiftRule: SwiftRule {
     
     func run(projectData: ProjectData) -> AuditGrade {
         guard let readmeComponents = projectData.applicationComponents.readmeComponents else {
-            auditGrader.failed(fileName: fileName, description: "No README found!!!")
+            auditGrader.failed(fileName: fileName, description: "No README found!!!", nameId: nameId)
             return auditGrader.generateGrade()
         }
 
         let readMe = readmeComponents.joined(separator: " ")
         
         if hasToDoItems(in: readMe) {
-            auditGrader.violationFound(fileName: fileName, lineNumber: nil, description: name)
+            auditGrader.violationFound(fileName: fileName, lineNumber: nil, description: description, nameId: nameId)
         }
         
         return auditGrader.generateGrade()

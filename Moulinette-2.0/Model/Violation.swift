@@ -12,4 +12,12 @@ struct Violation {
     let fileName: String
     let lineNumber: Int?
     let description: String
+    let nameId: String
+}
+
+extension Violation {
+
+    func formattedDescription() -> String {
+        return "\(description) [\(nameId)]"
+    }
 }

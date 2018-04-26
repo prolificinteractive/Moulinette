@@ -10,7 +10,9 @@ import Foundation
 
 final class FinalClassesSwiftRule: SwiftRule {
     
-    let name: String = "All classes should be final except when subclassed"
+    let description = "All classes should be final except when subclassed"
+    let nameId = "final_classes"
+
     let priority: RulePriority = .high
         
     private lazy var auditGrader: AuditGrader = {
@@ -27,7 +29,8 @@ final class FinalClassesSwiftRule: SwiftRule {
 
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: fileComponents.lineNumberFor($0),
-                                               description: name)
+                                               description: description,
+                                               nameId: nameId)
                 }
             }
         }

@@ -22,7 +22,9 @@ class GitCheckCommitQualitySwiftRule: SwiftRule {
     fileprivate let minimumWordNumber = 3
     fileprivate let numberOfDaysBack: TimeInterval = 30
 
-    let name: String = "Git - Check commits message quality. Minimum 3 words for commit message."
+    let description = "Git - Check commits message quality. Minimum 3 words for commit message."
+    let nameId = "git_commit_message"
+
     let priority: RulePriority = .medium
         
     fileprivate lazy var auditGrader: AuditGrader = {
@@ -127,7 +129,7 @@ private extension GitCheckCommitQualitySwiftRule {
             let components = commit.message.components(separatedBy: .whitespacesAndNewlines)
             let words = components.filter { !$0.isEmpty }
             if words.count < minimumWordNumber {
-                auditGrader.violationFound(fileName: "Git", lineNumber: nil, description: "Bad commit format. Hash: \(commit.hash), comment:\(commit.message), \(commit.date).")
+                auditGrader.violationFound(fileName: "Git", lineNumber: nil, description: "Bad commit format. Hash: \(commit.hash), comment:\(commit.message), \(commit.date).", nameId: nameId)
             }
         }
     }

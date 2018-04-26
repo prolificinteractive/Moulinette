@@ -11,7 +11,9 @@ import Foundation
 /// Git check branch naming swift rule.
 class GitCheckBranchNameSwiftRule: SwiftRule {
     
-    let name: String = "Git - Check branch naming upstream."
+    let description = "Git - Check branch naming upstream."
+    let nameId = "git_naming"
+
     let priority: RulePriority = .low
         
     fileprivate lazy var auditGrader: AuditGrader = {
@@ -57,7 +59,7 @@ class GitCheckBranchNameSwiftRule: SwiftRule {
             
             // Add violation for each branch found.
             results.forEach { (branch) in
-                auditGrader.violationFound(fileName: branch, lineNumber: nil, description: "Open branch: '\(branch)' has been badly named.")
+                auditGrader.violationFound(fileName: branch, lineNumber: nil, description: "Open branch: '\(branch)' has been badly named.", nameId: nameId)
             }
         } catch {
             // void

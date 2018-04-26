@@ -13,7 +13,9 @@ final class DefaultPodsSwiftRule: SwiftRule {
 
     // MARK: - Public 
 
-    let name: String = "Project should include default pods - \(requiredPods.joined(separator: ", "))"
+    let description = "Project should include default pods - \(requiredPods.joined(separator: ", "))"
+    let nameId = "default_pods"
+
     let priority: RulePriority = .high
 
     // MARK: - Private
@@ -41,7 +43,7 @@ final class DefaultPodsSwiftRule: SwiftRule {
         let foundPods = Set(pods)
         let unfoundPods = defaultPods.subtracting(foundPods)
         for pod in unfoundPods {
-            auditGrader.violationFound(fileName: fileName, lineNumber: nil, description: "Missing pod: \(pod)")
+            auditGrader.violationFound(fileName: fileName, lineNumber: nil, description: "Missing pod: \(pod)", nameId: nameId)
         }
 
         return auditGrader.generateGrade()

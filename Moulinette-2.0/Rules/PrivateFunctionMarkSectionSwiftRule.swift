@@ -10,7 +10,9 @@ import Foundation
 
 final class PrivateFunctionsMarkSectionSwiftRule: CorrectableSwiftRule {
 
-    let name: String = "MARK needed for private functions."
+    let description = "MARK needed for private functions."
+    let nameId = "mark_private_functions"
+
     let priority: RulePriority = .low
 
     private var contextCheck = ContextCheck()
@@ -38,7 +40,8 @@ final class PrivateFunctionsMarkSectionSwiftRule: CorrectableSwiftRule {
 
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: index + 1,
-                                               description: name)
+                                               description: description,
+                                               nameId: nameId)
                     break
                 }
             }

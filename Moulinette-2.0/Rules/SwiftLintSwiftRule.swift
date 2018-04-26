@@ -11,7 +11,9 @@ import Foundation
 /// Checks if the SwiftLint build phase script is included in the project's build phase. 
 final class SwiftLintSwiftRule: SwiftRule {
     
-    let name: String = "Uses SwiftLint in Project"
+    let description = "Uses SwiftLint in Project"
+    let nameId = "swiftlint_found"
+
     let priority: RulePriority = .medium
         
     private lazy var auditGrader: AuditGrader = {
@@ -21,7 +23,8 @@ final class SwiftLintSwiftRule: SwiftRule {
     func run(projectData: ProjectData) -> AuditGrade {
         guard let fileComponents = projectData.applicationComponents.file(by: Constants.FileNameConstants.xcodeProject) else {
             auditGrader.failed(fileName: Constants.FileNameConstants.xcodeProject,
-                               description: "Xcode project could not be found!")
+                               description: "Xcode project could not be found!",
+                               nameId: nameId)
             return auditGrader.generateGrade()
         }
         
@@ -33,7 +36,8 @@ final class SwiftLintSwiftRule: SwiftRule {
         }
 
         auditGrader.failed(fileName: Constants.FileNameConstants.xcodeProject,
-                           description: "SwiftLint not found in build phase.")
+                           description: "SwiftLint not found in build phase.",
+                           nameId: nameId)
         
         return auditGrader.generateGrade()
     }
