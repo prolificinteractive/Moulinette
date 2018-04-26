@@ -1,5 +1,5 @@
 # Moulinette
-An internal audit tool for Prolific Interactive brought to you by the PiOS team.
+An internal audit tool used by Prolific Interactive to ensure code quality and standards.
 
 ## Requirements
 * Xcode 8.3.3 or up
@@ -51,7 +51,7 @@ Tool calling the moulinette to generate multiple audit.
 
 ## Instructions
 
-How to build and run Coffee on multiple Prolific Interactive projects.
+How to build and run Coffee on multiple projects.
 
 ### From the command line
 
