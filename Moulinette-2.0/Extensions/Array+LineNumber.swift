@@ -1,6 +1,6 @@
 //
 //  Array+LineNumber.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 3/26/18.
 //  Copyright © 2018 Prolific Interactive. All rights reserved.

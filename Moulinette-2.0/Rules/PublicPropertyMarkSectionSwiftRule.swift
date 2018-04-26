@@ -1,6 +1,6 @@
 //
 //  PublicPropertyMarkSectionSwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 4/13/18.
 //  Copyright © 2018 Prolific Interactive. All rights reserved.

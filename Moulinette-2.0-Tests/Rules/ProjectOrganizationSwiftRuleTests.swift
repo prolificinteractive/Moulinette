@@ -1,6 +1,6 @@
 //
 //  ProjectOrganizationSwiftRuleTests.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 8/16/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.

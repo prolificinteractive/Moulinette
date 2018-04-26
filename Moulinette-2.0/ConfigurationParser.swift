@@ -1,6 +1,6 @@
 //
 //  ConfigurationParser.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 4/26/18.
 //  Copyright © 2018 Prolific Interactive. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  GitCheckCommitQualitySwiftRule.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Morgan Collino on 10/18/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.

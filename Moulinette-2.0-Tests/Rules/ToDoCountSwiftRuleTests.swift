@@ -1,6 +1,6 @@
 //
 //  ToDoCountSwiftRuleTests.swift
-//  Moulinette-2.0
+//  Moulinette
 //
 //  Created by Jonathan Samudio on 8/24/17.
 //  Copyright © 2017 Prolific Interactive. All rights reserved.
