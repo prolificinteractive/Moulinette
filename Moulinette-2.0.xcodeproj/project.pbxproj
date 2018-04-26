@@ -119,6 +119,11 @@
 		207CE2AA209231FB0032B3B5 /* ConfigurationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2A9209231FB0032B3B5 /* ConfigurationParser.swift */; };
 		207CE2AC209232500032B3B5 /* Data+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2AB209232500032B3B5 /* Data+Codable.swift */; };
 		207CE2AE209232700032B3B5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2AD209232700032B3B5 /* NetworkError.swift */; };
+		207CE2AF20923D570032B3B5 /* ConfigurationFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2A7209231630032B3B5 /* ConfigurationFile.swift */; };
+		207CE2B020923D6E0032B3B5 /* ConfigurationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2A9209231FB0032B3B5 /* ConfigurationParser.swift */; };
+		207CE2B120923D750032B3B5 /* Data+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2AB209232500032B3B5 /* Data+Codable.swift */; };
+		207CE2B220923D7A0032B3B5 /* ConstantsMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2005BCBF208522050069769D /* ConstantsMarkSectionSwiftRule.swift */; };
+		207CE2B320923D830032B3B5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2AD209232700032B3B5 /* NetworkError.swift */; };
 		207E90182069972500F88D9E /* Array+LineNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E90172069972500F88D9E /* Array+LineNumber.swift */; };
 		207E90192069996100F88D9E /* Array+LineNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E90172069972500F88D9E /* Array+LineNumber.swift */; };
 		207E9024206BE03800F88D9E /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E9023206BE03800F88D9E /* Violation.swift */; };
@@ -680,7 +685,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Prolific Interactive";
 				TargetAttributes = {
 					2053EE871EF4862B00AAE36D = {
@@ -762,6 +767,7 @@
 				203790541F4497EF00B74151 /* ApplicationComponents.swift in Sources */,
 				2053EEBA1EF4921B00AAE36D /* ProjectSettings.swift in Sources */,
 				20CE93FA1F4CCC7A000A5CF5 /* EmptyAppIconSwiftRule.swift in Sources */,
+				207CE2B220923D7A0032B3B5 /* ConstantsMarkSectionSwiftRule.swift in Sources */,
 				203790501F437C8200B74151 /* SwiftLintSwiftRule.swift in Sources */,
 				2053EEBB1EF4921B00AAE36D /* ProjectData.swift in Sources */,
 				2053EEBC1EF4921B00AAE36D /* ProjectParser.swift in Sources */,
@@ -773,6 +779,7 @@
 				207FB30C1F3B4CBF009B0B26 /* ReadMeSwiftRule.swift in Sources */,
 				205F9896208129530042128E /* EndContextBracketSwiftRule.swift in Sources */,
 				2053EEC01EF4921B00AAE36D /* RequiredSelfSwiftRule.swift in Sources */,
+				207CE2AF20923D570032B3B5 /* ConfigurationFile.swift in Sources */,
 				2053EEC11EF4921B00AAE36D /* SemiColonSwiftRule.swift in Sources */,
 				2023AD141EFB122800B66438 /* StringExtensionTests.swift in Sources */,
 				20CE93F31F4CC202000A5CF5 /* AppIconSwiftRuleTests.swift in Sources */,
@@ -798,6 +805,7 @@
 				2053EECB1EF4921B00AAE36D /* ColorEncapsulationSwiftRule.swift in Sources */,
 				2053EECC1EF4921B00AAE36D /* CompletionWeakSwiftRule.swift in Sources */,
 				2053EECD1EF4921B00AAE36D /* ContextCheck.swift in Sources */,
+				207CE2B320923D830032B3B5 /* NetworkError.swift in Sources */,
 				2053EECE1EF4921B00AAE36D /* BracketContextCheck.swift in Sources */,
 				2053EECF1EF4921B00AAE36D /* SwiftRule.swift in Sources */,
 				201EEA86206D733600BC466F /* FileCorrection.swift in Sources */,
@@ -822,6 +830,8 @@
 				2053EED91EF4921B00AAE36D /* String+SwiftCode.swift in Sources */,
 				2053EEDA1EF4921B00AAE36D /* NetworkRequester.swift in Sources */,
 				2053EEDB1EF4921B00AAE36D /* APIEnvironment.swift in Sources */,
+				207CE2B120923D750032B3B5 /* Data+Codable.swift in Sources */,
+				207CE2B020923D6E0032B3B5 /* ConfigurationParser.swift in Sources */,
 				2053EEDC1EF4921B00AAE36D /* Endpoints.swift in Sources */,
 				5932B4D91F3BB1C20066C38A /* ATSExceptionSwiftRuleTests.swift in Sources */,
 				2053EE921EF4871900AAE36D /* AppDelegateSwiftRuleTests.swift in Sources */,
@@ -969,15 +979,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1017,15 +1035,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
