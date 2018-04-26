@@ -1,13 +1,6 @@
 # Moulinette-2.0
 An internal audit tool for Prolific Interactive brought to you by the PiOS team.
 
-## Authors
-* Jonathan Samudio
-* Adam Tecle
-* Morgan Collino
-* Ruchi Jain
-* Lee Pollard
-
 ## Requirements
 * Xcode 8.3.3 or up
 
