@@ -9,10 +9,10 @@
 Pod::Spec.new do |s|
   s.name             = 'Moulinette'
   s.version          = '0.1.0'
-  s.summary          = 'An automated way to generate network models.'
+  s.summary          = 'An internal Xcode audit tool.'
 
   s.description      = <<-DESC
-An automated way to generate network models from JSON and keep them up to date.
+An internal audit tool used by Prolific Interactive to ensure code quality and standards.
                        DESC
 
   s.homepage         = 'https://github.com/prolificinteractive/Moulinette'
@@ -23,6 +23,6 @@ An automated way to generate network models from JSON and keep them up to date.
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.13'
 
-  s.source_files = 'Moulinette/Source/**/*'
+  s.source_files = 'Source/**/*'
 
 end
