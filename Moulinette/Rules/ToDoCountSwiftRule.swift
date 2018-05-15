@@ -29,7 +29,7 @@ final class ToDoCountSwiftRule: SwiftRule {
         
         let count = allContents.components(separatedBy: "TODO").count - 1
         if count > ToDoCountSwiftRule.maxTodoCount {
-            auditGrader.failed(description: "More than \(ToDoCountSwiftRule.maxTodoCount) found. (\(count) found.)", nameId: nameId)
+            auditGrader.failed(description: "There should be less than 10 TODOs: More than \(ToDoCountSwiftRule.maxTodoCount) found. (\(count) found.)", nameId: nameId)
         }
         
         return auditGrader.generateGrade()
