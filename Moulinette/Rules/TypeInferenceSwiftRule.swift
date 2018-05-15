@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class TypeInferenceSwiftRule: SwiftRule {
+final class TypeInferenceSwiftRule: CorrectableSwiftRule {
     
     let description: String = "Unnecessary Type inference"
     let nameId = "type_inference"
@@ -31,6 +31,26 @@ final class TypeInferenceSwiftRule: SwiftRule {
             }
         }
         return auditGrader.generateGrade()
+    }
+
+    func correct(projectData: ProjectData) -> [FileCorrection] {
+        return auditGrader.violations.compactMap({ (violation) -> FileCorrection? in
+            guard let lineNumber = violation.lineNumber,
+                let fileComponents = projectData.applicationComponents.components[violation.fileName],
+                let index = violation.componentIndex,
+                let typeString = fileComponents[index].stringBetween(startString: ":", endString: "="),
+                let colonIndex = fileComponents[index].index(of: ":") else {
+                    return nil
+            }
+            var customString = fileComponents[index].replacingOccurrences(of: typeString, with: "")
+            customString.remove(at: colonIndex)
+            customString.insert(" ", at: colonIndex)
+            return FileCorrection(fileName: violation.fileName,
+                                  lineNumber: lineNumber,
+                                  customString: customString,
+                                  lineInsertions: [],
+                                  lineDeletions: [])
+        })
     }
 }
 

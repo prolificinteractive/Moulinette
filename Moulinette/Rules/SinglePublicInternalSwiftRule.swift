@@ -16,6 +16,7 @@ final class SinglePublicInternalSwiftRule: SwiftRule {
     let priority: RulePriority = .low
     
     private var type: FileType?
+    private var commentCheck = OldCommentStyleCheck()
     
     private lazy var auditGrader: AuditGrader = {
         return PIOSAuditGrader(priority: self.priority)
@@ -24,7 +25,8 @@ final class SinglePublicInternalSwiftRule: SwiftRule {
     func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
             fileComponents.forEach {
-                if let fileType = FileType.type(fileLine: $0) {
+                commentCheck.check(line: $0)
+                if !commentCheck.insideCommentContext, let fileType = FileType.type(fileLine: $0) {
                     if let type = type,
                         !$0.isComment(),
                         !fileName.contains("Constants") && !$0.contains("CodingKey") {

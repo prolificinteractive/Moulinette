@@ -162,6 +162,7 @@
 		2081734F1EEB27ED0077106A /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2081734E1EEB27ED0077106A /* APIEnvironment.swift */; };
 		208173511EEB27F90077106A /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208173501EEB27F90077106A /* Endpoints.swift */; };
 		209696C01EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209696BF1EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift */; };
+		209B720F20AB882000E7E0DE /* OldCommentStyleCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B720E20AB882000E7E0DE /* OldCommentStyleCheck.swift */; };
 		20C40C581ED8D47C00695CA7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C40C571ED8D47C00695CA7 /* main.swift */; };
 		20CE93F31F4CC202000A5CF5 /* AppIconSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE93F21F4CC202000A5CF5 /* AppIconSwiftRuleTests.swift */; };
 		20CE93F41F4CC276000A5CF5 /* AppIconSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7341F4CBB92004335D8 /* AppIconSwiftRule.swift */; };
@@ -300,6 +301,7 @@
 		208173501EEB27F90077106A /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		209696BF1EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionWeakSwiftRule.swift; sourceTree = "<group>"; };
 		209696C11EE9F4270035C7AE /* RulePriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulePriority.swift; sourceTree = "<group>"; };
+		209B720E20AB882000E7E0DE /* OldCommentStyleCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldCommentStyleCheck.swift; sourceTree = "<group>"; };
 		20C40C541ED8D47C00695CA7 /* Moulinette */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Moulinette; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C40C571ED8D47C00695CA7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		20CE93F21F4CC202000A5CF5 /* AppIconSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconSwiftRuleTests.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 			children = (
 				201604C42092603200B7F191 /* ContextCheck.swift */,
 				201604C52092603200B7F191 /* BracketContextCheck.swift */,
+				209B720E20AB882000E7E0DE /* OldCommentStyleCheck.swift */,
 			);
 			path = Checks;
 			sourceTree = "<group>";
@@ -838,6 +841,7 @@
 				207CE2C920925ECB0032B3B5 /* LocalizationSwiftRule.swift in Sources */,
 				4C382C771FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift in Sources */,
 				207CE2DE20925F020032B3B5 /* FileCorrection.swift in Sources */,
+				209B720F20AB882000E7E0DE /* OldCommentStyleCheck.swift in Sources */,
 				20160509209260EF00B7F191 /* GradeType.swift in Sources */,
 				2016050A209260EF00B7F191 /* CodeRuleType.swift in Sources */,
 				20160508209260EF00B7F191 /* RuleCollection.swift in Sources */,
