@@ -19,7 +19,11 @@ enum FileType {
             return nil
         }
         
-        if fileLine.contains("class ") && !fileLine.contains("class func") && !fileLine.contains("protocol") {
+        if fileLine.contains("class ") &&
+            !fileLine.contains("class func") &&
+            !fileLine.contains("protocol") &&
+            !fileLine.contains("\"") {
+            
             return .swiftClass
         }
         

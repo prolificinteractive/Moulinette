@@ -26,6 +26,7 @@ final class SinglePublicInternalSwiftRule: SwiftRule {
             fileComponents.forEach {
                 if let fileType = FileType.type(fileLine: $0) {
                     if let type = type,
+                        !$0.isComment(),
                         !fileName.contains("Constants") && !$0.contains("CodingKey") {
                         let firstValue = FileType.value(fileType: type)
                         let secondValue = FileType.value(fileType: fileType)

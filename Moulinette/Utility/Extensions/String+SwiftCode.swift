@@ -46,11 +46,10 @@ extension String {
     ///
     /// - Returns: The class name in a string containing Swift code.
     func className() -> String? {
-        let fileLine = stringWithoutWhitespaces()
-        if let className = fileLine.stringBetween(startString: "class", endString: ":") {
-            return className
-        } else if let className = fileLine.stringBetween(startString: "class", endString: "{") {
-            return className
+        if let className = stringBetween(startString: "class ", endString: ":") {
+            return className.stringWithoutWhitespaces()
+        } else if let className = stringBetween(startString: "class ", endString: "{") {
+            return className.stringWithoutWhitespaces()
         }
         return nil
     }
