@@ -23,6 +23,6 @@ An internal audit tool used by Prolific Interactive to ensure code quality and s
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.13'
 
-  s.source_files = 'Source/**/*'
+  s.preserve_paths = 'Source/**/*'
 
 end
