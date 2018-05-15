@@ -19,44 +19,41 @@ let applicationFileComponents = projectParser.applicationComponents()
 // Generate data store
 var projectData = ProjectData(path: settings.projectDirectory, applicationComponents: applicationFileComponents)
 
-DispatchQueue.global().async {
-    // Run PiOS Rules
-    let audit = PIOSAudit(projectData: projectData, configurationFile: config)
-    let output = audit.runRules()
-    audit.autoCorrect()
+// Run PiOS Rules
 
-    if settings.debugMode {
-        print("############### MOULINETTE AUDITOR v0.1.1 ###############")
-        if settings.xcodePlugin {
-            print(output.xcodeDescription())
-        } else {
-            print(output.description())
-        }
-        print("################## MOULINETTE AUDITOR ##################")
-    }
+let audit = PIOSAudit(projectData: projectData, configurationFile: config)
+let output = audit.runRules()
+audit.autoCorrect()
 
-    if settings.silentMode == false,
-        let authToken = settings.authToken {
-        NetworkRequester(debugMode: settings.debugMode).submitAuditScore(score: output.representation(),
-                                            authToken: authToken,
-                                            completion: ({ (json, error) in
-            if let error = error {
-                print(error)
-                exit(0)
-            }
-
-            guard let url = json?["url"],
-                let score = output.representation()[Output.scoreKey] else {
-                    print("No url returned from the JSON or score doesn't exist in the output representation.")
-                    exit(0)
-            }
-            print("Score:\(score)")
-            print("Url:\(url)")
-            exit(0)
-        }))
+if settings.debugMode {
+    print("############### MOULINETTE AUDITOR v0.1.1 ###############")
+    if settings.xcodePlugin {
+        print(output.xcodeDescription())
     } else {
-        exit(0)
+        print(output.description())
     }
+    print("################## MOULINETTE AUDITOR ##################")
 }
 
-dispatchMain()
+if settings.silentMode == false,
+    let authToken = settings.authToken {
+    NetworkRequester(debugMode: settings.debugMode).submitAuditScore(score: output.representation(),
+                                        authToken: authToken,
+                                        completion: ({ (json, error) in
+        if let error = error {
+            print(error)
+            exit(0)
+        }
+
+        guard let url = json?["url"],
+            let score = output.representation()[Output.scoreKey] else {
+                print("No url returned from the JSON or score doesn't exist in the output representation.")
+                exit(0)
+        }
+        print("Score:\(score)")
+        print("Url:\(url)")
+        exit(0)
+    }))
+} else {
+    exit(0)
+}
