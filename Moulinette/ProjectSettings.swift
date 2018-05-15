@@ -10,7 +10,7 @@ import Foundation
 
 struct ProjectSettings {
     
-    static let excludedFiles: [String] = []
+    static let excludedFiles: [String] = ["Root.strings"]
     static let excludedDirectories = ["Pods", "Scripts", "Tools", "fastlane", "Build"]
     static let excludedDirectoryRegex = ["^[#].*", "]*Test]*", "]*.framework", "]*.xcworkspace"]
     
