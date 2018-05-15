@@ -15,7 +15,7 @@ enum FileType {
     case swiftStruct
     
     static func type(fileLine: String) -> FileType? {
-        guard !fileLine.contains("//") && !fileLine.contains("private") else {
+        guard !fileLine.isComment() && !fileLine.contains("private") else {
             return nil
         }
         
@@ -23,7 +23,7 @@ enum FileType {
             !fileLine.contains("class func") &&
             !fileLine.contains("protocol") &&
             !fileLine.contains("\"") {
-            
+
             return .swiftClass
         }
         
@@ -32,6 +32,7 @@ enum FileType {
         }
         
         if fileLine.contains("protocol ") {
+            print(fileLine)
             return .swiftProtocol
         }
         

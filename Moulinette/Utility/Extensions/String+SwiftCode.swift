@@ -78,7 +78,7 @@ extension String {
     ///
     /// - Returns: True if the string containing Swift code is a comment.
     func isComment() -> Bool {
-        return Regex.commentRegex().hasMatch(input: self)
+        return Regex.commentRegex().hasMatch(input: self) || self.components(separatedBy: " ").contains("*")
     }
 
     /// Returns true if the string containing Swift code has a pivotal story link.
