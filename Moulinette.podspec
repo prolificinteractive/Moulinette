@@ -20,9 +20,6 @@ An internal audit tool used by Prolific Interactive to ensure code quality and s
   s.author           = { 'Jonathan Samudio' => 'jonathan2457@gmail.com' }
   s.source           = { :git => 'https://github.com/prolificinteractive/Moulinette.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.13'
-
   s.preserve_paths = 'Source/**/*'
 
 end
