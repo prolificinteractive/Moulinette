@@ -32,7 +32,6 @@ enum FileType {
         }
         
         if fileLine.contains("protocol ") {
-            print(fileLine)
             return .swiftProtocol
         }
         

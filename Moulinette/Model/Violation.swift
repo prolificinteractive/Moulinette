@@ -17,6 +17,14 @@ struct Violation {
 
 extension Violation {
 
+    /// Index of the component.
+    var componentIndex: Int? {
+        if let lineNumber = lineNumber {
+            return lineNumber-1
+        }
+        return nil
+    }
+
     /// Formatted Description of for the violation.
     ///
     /// - Returns: Formatted description.

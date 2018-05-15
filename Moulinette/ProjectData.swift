@@ -52,6 +52,10 @@ final class ProjectData: SwiftData {
                 fileLineOffset[correction.fileName] = []
             }
 
+            if let customString = correction.customString {
+                correctedProjectComponents[correction.fileName]?[correction.lineNumber-1] = customString
+            }
+
             for index in correction.lineDeletions ?? [] {
                 let offset = lineOffset(lineNumber: index+1,
                                         lineInsertions: fileLineOffset[correction.fileName],
