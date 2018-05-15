@@ -40,45 +40,35 @@ struct PIOSAudit: Audit {
         var auditScore: Double = 0
         
         /// Dispatch group - Flag rules running concurrently and wait until all of them are done.
-        let group = DispatchGroup()
-        
         for collection in ruleCollection {
             for rule in collection.rules() {
                 guard !(configurationFile?.excludedRules.contains(rule.nameId) ?? false) else {
                     continue
                 }
 
-                group.enter()
-                
-                /// Dispatch the block in a concurrent queue (global).
-                DispatchQueue.global().async {
-                    let result = rule.run(projectData: self.projectData)
-                    let score = result.score()
-                    let report = result.violationDescription
-                    var violations = result.violations
+                let result = rule.run(projectData: self.projectData)
+                let score = result.score()
+                let report = result.violationDescription
+                var violations = result.violations
 
-                    auditScore += score
+                auditScore += score
 
-                    if let rule = rule as? CorrectableSwiftRule {
-                        let fileCorrections = rule.correct(projectData: self.projectData)
-                        self.projectData.add(corrections: fileCorrections)
-                        violations = []
-                    }
-
-                    output.record(collection: collection.description,
-                                  rule: rule.description,
-                                  score: score,
-                                  weight: rule.priority.weight(),
-                                  report: report,
-                                  violationCount: result.violationCount,
-                                  violations: violations)
-
-                    group.leave()
+                if let rule = rule as? CorrectableSwiftRule {
+                    let fileCorrections = rule.correct(projectData: self.projectData)
+                    self.projectData.add(corrections: fileCorrections)
+                    violations = []
                 }
+
+                output.record(collection: collection.description,
+                              rule: rule.description,
+                              score: score,
+                              weight: rule.priority.weight(),
+                              report: report,
+                              violationCount: result.violationCount,
+                              violations: violations)
             }
         }
 
-        group.wait()
         projectData.applyCorrections()
         let score = Int((auditScore / maxPoints()) * 100)
         output.record(overallScore: score)
