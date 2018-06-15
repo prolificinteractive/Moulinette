@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200BF1DE20D4126C00DC4B7D /* OldCommentStyleCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B720E20AB882000E7E0DE /* OldCommentStyleCheck.swift */; };
 		200FC72C1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */; };
 		200FC72E1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72D1F4C8872004335D8 /* SinglePublicInternalSwiftRuleTests.swift */; };
 		200FC72F1F4C892E004335D8 /* CocoapodKeysSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC72B1F4C7CE5004335D8 /* CocoapodKeysSwiftRule.swift */; };
@@ -790,6 +791,7 @@
 				207CE2CD20925ED50032B3B5 /* CorrectableSwiftRule.swift in Sources */,
 				201604EC209260E800B7F191 /* PodfileParser.swift in Sources */,
 				2053EECB1EF4921B00AAE36D /* ColorEncapsulationSwiftRule.swift in Sources */,
+				200BF1DE20D4126C00DC4B7D /* OldCommentStyleCheck.swift in Sources */,
 				201604FD209260EF00B7F191 /* FileCorrection.swift in Sources */,
 				2053EECC1EF4921B00AAE36D /* CompletionWeakSwiftRule.swift in Sources */,
 				207FB30D1F3B4CC1009B0B26 /* ATSExceptionSwiftRule.swift in Sources */,
