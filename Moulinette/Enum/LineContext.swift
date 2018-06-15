@@ -20,7 +20,9 @@ enum LineContext {
     case extensionContext
     case protocolContext
     case privateExtensionContext
-    
+    case initializer
+    case computedVariable
+
     static func type(fileLine: String) -> LineContext? {
         
         if fileLine.contains("struct") {
@@ -63,12 +65,20 @@ enum LineContext {
             return privateExtensionContext
         }
 
+        if fileLine.contains("init") {
+            return initializer
+        }
+
+        if (fileLine.contains("var ") || fileLine.contains("let ")) && fileLine.contains(" = {") {
+            return computedVariable
+        }
+
         return nil
     }
 
     func isBracketType() -> Bool {
         switch self {
-        case .structContext, .function, .classContext:
+        case .structContext, .function, .classContext, .initializer, .computedVariable:
             return true
         default:
             return false
