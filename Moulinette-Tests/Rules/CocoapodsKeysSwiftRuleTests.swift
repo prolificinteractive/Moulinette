@@ -16,7 +16,7 @@ class CocoapodsKeysSwiftRuleTests: XCTestCase {
     func testRun_CocoapodsKeysFound() {
         sut = CocoapodsKeysSwiftRule()
         
-        let grade = sut.run(projectData: projectData(fileName: "Sample", line: "import Keys"))
+        let grade = sut.run(projectData: projectData(fileName: "Podfile", line: "plugin 'cocoapods-keys'"))
         
         XCTAssertEqual(grade.violationCount, 0)
     }
@@ -24,7 +24,7 @@ class CocoapodsKeysSwiftRuleTests: XCTestCase {
     func testRun_CocoapodsKeysNotFound() {
         sut = CocoapodsKeysSwiftRule()
         
-        let grade = sut.run(projectData: projectData(fileName: "Sample", line: "import Keychain"))
+        let grade = sut.run(projectData: projectData(fileName: "Podfile", line: ""))
         
         XCTAssertEqual(grade.violationCount, Int.max)
     }
@@ -44,6 +44,6 @@ class CocoapodsKeysSwiftRuleTests: XCTestCase {
         
         let grade = sut.run(projectData: emptyProjectFile())
         
-        XCTAssertEqual(grade.violationCount, Int.max)
+        XCTAssertEqual(grade.violationCount, 0)
     }
 }

@@ -29,7 +29,7 @@ final class ProjectParser {
 
     private let configFile: ConfigurationFile?
 
-    init(configFile: ConfigurationFile?) {
+    init(configFile: ConfigurationFile? = nil) {
         self.configFile = configFile
     }
 
