@@ -13,4 +13,8 @@ struct ConfigurationFile: Codable {
 
     /// Collection of the excluded rules
     let excludedRules: [String]
+
+    /// Localization files.
+    let localizationFiles: [String]?
+
 }

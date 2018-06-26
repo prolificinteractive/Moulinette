@@ -35,7 +35,10 @@ struct ApplicationComponents {
     
     // String files.
     var stringFiles: FileCollection {
-        return files(for: Constants.FileNameConstants.stringSuffix)
+        guard let stringFiles = configFile?.localizationFiles else {
+            return files(for: Constants.FileNameConstants.stringSuffix)
+        }
+        return stringFiles.compactMap { file(filterBy: $0).first }
     }
     
     // README file components.
@@ -47,11 +50,15 @@ struct ApplicationComponents {
     var podfileComponents: [String]? {
         return file(by: Constants.FileNameConstants.podfile)
     }
+
+    private let configFile: ConfigurationFile?
     
     /// Init function with file names.
     ///
     /// - Parameter fileNames: File names.
-    init(with fileNames: [String]) {
+    init(with fileNames: [String], configFile: ConfigurationFile? = nil) {
+        self.configFile = configFile
+
         for file in fileNames {
             let fileToParse = settings.projectDirectory + file
             filePaths.append(file)
@@ -60,7 +67,7 @@ struct ApplicationComponents {
                 let content = try String(contentsOfFile: fileToParse, encoding: String.Encoding.utf8)
                 let fileComponents = content.components(separatedBy: "\n")
 
-                components[file] = fileComponents
+                components[file] = formatFileComponents(components: fileComponents)
                 setupProjectAssets(filePath: file, fileComponents: fileComponents)
             } catch {
                 print("Error caught with message: \(error.localizedDescription)")
@@ -71,8 +78,9 @@ struct ApplicationComponents {
     /// Init with custom components.
     ///
     /// - Parameter components: Components.
-    init(with components: ProjectComponents) {
+    init(with components: ProjectComponents, configFile: ConfigurationFile? = nil) {
         self.components = components
+        self.configFile = configFile
     }
     
     /// Filtering function to get component for given file name.
@@ -116,6 +124,10 @@ struct ApplicationComponents {
         return files.compactMap { (fileName, fileContents) -> String? in
             return fileContents.joined()
             }.joined()
+    }
+
+    func formatFileComponents(components: [String]) -> [String] {
+        return components.map { $0.components(separatedBy: "\r") }.reduce([], +)
     }
     
 }

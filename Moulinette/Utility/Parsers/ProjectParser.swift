@@ -15,7 +15,7 @@ enum ParseError: Error {
 /// Project parser.
 final class ProjectParser {
 
-    // MARK: - Private properties
+    // MARK: - Public properties
     
     // Private file filter closure.
     let filterClosure: ((Any) throws -> Bool) = { (file) -> Bool in
@@ -24,12 +24,20 @@ final class ProjectParser {
         }
         return try !ProjectParser.isExcluded(with: fileName)
     }
-    
+
+    // MARK: - Private properties
+
+    private let configFile: ConfigurationFile?
+
+    init(configFile: ConfigurationFile?) {
+        self.configFile = configFile
+    }
+
     // MARK: - Public functions
     
     func applicationComponents() -> ApplicationComponents {
         let fileNames = retrieveFilenames()
-        return ApplicationComponents(with: fileNames)
+        return ApplicationComponents(with: fileNames, configFile: configFile)
     }
 
     // MARK: - Private functions

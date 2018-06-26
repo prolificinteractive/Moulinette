@@ -8,17 +8,19 @@
 
 import Foundation
 
+typealias KeyInfo = [(fileName: String, index: Int, key: String)]
+
 // Check localized string usage rule.
-final class LocalizedStringSwiftRule: SwiftRule {
+final class LocalizedStringSwiftRule: CorrectableSwiftRule {
     
-    // MARK: - Public properties
+    // MARK: - Public Properties
     
     let description = "Check if the localized string keys are used."
     let nameId = "localized_keys"
 
     let priority: RulePriority = .high
     
-    // MARK: - Private properties
+    // MARK: - Private Properties
     
     private let separator = "="
     private let space = " "
@@ -28,56 +30,73 @@ final class LocalizedStringSwiftRule: SwiftRule {
         return PIOSAuditGrader(priority: self.priority)
     }()
     
-    // MARK: - Public functions
+    // MARK: - Public Functions
     
     func run(projectData: ProjectData) -> AuditGrade {
         let stringFiles = projectData.applicationComponents.stringFiles
         let swiftFiles = projectData.applicationComponents.swiftFiles
         let objectiveCFiles = projectData.applicationComponents.objectiveCFiles
 
-        let allSwiftFilesContent = allFilesContent(with: swiftFiles) + allFilesContent(with: objectiveCFiles)
+        let filesContent = allFilesContent(with: swiftFiles) + allFilesContent(with: objectiveCFiles)
         let keys = getKeys(with: stringFiles)
 
-        checkKeysUsage(with: keys, fileContent: allSwiftFilesContent)
+        checkKeysUsage(with: keys, fileContent: filesContent)
         
         return auditGrader.generateGrade()
     }
-    
-    // MARK: - Private functions
-    
-    private func allFilesContent(with files: [(String, [String])]) -> String {
+
+    func correct(projectData: ProjectData) -> [FileCorrection] {
+        return auditGrader.violations.compactMap({ (violation) -> FileCorrection? in
+            guard let lineNumber = violation.lineNumber,
+                let fileComponents = projectData.applicationComponents.components[violation.fileName] else {
+                return nil
+            }
+            
+            return FileCorrection(fileName: violation.fileName,
+                                  lineNumber: lineNumber,
+                                  customString: nil,
+                                  lineInsertions: nil,
+                                  lineDeletions: fileComponents.removeCommentEmptyStrings(lineNumber: lineNumber))
+        })
+    }
+
+}
+
+// MARK: - Private Functions
+private extension LocalizedStringSwiftRule {
+
+    func allFilesContent(with files: FileCollection) -> String {
         return files.compactMap { (fileName, fileContents) -> String? in
             return fileContents.joined()
             }.joined()
     }
-    
-    private func getKeys(with stringFiles: [(String, [String])]) -> [String] {
-        var keys: [String] = []
-        
-        for (_, fileComponents) in stringFiles {
+
+    func getKeys(with stringFiles: FileCollection) -> KeyInfo {
+        var keyInfo = KeyInfo()
+
+        for (fileName, fileComponents) in stringFiles {
             for line in fileComponents {
-                if line.contains(separator) {
+                if line.contains(separator), let index = fileComponents.index(of: line) {
                     let split = line.split(at: separator)
                     guard let key = split?.leftString else {
                         continue
                     }
-                    keys.append(key)
+                    keyInfo.append((fileName, index, key))
                 }
             }
         }
-        
-        return keys
+
+        return keyInfo
     }
-    
-    private func checkKeysUsage(with keys: [String], fileContent: String) {
-        for key in keys {
-            if !fileContent.contains(key) {
-                auditGrader.violationFound(fileName: "*",
-                                           lineNumber: nil,
-                                           description: "Missing usage of localized key: \(key)",
-                                           nameId: nameId)
+
+    func checkKeysUsage(with keyInfo: KeyInfo, fileContent: String) {
+        for info in keyInfo {
+            if !fileContent.contains(info.key) {
+                auditGrader.violationFound(fileName: info.fileName,
+                                           lineNumber: info.index+1,
+                                           description: "Missing usage of localized key: \(info.key)", nameId: nameId)
             }
         }
     }
-    
+
 }

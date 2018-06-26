@@ -11,7 +11,7 @@ import Foundation
 struct Constants {
 
     static let fileExtensions = ["swift", "strings", "plist", "md", "pbxproj", "storyboard", "json", "gitignore", "m"]
-    static let validNonSwiftFiles = ["AppDelegate", "Podfile", "Localizable.strings", "project.pbxproj", ".gitignore"]
+    static let validNonSwiftFiles = ["AppDelegate", "Podfile", "project.pbxproj", ".gitignore"]
 
     static var markFormat = "// MARK: - "
     

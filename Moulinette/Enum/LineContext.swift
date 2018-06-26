@@ -45,7 +45,8 @@ enum LineContext {
             return .enumContext
         }
         
-        if fileLine.stringWithoutWhitespaces().contains("{(") && fileLine.contains("in") {
+        if fileLine.stringWithoutWhitespaces().contains("{(") && fileLine.contains("in") ||
+            (fileLine.stringWithoutWhitespaces().contains("{ [weak self]") && fileLine.contains("in")) {
             return .completion
         }
 
@@ -69,7 +70,8 @@ enum LineContext {
             return initializer
         }
 
-        if (fileLine.contains("var ") || fileLine.contains("let ")) && fileLine.contains(" = {") {
+        if (fileLine.contains("var ") || fileLine.contains("let ")) &&
+            (fileLine.contains(" = {") || fileLine.contains("{"))  {
             return computedVariable
         }
 
@@ -78,7 +80,7 @@ enum LineContext {
 
     func isBracketType() -> Bool {
         switch self {
-        case .structContext, .function, .classContext, .initializer, .computedVariable:
+        case .structContext, .function, .classContext, .initializer, .computedVariable, .completion:
             return true
         default:
             return false
