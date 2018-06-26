@@ -10,7 +10,7 @@ import Foundation
 
 /// File components array type.
 typealias ProjectComponents = [String : [String]]
-typealias SwiftFileCollection = [(String, [String])]
+typealias FileCollection = [(String, [String])]
 
 /// Application components.
 struct ApplicationComponents {
@@ -25,12 +25,16 @@ struct ApplicationComponents {
     var assets: ProjectComponents = [:]
     
     /// Swift files.
-    var swiftFiles: SwiftFileCollection {
+    var swiftFiles: FileCollection {
         return files(for: Constants.FileNameConstants.swiftSuffix)
+    }
+
+    var objectiveCFiles: FileCollection {
+        return files(for: Constants.FileNameConstants.objectiveCSuffix)
     }
     
     // String files.
-    var stringFiles: SwiftFileCollection {
+    var stringFiles: FileCollection {
         return files(for: Constants.FileNameConstants.stringSuffix)
     }
     
@@ -83,7 +87,7 @@ struct ApplicationComponents {
     ///
     /// - Parameter name: File name,
     /// - Returns: List of file containing the file name given.
-    func file(filterBy name: String) -> SwiftFileCollection {
+    func file(filterBy name: String) -> FileCollection {
         let files = components.filter { (fileName, content) -> Bool in
             return fileName.contains(name)
             }.map { ($0.key, $0.value)}
@@ -95,7 +99,7 @@ struct ApplicationComponents {
     ///
     /// - Parameter pathExtension: Path extension.
     /// - Returns: Array of potential components with the path extension given.
-    func files(for pathExtension: String) -> SwiftFileCollection {
+    func files(for pathExtension: String) -> FileCollection {
         let files = components.filter { (fileName, content) -> Bool in
             let nsstring = fileName as NSString
             return nsstring.pathExtension == pathExtension

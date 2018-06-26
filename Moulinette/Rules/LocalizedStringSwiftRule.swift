@@ -33,10 +33,11 @@ final class LocalizedStringSwiftRule: SwiftRule {
     func run(projectData: ProjectData) -> AuditGrade {
         let stringFiles = projectData.applicationComponents.stringFiles
         let swiftFiles = projectData.applicationComponents.swiftFiles
-        
-        let allSwiftFilesContent = allFilesContent(with: swiftFiles)
+        let objectiveCFiles = projectData.applicationComponents.objectiveCFiles
+
+        let allSwiftFilesContent = allFilesContent(with: swiftFiles) + allFilesContent(with: objectiveCFiles)
         let keys = getKeys(with: stringFiles)
-        
+
         checkKeysUsage(with: keys, fileContent: allSwiftFilesContent)
         
         return auditGrader.generateGrade()
@@ -55,9 +56,8 @@ final class LocalizedStringSwiftRule: SwiftRule {
         
         for (_, fileComponents) in stringFiles {
             for line in fileComponents {
-                let trimmedString = line.replacingOccurrences(of: space, with: empty)
-                if trimmedString.contains(separator) {
-                    let split = trimmedString.split(at: separator)
+                if line.contains(separator) {
+                    let split = line.split(at: separator)
                     guard let key = split?.leftString else {
                         continue
                     }
