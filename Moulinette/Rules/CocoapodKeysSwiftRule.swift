@@ -21,15 +21,13 @@ final class CocoapodsKeysSwiftRule: SwiftRule {
     }()
     
     func run(projectData: ProjectData) -> AuditGrade {
-        guard !projectData.applicationComponents.components.isEmpty else {
+        guard let podfileComponents = projectData.applicationComponents.podfileComponents else {
             return auditGrader.generateGrade()
         }
         
-        for (_, fileComponents) in projectData.applicationComponents.components {
-            for component in fileComponents {
-                if component.contains("import Keys") {
-                    return auditGrader.generateGrade()
-                }
+        for component in podfileComponents {
+            if component.contains("plugin 'cocoapods-keys'") {
+                return auditGrader.generateGrade()
             }
         }
         

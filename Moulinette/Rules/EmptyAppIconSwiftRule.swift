@@ -24,7 +24,7 @@ final class EmptyAppIconSwiftRule: SwiftRule {
         let assetContents = projectData.applicationComponents.assets
         
         for (filePath, components) in assetContents {
-            if filePath.contains("AppIcon") {
+            if filePath.contains("AppIcon") && !filePath.contains("PR") {
                 checkContentsFile(filePath: filePath, components: components)
             }
         }

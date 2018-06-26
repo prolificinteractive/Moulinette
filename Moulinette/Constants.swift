@@ -26,6 +26,7 @@ struct Constants {
         static let AssetContents = "Contents.json"
         static let moulinetteName = "Moulinette"
         static let gitIgnore = ".gitignore"
+        static let podfile = "Podfile"
     }
 
     struct Regex {

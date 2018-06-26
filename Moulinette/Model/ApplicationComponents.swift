@@ -38,6 +38,11 @@ struct ApplicationComponents {
     var readmeComponents: [String]? {
         return file(by: Constants.FileNameConstants.readme)
     }
+
+    // Podfile components.
+    var podfileComponents: [String]? {
+        return file(by: Constants.FileNameConstants.podfile)
+    }
     
     /// Init function with file names.
     ///

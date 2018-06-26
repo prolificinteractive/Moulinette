@@ -23,7 +23,10 @@ final class ForceUnwrapSwiftRule: SwiftRule {
         for (fileName, fileComponents) in projectData.applicationComponents.swiftFiles {
             fileComponents.forEach {
                 if $0.contains("!") && !$0.contains("IBOutlet") && !$0.contains("!=") && !$0.contains(" !") {
-                    auditGrader.violationFound(fileName: fileName, lineNumber: fileComponents.lineNumberFor($0), description: description, nameId: nameId)
+                    auditGrader.violationFound(fileName: fileName,
+                                               lineNumber: fileComponents.lineNumberFor($0),
+                                               description: description,
+                                               nameId: nameId)
                 }
             }
         }
