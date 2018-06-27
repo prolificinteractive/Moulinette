@@ -353,6 +353,7 @@
 		201604B220925F7300B7F191 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				207CE2BE20925ECB0032B3B5 /* CorrectableSwiftRule.swift */,
 				201604B320925F7300B7F191 /* AuditGrader.swift */,
 				201604B420925F7300B7F191 /* SwiftData.swift */,
 				201604B520925F7300B7F191 /* Check.swift */,
@@ -473,7 +474,6 @@
 			children = (
 				207FB30A1F3B4CA9009B0B26 /* ReadMeSwiftRule.swift */,
 				207CE2B820925ECA0032B3B5 /* ConstantsMarkSectionSwiftRule.swift */,
-				207CE2BE20925ECB0032B3B5 /* CorrectableSwiftRule.swift */,
 				207CE2BA20925ECB0032B3B5 /* EndContextBracketSwiftRule.swift */,
 				207CE2B920925ECB0032B3B5 /* InitializationMarkSectionSwiftRule.swift */,
 				207CE2BF20925ECB0032B3B5 /* LocalizationSwiftRule.swift */,

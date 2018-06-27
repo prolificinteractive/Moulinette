@@ -10,5 +10,10 @@ import Foundation
 
 protocol CorrectableSwiftRule: SwiftRule {
 
+    /// Corrects the swift rule for any violations that are found.
+    ///
+    /// - Parameter projectData: Project data of the application.
+    /// - Returns: Array of necessary file corrections.
     func correct(projectData: ProjectData) -> [FileCorrection]
+    
 }
