@@ -10,7 +10,7 @@ import Foundation
 
 /// File components array type.
 typealias ProjectComponents = [String : [String]]
-typealias SwiftFileCollection = [(String, [String])]
+typealias FileCollection = [(String, [String])]
 
 /// Application components.
 struct ApplicationComponents {
@@ -25,24 +25,40 @@ struct ApplicationComponents {
     var assets: ProjectComponents = [:]
     
     /// Swift files.
-    var swiftFiles: SwiftFileCollection {
+    var swiftFiles: FileCollection {
         return files(for: Constants.FileNameConstants.swiftSuffix)
+    }
+
+    var objectiveCFiles: FileCollection {
+        return files(for: Constants.FileNameConstants.objectiveCSuffix)
     }
     
     // String files.
-    var stringFiles: SwiftFileCollection {
-        return files(for: Constants.FileNameConstants.stringSuffix)
+    var stringFiles: FileCollection {
+        guard let stringFiles = configFile?.localizationFiles else {
+            return files(for: Constants.FileNameConstants.stringSuffix)
+        }
+        return stringFiles.compactMap { file(filterBy: $0).first }
     }
     
     // README file components.
     var readmeComponents: [String]? {
         return file(by: Constants.FileNameConstants.readme)
     }
+
+    // Podfile components.
+    var podfileComponents: [String]? {
+        return file(by: Constants.FileNameConstants.podfile)
+    }
+
+    private let configFile: ConfigurationFile?
     
     /// Init function with file names.
     ///
     /// - Parameter fileNames: File names.
-    init(with fileNames: [String]) {
+    init(with fileNames: [String], configFile: ConfigurationFile? = nil) {
+        self.configFile = configFile
+
         for file in fileNames {
             let fileToParse = settings.projectDirectory + file
             filePaths.append(file)
@@ -51,7 +67,7 @@ struct ApplicationComponents {
                 let content = try String(contentsOfFile: fileToParse, encoding: String.Encoding.utf8)
                 let fileComponents = content.components(separatedBy: "\n")
 
-                components[file] = fileComponents
+                components[file] = formatFileComponents(components: fileComponents)
                 setupProjectAssets(filePath: file, fileComponents: fileComponents)
             } catch {
                 print("Error caught with message: \(error.localizedDescription)")
@@ -62,8 +78,9 @@ struct ApplicationComponents {
     /// Init with custom components.
     ///
     /// - Parameter components: Components.
-    init(with components: ProjectComponents) {
+    init(with components: ProjectComponents, configFile: ConfigurationFile? = nil) {
         self.components = components
+        self.configFile = configFile
     }
     
     /// Filtering function to get component for given file name.
@@ -78,7 +95,7 @@ struct ApplicationComponents {
     ///
     /// - Parameter name: File name,
     /// - Returns: List of file containing the file name given.
-    func file(filterBy name: String) -> SwiftFileCollection {
+    func file(filterBy name: String) -> FileCollection {
         let files = components.filter { (fileName, content) -> Bool in
             return fileName.contains(name)
             }.map { ($0.key, $0.value)}
@@ -90,7 +107,7 @@ struct ApplicationComponents {
     ///
     /// - Parameter pathExtension: Path extension.
     /// - Returns: Array of potential components with the path extension given.
-    func files(for pathExtension: String) -> SwiftFileCollection {
+    func files(for pathExtension: String) -> FileCollection {
         let files = components.filter { (fileName, content) -> Bool in
             let nsstring = fileName as NSString
             return nsstring.pathExtension == pathExtension
@@ -107,6 +124,10 @@ struct ApplicationComponents {
         return files.compactMap { (fileName, fileContents) -> String? in
             return fileContents.joined()
             }.joined()
+    }
+
+    func formatFileComponents(components: [String]) -> [String] {
+        return components.map { $0.components(separatedBy: "\r") }.reduce([], +)
     }
     
 }

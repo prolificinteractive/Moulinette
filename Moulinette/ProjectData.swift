@@ -10,6 +10,7 @@ import Foundation
 
 typealias FileComponents = [String]
 typealias ClassInfo = (className: String, subClassName: String?)
+typealias LineOffsetInfo = (lineNumber: Int, isInsertion: Bool)
 
 final class ProjectData: SwiftData {
     
@@ -44,10 +45,9 @@ final class ProjectData: SwiftData {
     /// - Parameter fileCorrections: File corrections to apply.
     func applyCorrections() {
         correctedProjectComponents = applicationComponents.components
-        var fileLineOffset = [String: [Int]]()
+        var fileLineOffset = [String: [LineOffsetInfo]]()
 
         for correction in fileCorrections {
-
             if fileLineOffset[correction.fileName] == nil {
                 fileLineOffset[correction.fileName] = []
             }
@@ -56,33 +56,29 @@ final class ProjectData: SwiftData {
                 correctedProjectComponents[correction.fileName]?[correction.lineNumber-1] = customString
             }
 
-            for index in correction.lineDeletions ?? [] {
-                let offset = lineOffset(lineNumber: index+1,
-                                        lineInsertions: fileLineOffset[correction.fileName],
-                                        isInsertion: false)
+            for lineNumber in correction.lineDeletions ?? [] {
+                let offset = lineOffset(lineNumber: lineNumber, lineOffsetInfo: fileLineOffset[correction.fileName])
 
-                let deletionIndex = index + offset
+                let deletionIndex = max(lineNumber - 1 + offset, 0)
                 correctedProjectComponents[correction.fileName]?.remove(at: deletionIndex)
-                fileLineOffset[correction.fileName]?.append(index+1)
+                fileLineOffset[correction.fileName]?.append((lineNumber, false))
             }
 
             for line in correction.lineInsertions ?? [] {
-                let offset = lineOffset(lineNumber: line.lineNumber,
-                                        lineInsertions: fileLineOffset[correction.fileName],
-                                        isInsertion: true)
+                let offset = lineOffset(lineNumber: line.lineNumber, lineOffsetInfo: fileLineOffset[correction.fileName])
 
                 let insertionIndex = line.lineNumber - 1 + offset
                 correctedProjectComponents[correction.fileName]?.insert(line.codeString, at: insertionIndex)
-                fileLineOffset[correction.fileName]?.append(line.lineNumber)
+                fileLineOffset[correction.fileName]?.append((line.lineNumber, true))
             }
         }
     }
 
-    private func lineOffset(lineNumber: Int, lineInsertions: [Int]?, isInsertion: Bool) -> Int {
+    private func lineOffset(lineNumber: Int, lineOffsetInfo: [LineOffsetInfo]?) -> Int {
         var offset = 0
-        for lineInsertion in lineInsertions ?? [] {
-            if lineInsertion <= lineNumber {
-                offset += isInsertion ? 1 : -1
+        for offsetInfo in lineOffsetInfo ?? [] {
+            if offsetInfo.lineNumber < lineNumber {
+                offset += offsetInfo.isInsertion ? 1 : -1
             }
         }
         return offset

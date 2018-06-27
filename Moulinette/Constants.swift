@@ -10,15 +10,16 @@ import Foundation
 
 struct Constants {
 
-    static let fileExtensions = ["swift", "strings", "plist", "md", "pbxproj", "storyboard", "json", "gitignore"]
-    static let validNonSwiftFiles = ["Podfile", "Localizable.strings", "project.pbxproj", ".gitignore"]
+    static let fileExtensions = ["swift", "strings", "plist", "md", "pbxproj", "storyboard", "json", "gitignore", "m"]
+    static let validNonSwiftFiles = ["AppDelegate", "Podfile", "project.pbxproj", ".gitignore"]
 
     static var markFormat = "// MARK: - "
     
     struct FileNameConstants {
         static let swiftSuffix = "swift"
+        static let objectiveCSuffix = "m"
         static let stringSuffix = "strings"
-        static let appDelegate = "AppDelegate.swift"
+        static let appDelegate = "AppDelegate"
         static let localizable = "Localizable.strings"
         static let plistSuffix = "plist"
         static let readme = "README.md"
@@ -26,6 +27,7 @@ struct Constants {
         static let AssetContents = "Contents.json"
         static let moulinetteName = "Moulinette"
         static let gitIgnore = ".gitignore"
+        static let podfile = "Podfile"
     }
 
     struct Regex {

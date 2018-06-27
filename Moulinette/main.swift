@@ -13,7 +13,7 @@ let settings = ProjectSettings()
 let config = ConfigurationParser(projectDirectory: settings.projectDirectory).configFile
 
 // Parse Project
-let projectParser = ProjectParser()
+let projectParser = ProjectParser(configFile: config)
 let applicationFileComponents = projectParser.applicationComponents()
 
 // Generate data store
@@ -26,7 +26,7 @@ let output = audit.runRules()
 audit.autoCorrect()
 
 if settings.debugMode {
-    print("############### MOULINETTE AUDITOR v0.1.2 ###############")
+    print("############### MOULINETTE AUDITOR v0.1.3 ###############")
     if settings.xcodePlugin {
         print(output.xcodeDescription())
     } else {

@@ -30,4 +30,35 @@ extension Array where Element == String {
         }
         return 0
     }
+
+    func removeCommentEmptyStrings(lineNumber: Int) -> [Int] {
+        let startIndex = Swift.max(lineNumber - 2, 0)
+        var lineDeletions = [lineNumber]
+
+        for index in stride(from: startIndex, through: 0, by: -1) {
+            var currentLine = self[index]
+            let lineNumber = index + 1
+
+            if currentLine.isEmpty {
+                lineDeletions.insert(lineNumber, at: 0)
+                continue
+            }
+
+            guard currentLine.count >= 2 else {
+                continue
+            }
+
+            let char1 = currentLine.remove(at: currentLine.startIndex)
+            let char2 = currentLine.remove(at: currentLine.startIndex)
+
+            if (char1 == "/" && char2 == "/") || (char1 == "/" && char2 == "*") {
+                lineDeletions.insert(lineNumber, at: 0)
+                continue
+            } else {
+                break
+            }
+        }
+        return lineDeletions
+    }
+
 }

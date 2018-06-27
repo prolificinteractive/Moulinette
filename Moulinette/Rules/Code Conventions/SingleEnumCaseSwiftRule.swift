@@ -27,7 +27,10 @@ final class SingleEnumCaseSwiftRule: CorrectableSwiftRule {
             fileComponents.forEach {
                 contextCheck.check(fileLine: $0)
                 
-                if contextCheck.insideContext(type: .enumContext), $0.contains("case ") && $0.contains(",") {
+                if contextCheck.currentContext == .enumContext, !$0.isComment(),
+                    $0.contains("case ") && $0.contains(",")
+                    && !($0.contains("var ") || $0.contains("let ") || $0.contains("(")) {
+                    
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: fileComponents.lineNumberFor($0),
                                                description: description,
@@ -46,13 +49,13 @@ final class SingleEnumCaseSwiftRule: CorrectableSwiftRule {
                 let index = lineNumber - 1
                 let currentLine = fileComponents[index]
                 let cases = enumCases(enumLine: currentLine)
-                let lines = enumLines(startIndex: index, cases: cases)
+                let lines = enumLines(lineNumber: lineNumber, cases: cases)
 
                 return FileCorrection(fileName: violation.fileName,
-                                      lineNumber: index,
+                                      lineNumber: lineNumber,
                                       customString: nil,
                                       lineInsertions: lines,
-                                      lineDeletions: [index])
+                                      lineDeletions: [lineNumber])
             }
             return nil
         })
@@ -61,12 +64,12 @@ final class SingleEnumCaseSwiftRule: CorrectableSwiftRule {
 
 private extension SingleEnumCaseSwiftRule {
 
-    func enumLines(startIndex: Int, cases: [String]) -> [Line] {
-        var lines = [Line]()
+    func enumLines(lineNumber: Int, cases: [String]) -> [Line] {
+        var lines = [String]()
         for index in 0..<cases.count {
-            lines.append(Line(lineNumber: startIndex + index, codeString: "\tcase " + cases[index]))
+            lines.append("\tcase \(cases[index])")
         }
-        return lines
+        return [Line(lineNumber: lineNumber, codeString: lines.joined(separator: "\n"))]
     }
 
     func enumCases(enumLine: String) -> [String] {

@@ -66,7 +66,7 @@ final class ProtocolExtensionMarkSectionSwiftRule: CorrectableSwiftRule {
 private extension ProtocolExtensionMarkSectionSwiftRule {
 
     func protocolString(line: String) -> String {
-        let protocols = line.removeLeading(startWith: ":").replacingOccurrences(of: "{", with: "").stringWithoutWhitespaces().components(separatedBy: ",")
+        let protocols = line.removeLeading(startWith: ":").removeTrailing(startWith: "{").stringWithoutWhitespaces().components(separatedBy: ",")
         return Constants.markFormat + protocols.joined(separator: ", ")
     }
 
