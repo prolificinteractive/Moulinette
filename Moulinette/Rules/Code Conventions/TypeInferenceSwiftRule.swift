@@ -22,7 +22,7 @@ final class TypeInferenceSwiftRule: CorrectableSwiftRule {
     func run(projectData: ProjectData) -> AuditGrade {
         for (fileName, fileComponents) in projectData.applicationComponents.components {
             fileComponents.forEach {
-                if unnecessaryTypeInference(fileLine: $0) {
+                if unnecessaryTypeInference(fileLine: $0, classInfo: projectData.classInfo) {
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: fileComponents.lineNumberFor($0),
                                                description: description,
@@ -56,7 +56,7 @@ final class TypeInferenceSwiftRule: CorrectableSwiftRule {
 
 private extension TypeInferenceSwiftRule {
     
-    func unnecessaryTypeInference(fileLine: String) -> Bool {
+    func unnecessaryTypeInference(fileLine: String, classInfo: [ClassInfo]) -> Bool {
         let noSpacefileLine = fileLine.stringWithoutWhitespaces()
         
         guard (fileLine.contains("let") || fileLine.contains("var")),
@@ -65,13 +65,22 @@ private extension TypeInferenceSwiftRule {
         }
         
         return primitiveTypeInference(noSpacefileLine: noSpacefileLine, type: type) ||
-            customTypeInference(noSpacefileLine: noSpacefileLine, type: type)
+            customTypeInference(noSpacefileLine: noSpacefileLine, type: type, classInfo: classInfo)
     }
     
-    private func customTypeInference(noSpacefileLine: String, type: String) -> Bool {
+    private func customTypeInference(noSpacefileLine: String, type: String, classInfo: [ClassInfo]) -> Bool {
         if let classInit = noSpacefileLine.stringBetween(startString: "=", endString: "("),
-            type == classInit {
+            type == classInit, isSwiftClass(type: type, classInfo: classInfo) {
             return true
+        }
+        return false
+    }
+
+    private func isSwiftClass(type: String, classInfo: [ClassInfo]) -> Bool {
+        for classInfo in classInfo {
+            if classInfo.className == type {
+                return true
+            }
         }
         return false
     }

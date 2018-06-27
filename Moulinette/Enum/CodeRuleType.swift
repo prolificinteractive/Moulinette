@@ -33,7 +33,7 @@ struct CodeConventionRuleCollection: RuleCollection {
             AppDelegateSwiftRule(),
             SemiColonSwiftRule(),
             FinalClassesSwiftRule(),
-            WeakIBOutletSwiftRule(),
+//            WeakIBOutletSwiftRule(),
             SinglePublicInternalSwiftRule(),
 //            ForceUnwrapSwiftRule(),
             MarkUsageSwiftRule(),
