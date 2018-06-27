@@ -46,6 +46,9 @@ extension String {
     ///
     /// - Returns: The class name in a string containing Swift code.
     func className() -> String? {
+        guard !self.contains("class var") else {
+            return nil
+        }
         if let className = stringBetween(startString: "class ", endString: ":") {
             return className.stringWithoutWhitespaces()
         } else if let className = stringBetween(startString: "class ", endString: "{") {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class FinalClassesSwiftRule: SwiftRule {
+final class FinalClassesSwiftRule: CorrectableSwiftRule {
     
     let description = "All classes should be final except when subclassed"
     let nameId = "final_classes"
@@ -27,6 +27,7 @@ final class FinalClassesSwiftRule: SwiftRule {
                     let className = $0.className(),
                     !projectData.subClassFound(className: className) {
 
+                    
                     auditGrader.violationFound(fileName: fileName,
                                                lineNumber: fileComponents.lineNumberFor($0),
                                                description: description,
@@ -36,4 +37,23 @@ final class FinalClassesSwiftRule: SwiftRule {
         }
         return auditGrader.generateGrade()
     }
+
+    func correct(projectData: ProjectData) -> [FileCorrection] {
+        return auditGrader.violations.compactMap({ (violation) -> FileCorrection? in
+            guard let lineNumber = violation.lineNumber,
+                let fileComponents = projectData.applicationComponents.components[violation.fileName],
+                let index = violation.componentIndex else {
+                    return nil
+            }
+            let splitClassString = fileComponents[index].split(at: "class")
+            let leftString = splitClassString?.leftString == nil ? "" : "\(splitClassString?.leftString ?? "") "
+            let customString =  "\(leftString)final class \(splitClassString?.rightString ?? "")"
+            return FileCorrection(fileName: violation.fileName,
+                                  lineNumber: lineNumber,
+                                  customString: customString,
+                                  lineInsertions: nil,
+                                  lineDeletions: nil)
+        })
+    }
+
 }

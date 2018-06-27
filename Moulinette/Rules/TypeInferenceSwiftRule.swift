@@ -33,7 +33,7 @@ final class TypeInferenceSwiftRule: CorrectableSwiftRule {
         return auditGrader.generateGrade()
     }
 
-    func correct(projectData: ProjectData) -> [FileCorrection] {
+    func correct( projectData: ProjectData) -> [FileCorrection] {
         return auditGrader.violations.compactMap({ (violation) -> FileCorrection? in
             guard let lineNumber = violation.lineNumber,
                 let fileComponents = projectData.applicationComponents.components[violation.fileName],
