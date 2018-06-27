@@ -172,6 +172,8 @@
 		20CE93FA1F4CCC7A000A5CF5 /* EmptyAppIconSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE93F51F4CC3D1000A5CF5 /* EmptyAppIconSwiftRule.swift */; };
 		20E414111EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E414101EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift */; };
 		20E414131EDF8C500000E447 /* SemiColonSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E414121EDF8C500000E447 /* SemiColonSwiftRule.swift */; };
+		20F9464620E405AE002FF9B4 /* ProjectXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9464520E405AE002FF9B4 /* ProjectXMLParser.swift */; };
+		20F9464720E405D7002FF9B4 /* ProjectXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9464520E405AE002FF9B4 /* ProjectXMLParser.swift */; };
 		4C14008A1F19173C007506FE /* LocalizedStringSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */; };
 		4C382C771FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382C761FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift */; };
 		4C382C791FE822EC00C0154E /* GitCheckBranchNameSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382C781FE822EC00C0154E /* GitCheckBranchNameSwiftRule.swift */; };
@@ -312,6 +314,7 @@
 		20E4140C1EDF7F9B0000E447 /* LineContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineContext.swift; sourceTree = "<group>"; };
 		20E414101EDF7FBD0000E447 /* RequiredSelfSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiredSelfSwiftRule.swift; sourceTree = "<group>"; };
 		20E414121EDF8C500000E447 /* SemiColonSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiColonSwiftRule.swift; sourceTree = "<group>"; };
+		20F9464520E405AE002FF9B4 /* ProjectXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectXMLParser.swift; sourceTree = "<group>"; };
 		4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringSwiftRule.swift; sourceTree = "<group>"; };
 		4C382C761FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckConfigurationSwiftRule.swift; sourceTree = "<group>"; };
 		4C382C781FE822EC00C0154E /* GitCheckBranchNameSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckBranchNameSwiftRule.swift; sourceTree = "<group>"; };
@@ -377,6 +380,7 @@
 		201604BE2092603200B7F191 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				20F9464520E405AE002FF9B4 /* ProjectXMLParser.swift */,
 				201604BF2092603200B7F191 /* CommentParser.swift */,
 				201604C02092603200B7F191 /* PodfileParser.swift */,
 				201604C12092603200B7F191 /* ConfigurationParser.swift */,
@@ -737,6 +741,7 @@
 				201D74221EFAC77900361ECD /* ToDoCountSwiftRule.swift in Sources */,
 				201604F6209260EF00B7F191 /* RuleCollection.swift in Sources */,
 				2037905A1F44E3F600B74151 /* CompletionWeakSwiftRuleTests.swift in Sources */,
+				20F9464720E405D7002FF9B4 /* ProjectXMLParser.swift in Sources */,
 				201604F7209260EF00B7F191 /* GradeType.swift in Sources */,
 				4C382C7A1FE9388D00C0154E /* GitCheckMergedBranchSwiftRule.swift in Sources */,
 				201604EB209260E800B7F191 /* CommentParser.swift in Sources */,
@@ -882,6 +887,7 @@
 				2016050D209260EF00B7F191 /* RulePriority.swift in Sources */,
 				20160510209260EF00B7F191 /* ApplicationComponents.swift in Sources */,
 				20E414131EDF8C500000E447 /* SemiColonSwiftRule.swift in Sources */,
+				20F9464620E405AE002FF9B4 /* ProjectXMLParser.swift in Sources */,
 				201604B920925F7300B7F191 /* SwiftData.swift in Sources */,
 				209696C01EE9E52B0035C7AE /* CompletionWeakSwiftRule.swift in Sources */,
 				201D741B1EFAC48300361ECD /* PIOSAuditGrader.swift in Sources */,

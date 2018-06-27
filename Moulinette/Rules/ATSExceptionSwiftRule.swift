@@ -34,15 +34,17 @@ final class ATSExceptionSwiftRule: SwiftRule {
     func run(projectData: ProjectData) -> AuditGrade {
         let plistFiles = projectData.applicationComponents.files(for: Constants.FileNameConstants.plistSuffix)
         
-        plistFiles.forEach { (fileName, _) in
-            let plistPathWithFileName = plistPath + fileName
-            let plistXMLDictionary: [String : AnyObject]? = plistPathWithFileName.parsedXMLDictionary()
-            
-            if let plistXMLDictionary = plistXMLDictionary,
-                let appTransportValue = plistXMLDictionary[appTransportSecurityString],
+        plistFiles.forEach { (fileName, fileComponents) in
+            if let plistXMLDictionary = ProjectXMLParser.parse(xml: fileComponents),
+                let appTransportValue = plistXMLDictionary[appTransportSecurityString] as? [String : Any],
                 let exceptionDomains = appTransportValue[exceptionDomainsString] as? [String : Any],
                 exceptionDomains.count > 0  {
-                auditGrader.violationFound(fileName: fileName, lineNumber: nil, description: "Exception Domains found", nameId: nameId)
+
+                let exceptions = exceptionDomains.map { $0.key }.joined(separator: ",")
+                auditGrader.violationFound(fileName: fileName,
+                                           lineNumber: nil,
+                                           description: "Exception Domains found: \(exceptions)",
+                                           nameId: nameId)
             }
         }
         
