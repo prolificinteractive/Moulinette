@@ -46,7 +46,8 @@ final class FinalClassesSwiftRule: CorrectableSwiftRule {
                     return nil
             }
             let splitClassString = fileComponents[index].split(at: "class")
-            let leftString = splitClassString?.leftString == nil ? "" : "\(splitClassString?.leftString ?? "") "
+            let splitClassLeftString = splitClassString?.leftString ?? ""
+            let leftString = splitClassLeftString.isEmpty ? "" : "\(splitClassString?.leftString ?? "") "
             let customString =  "\(leftString)final class \(splitClassString?.rightString ?? "")"
             return FileCorrection(fileName: violation.fileName,
                                   lineNumber: lineNumber,
