@@ -11,7 +11,6 @@ import Foundation
 /// Defines helper functions on objects of type String to parse information about the Swift code 
 /// contained in the string
 extension String {
-    
 
     /// Determines if the line is a class.
     ///

@@ -15,14 +15,7 @@ final class ATSExceptionSwiftRule: SwiftRule {
     let nameId = "ats_exception"
 
     let priority: RulePriority = .medium
-    
-    /// The path of the plist files. Made public for testing.
-    lazy var plistPath: String = {
-        return settings.projectDirectory + self.supportingFilesString
-    }()
-    
-    fileprivate var contextCheck = ContextCheck()
-    
+
     private let appTransportSecurityString = "NSAppTransportSecurity"
     private let exceptionDomainsString = "NSExceptionDomains"
     private let supportingFilesString = "/Supporting Files/"
@@ -43,7 +36,7 @@ final class ATSExceptionSwiftRule: SwiftRule {
                 let exceptions = exceptionDomains.map { $0.key }.joined(separator: ",")
                 auditGrader.violationFound(fileName: fileName,
                                            lineNumber: nil,
-                                           description: "Exception Domains found: \(exceptions)",
+                                           description: "Exception Domains found: \(exceptions). Check info.plist",
                                            nameId: nameId)
             }
         }

@@ -46,14 +46,7 @@ struct CodeConventionRuleCollection: RuleCollection {
             ToDoStorySwiftRule(),
             ToDoCountSwiftRule(),
 //            RequiredSelfSwiftRule(),
-            EndContextBracketSwiftRule(),
-            PublicPropertyMarkSectionSwiftRule(),
-            PrivatePropertyMarkSectionSwiftRule(),
-            InitializationMarkSectionSwiftRule(),
-            PublicFunctionMarkSectionSwiftRule(),
-            PrivateFunctionsMarkSectionSwiftRule(),
-            ProtocolExtensionMarkSectionSwiftRule(),
-            ConstantsMarkSectionSwiftRule()
+            EndContextBracketSwiftRule()
         ]
     }
     
@@ -92,7 +85,14 @@ struct DocumentationRuleCollection: RuleCollection {
 
     func rules() -> [SwiftRule] {
         return [
-            ReadMeSwiftRule()
+            ReadMeSwiftRule(),
+            PublicPropertyMarkSectionSwiftRule(),
+            PrivatePropertyMarkSectionSwiftRule(),
+            InitializationMarkSectionSwiftRule(),
+            PublicFunctionMarkSectionSwiftRule(),
+            PrivateFunctionsMarkSectionSwiftRule(),
+            ProtocolExtensionMarkSectionSwiftRule(),
+            ConstantsMarkSectionSwiftRule()
         ]
     }
     
@@ -193,7 +193,8 @@ struct SecurityRuleCollection: RuleCollection {
 
     func rules() -> [SwiftRule] {
         return [
-            ATSExceptionSwiftRule()
+            ATSExceptionSwiftRule(),
+            ATSArbitraryLoadsSwiftRule()
         ]
     }
     
