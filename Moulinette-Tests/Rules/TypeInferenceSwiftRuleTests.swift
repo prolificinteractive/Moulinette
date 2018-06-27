@@ -21,11 +21,21 @@ class TypeInferenceSwiftRuleTests: XCTestCase {
         XCTAssertEqual(grade.violationCount, 0)
     }
     
-    func test_RunUnnecessaryTypeInitialize() {
+    func test_RunUnnecessaryTypeInitializeNotSwiftClass() {
         sut = TypeInferenceSwiftRule()
         
         let grade = sut.run(projectData: projectData(line: "var sample: Example = Example()"))
         
+        XCTAssertEqual(grade.violationCount, 0)
+    }
+
+    func test_RunUnnecessaryTypeInitializeSwiftClass() {
+        sut = TypeInferenceSwiftRule()
+        let data = projectData(components: ["Example": ["class Example {}"],
+                                            "Sample": ["var sample: Example = Example()"]])
+
+        let grade = sut.run(projectData: data)
+
         XCTAssertEqual(grade.violationCount, 1)
     }
     

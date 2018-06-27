@@ -130,8 +130,6 @@
 		206837B11EDE2305008CB7F3 /* AppDelegateSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837B01EDE2305008CB7F3 /* AppDelegateSwiftRule.swift */; };
 		2071E2A81F4F6E9B00DA52DB /* AppIconSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC7341F4CBB92004335D8 /* AppIconSwiftRule.swift */; };
 		2071E2AC1F4F7DB800DA52DB /* ToDoCountSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EE0A81F4F41B800AC7EE4 /* ToDoCountSwiftRuleTests.swift */; };
-		207CE2B620925DFD0032B3B5 /* NoExceptionDomains.plist in Resources */ = {isa = PBXBuildFile; fileRef = 207CE2B420925DFD0032B3B5 /* NoExceptionDomains.plist */; };
-		207CE2B720925DFD0032B3B5 /* ExceptionDomains.plist in Resources */ = {isa = PBXBuildFile; fileRef = 207CE2B520925DFD0032B3B5 /* ExceptionDomains.plist */; };
 		207CE2C220925ECB0032B3B5 /* ConstantsMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2B820925ECA0032B3B5 /* ConstantsMarkSectionSwiftRule.swift */; };
 		207CE2C320925ECB0032B3B5 /* InitializationMarkSectionSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2B920925ECB0032B3B5 /* InitializationMarkSectionSwiftRule.swift */; };
 		207CE2C420925ECB0032B3B5 /* EndContextBracketSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CE2BA20925ECB0032B3B5 /* EndContextBracketSwiftRule.swift */; };
@@ -280,8 +278,6 @@
 		206837AE1EDE22E8008CB7F3 /* GradeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeType.swift; sourceTree = "<group>"; };
 		206837B01EDE2305008CB7F3 /* AppDelegateSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSwiftRule.swift; sourceTree = "<group>"; };
 		206EE0A81F4F41B800AC7EE4 /* ToDoCountSwiftRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCountSwiftRuleTests.swift; sourceTree = "<group>"; };
-		207CE2B420925DFD0032B3B5 /* NoExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NoExceptionDomains.plist; sourceTree = "<group>"; };
-		207CE2B520925DFD0032B3B5 /* ExceptionDomains.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExceptionDomains.plist; sourceTree = "<group>"; };
 		207CE2B820925ECA0032B3B5 /* ConstantsMarkSectionSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsMarkSectionSwiftRule.swift; sourceTree = "<group>"; };
 		207CE2B920925ECB0032B3B5 /* InitializationMarkSectionSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitializationMarkSectionSwiftRule.swift; sourceTree = "<group>"; };
 		207CE2BA20925ECB0032B3B5 /* EndContextBracketSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndContextBracketSwiftRule.swift; sourceTree = "<group>"; };
@@ -445,8 +441,6 @@
 		2053EE891EF4862B00AAE36D /* Moulinette-Tests */ = {
 			isa = PBXGroup;
 			children = (
-				207CE2B520925DFD0032B3B5 /* ExceptionDomains.plist */,
-				207CE2B420925DFD0032B3B5 /* NoExceptionDomains.plist */,
 				4CA5E00F1F1FA44B00EBE48B /* Core */,
 				2053EE901EF486F500AAE36D /* Rules */,
 				2023AD121EFB120900B66438 /* Extensions */,
@@ -788,8 +782,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				207CE2B720925DFD0032B3B5 /* ExceptionDomains.plist in Resources */,
-				207CE2B620925DFD0032B3B5 /* NoExceptionDomains.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
