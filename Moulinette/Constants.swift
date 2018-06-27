@@ -19,7 +19,7 @@ struct Constants {
         static let swiftSuffix = "swift"
         static let objectiveCSuffix = "m"
         static let stringSuffix = "strings"
-        static let appDelegate = "AppDelegate.swift"
+        static let appDelegate = "AppDelegate"
         static let localizable = "Localizable.strings"
         static let plistSuffix = "plist"
         static let readme = "README.md"
