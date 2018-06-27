@@ -176,6 +176,7 @@
 		20F9464720E405D7002FF9B4 /* ProjectXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9464520E405AE002FF9B4 /* ProjectXMLParser.swift */; };
 		20F9465220E408D0002FF9B4 /* ATSArbitraryLoadsSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9465120E408D0002FF9B4 /* ATSArbitraryLoadsSwiftRule.swift */; };
 		20F9465320E4095E002FF9B4 /* ATSArbitraryLoadsSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9465120E408D0002FF9B4 /* ATSArbitraryLoadsSwiftRule.swift */; };
+		20F9465820E42F9E002FF9B4 /* ForceUnwrapSwiftRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9465720E42F9E002FF9B4 /* ForceUnwrapSwiftRuleTests.swift */; };
 		4C14008A1F19173C007506FE /* LocalizedStringSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */; };
 		4C382C771FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382C761FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift */; };
 		4C382C791FE822EC00C0154E /* GitCheckBranchNameSwiftRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382C781FE822EC00C0154E /* GitCheckBranchNameSwiftRule.swift */; };
@@ -318,6 +319,7 @@
 		20E414121EDF8C500000E447 /* SemiColonSwiftRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiColonSwiftRule.swift; sourceTree = "<group>"; };
 		20F9464520E405AE002FF9B4 /* ProjectXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectXMLParser.swift; sourceTree = "<group>"; };
 		20F9465120E408D0002FF9B4 /* ATSArbitraryLoadsSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATSArbitraryLoadsSwiftRule.swift; sourceTree = "<group>"; };
+		20F9465720E42F9E002FF9B4 /* ForceUnwrapSwiftRuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceUnwrapSwiftRuleTests.swift; sourceTree = "<group>"; };
 		4C1400891F19173C007506FE /* LocalizedStringSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringSwiftRule.swift; sourceTree = "<group>"; };
 		4C382C761FE80EE800C0154E /* GitCheckConfigurationSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckConfigurationSwiftRule.swift; sourceTree = "<group>"; };
 		4C382C781FE822EC00C0154E /* GitCheckBranchNameSwiftRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCheckBranchNameSwiftRule.swift; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				4C382C821FE978EC00C0154E /* GitCheckBranchNameSwiftRuleTests.swift */,
 				4C382C841FE9807B00C0154E /* GitCheckCommitQualitySwiftRuleTests.swift */,
 				4C382C861FE98E9E00C0154E /* GitCheckConfigurationSwiftRuleTests.swift */,
+				20F9465720E42F9E002FF9B4 /* ForceUnwrapSwiftRuleTests.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -870,6 +873,7 @@
 				20160506209260EF00B7F191 /* Output.swift in Sources */,
 				2053EECA1EF4921B00AAE36D /* FontEncapsulationSwiftRule.swift in Sources */,
 				207CE2CD20925ED50032B3B5 /* CorrectableSwiftRule.swift in Sources */,
+				20F9465820E42F9E002FF9B4 /* ForceUnwrapSwiftRuleTests.swift in Sources */,
 				201604EC209260E800B7F191 /* PodfileParser.swift in Sources */,
 				2053EECB1EF4921B00AAE36D /* ColorEncapsulationSwiftRule.swift in Sources */,
 				200BF1DE20D4126C00DC4B7D /* OldCommentStyleCheck.swift in Sources */,
