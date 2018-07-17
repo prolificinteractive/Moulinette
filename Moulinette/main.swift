@@ -26,7 +26,7 @@ let output = audit.runRules()
 audit.autoCorrect()
 
 if settings.debugMode {
-    print("############### MOULINETTE AUDITOR v0.1.3 ###############")
+    print("############### MOULINETTE AUDITOR v0.1.4 ###############")
     if settings.xcodePlugin {
         print(output.xcodeDescription())
     } else {

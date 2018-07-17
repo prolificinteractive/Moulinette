@@ -61,7 +61,9 @@ final class PrivatePropertyMarkSectionSwiftRule: CorrectableSwiftRule {
                     return nil
             }
             let insertLineNumber = fileComponents.aboveCommentLineNumber(violationLineNumber: lineNumber)
-            let lineInsertions = [Line(lineNumber: insertLineNumber, codeString: "\n\(spacedMarkDescription)")]
+            let codeString = "\(insertLineNumber.insertTopSpace ? "\n" : "")\(spacedMarkDescription)\n"
+            let lineInsertions = [Line(lineNumber: insertLineNumber.lineNumber, codeString: codeString)]
+            
             return FileCorrection(fileName: violation.fileName,
                                   lineNumber: lineNumber,
                                   customString: nil,

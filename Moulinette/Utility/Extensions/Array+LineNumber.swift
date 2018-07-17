@@ -17,18 +17,22 @@ extension Array where Element == String {
         return nil
     }
 
-    /// Returns the line number above comments.
+    /// Returns the line number above comments
     ///
-    /// - Parameter violationLineNumber: Line number violation.
-    /// - Returns: Updated line number where there is no comment.
-    func aboveCommentLineNumber(violationLineNumber: Int) -> Int {
+    /// - Parameter violationLineNumber: Line number violation
+    /// - Returns: The updated line number where there is no comment and whether an additional space should be added.
+    func aboveCommentLineNumber(violationLineNumber: Int) -> (lineNumber: Int, insertTopSpace: Bool) {
         let startLineNumber = violationLineNumber-1
-        for index in stride(from: startLineNumber-1, through: 0, by: -1) {
-            if !self[index].isComment() {
-                return (self[index] == "") ? index+1 : index+2
+        let startIndex = startLineNumber-1
+        for index in stride(from: startIndex, through: 0, by: -1) {
+            let formattedString = self[index].replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
+            if formattedString.isComment() {
+                continue
+            } else {
+                return (index + 2, !formattedString.isEmpty)
             }
         }
-        return 0
+        return (0, false)
     }
 
     func removeCommentEmptyStrings(lineNumber: Int) -> [Int] {
