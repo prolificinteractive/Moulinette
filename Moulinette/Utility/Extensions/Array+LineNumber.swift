@@ -17,10 +17,10 @@ extension Array where Element == String {
         return nil
     }
 
-    /// Returns the line number above comments.
+    /// Returns the line number above comments
     ///
-    /// - Parameter violationLineNumber: Line number violation.
-    /// - Returns: Updated line number where there is no comment.
+    /// - Parameter violationLineNumber: Line number violation
+    /// - Returns: The updated line number where there is no comment and whether an additional space should be added.
     func aboveCommentLineNumber(violationLineNumber: Int) -> (lineNumber: Int, insertTopSpace: Bool) {
         let startLineNumber = violationLineNumber-1
         let startIndex = startLineNumber-1
