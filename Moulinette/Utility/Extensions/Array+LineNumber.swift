@@ -28,12 +28,8 @@ extension Array where Element == String {
             let formattedString = self[index].replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
             if formattedString.isComment() {
                 continue
-            }
-
-            if formattedString.isEmpty {
-                return (index + 2, false)
             } else {
-                return (index + 2, true)
+                return (index + 2, !formattedString.isEmpty)
             }
         }
         return (0, false)

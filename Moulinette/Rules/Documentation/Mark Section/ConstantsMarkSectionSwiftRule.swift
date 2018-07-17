@@ -64,7 +64,6 @@ final class ConstantsMarkSectionSwiftRule: CorrectableSwiftRule {
             let insertLineNumber = fileComponents.aboveCommentLineNumber(violationLineNumber: lineNumber)
             let codeString = "\(insertLineNumber.insertTopSpace ? "\n" : "")\(spacedMarkDescription)\n"
             let lineInsertions = [Line(lineNumber: insertLineNumber.lineNumber, codeString: codeString)]
-            print(fileComponents[lineNumber - 1])
             return FileCorrection(fileName: violation.fileName,
                                   lineNumber: lineNumber,
                                   customString: nil,
